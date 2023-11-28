@@ -3,6 +3,8 @@ local M = {}
 M.general = {
   i = {
     ["<C-s>"] = { "<C-o>:w<CR>", "Save file" },
+    ["<C-f>"] = { "<Right>", "Move Right" },
+    ["<C-b>"] = { "<Left>", "Move Right" },
   },
 }
 

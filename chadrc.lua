@@ -4,8 +4,12 @@ local M = {}
 M.ui = {
   theme = 'chadracula',
   transparency = true,
-  theme_toggle = {},
+
+  statusline = {
+    theme = "vscode",
+  },
 }
+
 
 M.plugins = 'custom.plugins'
 
