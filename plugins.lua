@@ -1,6 +1,16 @@
 local plugins = {
+
+  {
+    "NvChad/nvterm",
+    enabled = false,
+  },
+
   {
     "neovim/nvim-lspconfig",
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
   },
 
   {
@@ -8,6 +18,7 @@ local plugins = {
    opts = {
       ensure_installed = {
         "rust-analyzer",
+        "pyright",
       },
     },
   },
@@ -36,13 +47,20 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = {
       filters = {
-        dotfiles = true,
+        dotfiles = false,
       },
       renderer = {
         root_folder_label = ":~:s?$?",
         highlight_opened_files = "all",
       },
+      view = {
+        adaptive_size = true,
+        width = {
+          max = "35%"
+        }
+      },
     },
-  }
+  },
 }
 return plugins
+

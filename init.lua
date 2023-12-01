@@ -1,4 +1,4 @@
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function(data)
@@ -28,8 +28,3 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   end,
 })
 
-
-
-if vim.g.neovide then
-  vim.g.neovide_transparency = 0.8
-end
