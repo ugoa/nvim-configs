@@ -19,6 +19,7 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "pyright",
+        "terraform-ls"
       },
     },
   },
