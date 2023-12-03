@@ -62,6 +62,26 @@ local plugins = {
       },
     },
   },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        vimgrep_arguments = {
+          "rg",
+          "-L",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden",
+        },
+      },
+    },
+  },
 }
+
 return plugins
 
