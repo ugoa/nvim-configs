@@ -3,7 +3,7 @@ local M = {}
 
 M.ui = {
   theme = 'chadracula',
-  transparency = true,
+  transparency = false,
 
   statusline = {
     theme = "vscode",

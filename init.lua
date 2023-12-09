@@ -1,4 +1,7 @@
-vim.opt.colorcolumn = "100"
+local opt = vim.opt
+
+opt.colorcolumn = "100"
+opt.whichwrap = ""
 
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function(data)

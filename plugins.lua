@@ -42,8 +42,6 @@ local plugins = {
     end
   },
 
-  "mfussenegger/nvim-dap",
-
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
