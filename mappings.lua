@@ -8,7 +8,9 @@ M.general = {
   },
 
   n = {
-    ["`"] = { "<Nop>", "Disable backtilde as as it is used as leader key by tmux" }
+    ["`"] = { "<Nop>", "Disable backtilde as as it is used as leader key by tmux" },
+
+    ["<leader>;"] = { ":", "Enter command mode" },
   }
 }
 
