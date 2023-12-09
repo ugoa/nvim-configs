@@ -6,6 +6,10 @@ M.general = {
     ["<C-f>"] = { "<Right>", "Move Right" },
     ["<C-b>"] = { "<Left>", "Move Right" },
   },
+
+  n = {
+    ["`"] = { "<Nop>", "Disable backtilde as as it is used as leader key by tmux" }
+  }
 }
 
 M.comment = {
