@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-  theme = 'chadracula',
+  theme = 'catppuccin',
   transparency = false,
 
   statusline = {
