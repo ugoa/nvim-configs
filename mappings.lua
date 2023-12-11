@@ -5,6 +5,7 @@ M.general = {
     ["<C-s>"] = { "<C-o>:w<CR>", "Save file" },
     ["<C-f>"] = { "<Right>", "Move Right" },
     ["<C-b>"] = { "<Left>", "Move Right" },
+    ["<F1>"] = { "<Nop>", "Disable F1 key as I don't need help" },
   },
 
   n = {
