@@ -6,6 +6,11 @@ local plugins = {
   },
 
   {
+    "NvChad/nvim-colorizer.lua",
+    enabled = false,
+  },
+
+  {
     "neovim/nvim-lspconfig",
     config = function()
       require "plugins.configs.lspconfig"
