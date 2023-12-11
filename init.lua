@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 vim.api.nvim_create_autocmd("InsertLeave", {
   callback = function()
     vim.api.nvim_command('set norelativenumber')
+    vim.api.nvim_command('set number')
   end,
 })
 
