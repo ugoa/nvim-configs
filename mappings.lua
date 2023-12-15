@@ -16,6 +16,14 @@ M.general = {
   }
 }
 
+M.telescope = {
+  n = {
+    -- find
+    ["<leader>fw"] = { "<Nop>", "Disable" },
+    ["<leader>ww"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
+  },
+}
+
 M.comment = {
 
   i = {
