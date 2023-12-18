@@ -57,13 +57,7 @@ local plugins = {
       },
     },
   },
-  {
-    "rust-lang/rust.vim",
-    ft = "rust",
-    init = function ()
-      vim.g.rustfmt_autosave = 1
-    end
-  },
+
   {
     "simrat39/rust-tools.nvim",
     ft = "rust",
@@ -91,6 +85,15 @@ local plugins = {
         width = {
           max = "35%"
         }
+      },
+    },
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "rust"
       },
     },
   },
