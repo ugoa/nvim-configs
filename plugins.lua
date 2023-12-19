@@ -6,6 +6,16 @@ local plugins = {
   },
 
   {
+    "NvChad/nvim-colorizer.lua",
+    enabled = false,
+    -- opts = {
+    --   user_default_options = {
+    --     names = false,
+    --   },
+    -- },
+  },
+
+  {
     "Pocco81/auto-save.nvim",
     lazy = false,
     opts = {
@@ -24,16 +34,6 @@ local plugins = {
         delay = 0,
         ignore_whitespace = false,
         virt_text_priority = 700,
-      },
-    },
-  },
-
-  {
-    "NvChad/nvim-colorizer.lua",
-    enabled = false,
-    opts = {
-      user_default_options = {
-        names = false,
       },
     },
   },
