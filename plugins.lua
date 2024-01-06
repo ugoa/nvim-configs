@@ -1,28 +1,26 @@
 local plugins = {
 
-  {
-    "NvChad/nvterm",
-    enabled = false,
-  },
+  { "NvChad/nvterm", enabled = false, },
+
+  { "NvChad/nvim-colorizer.lua", enabled = false, },
+
 
   {
-    "NvChad/nvim-colorizer.lua",
-    enabled = false,
-    -- opts = {
-    --   user_default_options = {
-    --     names = false,
-    --   },
-    -- },
+    "nvimtools/none-ls.nvim",
+    ft = { "python" },
+    opts = function ()
+      return require "custom.configs.none-ls"
+    end,
   },
 
-  {
-    "Pocco81/auto-save.nvim",
-    lazy = false,
-    opts = {
-      trigger_events = {"InsertLeave", "TextChanged", "FocusLost"},
-      write_all_buffers = true,
-    }
-  },
+  -- {
+  --   "Pocco81/auto-save.nvim",
+  --   lazy = false,
+  --   opts = {
+  --     trigger_events = {"InsertLeave", "TextChanged", "FocusLost"},
+  --     write_all_buffers = true,
+  --   }
+  -- },
 
   {
     "lewis6991/gitsigns.nvim",
@@ -54,6 +52,9 @@ local plugins = {
         "pyright",
         "terraform-ls",
         "lua-language-server",
+        "black",
+        "mypy",
+        "ruff",
       },
     },
   },
