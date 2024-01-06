@@ -1,14 +1,13 @@
 local plugins = {
 
-  { "NvChad/nvterm", enabled = false, },
+  { "NvChad/nvterm", enabled = false },
 
-  { "NvChad/nvim-colorizer.lua", enabled = false, },
-
+  { "NvChad/nvim-colorizer.lua", enabled = false },
 
   {
     "nvimtools/none-ls.nvim",
-    ft = { "python" },
-    opts = function ()
+    ft = { "python", "lua" },
+    opts = function()
       return require "custom.configs.none-ls"
     end,
   },
@@ -28,7 +27,7 @@ local plugins = {
       current_line_blame = true, -- Toggle with `:Gitsigns toggle_current_line_blame`
       current_line_blame_opts = {
         virt_text = true,
-        virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+        virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
         delay = 0,
         ignore_whitespace = false,
         virt_text_priority = 700,
@@ -45,8 +44,8 @@ local plugins = {
   },
 
   {
-   "williamboman/mason.nvim",
-   opts = {
+    "williamboman/mason.nvim",
+    opts = {
       ensure_installed = {
         "rust-analyzer",
         "pyright",
@@ -55,6 +54,7 @@ local plugins = {
         "black",
         "mypy",
         "ruff",
+        "stylua",
       },
     },
   },
@@ -63,12 +63,12 @@ local plugins = {
     "simrat39/rust-tools.nvim",
     ft = "rust",
     dependencies = "neovim/nvim-lspconfig",
-    opts = function ()
+    opts = function()
       return require "custom.configs.rust-tools"
     end,
-    config = function (_, opts)
-      require('rust-tools').setup(opts)
-    end
+    config = function(_, opts)
+      require("rust-tools").setup(opts)
+    end,
   },
 
   {
@@ -84,8 +84,8 @@ local plugins = {
       view = {
         adaptive_size = true,
         width = {
-          max = "35%"
-        }
+          max = "35%",
+        },
       },
     },
   },
@@ -94,7 +94,7 @@ local plugins = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
-        "rust"
+        "rust",
       },
     },
   },
@@ -126,4 +126,3 @@ local plugins = {
 }
 
 return plugins
-
