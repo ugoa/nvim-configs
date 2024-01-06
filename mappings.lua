@@ -13,7 +13,7 @@ M.general = {
     ["<F1>"] = { "<Nop>", "Disable F1 key as I don't need help" },
 
     ["<leader>;"] = { ":", "Enter command mode" },
-  }
+  },
 }
 
 return M
