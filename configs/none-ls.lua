@@ -4,9 +4,11 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local opts = {
   sources = {
+    -- For Lua
     null_ls.builtins.formatting.stylua,
+    -- For Python
     null_ls.builtins.formatting.black,
-    null_ls.builtins.diagnostics.mypy,
+    -- For Rust
     null_ls.builtins.diagnostics.ruff,
   },
 

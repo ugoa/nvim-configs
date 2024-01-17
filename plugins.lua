@@ -52,7 +52,6 @@ local plugins = {
         "terraform-ls",
         "lua-language-server",
         "black",
-        "mypy",
         "ruff",
         "stylua",
       },
