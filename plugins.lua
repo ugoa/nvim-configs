@@ -1,8 +1,12 @@
 local plugins = {
 
-  { "NvChad/nvterm", enabled = false },
-
-  { "NvChad/nvim-colorizer.lua", enabled = false },
+  {
+    "rmagatti/auto-session",
+    opts = {
+      log_level = "error",
+      auto_session_suppress_dirs = { "~/.nvim_sessions" },
+    },
+  },
 
   {
     "nvimtools/none-ls.nvim",
@@ -122,6 +126,10 @@ local plugins = {
       },
     },
   },
+
+  { "NvChad/nvterm", enabled = false },
+
+  { "NvChad/nvim-colorizer.lua", enabled = false },
 }
 
 return plugins
