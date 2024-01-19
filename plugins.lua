@@ -122,6 +122,7 @@ local plugins = {
           "--glob=!.vscode/*",
           "--glob=!target/*",
           "--glob=!.idea/*",
+          "--glob=!.venv/*",
         },
       },
     },
