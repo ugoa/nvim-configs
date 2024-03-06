@@ -16,15 +16,6 @@ local plugins = {
     end,
   },
 
-  -- {
-  --   "Pocco81/auto-save.nvim",
-  --   lazy = false,
-  --   opts = {
-  --     trigger_events = {"InsertLeave", "TextChanged", "FocusLost"},
-  --     write_all_buffers = true,
-  --   }
-  -- },
-
   {
     "lewis6991/gitsigns.nvim",
     opts = {
