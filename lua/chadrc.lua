@@ -1,12 +1,12 @@
 local M = {}
 
 M.ui = {
-  theme = "catppuccin",
-  transparency = false,
+	theme = "catppuccin",
+	transparency = false,
 
-  statusline = {
-    theme = "vscode",
-  },
+	statusline = {
+		theme = "vscode",
+	},
 }
 
 return M
