@@ -17,3 +17,5 @@ end, { desc = "File Format with conform" })
 
 map("n", "`", "<Nop>", { desc = "Disable" })
 map("n", "<F1>", "<Nop>", { desc = "Disable" })
+
+map("v", ";", ":", { desc = "CMD enter command mode" })
