@@ -5,7 +5,7 @@ M.ui = {
 	transparency = false,
 
 	statusline = {
-		theme = "vscode",
+		theme = "vscode_colored",
 	},
 }
 
