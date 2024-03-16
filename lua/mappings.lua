@@ -5,8 +5,13 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 
 map("i", "<C-s>", "<C-o>:w<CR>", { desc = "Save file" })
+
 map("i", "<C-f>", "<Right>", { desc = "Move right" })
 map("i", "<C-b>", "<Left>", { desc = "Move left" })
+map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
+map("i", "<C-e>", "<End>", { desc = "Move to end" })
+
+
 map("i", "<F1>", "<Nop>", { desc = "Disable" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -19,3 +24,8 @@ map("n", "`", "<Nop>", { desc = "Disable" })
 map("n", "<F1>", "<Nop>", { desc = "Disable" })
 
 map("v", ";", ":", { desc = "CMD enter command mode" })
+
+map("c", "<C-f>", "<Right>", { desc = "Move right" })
+map("c", "<C-b>", "<Left>", { desc = "Move left" })
+map("c", "<C-a>", "<Home>", { desc = "Move beginning" })
+map("c", "<C-e>", "<End>", { desc = "Move to end" })
