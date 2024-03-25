@@ -38,5 +38,4 @@ map('n', "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map('n', "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
 map('n', "<M-k>", "<Cmd>NvimTmuxNavigateUp<CR>")
 map('n', "<M-l>", "<Cmd>NvimTmuxNavigateRight<CR>")
-map('n', "<M-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>")
 
