@@ -1,4 +1,7 @@
 return {
+
+  { "alexghergh/nvim-tmux-navigation" },
+
 	{
 		"stevearc/conform.nvim",
 		config = function()
