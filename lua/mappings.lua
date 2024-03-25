@@ -17,9 +17,6 @@ map("n", "<leader>fm", function()
 	require("conform").format()
 end, { desc = "File Format with conform" })
 
-map("n", "`", "<Nop>", { desc = "Disable" })
-map("n", "<F1>", "<Nop>", { desc = "Disable" })
-
 map("v", ";", ":", { desc = "CMD enter command mode" })
 
 map("c", "<C-f>", "<Right>", { desc = "Move right" })
@@ -33,6 +30,8 @@ nomap("n", "<C-h>")
 nomap("n", "<C-j>")
 nomap("n", "<C-k>")
 nomap("n", "<C-l>")
+nomap("n", "<leader>v")
+nomap("n", "<leader>h")
 
 map('n', "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map('n', "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
