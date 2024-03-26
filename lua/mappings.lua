@@ -10,12 +10,10 @@ map("i", "<C-b>", "<Left>", { desc = "Move left" })
 map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
 map("i", "<C-e>", "<End>", { desc = "Move to end" })
 map("i", "<F1>", "<Nop>", { desc = "Disable" })
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>op", ":!open %:p:h<CR>", { desc =  "Open in Finder"})
-
-map({ "n", "t" }, "<leader>i", function()
-  require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
-end, { desc = "Terminal Toggle Floating term" })
+map({ "n", "t" }, "<leader>i", ":e ", { desc =  "Open file in new buffer"})
 
 map("n", "<leader>fm", function()
 	require("conform").format()
