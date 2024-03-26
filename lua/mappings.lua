@@ -13,7 +13,7 @@ map("i", "<F1>", "<Nop>", { desc = "Disable" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>op", ":!open %:p:h<CR>", { desc =  "Open in Finder"})
-map({ "n", "t" }, "<leader>i", ":e ", { desc =  "Open file in new buffer"})
+map("n", "<leader>i", ":e ", { desc =  "Open file in new buffer"})
 
 map("n", "<leader>fm", function()
 	require("conform").format()
