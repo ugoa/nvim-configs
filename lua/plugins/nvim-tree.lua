@@ -3,7 +3,7 @@ return {
 	opts = {
 		git = { enable = true },
 		filters = {
-			dotfiles = false,
+			dotfiles = true,
 		},
 		renderer = {
 			root_folder_label = ":~:s?$?",
@@ -15,7 +15,7 @@ return {
 		},
 		view = {
 			adaptive_size = true,
-      signcolumn = "auto",
+			signcolumn = "auto",
 			width = {
 				max = "40%",
 			},
