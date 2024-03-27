@@ -2,14 +2,17 @@
 return {
 	"neovim/nvim-lspconfig",
 	config = function()
-		require("nvchad.configs.lspconfig").defaults()
+		local basic = require("nvchad.configs.lspconfig")
+		basic.defaults()
 
-		local on_attach = require("nvchad.configs.lspconfig").on_attach
-		local on_init = require("nvchad.configs.lspconfig").on_init
-		local capabilities = require("nvchad.configs.lspconfig").capabilities
+		local on_attach = basic.on_attach
+		local on_init = basic.on_init
+		local capabilities = basic.capabilities
 
 		local lspconfig = require("lspconfig")
-		local servers = { "pyright" }
+		local servers = {
+			"pyright",
+		}
 
 		-- lsps with default config
 		for _, lsp in ipairs(servers) do
