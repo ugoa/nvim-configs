@@ -15,6 +15,7 @@ return {
 		},
 		view = {
 			adaptive_size = true,
+      signcolumn = "auto",
 			width = {
 				max = "40%",
 			},
