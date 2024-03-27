@@ -39,7 +39,7 @@ vim.schedule(function()
 end)
 
 
--- My init settings
+-- My init settings -------------------------------------------------------------------------------
 
 vim.opt.colorcolumn = "100"
 vim.opt.whichwrap = ""

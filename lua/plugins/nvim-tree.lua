@@ -8,6 +8,10 @@ return {
 		renderer = {
 			root_folder_label = ":~:s?$?",
 			highlight_opened_files = "all",
+			icons = {
+				git_placement = "signcolumn",
+				modified_placement = "signcolumn",
+			},
 		},
 		view = {
 			adaptive_size = true,
