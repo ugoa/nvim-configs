@@ -9,15 +9,10 @@ map("i", "<C-f>", "<Right>", { desc = "Move right" })
 map("i", "<C-b>", "<Left>", { desc = "Move left" })
 map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
 map("i", "<C-e>", "<End>", { desc = "Move to end" })
-map("i", "<F1>", "<Nop>", { desc = "Disable" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>op", ":!open %:p:h<CR>", { desc = "Open in Finder" })
 map("n", "<leader>i", ":e ", { desc = "Open file in new buffer" })
-
-map("n", "<leader>fm", function()
-	require("conform").format()
-end, { desc = "File Format with conform" })
 
 map("v", ";", ":", { desc = "CMD enter command mode" })
 
@@ -30,10 +25,6 @@ map("c", "<C-e>", "<End>", { desc = "Move to end" })
 local nomap = vim.keymap.del
 nomap("n", "<leader>v")
 nomap("n", "<leader>h")
--- nomap("n", "<C-h>")
--- nomap("n", "<C-j>")
--- nomap("n", "<C-k>")
--- nomap("n", "<C-l>")
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map("n", "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
