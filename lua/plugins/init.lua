@@ -1,22 +1,4 @@
 return {
-    {
-      'alexghergh/nvim-tmux-navigation',
-      lazy = false,
-      config = function()
-        local p = require('nvim-tmux-navigation')
-        p.setup {
-            disable_when_zoomed = true -- defaults to false
-        }
-    end
-  },
-
-	{
-		"stevearc/conform.nvim",
-		config = function()
-			require("configs.conform")
-		end,
-	},
-
 	{
 		"nvim-tree/nvim-tree.lua",
 		opts = {
@@ -45,14 +27,6 @@ return {
 		},
 	},
 
-	-- {
-	-- 	"nvimtools/none-ls.nvim",
-	-- 	ft = { "python", "lua" },
-	-- 	opts = function()
-	-- 		return require("configs.none-ls")
-	-- 	end,
-	-- },
-
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -65,14 +39,6 @@ return {
 				virt_text_priority = 700,
 			},
 		},
-	},
-
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			require("nvchad.configs.lspconfig")
-			require("configs.lspconfig")
-		end,
 	},
 
 	{
@@ -95,7 +61,16 @@ return {
 		ft = "rust",
 		dependencies = "neovim/nvim-lspconfig",
 		opts = function()
-			return require("configs.rust-tools")
+      local config = require "nvchad.configs.lspconfig"
+      local on_attach = config.on_attach
+      local capabilities = config.capabilities
+      local options = {
+        server = {
+          on_attach = on_attach,
+          capabilities = capabilities,
+        },
+      }
+      return options
 		end,
 		config = function(_, opts)
 			require("rust-tools").setup(opts)
