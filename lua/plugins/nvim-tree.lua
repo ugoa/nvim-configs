@@ -20,5 +20,9 @@ return {
 				max = "40%",
 			},
 		},
+		system_open = {
+			cmd = "open",
+			args = { "-R" },
+		},
 	},
 }
