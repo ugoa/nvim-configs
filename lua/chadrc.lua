@@ -4,6 +4,8 @@ M.ui = {
 	theme = "catppuccin",
 	transparency = false,
 
+	telescope = { style = "bordered" }, -- borderless / bordered
+
 	statusline = {
 		theme = "vscode_colored",
 		order = { "mode", "my_file", "diagnostics", "git", "%=", "lsp_msg", "%=", "lsp", "cursor", "cwd" },
