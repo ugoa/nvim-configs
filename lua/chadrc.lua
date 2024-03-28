@@ -21,6 +21,12 @@ M.ui = {
 			end,
 		},
 	},
+
+	tabufline = {
+		lazyload = true,
+		order = { "treeOffset", "buffers", "tabs" },
+	},
+
 	term = {
 		float = {
 			relative = "editor",
