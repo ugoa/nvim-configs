@@ -13,9 +13,6 @@ map("i", "<C-e>", "<End>", { desc = "Move to end" })
 map("n", "<leader>op", ":!open %:p:h<CR>", { desc = "Open in Finder" })
 map("n", "<leader>i", ":e ", { desc = "Open file in new buffer" })
 
--- map("n", ";", ":", { desc = "CMD enter command mode" })
--- map("v", ";", ":", { desc = "CMD enter command mode" })
-
 map("c", "<C-f>", "<Right>", { desc = "Move right" })
 map("c", "<C-b>", "<Left>", { desc = "Move left" })
 map("c", "<C-a>", "<Home>", { desc = "Move beginning" })
