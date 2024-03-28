@@ -6,9 +6,9 @@ M.ui = {
 
 	statusline = {
 		theme = "vscode_colored",
-		order = { "mode", "myfile", "diagnostics", "git", "%=", "lsp_msg", "%=", "lsp", "cursor", "cwd" },
+		order = { "mode", "my_file", "diagnostics", "git", "%=", "lsp_msg", "%=", "lsp", "cursor", "cwd" },
 		modules = {
-			myfile = function()
+			my_file = function()
 				local buf = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
 				local path = vim.api.nvim_buf_get_name(buf)
 
@@ -17,8 +17,7 @@ M.ui = {
 
 				local utils = require("nvchad.stl.utils")
 				local x = utils.file()
-				local name = " " .. rpath .. " "
-				return "%#StText# " .. x[1] .. name
+				return "%#StText# " .. x[1] .. " " .. rpath .. " "
 			end,
 		},
 	},
