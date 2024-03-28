@@ -10,8 +10,7 @@ map("i", "<C-b>", "<Left>", { desc = "Move left" })
 map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
 map("i", "<C-e>", "<End>", { desc = "Move to end" })
 
-map("n", "<leader>op", ":!open %:p:h<CR>", { desc = "Open in Finder" })
-map("n", "<leader>i", ":e ", { desc = "Open file in new buffer" })
+map("n", "<leader>o", ":!open %:p:h<CR>", { desc = "Open in Finder" })
 
 map("c", "<C-f>", "<Right>", { desc = "Move right" })
 map("c", "<C-b>", "<Left>", { desc = "Move left" })
