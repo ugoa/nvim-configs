@@ -1,5 +1,15 @@
 require("nvchad.mappings")
 
+-- Disable mappings
+local nomap = vim.keymap.del
+nomap("n", "<leader>v")
+nomap("n", "<leader>h")
+nomap("n", "<leader>e")
+nomap("n", "<C-h>")
+nomap("n", "<C-j>")
+nomap("n", "<C-k>")
+nomap("n", "<C-l>")
+
 -- add yours here
 local map = vim.keymap.set
 
@@ -18,18 +28,10 @@ map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map("n", "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
 map("n", "<M-k>", "<Cmd>NvimTmuxNavigateUp<CR>")
 map("n", "<M-l>", "<Cmd>NvimTmuxNavigateRight<CR>")
+map("n", "<M-e>", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus window" })
 
 -- Command Mode
 map("c", "<C-f>", "<Right>", { desc = "Move right" })
 map("c", "<C-b>", "<Left>", { desc = "Move left" })
 map("c", "<C-a>", "<Home>", { desc = "Move beginning" })
 map("c", "<C-e>", "<End>", { desc = "Move to end" })
-
--- Disable mappings
-local nomap = vim.keymap.del
-nomap("n", "<leader>v")
-nomap("n", "<leader>h")
-nomap("n", "<C-h>")
-nomap("n", "<C-j>")
-nomap("n", "<C-k>")
-nomap("n", "<C-l>")
