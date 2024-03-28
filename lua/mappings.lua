@@ -25,6 +25,10 @@ map("c", "<C-e>", "<End>", { desc = "Move to end" })
 local nomap = vim.keymap.del
 nomap("n", "<leader>v")
 nomap("n", "<leader>h")
+nomap("n", "<C-h>")
+nomap("n", "<C-j>")
+nomap("n", "<C-k>")
+nomap("n", "<C-l>")
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map("n", "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
