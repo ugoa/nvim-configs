@@ -1,7 +1,7 @@
 local M = {}
 
 M.ui = {
-	theme = "bearded-arc",
+	theme = "chadracula",
 	transparency = false,
 
 	telescope = { style = "bordered" }, -- borderless / bordered
