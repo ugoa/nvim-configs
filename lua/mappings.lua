@@ -24,7 +24,7 @@ map("i", "<C-b>", "<Left>", { desc = "Move left" })
 map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
 map("i", "<C-e>", "<End>", { desc = "Move to end" })
 
--- Insert Mode
+-- Normal Mode
 map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
