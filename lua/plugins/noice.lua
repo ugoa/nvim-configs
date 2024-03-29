@@ -1,7 +1,7 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
-	dependencies = { "neovim/nvim-lspconfig", "MunifTanjim/nui.nvim" },
+	dependencies = { "rcarriga/nvim-notify", "MunifTanjim/nui.nvim" },
 	opts = {
 		lsp = {
 			override = {
@@ -30,6 +30,7 @@ return {
 			inc_rename = true,
 		},
 	},
+
   -- stylua: ignore
   keys = {
     { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c", desc = "Redirect Cmdline" },
