@@ -1,7 +1,10 @@
 require("nvchad.mappings")
 
--- Disable mappings
+-- add yours here
+local map = vim.keymap.set
 local nomap = vim.keymap.del
+
+-- Disable mappings
 nomap("n", "<leader>v")
 nomap("n", "<leader>h")
 nomap("n", "<leader>e")
@@ -9,9 +12,9 @@ nomap("n", "<C-h>")
 nomap("n", "<C-j>")
 nomap("n", "<C-k>")
 nomap("n", "<C-l>")
-
--- add yours here
-local map = vim.keymap.set
+map("n", "q:", "<nop>")
+map("n", "q/", "<nop>")
+map("n", "q?", "<nop>")
 
 -- Insert Mode
 map("i", "<C-s>", "<C-o>:w<CR>", { desc = "Save file" })
