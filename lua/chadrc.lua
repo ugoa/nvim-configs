@@ -1,14 +1,14 @@
 local M = {}
 
 M.ui = {
-	theme = "catppuccin",
+	theme = "chadracula",
 	transparency = false,
 
 	telescope = { style = "bordered" }, -- borderless / bordered
 
 	statusline = {
 		theme = "vscode_colored",
-		order = { "mode", "my_file", "diagnostics", "git", "%=", "lsp_msg", "%=", "lsp", "cursor", "cwd" },
+		order = { "mode", "my_file", "diagnostics", "git", "%=", "lsp_msg", "%=", "lsp", "cursor" },
 		modules = {
 			my_file = function()
 				local buf = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
