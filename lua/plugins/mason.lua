@@ -3,10 +3,11 @@ return {
 	opts = {
 		ensure_installed = {
 			"rust-analyzer",
+			-- for python
 			"pyright",
-			"terraform-ls",
-			"lua-language-server",
 			"black",
+			-- for lua
+			"lua-language-server",
 			"stylua",
 		},
 	},
