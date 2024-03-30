@@ -35,6 +35,10 @@ map("n", "<M-k>", "<Cmd>NvimTmuxNavigateUp<CR>")
 map("n", "<M-l>", "<Cmd>NvimTmuxNavigateRight<CR>")
 map("n", "<M-e>", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus window" })
 
+map({ "n", "t" }, "<M-i>", function()
+	require("nvchad.term").toggle({ pos = "float", cmd = "git add . ; git diff --staged", id = "floatTerm" })
+end, { desc = "Terminal Toggle Floating term" })
+
 -- Command Mode
 map("c", "<C-f>", "<Right>", { desc = "Move right" })
 map("c", "<C-b>", "<Left>", { desc = "Move left" })
