@@ -13,9 +13,11 @@ return {
 			format = {
 				search_down = {
 					view = "cmdline_popup",
+					icon = " ",
 				},
 				search_up = {
 					view = "cmdline_popup",
+					icon = " ",
 				},
 			},
 		},
