@@ -18,6 +18,7 @@ return {
 			signcolumn = "auto",
 			width = {
 				max = "40%",
+				min = "20%",
 			},
 		},
 		system_open = {
