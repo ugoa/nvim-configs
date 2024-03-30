@@ -12,9 +12,9 @@ nomap("n", "<C-h>")
 nomap("n", "<C-j>")
 nomap("n", "<C-k>")
 nomap("n", "<C-l>")
-map("n", "q:", "<nop>")
-map("n", "q/", "<nop>")
-map("n", "q?", "<nop>")
+-- map("n", "q:", "<nop>")
+-- map("n", "q/", "<nop>")
+-- map("n", "q?", "<nop>")
 -- Terminal mode
 nomap("t", "<Esc>") -- use <M-i> for toggle only
 
