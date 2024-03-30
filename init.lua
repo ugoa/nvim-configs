@@ -83,14 +83,14 @@ end)
 vim.opt.colorcolumn = "120"
 vim.opt.whichwrap = ""
 
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function(data)
-		if vim.fn.argv(0) == "" then
-			require("nvim-tree.api").tree.open()
-		elseif vim.fn.isdirectory(data.file) == 1 then
-			-- change to the directory and open the tree
-			vim.cmd.cd(data.file)
-			require("nvim-tree.api").tree.open()
-		end
-	end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	callback = function(data)
+-- 		if vim.fn.argv(0) == "" then
+-- 			require("nvim-tree.api").tree.open()
+-- 		elseif vim.fn.isdirectory(data.file) == 1 then
+-- 			-- change to the directory and open the tree
+-- 			vim.cmd.cd(data.file)
+-- 			require("nvim-tree.api").tree.open()
+-- 		end
+-- 	end,
+-- })
