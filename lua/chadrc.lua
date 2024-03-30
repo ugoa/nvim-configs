@@ -29,6 +29,8 @@ M.ui = {
 		order = { "treeOffset", "buffers", "tabs" },
 	},
 
+	lsp = { signature = false },
+
 	term = {
 		float = {
 			relative = "editor",
