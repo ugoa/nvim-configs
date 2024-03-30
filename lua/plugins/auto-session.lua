@@ -1,6 +1,8 @@
 local function openTree()
 	require("nvim-tree").change_dir(vim.fn.getcwd())
-	require("nvim-tree.api").tree.open()
+	local api = require("nvim-tree.api")
+	api.tree.open()
+	api.node.open.edit()
 end
 
 return {
