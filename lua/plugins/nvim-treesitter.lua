@@ -4,6 +4,10 @@ return {
 		ensure_installed = {
 			"rust",
 			"yaml",
+			"bash",
+			"regex",
+			"markdown",
+			"markdown_inline",
 		},
 	},
 }

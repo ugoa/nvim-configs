@@ -8,7 +8,17 @@ M.ui = {
 
 	statusline = {
 		theme = "vscode_colored",
-		order = { "mode", "my_file", "diagnostics", "git", "%=", "lsp_msg", "%=", "lsp", "cursor" },
+		order = {
+			"mode",
+			"my_file",
+			"diagnostics",
+			"git",
+			"%=",
+			--"lsp_msg", Handled by noice
+			"%=",
+			"lsp",
+			"cursor",
+		},
 		modules = {
 			my_file = function()
 				local buf = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
