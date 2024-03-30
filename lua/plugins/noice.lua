@@ -3,6 +3,18 @@ return {
 	event = "VeryLazy",
 	dependencies = { "rcarriga/nvim-notify", "MunifTanjim/nui.nvim" },
 	opts = {
+		views = {
+			cmdline_popup = {
+				position = {
+					row = "15%",
+					col = "50%",
+				},
+				size = {
+					width = "30%",
+					height = "auto",
+				},
+			},
+		},
 		lsp = {
 			override = {
 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
