@@ -25,12 +25,12 @@ return {
 				"--glob=!tmp/*",
 				"--glob=!temp/*",
 			},
-			sorting_strategy = "descending",
-			layout_config = {
-				horizontal = {
-					prompt_position = "bottom",
-				},
-			},
+			-- sorting_strategy = "descending",
+			-- layout_config = {
+			-- 	horizontal = {
+			-- 		prompt_position = "bottom",
+			-- 	},
+			-- },
 		},
 	},
 }
