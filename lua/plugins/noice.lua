@@ -1,7 +1,10 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
-	dependencies = { "rcarriga/nvim-notify", "MunifTanjim/nui.nvim" },
+	dependencies = {
+		"rcarriga/nvim-notify",
+		"MunifTanjim/nui.nvim",
+	},
 	opts = {
 		views = {
 			cmdline_popup = {
@@ -12,6 +15,11 @@ return {
 				size = {
 					width = "30%",
 					height = "auto",
+				},
+			},
+			mini = {
+				win_options = {
+					winblend = 0,
 				},
 			},
 		},
