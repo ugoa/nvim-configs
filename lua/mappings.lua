@@ -12,7 +12,7 @@ nomap("n", "<leader>e")
 -- map("n", "q/", "<nop>")
 -- map("n", "q?", "<nop>")
 -- Terminal mode
-nomap("t", "<Esc>") -- use <M-i> for toggle only
+nomap("t", "<Esc>") -- only use <M-i> for toggle
 
 -- Insert Mode
 map("i", "<C-s>", "<C-o>:w<CR>", { desc = "Save file" })
