@@ -1,8 +1,14 @@
 local M = {}
 
 M.ui = {
-	theme = "chadracula",
+	theme = "bearded-arc",
 	transparency = false,
+
+	hl_override = {
+		WhichKeyDesc = {
+			fg = "purple",
+		},
+	},
 
 	telescope = { style = "bordered" }, -- borderless / bordered
 
