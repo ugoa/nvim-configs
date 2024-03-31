@@ -9,8 +9,6 @@ vim.opt.whichwrap = ""
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua#L41
 vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
 
--- My init settings
-
 -- vim.api.nvim_create_autocmd("VimEnter", {
 -- 	callback = function(data)
 -- 		if vim.fn.argv(0) == "" then
