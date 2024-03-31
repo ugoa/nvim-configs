@@ -40,3 +40,7 @@ map("c", "<C-f>", "<Right>", { desc = "Move right" })
 map("c", "<C-b>", "<Left>", { desc = "Move left" })
 map("c", "<C-a>", "<Home>", { desc = "Move beginning" })
 map("c", "<C-e>", "<End>", { desc = "Move to end" })
+
+-- Visual mode
+map("v", " ", ":normal ", { desc = "Action in visual mode" })
+map("v", "A", ":normal A", { desc = "Append to visual block" })
