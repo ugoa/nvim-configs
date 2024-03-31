@@ -2,7 +2,7 @@ local M = {}
 
 M.ui = {
 	theme = "chadracula",
-	transparency = false,
+	transparency = true,
 
 	hl_override = {
 		WhichKeyDesc = {
