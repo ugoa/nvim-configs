@@ -12,6 +12,7 @@ return {
 		require("auto-session").setup({
 			log_level = "error",
 			post_restore_cmds = { openTree },
+			cwd_change_handling = nil,
 		})
 	end,
 }
