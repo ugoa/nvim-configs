@@ -16,7 +16,7 @@ nomap({ "n", "t" }, "<M-h>")
 nomap("t", "<Esc>") -- only use <M-i> for toggle
 
 -- Insert Mode
-map("i", "<C-s>", "<C-o>:w<CR>", { desc = "Save file" })
+map("i", "<C-s>", "<C-o>:wa<CR>", { desc = "Save file" })
 
 map("i", "<C-f>", "<Right>", { desc = "Move right" })
 map("i", "<C-b>", "<Left>", { desc = "Move left" })
