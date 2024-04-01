@@ -1,5 +1,11 @@
 local M = {}
 
+local function replace(str, what, with)
+	what = string.gsub(what, "[%(%)%.%+%-%*%?%[%]%^%$%%]", "%%%1") -- escape pattern
+	with = string.gsub(with, "[%%]", "%%%%") -- escape replacement
+	return string.gsub(str, what, with)
+end
+
 M.ui = {
 	theme = "chadracula",
 	transparency = true,
@@ -31,7 +37,7 @@ M.ui = {
 				local path = vim.api.nvim_buf_get_name(buf)
 
 				local parent = vim.loop.cwd() .. "/"
-				local rpath = path:gsub(parent, "")
+				local rpath = replace(path, parent, "")
 
 				local utils = require("nvchad.stl.utils")
 				local x = utils.file()
