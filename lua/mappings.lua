@@ -25,6 +25,7 @@ map("i", "<C-e>", "<End>", { desc = "Move to end" })
 
 -- Normal Mode
 map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
+map("n", "<leader>ss", "<Cmd>wa<CR>", { desc = "Save file" })
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map("n", "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
