@@ -12,7 +12,7 @@ M.ui = {
 
 	hl_override = {
 		WhichKeyDesc = {
-			fg = "purple",
+			fg = "white",
 		},
 		TbBufOnModified = {
 			fg = "red",
