@@ -14,6 +14,12 @@ M.ui = {
 		WhichKeyDesc = {
 			fg = "purple",
 		},
+		TbBufOnModified = {
+			fg = "red",
+		},
+		TbBufOnClose = {
+			fg = "green",
+		},
 	},
 
 	telescope = { style = "bordered" }, -- borderless / bordered
