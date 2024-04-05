@@ -34,7 +34,7 @@ map("n", "<M-l>", "<Cmd>NvimTmuxNavigateRight<CR>")
 map("n", "<M-e>", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus window" })
 
 map({ "n", "t" }, "<M-i>", function()
-	require("nvchad.term").toggle({ pos = "float", cmd = "git diff", id = "floatTerm" })
+	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "Toggle floating terminal" })
 map({ "n", "t" }, "<M-g>", function()
 	require("nvchad.term").toggle({ pos = "sp", size = 0.4, id = "split_window" })
