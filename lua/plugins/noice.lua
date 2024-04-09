@@ -53,6 +53,10 @@ return {
 				},
 				view = "mini",
 			},
+			{
+				view = "cmdline",
+				filter = { event = "msg_showmode" },
+			},
 		},
 		presets = {
 			bottom_search = true,
