@@ -18,6 +18,11 @@ return {
 		})
 
 		lspconfig.volar.setup({
+			-- Disable volar formatting, use eslint and prettier instread
+			on_attach = function(client, bufnr)
+				basic.on_attach(client, bufnr)
+				client.server_capabilities.documentFormattingProvider = false
+			end,
 			filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
 			init_options = {
 				vue = {
