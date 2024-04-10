@@ -28,9 +28,9 @@ local function my_on_attach(bufnr)
 	api.config.mappings.default_on_attach(bufnr)
 
 	-- custom mappings
-	vim.keymap.set("n", "<C-]>", "<nop>", opts("Disable CD"))
+	vim.keymap.set("n", "<C-]>", "<nop>", opts("Disable Root change"))
 	vim.keymap.set("n", "-", "<nop>", opts("Disable Up"))
-	vim.keymap.set("n", "<2-RightMouse>", "<nop>", opts("Disable CD"))
+	vim.keymap.set("n", "<2-RightMouse>", "<nop>", opts("Disable Root change"))
 end
 
 return {
