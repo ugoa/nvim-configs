@@ -1,10 +1,17 @@
 return {
 	"mfussenegger/nvim-lint",
 	config = function()
-		require("lint").linters_by_ft = {
+		local lint = require("lint")
+		lint.linters_by_ft = {
 			javascript = { "eslint" },
 			typescript = { "eslint" },
 			vue = { "eslint" },
+		}
+
+		local eslint = lint.linters.eslint
+		eslint.args = {
+			".",
+			"--fix",
 		}
 	end,
 }
