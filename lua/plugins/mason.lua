@@ -11,6 +11,7 @@ return {
 			"stylua",
 			-- for vue.js
 			"vue-language-server",
+			-- "prettier",
 		},
 	},
 }
