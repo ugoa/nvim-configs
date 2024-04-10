@@ -10,17 +10,23 @@ return {
 		local capabilities = basic.capabilities
 
 		local lspconfig = require("lspconfig")
-		local servers = {
-			"pyright",
-		}
 
-		-- lsps with default config
-		for _, lsp in ipairs(servers) do
-			lspconfig[lsp].setup({
-				on_attach = on_attach,
-				on_init = on_init,
-				capabilities = capabilities,
-			})
-		end
+		lspconfig.pyright.setup({
+			on_attach = on_attach,
+			on_init = on_init,
+			capabilities = capabilities,
+		})
+
+		lspconfig.volar.setup({
+			filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+			init_options = {
+				vue = {
+					hybridMode = false,
+				},
+				typescript = {
+					tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+				},
+			},
+		})
 	end,
 }

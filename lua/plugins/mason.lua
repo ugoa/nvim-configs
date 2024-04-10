@@ -9,6 +9,8 @@ return {
 			-- for lua
 			"lua-language-server",
 			"stylua",
+			-- for vue.js
+			"vue-language-server",
 		},
 	},
 }
