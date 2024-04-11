@@ -19,8 +19,9 @@ nomap("t", "<Esc>") -- only use <M-i> for toggle
 --      Shortcut: cmd-s
 --      Action: Send Escape Sequence
 --      Esc+: [17~
-map("i", "<F6>", "<C-o>:w<CR>", { desc = "Save file" })
-map("n", "<F6>", "<Cmd>:w<CR>", { desc = "Save file" })
+map("i", "<F6>", "<C-o>:wa<CR>", { desc = "Save file" })
+
+map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "Save file" })
 
 -- Insert Mode
 map("i", "<C-s>", "<C-o>:wa<CR>", { desc = "Save file" })

@@ -5,23 +5,19 @@ return {
 		local basic = require("nvchad.configs.lspconfig")
 		basic.defaults()
 
-		local on_attach = basic.on_attach
-		local on_init = basic.on_init
-		local capabilities = basic.capabilities
-
 		local lspconfig = require("lspconfig")
 
 		lspconfig.pyright.setup({
-			on_attach = on_attach,
-			on_init = on_init,
-			capabilities = capabilities,
+			on_attach = basic.on_attach,
+			on_init = basic.on_init,
+			capabilities = basic.capabilities,
 		})
 
 		lspconfig.volar.setup({
 			-- Disable volar formatting, use eslint and prettier instread
 			on_attach = function(client, bufnr)
 				basic.on_attach(client, bufnr)
-				client.server_capabilities.documentFormattingProvider = false
+				--client.server_capabilities.documentFormattingProvider = false
 			end,
 			filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
 			init_options = {
