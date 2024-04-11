@@ -2,18 +2,18 @@ require("nvchad.mappings")
 
 -- add yours here
 local map = vim.keymap.set
-local nomap = vim.keymap.del
+local del = vim.keymap.del
 
 -- Disable mappings
-nomap("n", "<leader>v")
-nomap("n", "<leader>h")
-nomap("n", "<leader>e")
-nomap({ "n", "t" }, "<M-h>")
--- map("n", "q:", "<nop>")
--- map("n", "q/", "<nop>")
--- map("n", "q?", "<nop>")
+del("n", "<leader>v")
+del("n", "<leader>h")
+del("n", "<leader>e")
+del({ "n", "t" }, "<M-h>")
+-- del("n", "q:", "<nop>")
+-- del("n", "q/", "<nop>")
+-- del("n", "q?", "<nop>")
 -- Terminal mode
-nomap("t", "<Esc>") -- only use <M-i> for toggle
+del("t", "<Esc>") -- only use <M-i> for toggle
 
 -- JUST FOR SAVE!
 -- Create a new keyboard shortcut in Iterm2:
@@ -48,13 +48,17 @@ map({ "n", "t" }, "<M-v>", function()
 	require("nvchad.term").toggle({ pos = "vsp", size = 0.4, id = "vertical_split_window" })
 end, { desc = "Toggle vertical terminal" })
 
-map("n", "<leader>ox", function()
+del("n", "<leader>x")
+map("n", "<leader>xx", function()
+	require("nvchad.tabufline").close_buffer()
+end, { desc = "Buffer Close" })
+map("n", "<leader>xo", function()
 	require("nvchad.tabufline").closeOtherBufs()
 end, { desc = "Close other buffers" })
-map("n", "<leader>lx", function()
+map("n", "<leader>xl", function()
 	require("nvchad.tabufline").closeBufs_at_direction("left")
 end, { desc = "Close Buffers on the left side" })
-map("n", "<leader>rx", function()
+map("n", "<leader>xr", function()
 	require("nvchad.tabufline").closeBufs_at_direction("right")
 end, { desc = "Close Buffers on the right side" })
 
