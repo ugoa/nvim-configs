@@ -25,6 +25,8 @@ return {
 				"--glob=!logs/*",
 				"--glob=!tmp/*",
 				"--glob=!temp/*",
+				"--glob=!.nuxt/*",
+				"--glob=!node_modules/*",
 			},
 			-- sorting_strategy = "descending",
 			-- layout_config = {
