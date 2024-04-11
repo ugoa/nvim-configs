@@ -17,6 +17,8 @@ return {
 			-- Disable volar formatting, use eslint and prettier instread
 			on_attach = function(client, bufnr)
 				basic.on_attach(client, bufnr)
+				-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
+				-- Use prettier instead of volar lsp to do formatting
 				client.server_capabilities.documentFormattingProvider = false
 			end,
 			filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },

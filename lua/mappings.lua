@@ -15,15 +15,14 @@ nomap({ "n", "t" }, "<M-h>")
 -- Terminal mode
 nomap("t", "<Esc>") -- only use <M-i> for toggle
 
+-- JUST FOR SAVE!
 -- Create a new keyboard shortcut in Iterm2:
 --      Shortcut: cmd-s
 --      Action: Send Escape Sequence
 --      Esc+: [17~
-map("i", "<F6>", "<C-o>:wa<CR>", { desc = "Save file" })
+map("i", "<F6>", "<Esc>:wa<CR>", { desc = "Save file" })
+map("i", "<C-s>", "<Esc>:wa<CR>", { desc = "Save file" })
 map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "Save file" })
-
--- Insert Mode
-map("i", "<C-s>", "<C-o>:wa<CR>", { desc = "Save file" })
 
 map("i", "<C-f>", "<Right>", { desc = "Move right" })
 map("i", "<C-b>", "<Left>", { desc = "Move left" })
@@ -31,8 +30,7 @@ map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
 map("i", "<C-e>", "<End>", { desc = "Move to end" })
 
 -- Normal Mode
-map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
-map("n", "<leader>ss", "<Cmd>wa<CR>", { desc = "Save file" })
+map("n", "<leader>ss", "<Cmd>SessionSave<CR>", { desc = "Save Session manually" })
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map("n", "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
@@ -59,6 +57,8 @@ end, { desc = "Close Buffers on the left side" })
 map("n", "<leader>rx", function()
 	require("nvchad.tabufline").closeBufs_at_direction("right")
 end, { desc = "Close Buffers on the right side" })
+
+-- map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 
 -- Command Mode
 map("c", "<C-f>", "<Right>", { desc = "Move right" })
