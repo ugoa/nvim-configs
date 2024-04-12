@@ -73,6 +73,9 @@ end, { desc = "Close Buffers on the left side" })
 map("n", "<leader>xr", function()
 	require("nvchad.tabufline").closeBufs_at_direction("right")
 end, { desc = "Close Buffers on the right side" })
+map("n", "<leader>xa", function()
+	require("nvchad.tabufline").closeAllBufs()
+end, { desc = "Buffer Close" })
 
 -- map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 

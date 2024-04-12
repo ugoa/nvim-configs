@@ -1,18 +1,16 @@
 local function open_or_expand()
 	local lib = require("nvim-tree.lib")
-	local mode = "edit"
-	local toggle_group = false
 	local node = lib.get_node_at_cursor()
 	if node.name == ".." then
 		return
 	elseif node.nodes then
-		lib.expand_or_collapse(node, toggle_group)
-	elseif not toggle_group then
+		lib.expand_or_collapse(node, false)
+	else
 		local path = node.absolute_path
 		if node.link_to and not node.nodes then
 			path = node.link_to
 		end
-		require("nvim-tree.actions").node.open_file.fn(mode, path)
+		require("nvim-tree.actions").node.open_file.fn("edit", path)
 	end
 end
 
