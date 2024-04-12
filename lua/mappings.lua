@@ -24,6 +24,18 @@ map("i", "<F6>", "<Esc>:wa<CR>", { desc = "Save file" })
 map("i", "<C-s>", "<Esc>:wa<CR>", { desc = "Save file" })
 map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "Save file" })
 
+-- Comment. Use Control-/
+del({ "n", "v" }, "<leader>/")
+map("n", "<C-_>", function()
+	require("Comment.api").toggle.linewise.current()
+end, { desc = "Comment Toggle" })
+map(
+	"v",
+	"<C-_>",
+	"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+	{ desc = "Comment Toggle" }
+)
+
 map("i", "<C-f>", "<Right>", { desc = "Move right" })
 map("i", "<C-b>", "<Left>", { desc = "Move left" })
 map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
