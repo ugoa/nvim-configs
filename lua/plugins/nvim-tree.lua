@@ -25,23 +25,33 @@ local function my_on_attach(bufnr)
 	-- default mappings
 	api.config.mappings.default_on_attach(bufnr)
 
-	-- custom mappings
+	-- DISABLE
 	vim.keymap.set("n", "<C-]>", "<nop>", opts("Disabled"))
 	vim.keymap.set("n", "-", "<nop>", opts("Disabled"))
 	vim.keymap.set("n", "<2-RightMouse>", "<nop>", opts("Disabled"))
 	vim.keymap.set("n", "g?", "<nop>", opts("Disabled"))
+	vim.keymap.set("n", "H", "<nop>", opts("Disabled"))
+	vim.keymap.set("n", "U", "<nop>", opts("Disabled"))
+	vim.keymap.set("n", "I", "<nop>", opts("Disabled"))
+	vim.keymap.set("n", "C", "<nop>", opts("Disabled"))
+	vim.keymap.set("n", "M", "<nop>", opts("Disabled"))
+	vim.keymap.set("n", "B", "<nop>", opts("Disabled"))
+
+	-- custom mappings
 	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
 	vim.keymap.set("n", "f", api.live_filter.clear, opts("Live Filter: Clear"))
 	vim.keymap.set("n", "F", api.live_filter.start, opts("Live Filter: Start"))
+	vim.keymap.set("n", "T", api.tree.toggle_enable_filters, opts("Toggle Filters"))
 end
 
 return {
 	"nvim-tree/nvim-tree.lua",
 	opts = {
 		on_attach = my_on_attach,
-		git = { enable = true },
+		git = { enable = true, ignore = false },
 		filters = {
 			dotfiles = true,
+			git_ignored = true,
 		},
 		actions = {
 			change_dir = {
