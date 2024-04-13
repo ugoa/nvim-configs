@@ -36,12 +36,12 @@ local function my_on_attach(bufnr)
 	vim.keymap.set("n", "C", "<nop>", opts("Disabled"))
 	vim.keymap.set("n", "M", "<nop>", opts("Disabled"))
 	vim.keymap.set("n", "B", "<nop>", opts("Disabled"))
+	vim.keymap.set("n", "f", "<nop>", opts("Disabled"))
+	vim.keymap.set("n", "F", "<nop>", opts("Disabled"))
 
 	-- custom mappings
 	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
-	vim.keymap.set("n", "f", api.live_filter.clear, opts("Live Filter: Clear"))
-	vim.keymap.set("n", "F", api.live_filter.start, opts("Live Filter: Start"))
-	vim.keymap.set("n", "T", api.tree.toggle_enable_filters, opts("Toggle Filters"))
+	vim.keymap.set("n", "t", api.tree.toggle_enable_filters, opts("Toggle Filters"))
 end
 
 return {
