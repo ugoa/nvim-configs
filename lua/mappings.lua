@@ -77,6 +77,8 @@ map("n", "<leader>xa", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "Buffer Close" })
 
+map("n", "<leader>yy", "<Cmd>:%y<CR>", { desc = "Save file" })
+
 -- map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 
 -- Command Mode
