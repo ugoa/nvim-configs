@@ -48,10 +48,9 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	opts = {
 		on_attach = my_on_attach,
-		git = { enable = true, ignore = false },
 		filters = {
-			dotfiles = true,
-			git_ignored = true,
+			custom = { ".git" },
+			exclude = { ".gitignore" },
 		},
 		actions = {
 			change_dir = {
