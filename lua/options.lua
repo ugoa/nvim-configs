@@ -2,7 +2,9 @@ require("nvchad.options")
 
 -- add yours here!
 vim.opt.colorcolumn = "120"
--- vim.opt.whichwrap = ""
+
+-- stylua: ignore start
+-- stylua: ignore end
 
 -- FIX: https://github.com/NvChad/NvChad/issues/1907
 -- Another solution is to disable sematic token in rust-tools on_init function
