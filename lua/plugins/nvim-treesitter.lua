@@ -8,6 +8,12 @@ return {
 			"regex",
 			"markdown",
 			"markdown_inline",
+			"vue",
+			"javascript",
+			"typescript",
+			"html",
+			"css",
+			"scss",
 		},
 	},
 }
