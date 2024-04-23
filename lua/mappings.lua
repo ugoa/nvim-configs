@@ -42,7 +42,8 @@ map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
 map("i", "<C-e>", "<End>", { desc = "Move to end" })
 
 -- Normal Mode
-map("n", "<leader>ss", "<Cmd>SessionSave<CR>", { desc = "Save Session manually" })
+map("n", "<M-s>", "<Cmd>SessionSave<CR>", { desc = "Save Nvim Session manually" })
+map("n", "<M-y>", "<Cmd>:%y<CR>", { desc = "Copy whole file" })
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map("n", "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
@@ -76,8 +77,6 @@ end, { desc = "Close Buffers on the right side" })
 map("n", "<leader>xa", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "Buffer Close" })
-
-map("n", "<leader>yy", "<Cmd>:%y<CR>", { desc = "Save file" })
 
 -- map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 
