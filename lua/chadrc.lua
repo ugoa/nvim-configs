@@ -27,13 +27,13 @@ M.ui = {
 	statusline = {
 		theme = "vscode_colored",
 		order = {
-			"mode",
 			"my_file",
 			"diagnostics",
 			"git",
 			"%=",
 			--"lsp_msg", Handled by noice
 			"%=",
+			"mode",
 			"lsp",
 			"cursor",
 		},
