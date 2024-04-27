@@ -57,12 +57,22 @@ return {
 				enable = false,
 			},
 		},
+		update_focused_file = {
+			enable = true,
+		},
 		renderer = {
 			root_folder_label = ":~:s?$?",
 			highlight_opened_files = "all",
+			highlight_git = "none",
 			icons = {
-				git_placement = "signcolumn",
-				modified_placement = "signcolumn",
+				git_placement = "after",
+				modified_placement = "after",
+				show = {
+					file = true,
+					folder = true,
+					folder_arrow = false,
+					git = true,
+				},
 			},
 		},
 		view = {
@@ -76,6 +86,14 @@ return {
 		system_open = {
 			cmd = "open",
 			args = { "-R" },
+		},
+		help = {
+			sort_by = "desc",
+		},
+		git = {
+			enable = true,
+			show_on_dirs = true,
+			show_on_open_dirs = false,
 		},
 	},
 }
