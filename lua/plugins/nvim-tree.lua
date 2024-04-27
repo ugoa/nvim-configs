@@ -66,18 +66,15 @@ return {
 			highlight_git = "none",
 			icons = {
 				git_placement = "after",
-				modified_placement = "after",
+				modified_placement = "before",
 				show = {
-					file = true,
-					folder = true,
 					folder_arrow = false,
-					git = true,
 				},
 			},
 		},
 		view = {
 			adaptive_size = true,
-			signcolumn = "yes", --auto, yes or no
+			signcolumn = "auto", --auto, yes or no
 			width = {
 				max = "40%",
 				min = "20%",
