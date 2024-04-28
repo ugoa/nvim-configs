@@ -9,8 +9,9 @@ return {
 			"markdown",
 			"markdown_inline",
 			"vue",
-			"javascript",
+			"javascript", -- jsx included
 			"typescript",
+			"tsx",
 			"html",
 			"css",
 			"scss",
