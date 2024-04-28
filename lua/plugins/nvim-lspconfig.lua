@@ -21,7 +21,7 @@ return {
 				-- Use prettier instead of volar lsp to do formatting
 				client.server_capabilities.documentFormattingProvider = false
 			end,
-			filetypes = { "vue", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+			filetypes = { "vue" },
 			init_options = {
 				vue = {
 					hybridMode = false,
