@@ -31,5 +31,14 @@ return {
 				},
 			},
 		})
+
+		lspconfig.tsserver.setup({
+			on_attach = function(client, bufnr)
+				basic.on_attach(client, bufnr)
+				client.server_capabilities.documentFormattingProvider = false -- disable formatting by LSP
+			end,
+			filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+			cmd = { "typescript-language-server", "--stdio" },
+		})
 	end,
 }

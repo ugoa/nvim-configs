@@ -8,6 +8,8 @@ return {
 				python = { "black" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				javascriptreact = { "prettier" },
 				json = { "prettier" },
 				vue = { "prettier" },
 			},
