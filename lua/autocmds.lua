@@ -16,9 +16,3 @@ autocmd("BufReadPost", {
 		end
 	end,
 })
-
--- autocmd({ "BufWritePost" }, {
--- 	callback = function()
--- 		require("lint").try_lint()
--- 	end,
--- })
