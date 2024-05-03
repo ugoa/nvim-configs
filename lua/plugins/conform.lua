@@ -6,11 +6,11 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black" },
-				javascript = { "prettier" },
-				typescript = { "prettier" },
-				typescriptreact = { "prettier" },
-				javascriptreact = { "prettier" },
-				json = { "prettier" },
+				javascript = { "biome" },
+				typescript = { "biome" },
+				typescriptreact = { "biome" },
+				javascriptreact = { "biome" },
+				json = { "biome" },
 				vue = { "prettier" },
 			},
 			format_on_save = { -- These options will be passed to conform.format()

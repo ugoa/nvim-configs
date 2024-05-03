@@ -12,6 +12,7 @@ return {
 			-- for vue.js
 			"vue-language-server",
 			"prettier",
+			"biome",
 		},
 	},
 }

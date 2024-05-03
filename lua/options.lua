@@ -2,7 +2,7 @@ require("nvchad.options")
 
 -- add yours here!
 vim.opt.colorcolumn = "120"
-vim.opt.conceallevel = 2
+-- vim.opt.conceallevel = 2
 
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
