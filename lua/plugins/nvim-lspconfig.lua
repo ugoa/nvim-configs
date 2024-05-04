@@ -7,16 +7,16 @@ return {
 		local servers = {
 
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/pyright.lua
-			pyright = {},
+			pyright = {}, -- Python
 
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
-			tsserver = {},
+			tsserver = {}, -- Typescript
 
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/rust_analyzer.lua
-			rust_analyzer = {},
+			rust_analyzer = {}, -- Rust
 
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/volar.lua
-			volar = {
+			volar = { -- Vue.js
 				init_options = {
 					vue = {
 						hybridMode = false,
