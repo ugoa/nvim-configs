@@ -1,6 +1,9 @@
 return {
 	"neovim/nvim-lspconfig",
 	config = function()
+		local nvchad = require("nvchad.configs.lspconfig")
+		nvchad.defaults() -- This setup the Lua LSP by Nvchad.
+
 		local servers = {
 
 			pyright = {},
@@ -21,24 +24,24 @@ return {
 				filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 				cmd = { "typescript-language-server", "--stdio" },
 			},
+
+			rust_analyzer = {},
 		}
 
-		local nvchad_lsp = require("nvchad.configs.lspconfig")
-		nvchad_lsp.defaults() -- This setup the Lua LSP by Nvchad.
-
-		local common_options = {
-			on_init = nvchad_lsp.on_init,
+		local common = {
+			-- https://github.com/NvChad/NvChad/issues/1907
+			on_init = function(client, _)
+				client.server_capabilities.semanticTokensProvider = nil
+			end,
 			-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
 			on_attach = function(client, bufnr)
-				nvchad_lsp.on_attach(client, bufnr)
+				nvchad.on_attach(client, bufnr)
 				client.server_capabilities.documentFormattingProvider = false
 			end,
-			capabilities = nvchad_lsp.capabilities,
+			capabilities = nvchad.capabilities,
 		}
-
-		for name, options in pairs(servers) do
-			local server = require("lspconfig")[name]
-			server.setup(vim.tbl_deep_extend("force", common_options, options))
+		for name, opts in pairs(servers) do
+			require("lspconfig")[name].setup(vim.tbl_deep_extend("force", common, opts))
 		end
 	end,
 }
