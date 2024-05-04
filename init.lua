@@ -49,7 +49,6 @@ local lazyconf = {
 local disabled = {
 	{ "NvChad/nvterm", enabled = false },
 	{ "NvChad/nvim-colorizer.lua", enabled = false },
-	{ "mfussenegger/nvim-lint", enabled = false },
 }
 
 require("lazy").setup({
