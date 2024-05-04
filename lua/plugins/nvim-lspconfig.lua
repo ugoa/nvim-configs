@@ -24,13 +24,13 @@ return {
 		}
 
 		local nvchad_lsp = require("nvchad.configs.lspconfig")
-		nvchad_lsp.defaults()
+		nvchad_lsp.defaults() -- This setup the Lua LSP by Nvchad.
 
 		local common_options = {
 			on_init = nvchad_lsp.on_init,
+			-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
 			on_attach = function(client, bufnr)
 				nvchad_lsp.on_attach(client, bufnr)
-				-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
 				client.server_capabilities.documentFormattingProvider = false
 			end,
 			capabilities = nvchad_lsp.capabilities,
