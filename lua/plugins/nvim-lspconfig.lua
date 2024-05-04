@@ -40,8 +40,8 @@ return {
 			end,
 			capabilities = nvchad.capabilities,
 		}
-		for name, opts in pairs(servers) do
-			require("lspconfig")[name].setup(vim.tbl_deep_extend("force", common, opts))
+		for name, overrides in pairs(servers) do
+			require("lspconfig")[name].setup(vim.tbl_deep_extend("force", common, overrides))
 		end
 	end,
 }
