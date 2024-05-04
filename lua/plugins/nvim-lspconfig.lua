@@ -13,7 +13,9 @@ return {
 			tsserver = {}, -- Typescript
 
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/rust_analyzer.lua
-			rust_analyzer = {}, -- Rust
+			rust_analyzer = { -- Rust
+				on_attach = nvchad.on_attach,
+			},
 
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/volar.lua
 			-- https://github.com/williamboman/mason-lspconfig.nvim/issues/371
@@ -30,11 +32,14 @@ return {
 		}
 
 		local common = {
-			-- https://github.com/NvChad/NvChad/issues/1907
+
+			-- Disable LSP syntax highlighting.
+			-- Ref: https://github.com/NvChad/NvChad/issues/1907
 			on_init = function(client, _)
 				client.server_capabilities.semanticTokensProvider = nil
 			end,
-			-- https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
+			-- Disable format on save.
+			-- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
 			on_attach = function(client, bufnr)
 				nvchad.on_attach(client, bufnr)
 				client.server_capabilities.documentFormattingProvider = false
