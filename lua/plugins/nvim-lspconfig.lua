@@ -16,6 +16,7 @@ return {
 			rust_analyzer = {}, -- Rust
 
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/volar.lua
+			-- https://github.com/williamboman/mason-lspconfig.nvim/issues/371
 			volar = { -- Vue.js
 				init_options = {
 					vue = {
