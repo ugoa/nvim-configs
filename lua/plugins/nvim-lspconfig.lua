@@ -9,6 +9,12 @@ return {
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/pyright.lua
 			pyright = {},
 
+			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
+			tsserver = {},
+
+			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/rust_analyzer.lua
+			rust_analyzer = {},
+
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/volar.lua
 			volar = {
 				init_options = {
@@ -20,12 +26,6 @@ return {
 					},
 				},
 			},
-
-			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
-			tsserver = {},
-
-			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/rust_analyzer.lua
-			rust_analyzer = {},
 		}
 
 		local common = {
