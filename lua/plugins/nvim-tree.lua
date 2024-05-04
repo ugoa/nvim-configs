@@ -66,7 +66,7 @@ return {
 			highlight_git = "none",
 			icons = {
 				git_placement = "after",
-				modified_placement = "before",
+				modified_placement = "signcolumn",
 				show = {
 					folder_arrow = false,
 				},
@@ -74,7 +74,7 @@ return {
 		},
 		view = {
 			adaptive_size = true,
-			signcolumn = "auto", --auto, yes or no
+			signcolumn = "on", --auto, yes or no
 			width = {
 				max = "40%",
 				min = "20%",
