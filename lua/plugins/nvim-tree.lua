@@ -74,7 +74,7 @@ return {
 		},
 		view = {
 			adaptive_size = true,
-			signcolumn = "on", --auto, yes or no
+			signcolumn = "yes", --auto, yes or no
 			width = {
 				max = "40%",
 				min = "20%",

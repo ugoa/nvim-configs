@@ -16,3 +16,10 @@ autocmd("BufReadPost", {
 		end
 	end,
 })
+
+autocmd("TermClose", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_input("<CR>")
+	end,
+})
