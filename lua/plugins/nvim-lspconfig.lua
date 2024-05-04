@@ -6,10 +6,11 @@ return {
 
 		local servers = {
 
+			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/pyright.lua
 			pyright = {},
 
+			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/volar.lua
 			volar = {
-				filetypes = { "vue" },
 				init_options = {
 					vue = {
 						hybridMode = false,
@@ -20,11 +21,10 @@ return {
 				},
 			},
 
-			tsserver = {
-				filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-				cmd = { "typescript-language-server", "--stdio" },
-			},
+			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
+			tsserver = {},
 
+			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/rust_analyzer.lua
 			rust_analyzer = {},
 		}
 
