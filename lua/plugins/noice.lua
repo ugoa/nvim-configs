@@ -16,7 +16,7 @@ return {
 			},
 			mini = {
 				win_options = {
-					winblend = 0,
+					winblend = 0, -- Get bg transparent in mini view
 				},
 			},
 		},
