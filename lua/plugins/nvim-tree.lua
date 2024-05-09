@@ -49,7 +49,7 @@ return {
 	opts = {
 		on_attach = my_on_attach,
 		filters = {
-			custom = { ".git" },
+			custom = { ".git", ".bsp" },
 			exclude = { ".gitignore" },
 		},
 		actions = {
