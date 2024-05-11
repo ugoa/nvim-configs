@@ -12,8 +12,6 @@ del({ "n", "t" }, "<M-h>")
 -- del("n", "q:", "<nop>")
 -- del("n", "q/", "<nop>")
 -- del("n", "q?", "<nop>")
--- Terminal mode
-del("t", "<Esc>") -- only use <M-i> for toggle
 
 -- JUST FOR SAVE!
 -- Create a new keyboard shortcut in Iterm2:
