@@ -18,71 +18,71 @@ del({ "n", "t" }, "<M-h>")
 --      Shortcut: cmd-s
 --      Action: Send Escape Sequence
 --      Esc+: [17~
-map("i", "<F6>", "<Esc>:wa<CR>", { desc = "Save file" })
-map("i", "<C-s>", "<Esc>:wa<CR>", { desc = "Save file" })
-map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "Save file" })
+map("i", "<F6>", "<Esc>:wa<CR>", { desc = "save file" })
+map("i", "<C-s>", "<Esc>:wa<CR>", { desc = "save file" })
+map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "save file" })
 
 -- Comment. Use Control-/
 del({ "n", "v" }, "<leader>/")
 map("n", "<C-_>", function()
 	require("Comment.api").toggle.linewise.current()
-end, { desc = "Comment Toggle" })
+end, { desc = "comment toggle" })
 map(
 	"v",
 	"<C-_>",
 	"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
-	{ desc = "Comment Toggle" }
+	{ desc = "comment toggle" }
 )
 
-map("i", "<C-f>", "<Right>", { desc = "Move right" })
-map("i", "<C-b>", "<Left>", { desc = "Move left" })
-map("i", "<C-a>", "<Home>", { desc = "Move beginning" })
-map("i", "<C-e>", "<End>", { desc = "Move to end" })
+map("i", "<C-f>", "<Right>", { desc = "move right" })
+map("i", "<C-b>", "<Left>", { desc = "move left" })
+map("i", "<C-a>", "<Home>", { desc = "move beginning" })
+map("i", "<C-e>", "<End>", { desc = "move to end" })
 
 -- Normal Mode
-map("n", "<M-s>", "<Cmd>SessionSave<CR>", { desc = "Save Nvim Session manually" })
-map("n", "<M-y>", "<Cmd>:%y<CR>", { desc = "Copy whole file" })
+map("n", "<M-s>", "<Cmd>SessionSave<CR>", { desc = "save nvim session" })
+map("n", "<M-y>", "<Cmd>:%y<CR>", { desc = "copy whole file" })
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map("n", "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
 map("n", "<M-k>", "<Cmd>NvimTmuxNavigateUp<CR>")
 map("n", "<M-l>", "<Cmd>NvimTmuxNavigateRight<CR>")
-map("n", "<M-e>", "<cmd>NvimTreeFocus<CR>", { desc = "Nvimtree Focus window" })
+map("n", "<M-e>", "<cmd>NvimTreeFocus<CR>", { desc = "focus nvimtree" })
 
 map({ "n", "t" }, "<M-i>", function()
 	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
-end, { desc = "Toggle floating terminal" })
+end, { desc = "toggle floating terminal" })
 map({ "n", "t" }, "<M-b>", function()
 	require("nvchad.term").toggle({ pos = "sp", size = 0.4, id = "split_window" })
-end, { desc = "Toggle horizontal terminal" })
+end, { desc = "toggle horizontal terminal" })
 map({ "n", "t" }, "<M-v>", function()
 	require("nvchad.term").toggle({ pos = "vsp", size = 0.4, id = "vertical_split_window" })
-end, { desc = "Toggle vertical terminal" })
+end, { desc = "toggle vertical terminal" })
 
 del("n", "<leader>x")
 map("n", "<leader>xx", function()
 	require("nvchad.tabufline").close_buffer()
-end, { desc = "Close current buffer" })
+end, { desc = "close current buffer" })
 map("n", "<leader>xo", function()
 	require("nvchad.tabufline").closeOtherBufs()
-end, { desc = "Close other buffers" })
+end, { desc = "close other buffers" })
 map("n", "<leader>xl", function()
 	require("nvchad.tabufline").closeBufs_at_direction("left")
-end, { desc = "Close buffers on the left side" })
+end, { desc = "close buffers on the left side" })
 map("n", "<leader>xr", function()
 	require("nvchad.tabufline").closeBufs_at_direction("right")
-end, { desc = "Close buffers on the right side" })
+end, { desc = "close buffers on the right side" })
 map("n", "<leader>xa", function()
 	require("nvchad.tabufline").closeAllBufs()
-end, { desc = "Close all buffers" })
+end, { desc = "close all buffers" })
 
 -- map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 
 -- Command Mode
-map("c", "<C-f>", "<Right>", { desc = "Move right" })
-map("c", "<C-b>", "<Left>", { desc = "Move left" })
-map("c", "<C-a>", "<Home>", { desc = "Move beginning" })
-map("c", "<C-e>", "<End>", { desc = "Move to end" })
+map("c", "<C-f>", "<Right>", { desc = "move right" })
+map("c", "<C-b>", "<Left>", { desc = "move left" })
+map("c", "<C-a>", "<Home>", { desc = "move beginning" })
+map("c", "<C-e>", "<End>", { desc = "move to end" })
 
 -- Visual mode
-map("v", "A", ":normal A", { desc = "Append to visual block" })
+map("v", "A", ":normal A", { desc = "append to visual block" })
