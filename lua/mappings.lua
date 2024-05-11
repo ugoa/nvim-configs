@@ -4,15 +4,6 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 local del = vim.keymap.del
 
--- Disable mappings
-del("n", "<leader>v")
-del("n", "<leader>h")
-del("n", "<leader>e")
-del({ "n", "t" }, "<M-h>")
--- del("n", "q:", "<nop>")
--- del("n", "q/", "<nop>")
--- del("n", "q?", "<nop>")
-
 -- JUST FOR SAVE!
 -- Create a new keyboard shortcut in Iterm2:
 --      Shortcut: cmd-s
@@ -22,8 +13,22 @@ map("i", "<F6>", "<Esc>:wa<CR>", { desc = "save file" })
 map("i", "<C-s>", "<Esc>:wa<CR>", { desc = "save file" })
 map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "save file" })
 
+-- Disable mappings
+del("n", "<leader>v")
+del("n", "<leader>h")
+del("n", "<leader>e")
+del({ "n", "t" }, "<M-h>")
+del("n", "<C-h>")
+del("n", "<C-j>")
+del("n", "<C-k>")
+del("n", "<C-l>")
+
 -- Comment. Use Control-/
 del({ "n", "v" }, "<leader>/")
+-- del("n", "q:", "<nop>")
+-- del("n", "q/", "<nop>")
+-- del("n", "q?", "<nop>")
+
 map("n", "<C-_>", function()
 	require("Comment.api").toggle.linewise.current()
 end, { desc = "comment toggle" })
@@ -60,6 +65,7 @@ map({ "n", "t" }, "<M-v>", function()
 end, { desc = "toggle vertical terminal" })
 
 del("n", "<leader>x")
+
 map("n", "<leader>xx", function()
 	require("nvchad.tabufline").close_buffer()
 end, { desc = "close current buffer" })
