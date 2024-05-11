@@ -46,11 +46,6 @@ local lazyconf = {
 	},
 }
 
-local disabled = {
-	{ "NvChad/nvterm", enabled = false },
-	{ "NvChad/nvim-colorizer.lua", enabled = false },
-}
-
 require("lazy").setup({
 	{
 		"NvChad/NvChad",
@@ -63,7 +58,10 @@ require("lazy").setup({
 	},
 
 	{ import = "plugins" },
-	disabled,
+	{
+		{ "NvChad/nvterm", enabled = false },
+		{ "NvChad/nvim-colorizer.lua", enabled = false },
+	},
 }, lazyconf)
 
 -- load theme
