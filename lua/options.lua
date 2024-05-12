@@ -9,6 +9,8 @@ vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a T
 vim.o.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 2 -- Number of spaces inserted when indenting
 
+vim.opt.relativenumber = true
+
 -- FIX: https://github.com/NvChad/NvChad/issues/1907
 -- Another solution is to disable sematic token in rust-tools on_init function
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua#L41

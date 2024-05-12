@@ -46,7 +46,7 @@ map("i", "<C-e>", "<End>", { desc = "move to end" })
 
 -- Normal Mode
 map("n", "<M-s>", "<Cmd>SessionSave<CR>", { desc = "save nvim session" })
-map("n", "<M-y>", "<Cmd>:%y<CR>", { desc = "copy whole file" })
+map("n", "<M-y>", "<Cmd>:%y+<CR>", { desc = "copy whole file" })
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
 map("n", "<M-j>", "<Cmd>NvimTmuxNavigateDown<CR>")
