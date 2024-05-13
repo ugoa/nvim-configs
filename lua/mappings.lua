@@ -4,6 +4,22 @@ require("nvchad.mappings")
 local map = vim.keymap.set
 local del = vim.keymap.del
 
+-- Disable mappings
+del("n", "<leader>v")
+del("n", "<leader>h")
+del("n", "<leader>e")
+del({ "n", "t" }, "<M-h>")
+-- del("n", "q:", "<nop>")
+-- del("n", "q/", "<nop>")
+-- del("n", "q?", "<nop>")
+-- Terminal mode
+del("t", "<Esc>") -- only use <M-i> for toggle
+
+del("n", "<leader>n")
+del("n", "<leader>rn")
+map("n", "<leader>nn", "<cmd>set nu!<CR>", { desc = "toggle line number" })
+map("n", "<leader>nt", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
+
 -- JUST FOR SAVE!
 -- Create a new keyboard shortcut in Iterm2:
 --      Shortcut: cmd-s

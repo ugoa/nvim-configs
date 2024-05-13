@@ -16,6 +16,11 @@ vim.opt.relativenumber = true
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua#L41
 vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
 
+-- Use blink block cursor in normal, visual, showmatch in insert mode
+-- Use blink vert line cursor in insert mode
+vim.opt.guicursor =
+	"n-v-c-sm:block-blinkwait50-blinkon100-blinkoff100,i-ci:ver30-iCursor-blinkwait50-blinkon100-blinkoff100"
+
 -- vim.api.nvim_create_autocmd("VimEnter", {
 -- 	callback = function(data)
 -- 		if vim.fn.argv(0) == "" then
