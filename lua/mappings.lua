@@ -12,8 +12,11 @@ del({ "n", "t" }, "<M-h>")
 -- del("n", "q:", "<nop>")
 -- del("n", "q/", "<nop>")
 -- del("n", "q?", "<nop>")
--- Terminal mode
-del("t", "<Esc>") -- only use <M-i> for toggle
+-- Disable mappings
+del("n", "<C-h>")
+del("n", "<C-j>")
+del("n", "<C-k>")
+del("n", "<C-l>")
 
 del("n", "<leader>n")
 del("n", "<leader>rn")
@@ -29,22 +32,8 @@ map("i", "<F6>", "<Esc>:wa<CR>", { desc = "save file" })
 map("i", "<C-s>", "<Esc>:wa<CR>", { desc = "save file" })
 map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "save file" })
 
--- Disable mappings
-del("n", "<leader>v")
-del("n", "<leader>h")
-del("n", "<leader>e")
-del({ "n", "t" }, "<M-h>")
-del("n", "<C-h>")
-del("n", "<C-j>")
-del("n", "<C-k>")
-del("n", "<C-l>")
-
 -- Comment. Use Control-/
 del({ "n", "v" }, "<leader>/")
--- del("n", "q:", "<nop>")
--- del("n", "q/", "<nop>")
--- del("n", "q?", "<nop>")
-
 map("n", "<C-_>", function()
 	require("Comment.api").toggle.linewise.current()
 end, { desc = "comment toggle" })
