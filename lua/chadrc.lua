@@ -7,7 +7,7 @@ local function replace(str, what, with)
 end
 
 M.ui = {
-	theme = "chadracula",
+	theme = "palenight",
 	transparency = true,
 
 	hl_override = {
