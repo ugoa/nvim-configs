@@ -87,7 +87,7 @@ map("n", "<leader>xa", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "close all buffers" })
 
--- map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
+map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 
 -- Command Mode
 map("c", "<C-f>", "<Right>", { desc = "move right" })
