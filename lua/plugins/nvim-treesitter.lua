@@ -18,4 +18,9 @@ return {
 			"terraform",
 		},
 	},
+	dependencies = {
+		-- NOTE: additional parser
+		{ "nushell/tree-sitter-nu" },
+	},
+	build = ":TSUpdate",
 }
