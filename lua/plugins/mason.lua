@@ -11,6 +11,8 @@ return {
 			"stylua",
 			-- for vue.js
 			"vue-language-server",
+			-- for Solid.js, React and Typescript/Javascript
+			"typescript-language-server",
 			"prettier",
 			"biome",
 		},

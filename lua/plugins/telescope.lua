@@ -28,6 +28,7 @@ return {
 				"--glob=!.nuxt/*",
 				"--glob=!node_modules/*",
 				"--glob=!.output/*",
+				"--glob=!.vinxi/*",
 			},
 			-- sorting_strategy = "descending",
 			-- layout_config = {
