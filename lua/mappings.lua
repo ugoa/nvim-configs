@@ -38,7 +38,7 @@ map("i", "<C-a>", "<Home>", { desc = "move beginning" })
 map("i", "<C-e>", "<End>", { desc = "move to end" })
 
 -- Normal Mode
-map("n", "<M-s>", "<Cmd>SessionSave<CR>", { desc = "save nvim session" })
+map("n", "<M-r>", "<Cmd>SessionSave<CR>", { desc = "save nvim session" })
 map("n", "<M-y>", "<Cmd>:%y+<CR>", { desc = "copy whole file" })
 
 map("n", "<M-h>", "<Cmd>NvimTmuxNavigateLeft<CR>")
@@ -85,3 +85,6 @@ map("c", "<C-e>", "<End>", { desc = "move to end" })
 
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
+
+-- Open file out of current FS scope
+map("n", "<leader>b", ".edit ")
