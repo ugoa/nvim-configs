@@ -87,4 +87,4 @@ map("c", "<C-e>", "<End>", { desc = "move to end" })
 map("v", "A", ":normal A", { desc = "append to visual block" })
 
 -- Open file out of current FS scope
-map("n", "<leader>b", ".edit ")
+map("n", "<leader>b", ":edit ")
