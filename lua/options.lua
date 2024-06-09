@@ -4,6 +4,9 @@ require("nvchad.options")
 vim.opt.colorcolumn = "120"
 -- vim.opt.conceallevel = 2
 
+-- vim.opt.shell = "/opt/homebrew/bin/nu"
+vim.opt.shell = "/bin/zsh"
+
 vim.o.tabstop = 2 -- A TAB character looks like 4 spaces
 vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
 vim.o.softtabstop = 2 -- Number of spaces inserted instead of a TAB character
