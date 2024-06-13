@@ -23,3 +23,22 @@ autocmd("TermClose", {
 		vim.api.nvim_input("<CR>")
 	end,
 })
+
+autocmd("FileType", {
+	pattern = {
+		"notify",
+		"checkhealth",
+		"fugitive*",
+		"git",
+		"help",
+		"lspinfo",
+		"netrw",
+		"notify",
+		"qf",
+		"query",
+		"Quickfix",
+	},
+	callback = function()
+		vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
+	end,
+})
