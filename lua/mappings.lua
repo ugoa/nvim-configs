@@ -87,4 +87,8 @@ map("c", "<C-e>", "<End>", { desc = "move to end" })
 map("v", "A", ":normal A", { desc = "append to visual block" })
 
 -- Open file out of current FS scope
-map("n", "<leader>b", ":edit ")
+map("n", "<leader>b", ":edit ", { desc = "Edit file in new buffer" })
+
+map("n", "<leader>h", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hint" })

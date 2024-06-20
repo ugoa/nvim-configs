@@ -6,15 +6,16 @@ return {
 
 		local common = {
 
-			-- Disable LSP syntax highlighting.
-			-- Ref: https://github.com/NvChad/NvChad/issues/1907
 			on_init = function(client, _)
+				-- Disable LSP syntax highlighting.
+				-- Ref: https://github.com/NvChad/NvChad/issues/1907
 				client.server_capabilities.semanticTokensProvider = nil
 			end,
-			-- Disable format on save.
-			-- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
+
 			on_attach = function(client, bufnr)
 				nvchad.on_attach(client, bufnr)
+				-- Disable format on save.
+				-- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
 				client.server_capabilities.documentFormattingProvider = false
 			end,
 			capabilities = nvchad.capabilities,
