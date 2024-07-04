@@ -56,19 +56,23 @@ M.ui = {
 		lazyload = true,
 		order = { "treeOffset", "buffers", "tabs" },
 	},
+}
 
-	lsp = { signature = false },
+M.lsp = { signature = false }
 
-	term = {
-		float = {
-			relative = "editor",
-			row = 0.05,
-			col = 0.1,
-			width = 0.8,
-			height = 0.8,
-			border = "single",
-		},
+M.term = {
+	float = {
+		relative = "editor",
+		row = 0.05,
+		col = 0.1,
+		width = 0.8,
+		height = 0.8,
+		border = "single",
 	},
 }
+
+-- M.base46 = {}
+
+-- M.cheatsheet = {}
 
 return M
