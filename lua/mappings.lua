@@ -32,10 +32,10 @@ map("i", "<F6>", "<Esc>:wa<CR>", { desc = "save file" })
 map("i", "<C-s>", "<Esc>:wa<CR>", { desc = "save file" })
 map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "save file" })
 
-map("i", "<C-f>", "<Right>", { desc = "move right" })
-map("i", "<C-b>", "<Left>", { desc = "move left" })
-map("i", "<C-a>", "<Home>", { desc = "move beginning" })
-map("i", "<C-e>", "<End>", { desc = "move to end" })
+map({ "i", "c" }, "<C-f>", "<Right>", { desc = "move right" })
+map({ "i", "c" }, "<C-b>", "<Left>", { desc = "move left" })
+map({ "i", "c" }, "<C-a>", "<Home>", { desc = "move beginning" })
+map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
 -- Normal Mode
 map("n", "<M-r>", "<Cmd>SessionSave<CR>", { desc = "save nvim session" })
@@ -77,11 +77,11 @@ end, { desc = "close all buffers" })
 
 map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 
--- Command Mode
-map("c", "<C-f>", "<Right>", { desc = "move right" })
-map("c", "<C-b>", "<Left>", { desc = "move left" })
-map("c", "<C-a>", "<Home>", { desc = "move beginning" })
-map("c", "<C-e>", "<End>", { desc = "move to end" })
+-- -- Command Mode
+-- map("c", "<C-f>", "<Right>", { desc = "move right" })
+-- map("c", "<C-b>", "<Left>", { desc = "move left" })
+-- map("c", "<C-a>", "<Home>", { desc = "move beginning" })
+-- map("c", "<C-e>", "<End>", { desc = "move to end" })
 
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
