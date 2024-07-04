@@ -23,15 +23,3 @@ vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, t
 -- Use blink vert line cursor in insert mode
 vim.opt.guicursor =
 	"n-v-c-sm:block-blinkwait50-blinkon100-blinkoff100,i-ci:ver30-iCursor-blinkwait50-blinkon100-blinkoff100"
-
--- vim.api.nvim_create_autocmd("VimEnter", {
--- 	callback = function(data)
--- 		if vim.fn.argv(0) == "" then
--- 			require("nvim-tree.api").tree.open()
--- 		elseif vim.fn.isdirectory(data.file) == 1 then
--- 			-- change to the directory and open the tree
--- 			vim.cmd.cd(data.file)
--- 			require("nvim-tree.api").tree.open()
--- 		end
--- 	end,
--- })
