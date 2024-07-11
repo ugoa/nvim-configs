@@ -17,7 +17,7 @@ end
 local function my_on_attach(bufnr)
 	local api = require("nvim-tree.api")
 
-	-- api.node.open.edit = open_or_expand
+	api.node.open.edit = open_or_expand
 
 	local function opts(desc)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
