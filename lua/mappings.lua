@@ -23,6 +23,8 @@ del("n", "<leader>rn")
 map("n", "<leader>nn", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 map("n", "<leader>nt", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
+map({ "n", "v" }, "p", "P", { desc = "paste without reset register" })
+
 -- JUST FOR SAVE!
 -- Create a new keyboard shortcut in Iterm2:
 --      Shortcut: cmd-s
