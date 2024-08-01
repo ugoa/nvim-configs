@@ -52,12 +52,18 @@ return {
 		filters = {
 			enable = true,
 			git_ignored = true,
-			dotfiles = false,
+			dotfiles = true,
 			git_clean = false,
 			no_buffer = false,
 			no_bookmark = false,
-			custom = { ".git", ".bsp" },
-			exclude = { ".gitignore" },
+			exclude = {
+				".gitignore",
+				".env.template",
+				".env.sample",
+				".dockerignore",
+				".gitlab-ci.yml",
+				".gitlab-ci.yaml",
+			},
 		},
 		actions = {
 			change_dir = {
