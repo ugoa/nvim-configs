@@ -63,6 +63,8 @@ return {
 				".dockerignore",
 				".gitlab-ci.yml",
 				".gitlab-ci.yaml",
+				".values",
+				".terraform",
 			},
 		},
 		actions = {
