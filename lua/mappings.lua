@@ -30,8 +30,8 @@ map({ "n", "v" }, "p", "P", { desc = "paste without reset register" })
 --      Shortcut: cmd-s
 --      Action: Send Escape Sequence
 --      Esc+: [17~
-map("i", "<F6>", "<Esc>:wa<CR>", { desc = "save file" })
-map("i", "<C-s>", "<Esc>:wa<CR>", { desc = "save file" })
+map("i", "<F6>", "<C-o>:wa<CR>", { desc = "save file" })
+map("i", "<C-s>", "<C-o>:wa<CR>", { desc = "save file" })
 map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "save file" })
 
 map({ "i", "c" }, "<C-f>", "<Right>", { desc = "move right" })
