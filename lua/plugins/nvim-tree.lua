@@ -91,7 +91,7 @@ return {
 			adaptive_size = true,
 			signcolumn = "yes", --auto, yes or no
 			width = {
-				max = "40%",
+				max = "35%",
 				min = "20%",
 			},
 		},
