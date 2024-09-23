@@ -15,6 +15,8 @@ local function open_or_expand()
 end
 
 local function my_on_attach(bufnr)
+	vim.cmd([[ :hi NvimTreeCursorLine guifg=green ]])
+
 	local api = require("nvim-tree.api")
 
 	api.node.open.edit = open_or_expand
@@ -90,8 +92,10 @@ return {
 		view = {
 			adaptive_size = true,
 			signcolumn = "yes", --auto, yes or no
+			number = true,
+			cursorline = true,
 			width = {
-				max = "35%",
+				max = "30%",
 				min = "20%",
 			},
 		},
