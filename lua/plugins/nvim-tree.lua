@@ -15,7 +15,7 @@ local function open_or_expand()
 end
 
 local function my_on_attach(bufnr)
-	vim.cmd([[ :hi NvimTreeCursorLine guifg=cterm=bold gui=bold guifg=#42f584 ]])
+	vim.cmd([[ :hi NvimTreeCursorLine guifg=cterm=bold gui=bold guibg=#4d4f68 ]])
 
 	local api = require("nvim-tree.api")
 
@@ -87,6 +87,9 @@ return {
 				show = {
 					folder_arrow = false,
 				},
+			},
+			indent_markers = {
+				enable = false,
 			},
 		},
 		view = {
