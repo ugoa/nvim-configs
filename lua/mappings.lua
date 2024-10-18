@@ -95,3 +95,7 @@ map("n", "<leader>b", ":edit ", { desc = "Edit file in new buffer" })
 map("n", "<leader>h", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hint" })
+
+map("n", "<leader>ll", function()
+	vim.diagnostic.open_float()
+end, { desc = "Show Line Diagnostics" })
