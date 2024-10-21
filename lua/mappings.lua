@@ -96,7 +96,7 @@ map("n", "<leader>h", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hint" })
 
-map("n", "<leader>dd", function()
+map("n", "<leader>df", function()
 	vim.diagnostic.open_float()
 end, { desc = "Show Line Diagnosics" })
 
