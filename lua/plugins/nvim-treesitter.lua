@@ -16,6 +16,7 @@ return {
 			"css",
 			"scss",
 			"terraform",
+			"just",
 		},
 	},
 	dependencies = {

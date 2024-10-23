@@ -11,6 +11,9 @@ M.ui = {
 	transparency = true,
 
 	hl_override = {
+		CursorLine = {
+			bg = "#282a2e",
+		},
 		WhichKeyDesc = {
 			fg = "white",
 		},

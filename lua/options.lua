@@ -23,3 +23,6 @@ vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, t
 -- Use blink vert line cursor in insert mode
 vim.opt.guicursor =
 	"n-v-c-sm:block-blinkwait50-blinkon100-blinkoff100,i-ci:ver30-iCursor-blinkwait50-blinkon100-blinkoff100"
+
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "both"
