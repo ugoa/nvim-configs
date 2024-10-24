@@ -12,7 +12,8 @@ M.ui = {
 
 	hl_override = {
 		-- https://github.com/NvChad/NvChad/discussions/2722
-		["@comment"] = { fg = "teal" },
+		["@comment"] = { fg = "teal" }, -- Override treesitter Enabled filetypes
+		Comment = { fg = "teal" }, -- Override rest filetypes
 
 		CursorLine = {
 			bg = "#4d4f68",
