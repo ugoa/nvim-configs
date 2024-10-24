@@ -11,8 +11,11 @@ M.ui = {
 	transparency = true,
 
 	hl_override = {
+		-- https://github.com/NvChad/NvChad/discussions/2722
+		["@comment"] = { fg = "teal" },
+
 		CursorLine = {
-			bg = "#282a2e",
+			bg = "#4d4f68",
 		},
 		WhichKeyDesc = {
 			fg = "white",
