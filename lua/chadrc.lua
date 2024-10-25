@@ -15,6 +15,8 @@ M.ui = {
 		["@comment"] = { fg = "teal" }, -- Override treesitter Enabled filetypes
 		Comment = { fg = "teal" }, -- Override rest filetypes
 
+		NonText = { fg = "#9dafe3" }, -- Override rest filetypes
+
 		CursorLine = {
 			bg = "#4d4f68",
 		},
