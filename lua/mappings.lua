@@ -107,9 +107,14 @@ vim.keymap.set("n", "<leader>dn", function()
 	vim.diagnostic.goto_next()
 end, { desc = "Show Next Diagnosics" })
 
--- always center search results
+-- always center search/nav results
 vim.keymap.set("n", "n", "nzz", { silent = true })
 vim.keymap.set("n", "N", "Nzz", { silent = true })
 vim.keymap.set("n", "*", "*zz", { silent = true })
 vim.keymap.set("n", "#", "#zz", { silent = true })
 vim.keymap.set("n", "g*", "g*zz", { silent = true })
+
+vim.keymap.set("n", "<C-f>", "<C-f>zz", { silent = true })
+vim.keymap.set("n", "<C-b>", "<C-b>zz", { silent = true })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { silent = true })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { silent = true })
