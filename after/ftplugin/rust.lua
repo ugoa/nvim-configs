@@ -10,3 +10,17 @@ end, { silent = true, buffer = bufnr, desc = "Expand Rust Macro" })
 
 local nvchad = require("nvchad.configs.lspconfig")
 nvchad.on_attach(bufnr) -- This setup the Lua LSP by Nvchad.
+
+vim.g.rustaceanvim = {
+	server = {
+		default_settings = {
+			["rust-analyzer"] = {
+				files = {
+					excludeDirs = {
+						"node_modules",
+					},
+				},
+			},
+		},
+	},
+}
