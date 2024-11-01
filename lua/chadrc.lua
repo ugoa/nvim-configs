@@ -46,7 +46,6 @@ M.ui = {
 			"percent",
 			"mode",
 			"lsp",
-			"ftp",
 		},
 		modules = {
 			my_file = function()
@@ -61,7 +60,7 @@ M.ui = {
 				if rpath == "NvimTree_1" then
 					return ""
 				else
-					return "%#StText# " .. x[1] .. " " .. rpath .. " "
+					return " " .. rpath .. " (" .. x[1] .. " " .. vim.bo.filetype .. ")"
 				end
 			end,
 
