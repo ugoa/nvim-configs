@@ -42,10 +42,11 @@ M.ui = {
 			"%=",
 			--"lsp_msg", Handled by noice
 			"%=",
-			"ftp",
+			"cursor",
+			"percent",
 			"mode",
 			"lsp",
-			"cursor",
+			"ftp",
 		},
 		modules = {
 			my_file = function()
@@ -57,10 +58,18 @@ M.ui = {
 
 				local utils = require("nvchad.stl.utils")
 				local x = utils.file()
-				return "%#StText# " .. x[1] .. " " .. rpath .. " "
+				if rpath == "NvimTree_1" then
+					return ""
+				else
+					return "%#StText# " .. x[1] .. " " .. rpath .. " "
+				end
+			end,
+
+			percent = function()
+				return "%#St_pos_sep#" .. " " .. "%#St_pos_icon#%#St_pos_text# %p%% "
 			end,
 			ftp = function()
-				return vim.bo.filetype .. " "
+				return " " .. vim.bo.filetype
 			end,
 		},
 	},
