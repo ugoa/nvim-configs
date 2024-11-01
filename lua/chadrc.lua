@@ -42,6 +42,7 @@ M.ui = {
 			"%=",
 			--"lsp_msg", Handled by noice
 			"%=",
+			"ftp",
 			"mode",
 			"lsp",
 			"cursor",
@@ -57,6 +58,9 @@ M.ui = {
 				local utils = require("nvchad.stl.utils")
 				local x = utils.file()
 				return "%#StText# " .. x[1] .. " " .. rpath .. " "
+			end,
+			ftp = function()
+				return vim.bo.filetype .. " "
 			end,
 		},
 	},
