@@ -52,6 +52,7 @@ return {
 	-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
 	opts = {
 		on_attach = my_on_attach,
+		reload_on_bufenter = true,
 		filters = {
 			enable = true,
 			git_ignored = true,
