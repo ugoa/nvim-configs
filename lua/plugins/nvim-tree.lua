@@ -49,6 +49,7 @@ end
 
 return {
 	"nvim-tree/nvim-tree.lua",
+	-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
 	opts = {
 		on_attach = my_on_attach,
 		filters = {
