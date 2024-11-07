@@ -14,7 +14,7 @@ return {
 			-- for Solid.js, React and Typescript/Javascript
 			"typescript-language-server",
 			"prettier",
-			"biome",
+			"djlint", -- for htmldjango/jinja formatting
 		},
 	},
 }

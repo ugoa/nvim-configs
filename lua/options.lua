@@ -26,3 +26,9 @@ vim.opt.guicursor =
 
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
+
+vim.filetype.add({
+	extension = {
+		html = "htmldjango",
+	},
+})

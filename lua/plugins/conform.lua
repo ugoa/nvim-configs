@@ -11,7 +11,9 @@ return {
 				typescriptreact = { "prettier" },
 				javascriptreact = { "prettier" },
 				json = { "prettier" },
-				vue = { "prettier" },
+				-- vue = { "prettier" },
+				html = { "djlint" },
+				htmldjango = { "djlint" },
 			},
 			format_on_save = { -- These options will be passed to conform.format()
 				timeout_ms = 2000, -- increase timeout to 2s since black take longer time to finish.

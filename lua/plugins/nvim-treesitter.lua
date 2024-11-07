@@ -17,6 +17,7 @@ return {
 			"scss",
 			"terraform",
 			"just",
+			"htmldjango",
 		},
 	},
 	dependencies = {
