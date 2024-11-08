@@ -64,6 +64,9 @@ require("lazy").setup({
 
 	{ import = "plugins" },
 	{
+		"nvim-lua/plenary.nvim",
+	},
+	{
 		{ "NvChad/nvterm", enabled = false },
 		{ "NvChad/nvim-colorizer.lua", enabled = false },
 	},
