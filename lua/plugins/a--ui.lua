@@ -1,15 +1,16 @@
 return {
-	 {
-	 	"NvChad/NvChad",
-	 	lazy = false,
-	 	branch = "v2.5",
-	 	config = function()
-	 		require("options")
-	 	end,
-	 },
+	{
+		"NvChad/NvChad",
+		lazy = false,
+		branch = "v2.5",
+		config = function()
+			require("options")
+		end,
+	},
 
 	{
 		"nvchad/base46",
+		branch = "v2.5",
 		build = function()
 			require("base46").load_all_highlights()
 		end,
@@ -18,6 +19,7 @@ return {
 	{
 		"nvchad/ui",
 		lazy = false,
+		branch = "v2.5",
 		config = function()
 			require("nvchad")
 		end,
