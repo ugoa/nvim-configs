@@ -67,7 +67,7 @@ autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("VimEnter", {
+autocmd("VimEnter", {
 	callback = function(data)
 		if vim.fn.argv(0) == "" then
 			require("nvim-tree.api").tree.open()
@@ -79,7 +79,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("trim_whitespaces", { clear = true }),
 	desc = "Trim trailing white spaces",
 	pattern = "*",
