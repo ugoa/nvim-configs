@@ -8,8 +8,8 @@ local function replace(str, what, with)
 end
 
 M.base46 = {
-	theme = "chadracula",
-	transparency = true,
+	theme = "chadracula-evondev",
+	transparency = false,
 
 	hl_override = {
 		-- https://github.com/NvChad/NvChad/discussions/2722
