@@ -10,7 +10,7 @@ if not vim.uv.fs_stat(lazypath) then
 	vim.fn.system({ "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath })
 end
 
-local lazyconf = {
+local lazy_config = {
 	defaults = { lazy = true },
 	install = { colorscheme = { "nvchad" } },
 
@@ -51,7 +51,11 @@ local lazyconf = {
 	},
 }
 
-require("lazy").setup({ import = "plugins" }, lazyconf)
+-- load plugins
+require("lazy").setup({
+	{ "NvChad/NvChad", lazy = false, branch = "v2.5", import = "nvchad.plugins" },
+	{ import = "plugins" },
+}, lazy_config)
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
