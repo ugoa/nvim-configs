@@ -1,3 +1,4 @@
+-- Ref https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 local M = {}
 
 local function replace(str, what, with)
@@ -7,7 +8,7 @@ local function replace(str, what, with)
 end
 
 M.base46 = {
-	theme = "chadracula",
+	theme = "bearded-arc",
 	transparency = true,
 
 	hl_override = {
@@ -30,6 +31,9 @@ M.base46 = {
 			fg = "green",
 		},
 	},
+}
+
+M.ui = {
 
 	telescope = { style = "bordered" }, -- borderless / bordered
 
@@ -92,8 +96,5 @@ M.term = {
 	},
 }
 
--- M.base46 = {}
-
--- M.cheatsheet = {}
-
-return M
+local status, chadrc = pcall(require, "chadrc")
+return vim.tbl_deep_extend("force", M, status and chadrc or {})
