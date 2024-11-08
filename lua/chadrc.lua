@@ -6,7 +6,7 @@ local function replace(str, what, with)
 	return string.gsub(str, what, with)
 end
 
-M.ui = {
+M.base46 = {
 	theme = "chadracula",
 	transparency = true,
 

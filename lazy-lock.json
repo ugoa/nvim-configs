@@ -5,15 +5,16 @@
   },
   "NvChad": {
     "branch": "v2.5",
-    "commit": "7b73d1111cfb41f980d25c800d86d43ad802d8b8"
+    "commit": "bbc3d43db088c141b142a40cd5f717635833a54e"
   },
+
   "auto-session": {
     "branch": "main",
     "commit": "7b1b30d3424b7ca0fb4d12ce3f3d1977cf7c5691"
   },
   "base46": {
     "branch": "v2.5",
-    "commit": "d4ffecc3e1a34f3ed9af6362529552eee79e57c2"
+    "commit": "c58d8a76fcd31462ef707c55d9f4147c3927721f"
   },
   "cmp-buffer": {
     "branch": "main",
@@ -62,6 +63,14 @@
   "mason.nvim": {
     "branch": "main",
     "commit": "0950b15060067f752fde13a779a994f59516ce3d"
+  },
+  "menu": {
+    "branch": "main",
+    "commit": "657bfc91382c0928453d9a4d0a10ec92db5de2bb"
+  },
+  "minty": {
+    "branch": "main",
+    "commit": "1b604ed0d741294cfb56c0ce3aa6161e9ae7dd8b"
   },
   "noice.nvim": {
     "branch": "main",
@@ -128,8 +137,12 @@
     "commit": "0bb9a602d9bc94b66fab96ce51d46a5a227ab76c"
   },
   "ui": {
-    "branch": "v2.5",
-    "commit": "3c9e5cb6499f66a02c365f073145a835124a19ac"
+    "branch": "v3.0",
+    "commit": "25319f3686b4f980458859b30244f373d158635c"
+  },
+  "volt": {
+    "branch": "main",
+    "commit": "ff954757fdaf72da0dedd77bdf74718ea846f989"
   },
   "which-key.nvim": {
     "branch": "main",
