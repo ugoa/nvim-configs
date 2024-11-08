@@ -51,26 +51,7 @@ local lazyconf = {
 	},
 }
 
-require("lazy").setup({
-	{
-		"NvChad/NvChad",
-		lazy = false,
-		branch = "v2.5",
-		-- import = "nvchad.plugins",
-		-- config = function()
-		-- 	require("options")
-		-- end,
-	},
-
-	{ import = "plugins" },
-	{
-		"nvim-lua/plenary.nvim",
-	},
-	{
-		{ "NvChad/nvterm", enabled = false },
-		{ "NvChad/nvim-colorizer.lua", enabled = false },
-	},
-}, lazyconf)
+require("lazy").setup({ import = "plugins" }, lazyconf)
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")

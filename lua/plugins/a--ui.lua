@@ -1,4 +1,13 @@
 return {
+	 {
+	 	"NvChad/NvChad",
+	 	lazy = false,
+	 	branch = "v2.5",
+	 	config = function()
+	 		require("options")
+	 	end,
+	 },
+
 	{
 		"nvchad/base46",
 		build = function()
