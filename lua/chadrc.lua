@@ -8,19 +8,20 @@ local function replace(str, what, with)
 end
 
 M.base46 = {
-	theme = "bearded-arc",
+	theme = "chadracula",
 	transparency = true,
 
 	hl_override = {
 		-- https://github.com/NvChad/NvChad/discussions/2722
+
 		["@comment"] = { fg = "teal" }, -- Override treesitter Enabled filetypes
 		Comment = { fg = "teal" }, -- Override rest filetypes
 
 		NonText = { fg = "#9dafe3" }, -- Override rest filetypes
 
-		CursorLine = {
-			bg = "#4d4f68",
-		},
+		-- CursorLine = {
+		-- 	bg = "#4d4f68",
+		-- },
 		WhichKeyDesc = {
 			fg = "white",
 		},
