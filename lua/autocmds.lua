@@ -67,6 +67,7 @@ autocmd("FileType", {
 		"undefined",
 	},
 	callback = function()
+		-- vim.keymap.set("n", "q", ":silent q!<CR>", { desc = "Close the current buffer", buffer = true, silent = true })
 		vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
 	end,
 })
