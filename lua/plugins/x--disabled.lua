@@ -37,4 +37,17 @@ return {
 		"nvim-treesitter/playground",
 		enabled = false,
 	},
+	{
+		"ray-x/lsp_signature.nvim",
+		enabled = false,
+		event = "VeryLazy",
+		config = function(_, opts)
+			require("lsp_signature").setup({
+				bind = true,
+				handler_opts = {
+					border = "rounded",
+				},
+			})
+		end,
+	},
 }
