@@ -41,10 +41,12 @@ autocmd("BufReadPost", {
 	end,
 })
 
-autocmd("TermClose", {
+autocmd("BufEnter", {
 	pattern = "*",
 	callback = function()
-		vim.api.nvim_input("<CR>")
+		if vim.bo.filetype == "" then
+			vim.cmd([[ :setfiletype undefined ]])
+		end
 	end,
 })
 
@@ -62,6 +64,7 @@ autocmd("FileType", {
 		"query",
 		"quickfix",
 		"vim",
+		"undefined",
 	},
 	callback = function()
 		vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
