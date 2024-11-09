@@ -159,3 +159,5 @@ map("n", "?", ":h ", opts("help"))
 map("n", "<c-i>", "<c-]>", opts("jump tag forward"))
 
 map("n", "<leader>m", ":Markview splitToggle<CR>", opts("Toggle markdown preview"))
+
+map("n", "<leader>tw", ":TailwindFoldToggle<CR>", opts("Toggle markdown preview"))

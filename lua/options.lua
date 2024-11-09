@@ -55,7 +55,6 @@ vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, sep) .. 
 
 -- add yours here!
 vim.opt.colorcolumn = "120"
--- vim.opt.conceallevel = 2
 
 -- vim.opt.shell = "/opt/homebrew/bin/nu"
 vim.opt.shell = "/bin/zsh"
@@ -78,3 +77,7 @@ vim.filetype.add({
 		html = "htmldjango",
 	},
 })
+
+-- for tailwind fold
+opt.conceallevel = 2
+opt.concealcursor = ""
