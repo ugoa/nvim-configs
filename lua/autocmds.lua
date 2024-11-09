@@ -61,6 +61,7 @@ autocmd("FileType", {
 		"qf",
 		"query",
 		"quickfix",
+		"vim",
 	},
 	callback = function()
 		vim.keymap.set("n", "q", vim.cmd.close, { desc = "Close the current buffer", buffer = true })
