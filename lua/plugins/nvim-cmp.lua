@@ -67,8 +67,10 @@ return {
 	},
 
 	config = function()
+		dofile(vim.g.base46_cache .. "cmp")
+
 		local cmp = require("cmp")
-		local opts = {
+		local options = {
 			completion = { completeopt = "menu,menuone" },
 
 			snippet = {
@@ -119,6 +121,8 @@ return {
 				{ name = "path" },
 			},
 		}
+		local opts = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
+
 		cmp.setup(opts)
 
 		cmp.setup.cmdline("/", {
