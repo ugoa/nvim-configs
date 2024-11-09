@@ -38,6 +38,9 @@ return {
 		return {
 			on_attach = on_attach,
 			reload_on_bufenter = true,
+			auto_reload_on_write = true,
+			disable_netrw = true,
+			hijack_cursor = true,
 			filters = {
 				enable = true,
 				git_ignored = true,
@@ -63,25 +66,26 @@ return {
 			},
 			update_focused_file = {
 				enable = true,
+				update_root = false,
 			},
 			renderer = {
 				root_folder_label = ":~:s?$?",
 				highlight_opened_files = "all",
-				highlight_git = "none",
 				icons = {
 					git_placement = "after",
 					modified_placement = "signcolumn",
-					show = {
-						folder_arrow = false,
-					},
 				},
 				indent_markers = {
 					enable = false,
 				},
 				group_empty = true,
+				full_name = true,
+				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "justfile" },
+				hidden_display = "all",
 			},
 			view = {
 				adaptive_size = true,
+				centralize_selection = true,
 				signcolumn = "yes", --auto, yes or no
 				cursorline = true,
 				width = {
@@ -97,8 +101,6 @@ return {
 				sort_by = "desc",
 			},
 			git = {
-				enable = true,
-				show_on_dirs = true,
 				show_on_open_dirs = false,
 			},
 			modified = {
