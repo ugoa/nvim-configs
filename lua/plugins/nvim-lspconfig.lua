@@ -2,7 +2,7 @@ local M = {}
 local map = vim.keymap.set
 
 -- export on_attach & capabilities
-M.on_attach = function(_, bufnr)
+M.on_attach = function(client, bufnr)
 	local function opts(desc)
 		return { buffer = bufnr, desc = "LSP " .. desc }
 	end
@@ -24,13 +24,21 @@ M.on_attach = function(_, bufnr)
 
 	map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
 	map("n", "gr", vim.lsp.buf.references, opts("Show references"))
+
+	-- Disable format on save.
+	-- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
+	client.server_capabilities.documentFormattingProvider = false
 end
 
--- disable semanticTokens
 M.on_init = function(client, _)
+	-- disable semanticTokens
 	if client.supports_method("textDocument/semanticTokens") then
 		client.server_capabilities.semanticTokensProvider = nil
 	end
+
+	-- Disable LSP syntax highlighting, and use treesitter instead, which is much prettier.
+	-- Ref: https://github.com/NvChad/NvChad/issues/1907
+	client.server_capabilities.semanticTokensProvider = nil
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -53,15 +61,9 @@ M.capabilities.textDocument.completion.completionItem = {
 	},
 }
 
-M.defaults = function()
-	dofile(vim.g.base46_cache .. "lsp")
-	require("nvchad.lsp").diagnostic_config()
+local Servers = {
 
-	require("lspconfig").lua_ls.setup({
-		on_attach = M.on_attach,
-		capabilities = M.capabilities,
-		on_init = M.on_init,
-
+	lua_ls = {
 		settings = {
 			Lua = {
 				diagnostics = {
@@ -80,72 +82,51 @@ M.defaults = function()
 				},
 			},
 		},
-	})
-end
+	},
+
+	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/pyright.lua
+	pyright = {}, -- Python
+
+	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
+	tsserver = {}, -- Typescript
+
+	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/rust_analyzer.lua
+	-- rust_analyzer = {
+	-- 	on_attach = function(client, bufnr)
+	-- 		M.on_attach(client, bufnr)
+	--
+	-- 		local expand_macro = function()
+	-- 			local error_handler = nil
+	-- 			client.request("expandMacro", vim.lsp.util.make_position_params(), error_handler, bufnr)
+	-- 		end
+	-- 		vim.keymap.set("n", "<leader>le", expand_macro, { buffer = bufnr, desc = "Expand Macro" })
+	-- 	end,
+	-- },
+
+	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/volar.lua
+	-- https://github.com/williamboman/mason-lspconfig.nvim/issues/371
+	-- volar = { -- Vue.js
+	-- 	init_options = {
+	-- 		vue = {
+	-- 			hybridMode = false,
+	-- 		},
+	-- 		typescript = {
+	-- 			tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
+	-- 		},
+	-- 	},
+	-- },
+}
 
 return {
 	"neovim/nvim-lspconfig",
 	event = "User FilePost",
 
 	config = function()
-		local nvchad = M
-		nvchad.defaults() -- This setup the Lua LSP by Nvchad.
+		dofile(vim.g.base46_cache .. "lsp")
+		require("nvchad.lsp").diagnostic_config()
 
-		local common = {
-
-			on_init = function(client, _)
-				-- Disable LSP syntax highlighting.
-				-- Ref: https://github.com/NvChad/NvChad/issues/1907
-				client.server_capabilities.semanticTokensProvider = nil
-			end,
-
-			on_attach = function(client, bufnr)
-				nvchad.on_attach(client, bufnr)
-				-- Disable format on save.
-				-- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
-				client.server_capabilities.documentFormattingProvider = false
-			end,
-
-			capabilities = nvchad.capabilities,
-		}
-
-		local servers = {
-
-			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/pyright.lua
-			pyright = {}, -- Python
-
-			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
-			tsserver = {}, -- Typescript
-
-			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/rust_analyzer.lua
-			-- rust_analyzer = {
-			-- 	on_attach = function(client, bufnr)
-			-- 		nvchad.on_attach(client, bufnr)
-			--
-			-- 		local expand_macro = function()
-			-- 			local error_handler = nil
-			-- 			client.request("expandMacro", vim.lsp.util.make_position_params(), error_handler, bufnr)
-			-- 		end
-			-- 		vim.keymap.set("n", "<leader>le", expand_macro, { buffer = bufnr, desc = "Expand Macro" })
-			-- 	end,
-			-- },
-
-			-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/volar.lua
-			-- https://github.com/williamboman/mason-lspconfig.nvim/issues/371
-			volar = { -- Vue.js
-				init_options = {
-					vue = {
-						hybridMode = false,
-					},
-					typescript = {
-						tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
-					},
-				},
-			},
-		}
-
-		for name, overrides in pairs(servers) do
-			require("lspconfig")[name].setup(vim.tbl_deep_extend("force", common, overrides))
+		for name, overrides in pairs(Servers) do
+			require("lspconfig")[name].setup(vim.tbl_deep_extend("force", M, overrides))
 		end
 	end,
 }
