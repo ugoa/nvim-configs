@@ -15,7 +15,7 @@ local function open_or_expand()
 end
 
 local function my_on_attach(bufnr)
-	vim.cmd([[ :hi NvimTreeCursorLine guifg=cterm=bold gui=bold guibg=#4d4f68 ]])
+	-- vim.cmd([[ :hi NvimTreeCursorLine guifg=cterm=bold gui=bold guibg=#4d4f68 ]])
 
 	local api = require("nvim-tree.api")
 
@@ -61,6 +61,8 @@ return {
 
 	-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
 	opts = function()
+		dofile(vim.g.base46_cache .. "nvimtree")
+
 		return {
 			on_attach = my_on_attach,
 			reload_on_bufenter = true,

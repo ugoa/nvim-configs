@@ -12,16 +12,16 @@ M.base46 = {
 	transparency = true,
 
 	hl_override = {
-		-- https://github.com/NvChad/NvChad/discussions/2722
 
+		-- https://github.com/nvim-tree/nvim-tree.lua/issues/2923
+		NvimTreeCursorLine = { bg = "#4d4f68" },
+
+		-- https://github.com/NvChad/NvChad/discussions/2722
 		["@comment"] = { fg = "teal" }, -- Override treesitter Enabled filetypes
 		Comment = { fg = "teal" }, -- Override rest filetypes
-
 		NonText = { fg = "#9dafe3" }, -- Override rest filetypes
+		-- CursorLine = { bg = "#4d4f68" },
 
-		-- CursorLine = {
-		-- 	bg = "#4d4f68",
-		-- },
 		WhichKeyDesc = {
 			fg = "white",
 		},
