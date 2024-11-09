@@ -3,11 +3,6 @@
     "branch": "master",
     "commit": "ce0a05ab4e2839e1c48d072c5236cce846a387bc"
   },
-  "NvChad": {
-    "branch": "v2.5",
-    "commit": "bbc3d43db088c141b142a40cd5f717635833a54e"
-  },
-
   "auto-session": {
     "branch": "main",
     "commit": "7b1b30d3424b7ca0fb4d12ce3f3d1977cf7c5691"
@@ -54,7 +49,7 @@
   },
   "indent-blankline.nvim": {
     "branch": "master",
-    "commit": "65e20ab94a26d0e14acac5049b8641336819dfc7"
+    "commit": "04e44b09ee3ff189c69ab082edac1ef7ae2e256c"
   },
   "lazy.nvim": {
     "branch": "main",
@@ -127,6 +122,10 @@
   "rustaceanvim": {
     "branch": "master",
     "commit": "d6d7620b66d74b3b16defcf85cbef7b3582795b3"
+  },
+  "showkeys": {
+    "branch": "main",
+    "commit": "a8bcd950e19116f801ed6714fdba0d385cb24f3c"
   },
   "telescope.nvim": {
     "branch": "master",
