@@ -32,6 +32,9 @@ return {
 				"terraform",
 				"just",
 				"htmldjango",
+				"json",
+				"sql",
+				"java",
 			},
 			highlight = {
 				enable = true,
