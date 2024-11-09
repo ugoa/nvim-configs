@@ -16,9 +16,9 @@ return {
 
 	"nvzone/volt",
 
-	"nvzone/menu",
+	"nvzone/menu", -- Pop up menu
 
-	{ "nvzone/minty", cmd = { "Huefy", "Shades" } },
+	{ "nvzone/minty", cmd = { "Huefy", "Shades" } }, -- Color picker
 
 	"nvim-lua/plenary.nvim",
 }
