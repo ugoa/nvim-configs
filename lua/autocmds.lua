@@ -102,3 +102,6 @@ autocmd("FileType", {
 		})
 	end,
 })
+
+-- how to load vimscript file
+-- vim.cmd('source my_vim_script.vim')
