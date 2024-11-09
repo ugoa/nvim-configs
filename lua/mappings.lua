@@ -72,16 +72,6 @@ vim.keymap.set("n", "g*", "g*zz", { desc = "highlight all and center screen", si
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center screen", silent = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
 
--- LSP mappings
-local function lsp_opts(_desc)
-	return { desc = "LSP " .. _desc }
-end
-map("n", "gD", vim.lsp.buf.declaration, lsp_opts("Go to declaration"))
-map("n", "gd", vim.lsp.buf.definition, lsp_opts("Go to definition"))
-map("n", "gi", vim.lsp.buf.implementation, lsp_opts("Go to implementation"))
-
-map("n", "gr", vim.lsp.buf.references, lsp_opts("Show references"))
-
 -- Keyboard users
 vim.keymap.set("n", "<C-t>", function()
 	require("menu").open("default")
@@ -93,61 +83,76 @@ map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 ----------------------------------------------------------------------------------------------------
 -- leader key mappings
 ----------------------------------------------------------------------------------------------------
+--- LSP mappings
+local function lsp_opts(_desc)
+	return { desc = "LSP: " .. _desc }
+end
 
 map("n", "<leader>a", "<cmd>enew<CR>", { desc = "buffer new" })
-map("n", "<leader>b", ":edit<CR>", { desc = "Reload current  buffer" })
+map("n", "<leader>b", ":edit<CR>", { desc = "reload current  buffer" })
 
-map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, lsp_opts("Code action"))
--- Open file out of current FS scope
+map({ "n" }, "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
+
+map("n", "<leader>d", function()
+	vim.diagnostic.open_float()
+end, lsp_opts("show Line Diagnosics"))
+
+map("n", "<leader>e", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
+
+map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+
+map("n", "<leader>g", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
 
 map("n", "<leader>h", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hint" })
 
-map("n", "<leader>df", function()
-	vim.diagnostic.open_float()
-end, { desc = "Show Line Diagnosics" })
-map("n", "<leader>dp", function()
-	vim.diagnostic.goto_prev()
-end, { desc = "Show Previous Diagnosics" })
-map("n", "<leader>dn", function()
-	vim.diagnostic.goto_next()
-end, { desc = "Show Next Diagnosics" })
-map("n", "<leader>ds", vim.diagnostic.setloclist, { desc = "LSP diagnostic loclist" })
+map("n", "<leader>i", vim.lsp.buf.implementation, lsp_opts("go to type implementation"))
 
-map("n", "<leader>fm", function()
+map("n", "<leader>k", function()
+	require("nvchad.tabufline").close_buffer()
+end, { desc = "close current buffer" })
+
+map("n", "<leader>m", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
 
-map("n", "<leader>x", function()
-	require("nvchad.tabufline").close_buffer()
-end, { desc = "close current buffer" })
-map("n", "<leader>ko", function()
-	require("nvchad.tabufline").closeOtherBufs()
+map("n", "<leader>o", function()
+	require("nvchad.tabufline").closeBufs_at_direction("left")
+	require("nvchad.tabufline").closeBufs_at_direction("right")
 end, { desc = "close other buffers" })
-map("n", "<leader>ka", function()
+
+map("n", "<leader>p", vim.lsp.buf.references, lsp_opts("show references"))
+
+map("n", "<leader>r", require("nvchad.lsp.renamer"), lsp_opts("rename")) -- or vim.lsp.buf.rename
+
+map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
+
+map("n", "<leader>t", ":TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
+
+map("n", "<leader>v", ":Markview splitToggle<CR>", { desc = "toggle markdown preview" })
+
+map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
+
+map("n", "<leader>x", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "close all buffers" })
 
--- telescope
-map("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
-map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-
-map("n", "<leader>D", vim.lsp.buf.type_definition, lsp_opts("Go to type definition"))
-map("n", "<leader>ra", require("nvchad.lsp.renamer"), lsp_opts("NvRenamer")) -- or vim.lsp.buf.rename
-map("n", "<leader>sh", vim.lsp.buf.signature_help, lsp_opts("Show signature help"))
-
-map("n", "<leader>m", ":Markview splitToggle<CR>", lsp_opts("Toggle markdown preview"))
-
-map("n", "<leader>t", ":TailwindFoldToggle<CR>", lsp_opts("Toggle markdown preview"))
+-- Others leader mappings
+map("n", "<leader>jp", function()
+	vim.diagnostic.goto_prev()
+end, { desc = "show previous diagnosics" })
+map("n", "<leader>jn", function()
+	vim.diagnostic.goto_next()
+end, { desc = "show next diagnosics" })
+map("n", "<leader>js", vim.diagnostic.setloclist, lsp_opts("LSP diagnostic loclist"))
 
 -- whichkey
-map("n", "<leader>wk", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
+map("n", "<leader>jk", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
 
-map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, lsp_opts("Add workspace folder"))
-map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, lsp_opts("Remove workspace folder"))
+map("n", "<leader>ja", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
+map("n", "<leader>jr", vim.lsp.buf.remove_workspace_folder, lsp_opts("remove workspace folder"))
 
-map("n", "<leader>wl", function()
+map("n", "<leader>jl", function()
 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end, lsp_opts("List workspace folders"))
+end, lsp_opts("list workspace folders"))
