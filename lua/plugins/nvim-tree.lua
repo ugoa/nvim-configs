@@ -28,8 +28,8 @@ end
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	cmd = { "NvimTreeToggle", "NvimTreeFocus" },
 	tag = "v1.8.0",
+	cmd = { "NvimTreeToggle", "NvimTreeFocus" },
 
 	-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
 	opts = function()

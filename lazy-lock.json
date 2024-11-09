@@ -8,8 +8,8 @@
     "commit": "7b1b30d3424b7ca0fb4d12ce3f3d1977cf7c5691"
   },
   "base46": {
-    "branch": "v2.5",
-    "commit": "c58d8a76fcd31462ef707c55d9f4147c3927721f"
+    "branch": "v3.0",
+    "commit": "76bce38f1afbe93708f702c61245b0a5b32cd733"
   },
   "cmp-buffer": {
     "branch": "main",
@@ -100,7 +100,7 @@
     "commit": "4898c98702954439233fdaf764c39636681e2861"
   },
   "nvim-tree.lua": {
-    "tag": "v1.8.0",
+    "branch": "master",
     "commit": "c7639482a1598f4756798df1b2d72f79fe5bb34f"
   },
   "nvim-treesitter": {
@@ -133,7 +133,7 @@
   },
   "ui": {
     "branch": "v3.0",
-    "commit": "25319f3686b4f980458859b30244f373d158635c"
+    "commit": "b6c237702449792a2d8c495909029fdd59e9781d"
   },
   "volt": {
     "branch": "main",

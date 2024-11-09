@@ -35,7 +35,6 @@ M.base46 = {
 }
 
 M.ui = {
-
 	telescope = { style = "bordered" }, -- borderless / bordered
 
 	statusline = {
