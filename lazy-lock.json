@@ -100,8 +100,8 @@
     "commit": "4898c98702954439233fdaf764c39636681e2861"
   },
   "nvim-tree.lua": {
-    "branch": "master",
-    "commit": "8b2c5c678be4b49dff6a2df794877000113fd77b"
+    "tag": "v1.8.0",
+    "commit": "c7639482a1598f4756798df1b2d72f79fe5bb34f"
   },
   "nvim-treesitter": {
     "branch": "master",
@@ -110,10 +110,6 @@
   "nvim-web-devicons": {
     "branch": "master",
     "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856"
-  },
-  "playground": {
-    "branch": "master",
-    "commit": "ba48c6a62a280eefb7c85725b0915e021a1a0749"
   },
   "plenary.nvim": {
     "branch": "master",
