@@ -155,3 +155,5 @@ vim.keymap.set("n", "<C-t>", function()
 end, {})
 
 map("n", "?", ":h ", opts("help"))
+
+map("n", "<c-i>", "<c-]>", opts("jump tag forward"))
