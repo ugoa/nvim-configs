@@ -153,3 +153,5 @@ map("n", "gr", vim.lsp.buf.references, opts("Show references"))
 vim.keymap.set("n", "<C-t>", function()
 	require("menu").open("default")
 end, {})
+
+map("n", "?", ":h ", opts("help"))
