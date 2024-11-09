@@ -43,6 +43,7 @@ M.capabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capab
 })
 
 local Servers = {
+	tailwindcss = {},
 
 	lua_ls = {
 		settings = {

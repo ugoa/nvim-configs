@@ -81,6 +81,13 @@ M.ui = {
 		lazyload = true,
 		order = { "treeOffset", "buffers", "tabs" },
 	},
+	cmp = {
+		lspkind_text = true,
+		style = "flat_light", -- default/flat_light/flat_dark/atom/atom_colored
+		format_colors = {
+			tailwind = true,
+		},
+	},
 }
 
 M.lsp = { signature = true }

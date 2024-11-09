@@ -19,6 +19,7 @@ return {
 				"typescript-language-server",
 				"prettier",
 				"djlint", -- for htmldjango/jinja formatting
+				"tailwindcss-language-server",
 			},
 			PATH = "skip",
 
