@@ -83,7 +83,7 @@ M.ui = {
 	},
 }
 
-M.lsp = { signature = false }
+M.lsp = { signature = true }
 
 M.term = {
 	float = {
