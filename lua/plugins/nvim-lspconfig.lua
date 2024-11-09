@@ -1,18 +1,13 @@
 local M = {}
 
 -- export on_attach & capabilities
-M.on_attach = function(client, bufnr)
-	local map = vim.keymap.set
-	local function opts(desc)
-		return { buffer = bufnr, desc = "LSP " .. desc }
-	end
-
+M.on_attach = function(client, _bufnr)
 	-- Disable format on save.
 	-- Ref: https://github.com/jose-elias-alvarez/null-ls.nvim/wiki/Avoiding-LSP-formatting-conflicts#neovim-08
 	client.server_capabilities.documentFormattingProvider = false
 end
 
-M.on_init = function(client, _)
+M.on_init = function(client, _bufnr)
 	-- disable semanticTokens
 	if client.supports_method("textDocument/semanticTokens") then
 		client.server_capabilities.semanticTokensProvider = nil
@@ -23,25 +18,29 @@ M.on_init = function(client, _)
 	client.server_capabilities.semanticTokensProvider = nil
 end
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-
-M.capabilities.textDocument.completion.completionItem = {
-	documentationFormat = { "markdown", "plaintext" },
-	snippetSupport = true,
-	preselectSupport = true,
-	insertReplaceSupport = true,
-	labelDetailsSupport = true,
-	deprecatedSupport = true,
-	commitCharactersSupport = true,
-	tagSupport = { valueSet = { 1 } },
-	resolveSupport = {
-		properties = {
-			"documentation",
-			"detail",
-			"additionalTextEdits",
+M.capabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), {
+	textDocument = {
+		completion = {
+			completionItem = {
+				documentationFormat = { "markdown", "plaintext" },
+				snippetSupport = true,
+				preselectSupport = true,
+				insertReplaceSupport = true,
+				labelDetailsSupport = true,
+				deprecatedSupport = true,
+				commitCharactersSupport = true,
+				tagSupport = { valueSet = { 1 } },
+				resolveSupport = {
+					properties = {
+						"documentation",
+						"detail",
+						"additionalTextEdits",
+					},
+				},
+			},
 		},
 	},
-}
+})
 
 local Servers = {
 
