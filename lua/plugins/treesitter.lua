@@ -9,7 +9,6 @@ return {
 	},
 
 	config = function()
-
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"rust",
@@ -31,6 +30,7 @@ return {
 				"json",
 				"sql",
 				"java",
+				"scala",
 			},
 			highlight = {
 				enable = true,
