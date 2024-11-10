@@ -3,10 +3,6 @@ return {
 	keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
 	cmd = "WhichKey",
 	lazy = false,
-	opts = function()
-		dofile(vim.g.base46_cache .. "whichkey")
-		return {}
-	end,
 	config = function(_, opts)
 		dofile(vim.g.base46_cache .. "whichkey")
 		vim.o.timeout = true
