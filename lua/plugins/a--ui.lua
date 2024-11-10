@@ -36,9 +36,10 @@ return {
 		opts = {
 			-- REF: https://github.com/nvzone/showkeys/blob/main/lua/showkeys/state.lua
 			timeout = 2,
-			maxkeys = 4,
+			maxkeys = 2,
 			show_count = true,
-			excluded_modes = { "i" },
+			position = "bottom-left",
+			excluded_modes = { "i", "t" },
 		},
 	},
 
