@@ -10,7 +10,8 @@ if not vim.uv.fs_stat(lazypath) then
 	vim.fn.system({ "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath })
 end
 
-local lazy_config = {
+-- load plugins
+require("lazy").setup("plugins", {
 	defaults = { lazy = true },
 	install = { colorscheme = { "nvchad" } },
 
@@ -49,16 +50,12 @@ local lazy_config = {
 			},
 		},
 	},
-}
+})
 
---	{ "NvChad/NvChad", lazy = false, branch = "v2.5", import = "nvchad.plugins" },
-
--- load plugins
-require("lazy").setup("plugins", lazy_config)
-
--- load theme
-dofile(vim.g.base46_cache .. "defaults")
-dofile(vim.g.base46_cache .. "statusline")
+-- Ref: https://github.com/NvChad/ui/blob/v3.0/README.md#install
+for _, plugin_highlights in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
+	dofile(vim.g.base46_cache .. plugin_highlights)
+end
 
 require("options")
 require("autocmds")

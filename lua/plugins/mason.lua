@@ -3,7 +3,6 @@ return {
 	cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
 
 	opts = function()
-		dofile(vim.g.base46_cache .. "mason")
 		return {
 			ensure_installed = {
 				"rust-analyzer",

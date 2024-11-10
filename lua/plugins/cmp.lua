@@ -67,7 +67,6 @@ return {
 	},
 
 	config = function()
-		dofile(vim.g.base46_cache .. "cmp")
 
 		local cmp = require("cmp")
 		local options = {

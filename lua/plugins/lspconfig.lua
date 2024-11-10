@@ -104,7 +104,6 @@ return {
 	event = "User FilePost",
 
 	config = function()
-		dofile(vim.g.base46_cache .. "lsp")
 		require("nvchad.lsp").diagnostic_config()
 
 		for name, overrides in pairs(Servers) do

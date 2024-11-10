@@ -33,7 +33,6 @@ return {
 
 	-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
 	opts = function()
-		dofile(vim.g.base46_cache .. "nvimtree")
 
 		return {
 			on_attach = on_attach,
