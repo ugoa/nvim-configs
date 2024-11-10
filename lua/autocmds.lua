@@ -1,3 +1,6 @@
+-- how to load vimscript file
+-- vim.cmd('source my_vim_script.vim')
+
 local autocmd = vim.api.nvim_create_autocmd
 
 -- user event that loads after UIEnter + only if file buf is there
@@ -106,5 +109,7 @@ autocmd("FileType", {
 	end,
 })
 
--- how to load vimscript file
--- vim.cmd('source my_vim_script.vim')
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	pattern = "*",
+	command = "silent! checktime",
+})
