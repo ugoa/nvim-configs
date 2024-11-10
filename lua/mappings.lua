@@ -5,9 +5,10 @@ local map = vim.keymap.set
 --      Shortcut: cmd-s
 --      Action: Send Escape Sequence
 --      Esc+: [17~
+map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "save file" })
 map("i", "<F6>", "<C-o>:wa<CR>", { desc = "save file" })
 map("i", "<C-s>", "<C-o>:wa<CR>", { desc = "save file" })
-map("n", "<F6>", "<Cmd>:wa<CR>", { desc = "save file" })
+map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
@@ -15,12 +16,7 @@ map({ "i", "c" }, "<C-f>", "<Right>", { desc = "move right" })
 map({ "i", "c" }, "<C-b>", "<Left>", { desc = "move left" })
 map({ "i", "c" }, "<C-a>", "<Home>", { desc = "move beginning" })
 map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
-map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
-map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
-map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
-map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
 
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "general save file" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
 map("n", "<tab>", function()
@@ -73,7 +69,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center scr
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
 
 -- Keyboard users
-vim.keymap.set("n", "<C-t>", function()
+vim.keymap.set("n", "<M-t>", function()
 	require("menu").open("default")
 end, {})
 
@@ -83,15 +79,19 @@ map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 ----------------------------------------------------------------------------------------------------
 -- leader key mappings
 ----------------------------------------------------------------------------------------------------
+
 --- LSP mappings
 local function lsp_opts(_desc)
 	return { desc = "LSP: " .. _desc }
 end
 
 map("n", "<leader>a", "<cmd>enew<CR>", { desc = "buffer new" })
-map("n", "<leader>b", ":edit<CR>", { desc = "reload current  buffer" })
 
-map({ "n" }, "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
+-- Reload all buffers to get external latest changes
+map("n", "<leader>b", ":bufdo edit<CR>", { desc = "reload all buffers" })
+
+-- <leader>c also mapped by rust lsp rustacenvim
+map("n", "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
 
 map("n", "<leader>d", function()
 	vim.diagnostic.open_float()
@@ -130,6 +130,7 @@ map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"
 
 map("n", "<leader>t", ":TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
 
+-- <leader>v also mapped by rust lsp rustacenvim
 map("n", "<leader>v", ":Markview splitToggle<CR>", { desc = "toggle markdown preview" })
 
 map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })

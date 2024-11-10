@@ -84,7 +84,7 @@ return {
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-Space>"] = cmp.mapping.complete(),
+				["<C-k>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
 
 				["<CR>"] = cmp.mapping.confirm({
@@ -125,15 +125,20 @@ return {
 
 		cmp.setup(opts)
 
+		local cmdline_mapping_overrides = {
+			["<CR>"] = {
+				c = cmp.mapping.confirm({ select = false }),
+			},
+		}
 		cmp.setup.cmdline("/", {
-			mapping = cmp.mapping.preset.cmdline(),
+			mapping = cmp.mapping.preset.cmdline(cmdline_mapping_overrides),
 			sources = {
 				{ name = "buffer" },
 			},
 		})
 
 		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(),
+			mapping = cmp.mapping.preset.cmdline(cmdline_mapping_overrides),
 			sources = cmp.config.sources({
 				{ name = "path" },
 			}, {
