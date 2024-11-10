@@ -33,7 +33,6 @@ return {
 
 	-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
 	opts = function()
-
 		return {
 			on_attach = on_attach,
 			reload_on_bufenter = true,
@@ -80,7 +79,7 @@ return {
 				group_empty = true,
 				full_name = true,
 				special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "justfile" },
-				hidden_display = "all",
+				-- hidden_display = "all",
 			},
 			view = {
 				adaptive_size = true,
