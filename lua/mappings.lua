@@ -144,7 +144,7 @@ map("n", "<leader>x", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "close all buffers" })
 
-map("n", "<leader>y", "<cmd>AerialToggle!<CR>")
+map("n", "<leader>y", ":AerialToggle<CR>")
 
 -- Others leader mappings
 map("n", "<leader>jp", function()

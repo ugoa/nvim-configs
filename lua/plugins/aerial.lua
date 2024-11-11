@@ -1,9 +1,11 @@
 return {
 	"stevearc/aerial.nvim",
-	-- lazy = false,
+	cmd = { "AerialToggle" },
 	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 	opts = {
 		layout = {
+			min_width = 20,
+
 			placement = "window",
 			resize_to_content = false,
 			preserve_equality = false,
