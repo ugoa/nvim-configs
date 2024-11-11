@@ -1,10 +1,8 @@
 return {
 	"hedyhli/outline.nvim",
 	cmd = { "Outline", "OutlineOpen" },
-
 	config = function()
-		require("outline").setup({
-			position = "right",
+		local opts = {
 			keymaps = {
 				goto_location = "o",
 				peek_location = "<CR>",
@@ -15,6 +13,7 @@ return {
 					only = true,
 				},
 			},
-		})
+		}
+		require("outline").setup(opts)
 	end,
 }
