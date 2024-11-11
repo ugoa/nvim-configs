@@ -101,7 +101,7 @@ map("n", "<leader>e", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
 
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 
-map("n", "<leader>g", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
+map("n", "<leader>g", vim.lsp.buf.definition, lsp_opts("go to definition"))
 
 map("n", "<leader>h", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
@@ -112,6 +112,8 @@ map("n", "<leader>i", vim.lsp.buf.implementation, lsp_opts("go to type implement
 map("n", "<leader>k", function()
 	require("nvchad.tabufline").close_buffer()
 end, { desc = "close current buffer" })
+
+map("n", "<leader>l", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
 
 map("n", "<leader>m", function()
 	require("conform").format({ lsp_fallback = true })
