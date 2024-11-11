@@ -115,6 +115,10 @@
     "branch": "master",
     "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856"
   },
+  "outline.nvim": {
+    "branch": "main",
+    "commit": "6c44527837ff7ac1cd054dc365a721e881020a2e"
+  },
   "plenary.nvim": {
     "branch": "master",
     "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683"
@@ -152,3 +156,4 @@
     "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0"
   }
 }
+
