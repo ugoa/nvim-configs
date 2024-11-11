@@ -16,7 +16,7 @@ return {
 				htmldjango = { "djlint" },
 			},
 			format_on_save = { -- These options will be passed to conform.format()
-				timeout_ms = 2000, -- increase timeout to 2s since black take longer time to finish.
+				timeout_ms = 4000, -- increase timeout to 2s since black take longer time to finish.
 				lsp_fallback = true,
 			},
 		}
