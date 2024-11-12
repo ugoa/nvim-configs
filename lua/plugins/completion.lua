@@ -82,6 +82,7 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-k>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
+				["<Esc>"] = cmp.mapping.close(), -- for cmd cancel
 
 				["<CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
