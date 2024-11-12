@@ -5,13 +5,13 @@ local map = vim.keymap.set
 --      Shortcut: cmd-s
 --      Action: Send Escape Sequence
 --      Esc+: [17~
-map("n", "<F6>", ":wa<CR>", { desc = "save file" })
+map("n", "<F6>", "<cmd>wa<CR>", { desc = "save file" })
 map("i", "<F6>", "<C-o>:wa<CR>", { desc = "save file" })
 
 map("i", "<C-s>", "<C-o>:wa<CR>", { desc = "save file" })
-map("n", "<C-s>", ":w<CR>", { desc = "save file" })
+map("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
 
-map("n", "<Esc>", ":noh<CR>", { desc = "general clear highlights" })
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 map({ "i", "c" }, "<C-f>", "<Right>", { desc = "move right" })
 map({ "i", "c" }, "<C-b>", "<Left>", { desc = "move left" })
@@ -29,7 +29,7 @@ map("n", "<S-tab>", function()
 end, { desc = "buffer goto prev" })
 
 -- nvimtree
-map("n", "<C-n>", ":NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
@@ -37,12 +37,12 @@ map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 map({ "n", "v" }, "p", "P", { desc = "paste without reset register" })
 
 -- Normal Mode
-map("n", "<M-r>", ":SessionSave<CR>", { desc = "save nvim session" })
+map("n", "<M-r>", "<cmd>essionSave<CR>", { desc = "save nvim session" })
 
-map("n", "<M-h>", ":NvimTmuxNavigateLeft<CR>")
-map("n", "<M-j>", ":NvimTmuxNavigateDown<CR>")
-map("n", "<M-k>", ":NvimTmuxNavigateUp<CR>")
-map("n", "<M-l>", ":NvimTmuxNavigateRight<CR>")
+map("n", "<M-h>", "<cmd>NvimTmuxNavigateLeft<CR>")
+map("n", "<M-j>", "<cmd>NvimTmuxNavigateDown<CR>")
+map("n", "<M-k>", "<cmd>NvimTmuxNavigateUp<CR>")
+map("n", "<M-l>", "<cmd>NvimTmuxNavigateRight<CR>")
 
 map({ "n", "t" }, "<M-g>", function()
 	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
@@ -57,7 +57,7 @@ end, { desc = "toggle vertical terminal" })
 map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
 
 -- Visual mode
-map("v", "A", ":normal A", { desc = "append to visual block" })
+map("v", "A", "<cmd>normal A", { desc = "append to visual block" })
 
 -- always center search/nav results
 vim.keymap.set("n", "n", "nzz", { desc = "find next and center screen", silent = true })
@@ -74,7 +74,7 @@ vim.keymap.set("n", "<M-t>", function()
 	require("menu").open("default")
 end, {})
 
-map("n", "?", ":h ", { desc = "help" })
+map("n", "?", "<cmd>h ", { desc = "help" })
 map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 
 ----------------------------------------------------------------------------------------------------
@@ -86,10 +86,10 @@ local function lsp_opts(_desc)
 	return { desc = "LSP: " .. _desc }
 end
 
-map("n", "<leader>a", ":enew<CR>", { desc = "buffer new" })
+map("n", "<leader>a", "<cmd>enew<CR>", { desc = "buffer new" })
 
 -- Reload all buffers to get external latest changes
-map("n", "<leader>b", ":bufdo edit<CR>", { desc = "reload all buffers" })
+map("n", "<leader>b", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
 
 -- <leader>c also mapped by rust lsp rustacenvim
 map("n", "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
@@ -100,7 +100,7 @@ end, lsp_opts("show Line Diagnosics"))
 
 map("n", "<leader>e", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
 
-map("n", "<leader>f", ":Telescope find_files<cr>", { desc = "telescope find files" })
+map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 
 map("n", "<leader>g", vim.lsp.buf.definition, lsp_opts("go to definition"))
 
@@ -131,20 +131,20 @@ map("n", "<leader>r", require("nvchad.lsp.renamer"), lsp_opts("rename")) -- or v
 
 map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
 
-map("n", "<leader>t", ":TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
+map("n", "<leader>t", "<cmd>TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
 
-map("n", "<leader>u", ":Outline<CR>", { desc = "toggle Outline" })
+map("n", "<leader>u", "<cmd>Outline<CR>", { desc = "toggle Outline" })
 
 -- <leader>v also mapped by rust lsp rustacenvim
-map("n", "<leader>v", ":Markview splitToggle<CR>", { desc = "toggle markdown preview" })
+map("n", "<leader>v", "<cmd>Markview splitToggle<CR>", { desc = "toggle markdown preview" })
 
-map("n", "<leader>w", ":Telescope live_grep<CR>", { desc = "telescope live grep" })
+map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 
 map("n", "<leader>x", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "close all buffers" })
 
-map("n", "<leader>y", ":AerialToggle<CR>")
+map("n", "<leader>y", "<cmd>AerialToggle<CR>")
 
 -- Others leader mappings
 map("n", "<leader>jp", function()
@@ -156,7 +156,7 @@ end, { desc = "show next diagnosics" })
 map("n", "<leader>js", vim.diagnostic.setloclist, lsp_opts("diagnostic loclist"))
 
 -- whichkey
-map("n", "<leader>jk", ":WhichKey<CR>", { desc = "whichkey all keymaps" })
+map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
 
 map("n", "<leader>ja", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 map("n", "<leader>jr", vim.lsp.buf.remove_workspace_folder, lsp_opts("remove workspace folder"))
