@@ -2,8 +2,6 @@ return {
 	"hrsh7th/nvim-cmp",
 	lazy = false,
 
-	-- dependencies = { "hrsh7th/cmp-cmdline", "hrsh7th/cmp-path", "hrsh7th/cmp-buffer" },
-
 	dependencies = {
 		{
 			-- snippet plugin
@@ -85,7 +83,7 @@ return {
 				["<C-k>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
 
-				["<Space>"] = cmp.mapping.confirm({
+				["<CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
 					select = true,
 				}),

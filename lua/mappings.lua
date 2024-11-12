@@ -164,3 +164,5 @@ map("n", "<leader>jr", vim.lsp.buf.remove_workspace_folder, lsp_opts("remove wor
 map("n", "<leader>jl", function()
 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, lsp_opts("list workspace folders"))
+
+map("n", "?", ":h ", { desc = "help" })

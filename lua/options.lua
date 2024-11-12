@@ -6,6 +6,9 @@ local g = vim.g
 o.laststatus = 3
 o.showmode = false
 
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 o.clipboard = "unnamedplus"
 
 -- Indenting
