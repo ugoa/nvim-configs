@@ -67,7 +67,6 @@ return {
 	},
 
 	config = function()
-
 		local cmp = require("cmp")
 		local options = {
 			completion = { completeopt = "menu,menuone" },
@@ -86,7 +85,7 @@ return {
 				["<C-k>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
 
-				["<CR>"] = cmp.mapping.confirm({
+				["<Space>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
 					select = true,
 				}),
@@ -125,7 +124,7 @@ return {
 		cmp.setup(opts)
 
 		local cmdline_mapping_overrides = {
-			["<CR>"] = {
+			["<Space>"] = {
 				c = cmp.mapping.confirm({ select = false }),
 			},
 		}
