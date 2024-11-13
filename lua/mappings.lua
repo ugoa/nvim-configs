@@ -133,7 +133,7 @@ map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"
 
 map("n", "<leader>t", "<cmd>TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
 
-map("n", "<leader>u", "<cmd>Outline<CR>", { desc = "toggle Outline" })
+-- <leader>u used to be used by Outline
 
 -- <leader>v also mapped by rust lsp rustacenvim
 map("n", "<leader>v", "<cmd>Markview splitToggle<CR>", { desc = "toggle markdown preview" })
