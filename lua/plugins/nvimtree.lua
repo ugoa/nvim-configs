@@ -86,7 +86,7 @@ return {
 				signcolumn = "yes", --auto, yes or no
 				cursorline = true,
 				width = {
-					max = "20%",
+					max = "25%",
 					min = "15%",
 				},
 			},
