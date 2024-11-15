@@ -131,7 +131,9 @@ map("n", "<leader>r", require("nvchad.lsp.renamer"), lsp_opts("rename")) -- or v
 
 map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
 
-map("n", "<leader>t", "<cmd>TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
+map("n", "<leader>t", function()
+	require("nvchad.tabufline").closeAllBufs()
+end, { desc = "close other buffers" })
 
 -- <leader>u used to be used by Outline
 
@@ -164,5 +166,7 @@ map("n", "<leader>jr", vim.lsp.buf.remove_workspace_folder, lsp_opts("remove wor
 map("n", "<leader>jl", function()
 	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end, lsp_opts("list workspace folders"))
+
+map("n", "<leader>jt", "<cmd>TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
 
 map("n", "?", ":h ", { desc = "help" })
