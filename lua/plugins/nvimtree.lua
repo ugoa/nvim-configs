@@ -1,5 +1,32 @@
 local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
+	local lib = require("nvim-tree.lib")
+
+	local function edit_or_open()
+		local node = api.tree.get_node_under_cursor()
+
+		if node.nodes then -- is folder
+			api.node.open.edit()
+		else -- is file
+			api.node.open.edit()
+		end
+	end
+
+	local close = function()
+		local node = api.tree.get_node_under_cursor()
+
+		if node.nodes then -- node is folder
+			if node.open then -- folder is open
+				api.node.open.edit() -- toggles the folder from open to closed
+			else -- folder is closed
+				api.node.navigate.parent()
+				api.node.open.edit() -- close that folder
+			end
+		else -- node is file
+			api.node.navigate.parent() -- jump to parent folder
+			api.node.open.edit() -- close that folder
+		end
+	end
 
 	-- default mappings
 	api.config.mappings.default_on_attach(bufnr)
@@ -14,6 +41,8 @@ local function on_attach(bufnr)
 		}
 	end
 	-- custom mappings
+	vim.keymap.set("n", "l", edit_or_open, opts("Edit Or Open"))
+	vim.keymap.set("n", "h", close, opts("Close"))
 	vim.keymap.set("n", "t", api.tree.toggle_enable_filters, opts("Toggle Filters"))
 	vim.keymap.set("n", "T", api.tree.change_root_to_node, opts("Set current node as root dir"))
 
@@ -82,7 +111,6 @@ return {
 			},
 			view = {
 				adaptive_size = true,
-				centralize_selection = true,
 				signcolumn = "yes", --auto, yes or no
 				cursorline = true,
 				width = {
