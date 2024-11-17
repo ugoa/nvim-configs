@@ -151,6 +151,10 @@
     "branch": "v3.0",
     "commit": "b6c237702449792a2d8c495909029fdd59e9781d"
   },
+  "venv-selector.nvim": {
+    "branch": "regexp",
+    "commit": "e82594274bf7b54387f9a2abe65f74909ac66e97"
+  },
   "volt": {
     "branch": "main",
     "commit": "ff954757fdaf72da0dedd77bdf74718ea846f989"

@@ -4,7 +4,6 @@ return {
 	cmd = "Telescope",
 
 	opts = function()
-
 		return {
 			defaults = {
 				prompt_prefix = "   ",
@@ -20,19 +19,19 @@ return {
 					"--hidden",
 					"--no-ignore",
 					"--glob=!.github/*",
-					"--glob=!.cargo/*",
-					"--glob=!.vscode/*",
-					"--glob=!target/*",
+					"--glob=!.cargo*",
+					"--glob=!.vscode*",
+					"--glob=!target*",
 					"--glob=!.idea/*",
 					"--glob=!.venv/*",
 					"--glob=!.git/*",
 					"--glob=!log/*",
 					"--glob=!logs/*",
-					"--glob=!tmp/*",
+					"--glob=!tmp*",
 					"--glob=!temp/*",
-					"--glob=!.nuxt/*",
-					"--glob=!node_modules/*",
-					"--glob=!.output/*",
+					"--glob=!.nuxt*",
+					"--glob=!node_modules",
+					"--glob=!.output*",
 					"--glob=!.vinxi/*",
 				},
 
