@@ -71,10 +71,6 @@
     "branch": "main",
     "commit": "0950b15060067f752fde13a779a994f59516ce3d"
   },
-  "menu": {
-    "branch": "main",
-    "commit": "657bfc91382c0928453d9a4d0a10ec92db5de2bb"
-  },
   "minty": {
     "branch": "main",
     "commit": "1b604ed0d741294cfb56c0ce3aa6161e9ae7dd8b"
