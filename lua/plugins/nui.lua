@@ -185,7 +185,7 @@ end
 return {
 	"MunifTanjim/nui.nvim",
 	config = function()
-		override_ui_input()
+		-- override_ui_input()
 		override_ui_select()
 	end,
 }

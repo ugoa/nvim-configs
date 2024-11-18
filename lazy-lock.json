@@ -43,6 +43,10 @@
     "branch": "master",
     "commit": "cd75be867f2331b22905f47d28c0c270a69466aa"
   },
+  "dressing.nvim": {
+    "branch": "master",
+    "commit": "fc78a3ca96f4db9f8893bb7e2fd9823e0780451b"
+  },
   "friendly-snippets": {
     "branch": "main",
     "commit": "682157939e57bd6a2c86277dfd4d6fbfce63dbac"
