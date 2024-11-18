@@ -18,7 +18,7 @@ return {
 
 	"nvzone/volt",
 
-	"nvzone/menu", -- Pop up menu
+	-- "nvzone/menu", -- Pop up menu
 
 	{ "nvzone/minty", cmd = { "Huefy", "Shades" } }, -- Color picker
 

@@ -69,11 +69,6 @@ vim.keymap.set("n", "g*", "g*zz", { desc = "highlight all and center screen", si
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center screen", silent = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
 
--- Keyboard users
-vim.keymap.set("n", "<M-t>", function()
-	require("menu").open("default")
-end, {})
-
 map("n", "?", "<cmd>h ", { desc = "help" })
 map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 

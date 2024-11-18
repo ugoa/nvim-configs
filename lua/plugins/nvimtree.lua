@@ -45,14 +45,6 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "h", close, opts("Close"))
 	vim.keymap.set("n", "t", api.tree.toggle_enable_filters, opts("Toggle Filters"))
 	vim.keymap.set("n", "T", api.tree.change_root_to_node, opts("Set current node as root dir"))
-
-	-- popup menu mouse users + nvimtree users!
-	vim.keymap.set("n", "<RightMouse>", function()
-		vim.cmd.exec('"normal! \\<RightMouse>"')
-
-		local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
-		require("menu").open(options, { mouse = true })
-	end, {})
 end
 
 return {
