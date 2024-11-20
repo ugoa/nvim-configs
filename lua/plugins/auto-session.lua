@@ -8,11 +8,9 @@ end
 return {
 	"rmagatti/auto-session",
 	lazy = false,
-	config = function()
-		require("auto-session").setup({
-			log_level = "error",
-			post_restore_cmds = { openTree },
-			cwd_change_handling = nil,
-		})
-	end,
+	opts = {
+		log_level = "error",
+		post_restore_cmds = { openTree },
+		cwd_change_handling = nil,
+	},
 }

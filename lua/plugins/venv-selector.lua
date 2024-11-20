@@ -7,9 +7,6 @@ return {
 	},
 	lazy = false,
 	branch = "regexp",
-	config = function()
-		require("venv-selector").setup()
-	end,
 	keys = {
 		{ "<leader>jv", "<cmd>VenvSelect<cr>" },
 	},
