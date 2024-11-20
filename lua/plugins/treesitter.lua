@@ -5,7 +5,7 @@ return {
 	build = ":TSUpdate",
 	dependencies = {
 		-- NOTE: additional parser
-		{ "nushell/tree-sitter-nu" },
+		{ "nushell/tree-sitter-nu", build = ":TSUpdate nu" },
 	},
 	opts = {
 		ensure_installed = {
@@ -29,6 +29,7 @@ return {
 			"sql",
 			"java",
 			"scala",
+			"nu",
 		},
 		highlight = {
 			enable = true,
