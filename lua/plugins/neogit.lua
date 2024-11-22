@@ -1,11 +1,13 @@
 return {
 	"NeogitOrg/neogit",
 	tag = "v2.0.0",
-	enabled = false,
-
+	cmd = "Neogit",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
 	},
-	opts = {},
+	config = true,
+	keys = {
+		{ "<leader>=", "<cmd>Neogit<cr>" },
+	},
 }
