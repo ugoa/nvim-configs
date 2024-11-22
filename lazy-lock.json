@@ -75,6 +75,10 @@
     "branch": "main",
     "commit": "1b604ed0d741294cfb56c0ce3aa6161e9ae7dd8b"
   },
+  "neogit": {
+    "branch": "master",
+    "commit": "efd2a182024e422a4c4061683b9264c782eb684a"
+  },
   "noice.nvim": {
     "branch": "main",
     "commit": "03c6a75661e68012e30b0ed81f050358b1e2233c"
@@ -118,10 +122,6 @@
   "nvim-web-devicons": {
     "branch": "master",
     "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856"
-  },
-  "outline.nvim": {
-    "branch": "main",
-    "commit": "6c44527837ff7ac1cd054dc365a721e881020a2e"
   },
   "plenary.nvim": {
     "branch": "master",
