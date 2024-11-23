@@ -164,4 +164,8 @@ end, lsp_opts("list workspace folders"))
 
 map("n", "<leader>jt", "<cmd>TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
 
+map("n", "<leader>jh", function()
+	require("nvchad.themes").open()
+end, { desc = "telescope nvchad themes" })
+
 map("n", "?", ":h ", { desc = "help" })

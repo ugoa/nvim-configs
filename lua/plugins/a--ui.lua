@@ -20,7 +20,7 @@ return {
 
 	-- "nvzone/menu", -- Pop up menu
 
-	{ "nvzone/minty", cmd = { "Huefy", "Shades" } }, -- Color picker
+	--{ "nvzone/minty", cmd = { "Huefy", "Shades" } }, -- Color picker
 
 	{
 		"nvim-tree/nvim-web-devicons",
