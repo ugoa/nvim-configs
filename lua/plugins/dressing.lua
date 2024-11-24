@@ -1,6 +1,5 @@
 return {
 	"stevearc/dressing.nvim",
-	lazy = false, -- load first before nui.nvim hiject the vim.ui.select event
 	opts = {
 		input = {
 			enabled = true,

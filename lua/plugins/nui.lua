@@ -184,8 +184,12 @@ end
 
 return {
 	"MunifTanjim/nui.nvim",
+	dependencies = {
+		"stevearc/dressing.nvim", -- load dressing.nvim first before nui.nvim hiject the vim.ui.input/select event
+	},
+
 	config = function()
 		-- override_ui_input()
-		--override_ui_select()
+		-- override_ui_select()
 	end,
 }
