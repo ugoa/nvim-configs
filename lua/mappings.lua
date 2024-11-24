@@ -168,4 +168,6 @@ map("n", "<leader>jh", function()
 	require("nvchad.themes").open()
 end, { desc = "telescope nvchad themes" })
 
+map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
+
 map("n", "?", ":h ", { desc = "help" })
