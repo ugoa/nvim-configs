@@ -126,10 +126,6 @@ map("n", "<leader>r", require("nvchad.lsp.renamer"), lsp_opts("rename")) -- or v
 
 map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
 
-map("n", "<leader>t", function()
-	require("nvchad.tabufline").closeAllBufs()
-end, { desc = "close other buffers" })
-
 -- <leader>u used to be used by Outline
 
 -- <leader>v also mapped by rust lsp rustacenvim
