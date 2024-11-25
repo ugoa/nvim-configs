@@ -3,6 +3,7 @@
 
 local autocmd = vim.api.nvim_create_autocmd
 
+-- Ref: https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/autocmds.lua
 -- user event that loads after UIEnter + only if file buf is there
 autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 	group = vim.api.nvim_create_augroup("NvFilePost", { clear = true }),
@@ -29,6 +30,7 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 	end,
 })
 
+-- Jump to last left position.
 autocmd("BufReadPost", {
 	pattern = "*",
 	callback = function()
@@ -44,6 +46,7 @@ autocmd("BufReadPost", {
 	end,
 })
 
+-- set filetype as undefined for unknown/empty filetypes
 autocmd("BufEnter", {
 	pattern = "*",
 	callback = function()
@@ -53,6 +56,7 @@ autocmd("BufEnter", {
 	end,
 })
 
+-- quick quit with `q` for interim buffers
 autocmd("FileType", {
 	pattern = {
 		"notify",
@@ -77,10 +81,11 @@ autocmd("FileType", {
 	end,
 })
 
+-- Open nvimtree when enter
 autocmd("VimEnter", {
 	callback = function(data)
 		if vim.fn.argv(0) == "" then
-			require("nvim-tree.api").tree.open()
+			require("nvim-tree.api").tree.open(vim.loop.cwd())
 		elseif vim.fn.isdirectory(data.file) == 1 then
 			-- change to the directory and open the tree
 			vim.cmd.cd(data.file)
@@ -89,6 +94,7 @@ autocmd("VimEnter", {
 	end,
 })
 
+-- Remove trailing whitespaces before write
 autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("trim_whitespaces", { clear = true }),
 	desc = "Trim trailing white spaces",
