@@ -7,7 +7,8 @@ end
 
 return {
 	"rmagatti/auto-session",
-	lazy = false,
+	-- lazy = false,
+	enabled = false,
 	opts = {
 		log_level = "error",
 		post_restore_cmds = { openTree },
