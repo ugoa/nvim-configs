@@ -34,7 +34,10 @@ map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" }
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
-map({ "n", "v" }, "p", "P", { desc = "paste without reset register" })
+-- map({ "n", "v" }, "p", "P", { desc = "paste without reset register" })
+map("x", "p", function()
+	return 'pgv"' .. vim.v.register .. "y"
+end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- Normal Mode
 map("n", "<M-r>", "<cmd>essionSave<CR>", { desc = "save nvim session" })
