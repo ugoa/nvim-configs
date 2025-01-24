@@ -109,14 +109,14 @@ end, { desc = "Toggle inlay hint" })
 map("n", "<leader>i", vim.lsp.buf.implementation, lsp_opts("go to type implementation"))
 
 map("n", "<leader>k", function()
-	require("nvchad.tabufline").close_buffer()
-end, { desc = "close current buffer" })
+	require("conform").format({ lsp_fallback = true })
+end, { desc = "general format file" })
 
 map("n", "<leader>l", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
 
 map("n", "<leader>m", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "general format file" })
+	require("nvchad.tabufline").close_buffer()
+end, { desc = "close current buffer" })
 
 map("n", "<leader>o", function()
 	require("nvchad.tabufline").closeBufs_at_direction("left")
