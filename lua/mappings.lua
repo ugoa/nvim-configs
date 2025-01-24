@@ -169,6 +169,10 @@ end, { desc = "telescope nvchad themes" })
 
 map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
 
+map("n", "<leader>jm", function()
+	require("smear_cursor").toggle()
+end, { desc = "toggle cursor animation" })
+
 map("n", "?", ":h ", { desc = "help" })
 map("n", "H", "0", { desc = "go to line start" })
 map("n", "L", "$", { desc = "go to line end" })
