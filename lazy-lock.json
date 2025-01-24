@@ -7,10 +7,6 @@
     "branch": "master",
     "commit": "247df216704cbe3cfa68e2ae5515c3485e281364"
   },
-  "auto-session": {
-    "branch": "main",
-    "commit": "7b1b30d3424b7ca0fb4d12ce3f3d1977cf7c5691"
-  },
   "base46": {
     "branch": "v3.0",
     "commit": "76bce38f1afbe93708f702c61245b0a5b32cd733"
@@ -71,10 +67,6 @@
     "branch": "main",
     "commit": "0950b15060067f752fde13a779a994f59516ce3d"
   },
-  "minty": {
-    "branch": "main",
-    "commit": "1b604ed0d741294cfb56c0ce3aa6161e9ae7dd8b"
-  },
   "neogit": {
     "branch": "master",
     "commit": "efd2a182024e422a4c4061683b9264c782eb684a"
@@ -134,6 +126,10 @@
   "showkeys": {
     "branch": "main",
     "commit": "a8bcd950e19116f801ed6714fdba0d385cb24f3c"
+  },
+  "smear-cursor.nvim": {
+    "branch": "main",
+    "commit": "791bd7871e612b17520cbde19ddede306d83ef11"
   },
   "tailwind-fold.nvim": {
     "branch": "main",
