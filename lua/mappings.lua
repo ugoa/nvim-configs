@@ -109,14 +109,14 @@ end, { desc = "Toggle inlay hint" })
 map("n", "<leader>i", vim.lsp.buf.implementation, lsp_opts("go to type implementation"))
 
 map("n", "<leader>k", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "general format file" })
+	require("nvchad.tabufline").close_buffer()
+end, { desc = "close current buffer" })
 
 map("n", "<leader>l", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
 
 map("n", "<leader>m", function()
-	require("nvchad.tabufline").close_buffer()
-end, { desc = "close current buffer" })
+	require("conform").format({ lsp_fallback = true })
+end, { desc = "general format file" })
 
 map("n", "<leader>o", function()
 	require("nvchad.tabufline").closeBufs_at_direction("left")
@@ -140,9 +140,23 @@ map("n", "<leader>x", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "close all buffers" })
 
-map("n", "<leader>y", "<cmd>AerialToggle<CR>")
+map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
--- Others leader mappings
+-- <leader>J* Group
+
+map("n", "<leader>jc", function()
+	require("noice").cmd("last")
+end, { desc = "noice last message" })
+map("n", "<leader>jd", function()
+	require("noice").cmd("history")
+end, { desc = "noice history" })
+map("n", "<leader>je", function()
+	require("noice").cmd("all")
+end, { desc = "noice all" })
+map("n", "<leader>jf", function()
+	require("noice").cmd("dismiss")
+end, { desc = "noice dismiss all" })
+
 map("n", "<leader>jp", function()
 	vim.diagnostic.goto_prev()
 end, { desc = "show previous diagnosics" })
@@ -174,5 +188,5 @@ map("n", "<leader>jm", function()
 end, { desc = "toggle cursor animation" })
 
 map("n", "?", ":h ", { desc = "help" })
-map("n", "H", "0", { desc = "go to line start" })
+map("n", "H", "^", { desc = "go to line non-blank start" })
 map("n", "L", "$", { desc = "go to line end" })
