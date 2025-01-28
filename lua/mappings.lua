@@ -6,10 +6,10 @@ local map = vim.keymap.set
 --      Action: Send Escape Sequence
 --      Esc+: [17~
 map("n", "<F6>", "<cmd>wa<CR>", { desc = "save file" })
-map("i", "<F6>", "<C-o>:wa<CR>", { desc = "save file" })
+map("i", "<F6>", "<C-o><cmd>wa<CR>", { desc = "save file" })
 
-map("i", "<C-s>", "<C-o>:wa<CR>", { desc = "save file" })
-map("n", "<C-s>", "<cmd>w<CR>", { desc = "save file" })
+map("i", "<C-s>", "<C-o><cmd>wa<CR>", { desc = "save file" })
+map("n", "<C-s>", "<cmd>wa<CR>", { desc = "save file" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
