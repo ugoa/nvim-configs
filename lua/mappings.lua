@@ -57,7 +57,7 @@ map({ "n", "t" }, "<M-=>", function()
 	require("nvchad.term").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" })
 end, { desc = "toggle vertical terminal" })
 
-map("n", "<M-s>", ":silent !open -R %:p<CR>", { desc = "Open in Finder" })
+map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 
 -- Visual mode
 map("v", "A", "<cmd>normal A", { desc = "append to visual block" })
@@ -84,7 +84,7 @@ local function lsp_opts(_desc)
 	return { desc = "LSP: " .. _desc }
 end
 
-map("n", "<leader>a", "<cmd>enew<CR>", { desc = "buffer new" })
+map("n", "<leader>a", vim.lsp.buf.references, lsp_opts("show references"))
 
 -- Reload all buffers to get external latest changes
 map("n", "<leader>b", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
@@ -123,7 +123,7 @@ map("n", "<leader>o", function()
 	require("nvchad.tabufline").closeBufs_at_direction("right")
 end, { desc = "close other buffers" })
 
-map("n", "<leader>p", vim.lsp.buf.references, lsp_opts("show references"))
+map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
 map("n", "<leader>r", require("nvchad.lsp.renamer"), lsp_opts("rename")) -- or vim.lsp.buf.rename
 

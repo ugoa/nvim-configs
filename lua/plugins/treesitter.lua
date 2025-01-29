@@ -30,6 +30,8 @@ return {
 			"java",
 			"scala",
 			"nu",
+			"toml",
+			"make",
 		},
 		highlight = {
 			enable = true,
