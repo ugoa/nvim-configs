@@ -18,10 +18,6 @@ return {
 
 	"nvzone/volt",
 
-	-- "nvzone/menu", -- Pop up menu
-
-	--{ "nvzone/minty", cmd = { "Huefy", "Shades" } }, -- Color picker
-
 	{
 		"nvim-tree/nvim-web-devicons",
 		opts = function()

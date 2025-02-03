@@ -1,53 +1,5 @@
 return {
-	{
-		"scalameta/nvim-metals",
-		enabled = false,
-
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		ft = { "scala", "sbt", "java" },
-		opts = function()
-			local metals_config = require("metals").bare_config()
-			local nvchad = require("nvchad.configs.lspconfig")
-
-			metals_config.on_attach = nvchad.on_attach
-
-			metals_config.on_init = function(client, _)
-				client.server_capabilities.semanticTokensProvider = nil
-			end
-
-			return metals_config
-		end,
-
-		config = function(self, metals_config)
-			local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
-			vim.api.nvim_create_autocmd("FileType", {
-				pattern = self.ft,
-				callback = function()
-					require("metals").initialize_or_attach(metals_config)
-				end,
-				group = nvim_metals_group,
-			})
-		end,
-	},
 	{ "NvChad/nvterm", enabled = false },
 	{ "NvChad/nvim-colorizer.lua", enabled = false },
-	{
-		"nvim-treesitter/playground",
-		enabled = false,
-	},
-	{
-		"ray-x/lsp_signature.nvim",
-		enabled = false,
-		event = "VeryLazy",
-		config = function(_, opts)
-			require("lsp_signature").setup({
-				bind = true,
-				handler_opts = {
-					border = "rounded",
-				},
-			})
-		end,
-	},
+	{ "nvim-treesitter/playground", enabled = false },
 }
