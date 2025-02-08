@@ -188,5 +188,5 @@ map("n", "<leader>jm", function()
 end, { desc = "toggle cursor animation" })
 
 map("n", "?", ":h ", { desc = "help" })
-map("n", "H", "^", { desc = "go to line non-blank start" })
-map("n", "L", "$", { desc = "go to line end" })
+map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
+map({ "n", "v" }, "L", "$", { desc = "go to line end" })

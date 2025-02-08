@@ -7,5 +7,9 @@ return {
 			["<CR>"] = "actions.scroll",
 			["p"] = "actions.jump",
 		},
+		layout = {
+			max_width = { 60, 0.3 },
+			min_width = 30,
+		},
 	},
 }

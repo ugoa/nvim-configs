@@ -13,6 +13,9 @@ vim.g.rustaceanvim = {
 						"node_modules",
 					},
 				},
+				cargo = {
+					features = "all",
+				},
 			},
 		},
 	},
