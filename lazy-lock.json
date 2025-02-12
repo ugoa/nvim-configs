@@ -133,7 +133,7 @@
   },
   "tailwind-fold.nvim": {
     "branch": "main",
-    "commit": "30b8c04eec28628fbe554fb4f3a26984c4455176"
+    "commit": "599ecda211573f8dc39308468c58e5b156d917a6"
   },
   "telescope.nvim": {
     "branch": "master",
