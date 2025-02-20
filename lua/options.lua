@@ -80,7 +80,3 @@ vim.filetype.add({
 		html = "htmldjango",
 	},
 })
-
--- for tailwind fold
-opt.conceallevel = 2
-opt.concealcursor = ""
