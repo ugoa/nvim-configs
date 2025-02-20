@@ -71,32 +71,6 @@ local Servers = {
 
 	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
 	tsserver = {}, -- Typescript
-
-	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/rust_analyzer.lua
-	-- rust_analyzer = {
-	-- 	on_attach = function(client, bufnr)
-	-- 		M.on_attach(client, bufnr)
-	--
-	-- 		local expand_macro = function()
-	-- 			local error_handler = nil
-	-- 			client.request("expandMacro", vim.lsp.util.make_position_params(), error_handler, bufnr)
-	-- 		end
-	-- 		vim.keymap.set("n", "<leader>le", expand_macro, { buffer = bufnr, desc = "Expand Macro" })
-	-- 	end,
-	-- },
-
-	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/volar.lua
-	-- https://github.com/williamboman/mason-lspconfig.nvim/issues/371
-	-- volar = { -- Vue.js
-	-- 	init_options = {
-	-- 		vue = {
-	-- 			hybridMode = false,
-	-- 		},
-	-- 		typescript = {
-	-- 			tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib",
-	-- 		},
-	-- 	},
-	-- },
 }
 
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/lsp/init.lua

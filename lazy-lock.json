@@ -105,7 +105,7 @@
   },
   "nvim-tree.lua": {
     "branch": "master",
-    "commit": "c7639482a1598f4756798df1b2d72f79fe5bb34f"
+    "commit": "d529a99f88e0dff02e0aa275db2f595cd252a2c8"
   },
   "nvim-treesitter": {
     "branch": "master",

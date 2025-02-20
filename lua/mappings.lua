@@ -42,10 +42,15 @@ end, { remap = false, expr = true, desc = "paste without reset register" })
 -- Normal Mode
 map("n", "<M-r>", "<cmd>essionSave<CR>", { desc = "save nvim session" })
 
-map({ "n", "t" }, "<M-h>", "<cmd>NvimTmuxNavigateLeft<CR>")
-map({ "n", "t" }, "<M-j>", "<cmd>NvimTmuxNavigateDown<CR>")
-map({ "n", "t" }, "<M-k>", "<cmd>NvimTmuxNavigateUp<CR>")
-map({ "n", "t" }, "<M-l>", "<cmd>NvimTmuxNavigateRight<CR>")
+-- map({ "n", "t" }, "<M-h>", "<cmd>NvimTmuxNavigateLeft<CR>")
+-- map({ "n", "t" }, "<M-j>", "<cmd>NvimTmuxNavigateDown<CR>")
+-- map({ "n", "t" }, "<M-k>", "<cmd>NvimTmuxNavigateUp<CR>")
+-- map({ "n", "t" }, "<M-l>", "<cmd>NvimTmuxNavigateRight<CR>")
+
+map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "terminal escape terminal mode" })
+map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "terminal escape terminal mode" })
+map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "terminal escape terminal mode" })
+map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "terminal escape terminal mode" })
 
 map({ "n", "t" }, "<M-g>", function()
 	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })

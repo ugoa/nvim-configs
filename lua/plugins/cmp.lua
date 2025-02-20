@@ -120,31 +120,5 @@ return {
 		local opts = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
 
 		cmp.setup(opts)
-
-		local cmdline_mapping_overrides = {
-			["<Space>"] = {
-				c = cmp.mapping.confirm({ select = false }),
-			},
-		}
-		cmp.setup.cmdline("/", {
-			mapping = cmp.mapping.preset.cmdline(cmdline_mapping_overrides),
-			sources = {
-				{ name = "buffer" },
-			},
-		})
-
-		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(cmdline_mapping_overrides),
-			sources = cmp.config.sources({
-				{ name = "path" },
-			}, {
-				{
-					name = "cmdline",
-					option = {
-						ignore_cmds = { "Man", "!" },
-					},
-				},
-			}),
-		})
 	end,
 }
