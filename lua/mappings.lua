@@ -137,7 +137,7 @@ map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"
 -- <leader>u used to be used by Outline
 
 -- <leader>v also mapped by rust lsp rustacenvim
-map("n", "<leader>v", "<cmd>Markview splitToggle<CR>", { desc = "toggle markdown preview" })
+map("n", "<leader>v", "<cmd>Markview Toggle<CR>", { desc = "toggle markdown preview" })
 
 map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 

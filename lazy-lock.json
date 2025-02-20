@@ -61,7 +61,7 @@
   },
   "markview.nvim": {
     "branch": "main",
-    "commit": "4d549f68b5d6d4edc2447bbbd0b650d5c8039942"
+    "commit": "16e7fca925133b200212857bff8171607703d4f5"
   },
   "mason.nvim": {
     "branch": "main",
@@ -160,3 +160,4 @@
     "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0"
   }
 }
+

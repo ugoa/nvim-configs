@@ -1,6 +1,6 @@
 return {
 	"OXY2DEV/markview.nvim",
-	tag = "v25.1.0",
+	tag = "v25.3.0",
 	ft = "markdown",
 	lazy = false,
 
@@ -8,5 +8,8 @@ return {
 
 	opts = {
 		initial_state = false,
+		preview = {
+			icon_provider = "devicons",
+		},
 	},
 }
