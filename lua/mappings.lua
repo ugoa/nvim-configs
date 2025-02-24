@@ -149,6 +149,8 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 -- <leader>J* Group
 
+map("n", "<leader>ja", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
+map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
 map("n", "<leader>jc", function()
 	require("noice").cmd("last")
 end, { desc = "noice last message" })
@@ -173,7 +175,6 @@ map("n", "<leader>js", vim.diagnostic.setloclist, lsp_opts("diagnostic loclist")
 -- whichkey
 map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
 
-map("n", "<leader>ja", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 map("n", "<leader>jr", vim.lsp.buf.remove_workspace_folder, lsp_opts("remove workspace folder"))
 
 map("n", "<leader>jl", function()
@@ -186,12 +187,13 @@ map("n", "<leader>jh", function()
 	require("nvchad.themes").open()
 end, { desc = "telescope nvchad themes" })
 
-map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
-
 map("n", "<leader>jm", function()
 	require("smear_cursor").toggle()
 end, { desc = "toggle cursor animation" })
 
+-- whichkey
+map("n", "<leader>jg", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enable highlight" })
+
 map("n", "?", ":h ", { desc = "help" })
 map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
-map({ "n", "v" }, "L", "$", { desc = "go to line end" })
+map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
