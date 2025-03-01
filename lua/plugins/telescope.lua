@@ -46,7 +46,7 @@ return {
 				height = 0.80,
 			},
 			mappings = {
-				n = { ["q"] = require("telescope.actions").close },
+				n = {},
 			},
 		},
 
