@@ -46,7 +46,7 @@ return {
 				height = 0.80,
 			},
 			mappings = {
-				n = {},
+				i = { ["<Esc>"] = require("telescope.actions").close },
 			},
 		},
 
