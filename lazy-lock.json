@@ -152,13 +152,8 @@
     "branch": "regexp",
     "commit": "e82594274bf7b54387f9a2abe65f74909ac66e97"
   },
-  "volt": {
-    "branch": "main",
-    "commit": "ff954757fdaf72da0dedd77bdf74718ea846f989"
-  },
   "which-key.nvim": {
     "branch": "main",
     "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0"
   }
 }
-
