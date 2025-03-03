@@ -86,7 +86,10 @@ return {
 			-- disable to avoid duplications with lsp_lines message
 			virtual_text = false,
 			-- enable for lsp_lines
-			virtual_lines = true,
+			virtual_lines = {
+				only_current_line = false,
+				highlight_whole_line = false,
+			},
 			signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
 			underline = true,
 			float = { border = "rounded" },

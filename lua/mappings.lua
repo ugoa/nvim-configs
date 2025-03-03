@@ -97,10 +97,7 @@ map("n", "<leader>b", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
 -- <leader>c also mapped by rust lsp rustacenvim
 map("n", "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
 
--- map("n", "<leader>d", function()
--- 	vim.diagnostic.open_float()
--- end, lsp_opts("show Line Diagnosics"))
-map("n", "<leader>d", require("lsp_lines").toggle, lsp_opts("show Line Diagnosics"))
+map("n", "<leader>d", require("lsp_lines").toggle, lsp_opts("show lsp lines"))
 
 map("n", "<leader>e", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
 
@@ -147,6 +144,10 @@ map("n", "<leader>x", function()
 end, { desc = "close all buffers" })
 
 map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
+
+map("n", "<leader>z", function()
+	vim.diagnostic.open_float()
+end, lsp_opts("show Diagnosics"))
 
 -- <leader>J* Group
 
