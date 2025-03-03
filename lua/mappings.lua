@@ -130,7 +130,7 @@ end, { desc = "close other buffers" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
-map("n", "<leader>r", require("nvchad.lsp.renamer"), lsp_opts("rename")) -- or vim.lsp.buf.rename
+map("n", "<leader>r", require("utils.renamer"), lsp_opts("rename")) -- or vim.lsp.buf.rename
 
 map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
 

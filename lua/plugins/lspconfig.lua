@@ -73,33 +73,21 @@ local Servers = {
 	tsserver = {}, -- Typescript
 }
 
--- https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/lsp/init.lua
-local function diagnostic_config()
-	local x = vim.diagnostic.severity
-
-	vim.diagnostic.config({
-		virtual_text = { prefix = "" },
-		signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
-		underline = true,
-		float = { border = "single" },
-	})
-
-	-- Default border style
-	local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-	function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-		opts = opts or {}
-		opts.border = "rounded"
-		return orig_util_open_floating_preview(contents, syntax, opts, ...)
-	end
-end
-
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua
 return {
 	"neovim/nvim-lspconfig",
 	event = "User FilePost",
 
 	config = function()
-		diagnostic_config()
+		-- https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/lsp/init.lua
+		local x = vim.diagnostic.severity
+
+		vim.diagnostic.config({
+			virtual_text = { prefix = "" },
+			signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
+			underline = true,
+			float = { border = "rounded" },
+		})
 
 		for name, overrides in pairs(Servers) do
 			require("lspconfig")[name].setup(vim.tbl_deep_extend("force", M, overrides))
