@@ -115,7 +115,8 @@ autocmd("FileType", {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+-- Trigger vim to autoload modifications from external
+autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
 	pattern = "*",
 	command = "silent! checktime",
 })

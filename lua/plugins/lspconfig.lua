@@ -83,7 +83,10 @@ return {
 		local x = vim.diagnostic.severity
 
 		vim.diagnostic.config({
-			virtual_text = { prefix = "" },
+			-- disable to avoid duplications with lsp_lines message
+			virtual_text = false,
+			-- enable for lsp_lines
+			virtual_lines = true,
 			signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
 			underline = true,
 			float = { border = "rounded" },

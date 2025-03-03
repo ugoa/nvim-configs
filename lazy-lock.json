@@ -60,6 +60,10 @@
     "branch": "main",
     "commit": "cea5920abb202753004440f94ec39bcf2927e02e"
   },
+  "lsp_lines.nvim": {
+    "branch": "main",
+    "commit": "a92c755f182b89ea91bd8a6a2227208026f27b4d"
+  },
   "markview.nvim": {
     "branch": "main",
     "commit": "4d549f68b5d6d4edc2447bbbd0b650d5c8039942"
