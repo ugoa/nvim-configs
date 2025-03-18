@@ -88,9 +88,6 @@ end
 
 map("n", "<leader>a", vim.lsp.buf.references, lsp_opts("show references"))
 
--- Reload all buffers to get external latest changes
-map("n", "<leader>b", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
-
 -- <leader>c also mapped by rust lsp rustacenvim
 map("n", "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
 
@@ -129,6 +126,8 @@ map("n", "<leader>r", require("utils.renamer"), lsp_opts("rename")) -- or vim.ls
 
 map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
 
+map("n", "<leader>t", "<cmd>LLMSessionToggle<cr>", { desc = "toggle LLM" })
+
 -- <leader>u used to be used by Outline
 
 -- <leader>v also mapped by rust lsp rustacenvim
@@ -146,8 +145,11 @@ map("n", "<leader>z", function()
 	vim.diagnostic.open_float()
 end, lsp_opts("show Diagnosics"))
 
--- <leader>J* Group
+-- <leader>b* Group
+map("v", "<leader>ba", "<cmd>LLMSelectedTextHandler 请解释下面这段代码<cr>", { desc = "AI explain" })
+map("x", "<leader>bb", "<cmd>LLMSelectedTextHandler 英译汉<cr>", { desc = "AI translate" })
 
+-- <leader>J* Group
 map("n", "<leader>ja", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
 map("n", "<leader>jc", function()
@@ -162,6 +164,16 @@ end, { desc = "noice all" })
 map("n", "<leader>jf", function()
 	require("noice").cmd("dismiss")
 end, { desc = "noice dismiss all" })
+
+-- whichkey
+map("n", "<leader>jg", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enable highlight" })
+
+map("n", "<leader>jh", function()
+	require("nvchad.themes").open()
+end, { desc = "telescope nvchad themes" })
+
+-- Reload all buffers to get external latest changes
+map("n", "<leader>ji", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
 
 map("n", "<leader>jp", function()
 	vim.diagnostic.goto_prev()
@@ -182,16 +194,9 @@ end, lsp_opts("list workspace folders"))
 
 map("n", "<leader>jt", "<cmd>TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
 
-map("n", "<leader>jh", function()
-	require("nvchad.themes").open()
-end, { desc = "telescope nvchad themes" })
-
 map("n", "<leader>jm", function()
 	require("smear_cursor").toggle()
 end, { desc = "toggle cursor animation" })
-
--- whichkey
-map("n", "<leader>jg", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enable highlight" })
 
 map("n", "?", ":h ", { desc = "help" })
 map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })

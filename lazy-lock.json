@@ -3,7 +3,6 @@
     "branch": "master",
     "commit": "ce0a05ab4e2839e1c48d072c5236cce846a387bc"
   },
-
   "aerial.nvim": {
     "branch": "master",
     "commit": "247df216704cbe3cfa68e2ae5515c3485e281364"
@@ -60,9 +59,13 @@
     "branch": "main",
     "commit": "cea5920abb202753004440f94ec39bcf2927e02e"
   },
+  "llm.nvim": {
+    "branch": "main",
+    "commit": "2eb6cf77d63a4349bd9f137e1163716f8a862633"
+  },
   "lsp_lines.nvim": {
     "branch": "main",
-    "commit": "3b57922d2d79762e6baedaf9d66d8ba71f822816"
+    "commit": "a92c755f182b89ea91bd8a6a2227208026f27b4d"
   },
   "markview.nvim": {
     "branch": "main",
@@ -161,3 +164,4 @@
     "commit": "0099511294f16b81c696004fa6a403b0ae61f7a0"
   }
 }
+
