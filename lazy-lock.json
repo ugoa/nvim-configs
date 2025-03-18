@@ -7,6 +7,10 @@
     "branch": "master",
     "commit": "247df216704cbe3cfa68e2ae5515c3485e281364"
   },
+  "avante.nvim": {
+    "branch": "main",
+    "commit": "a8baee4354b0474ca06f047e2aac69d22e1ccd87"
+  },
   "base46": {
     "branch": "v3.0",
     "commit": "76bce38f1afbe93708f702c61245b0a5b32cd733"
@@ -122,6 +126,10 @@
   "plenary.nvim": {
     "branch": "master",
     "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683"
+  },
+  "render-markdown.nvim": {
+    "branch": "main",
+    "commit": "9721ffe230ec90e49c49ee33b5ca44c3fc689214"
   },
   "rustaceanvim": {
     "branch": "master",
