@@ -71,6 +71,7 @@ autocmd("FileType", {
 		"query",
 		"quickfix",
 		"vim",
+		"Avante",
 		"undefined",
 	},
 	callback = function()

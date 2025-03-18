@@ -146,7 +146,7 @@ map("n", "<leader>z", function()
 end, lsp_opts("show Diagnosics"))
 
 -- <leader>b* Group
-map("v", "<leader>ba", "<cmd>AvanteToggle<cr>", { desc = "AI explain" })
+map("n", "<leader>ba", "<cmd>AvanteToggle<cr>", { desc = "AI explain" })
 
 -- <leader>J* Group
 map("n", "<leader>ja", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
