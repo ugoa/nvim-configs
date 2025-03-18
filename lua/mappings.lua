@@ -126,7 +126,7 @@ map("n", "<leader>r", require("utils.renamer"), lsp_opts("rename")) -- or vim.ls
 
 map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
 
-map("n", "<leader>t", "<cmd>LLMSessionToggle<cr>", { desc = "toggle LLM" })
+map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
 
 -- <leader>u used to be used by Outline
 
@@ -144,9 +144,6 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 map("n", "<leader>z", function()
 	vim.diagnostic.open_float()
 end, lsp_opts("show Diagnosics"))
-
--- <leader>b* Group
-map("n", "<leader>ba", "<cmd>AvanteToggle<cr>", { desc = "AI explain" })
 
 -- <leader>J* Group
 map("n", "<leader>ja", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
