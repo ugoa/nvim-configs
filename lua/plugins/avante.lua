@@ -12,6 +12,9 @@ return {
 				model = "deepseek-coder",
 			},
 		},
+		windows = {
+			width = 40,
+		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
