@@ -2,6 +2,17 @@ return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
+	build = "make",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		"stevearc/dressing.nvim",
+		"nvim-lua/plenary.nvim",
+		"MunifTanjim/nui.nvim",
+		"nvim-telescope/telescope.nvim",
+		"hrsh7th/nvim-cmp",
+		"nvim-tree/nvim-web-devicons",
+		"MeanderingProgrammer/render-markdown.nvim",
+	},
 	opts = {
 		provider = "deepseek",
 		vendors = {
@@ -15,17 +26,5 @@ return {
 		windows = {
 			width = 40,
 		},
-	},
-	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-	build = "make",
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter",
-		"stevearc/dressing.nvim",
-		"nvim-lua/plenary.nvim",
-		"MunifTanjim/nui.nvim",
-		"nvim-telescope/telescope.nvim",
-		"hrsh7th/nvim-cmp",
-		"nvim-tree/nvim-web-devicons",
-		"MeanderingProgrammer/render-markdown.nvim",
 	},
 }
