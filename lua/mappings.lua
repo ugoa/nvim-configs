@@ -39,11 +39,6 @@ map("x", "p", function()
 	return 'pgv"' .. vim.v.register .. "y"
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
--- map({ "n", "t" }, "<M-h>", "<cmd>NvimTmuxNavigateLeft<CR>")
--- map({ "n", "t" }, "<M-j>", "<cmd>NvimTmuxNavigateDown<CR>")
--- map({ "n", "t" }, "<M-k>", "<cmd>NvimTmuxNavigateUp<CR>")
--- map({ "n", "t" }, "<M-l>", "<cmd>NvimTmuxNavigateRight<CR>")
-
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "terminal escape terminal mode" })
 map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "terminal escape terminal mode" })
 map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "terminal escape terminal mode" })
@@ -86,8 +81,9 @@ local function lsp_opts(_desc)
 	return { desc = "LSP: " .. _desc }
 end
 
-map("n", "<leader>a", vim.lsp.buf.references, lsp_opts("show references"))
+map("n", "<leader>at", "<cmd>AvanteToggle<cr>", lsp_opts("show references"))
 
+map("n", "<leader>b", vim.lsp.buf.references, lsp_opts("show references"))
 -- <leader>c also mapped by rust lsp rustacenvim
 map("n", "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
 
@@ -126,7 +122,7 @@ map("n", "<leader>r", require("utils.renamer"), lsp_opts("rename")) -- or vim.ls
 
 map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
 
-map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
+-- map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
 
 -- <leader>u used to be used by Outline
 
