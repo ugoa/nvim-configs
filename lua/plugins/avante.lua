@@ -15,6 +15,7 @@ return {
 	},
 	opts = {
 		provider = "deepseek",
+		hints = { enabled = false }, -- disable inline keymap hint
 		vendors = {
 			deepseek = {
 				__inherited_from = "openai",
