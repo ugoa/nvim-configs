@@ -39,4 +39,9 @@ return {
 		},
 		indent = { enable = true },
 	},
+	-- IMPORTANT to make TS highlight to work.
+	-- https://github.com/MeanderingProgrammer/render-markdown.nvim/issues/249#issuecomment-2519081718
+	config = function(_, opts)
+		require("nvim-treesitter.configs").setup(opts)
+	end,
 }
