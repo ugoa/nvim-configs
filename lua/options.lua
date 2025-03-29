@@ -83,7 +83,6 @@ vim.filetype.add({
 
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/lsp/init.lua
 local x = vim.diagnostic.severity
-
 vim.diagnostic.config({
 	-- disable to avoid duplications with lsp_lines message
 	virtual_text = false,
@@ -94,5 +93,6 @@ vim.diagnostic.config({
 	},
 	signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
 	underline = true,
-	float = { border = "rounded" },
 })
+
+vim.opt.winborder = "single"
