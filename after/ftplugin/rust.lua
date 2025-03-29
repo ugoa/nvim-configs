@@ -1,8 +1,8 @@
 local bufnr = vim.api.nvim_get_current_buf()
 
-vim.keymap.set("n", "<leader>v", function()
+vim.keymap.set("n", "<leader>grv", function()
 	vim.cmd.RustLsp("expandMacro")
-end, { silent = true, buffer = bufnr, desc = "Expand Rust Macro" })
+end, { silent = true, buffer = bufnr, desc = "Lsp: Expand Rust Macro" })
 
 vim.g.rustaceanvim = {
 	server = {

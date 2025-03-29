@@ -1,13 +1,5 @@
 local map = vim.keymap.set
 
--- JUST FOR SAVE!
--- Create a new keyboard shortcut in Iterm2:
---      Shortcut: cmd-s
---      Action: Send Escape Sequence
---      Esc+: [17~
-map("n", "<F6>", "<cmd>wa<CR>", { desc = "save file" })
-map("i", "<F6>", "<C-o><cmd>wa<CR>", { desc = "save file" })
-
 map("i", "<C-s>", "<C-o><cmd>wa<CR>", { desc = "save file" })
 map("n", "<C-s>", "<cmd>wa<CR>", { desc = "save file" })
 
@@ -81,33 +73,36 @@ local function lsp_opts(_desc)
 	return { desc = "LSP: " .. _desc }
 end
 
-map("n", "<leader>at", "<cmd>AvanteToggle<cr>", lsp_opts("show references"))
+map("n", "gre", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
+map("n", "grt", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
+map("n", "grs", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
+map("n", "grh", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hint" })
+map("n", "grw", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 
-map("n", "<leader>b", vim.lsp.buf.references, lsp_opts("show references"))
--- <leader>c also mapped by rust lsp rustacenvim
-map("n", "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
-
-map("n", "<leader>e", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
+-- <leader>b
+-- <leader>c
+-- <leader>d
+-- <leader>e
 
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 
-map("n", "<leader>g", vim.lsp.buf.definition, lsp_opts("go to definition"))
-
-map("n", "<leader>h", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, { desc = "Toggle inlay hint" })
-
-map("n", "<leader>i", vim.lsp.buf.implementation, lsp_opts("go to type implementation"))
+-- <leader>g
+-- <leader>h
+-- <leader>i
 
 map("n", "<leader>k", function()
 	require("nvchad.tabufline").close_buffer()
 end, { desc = "close current buffer" })
 
-map("n", "<leader>l", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
+-- <leader>l
 
 map("n", "<leader>m", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
+
+-- <leader>n
 
 map("n", "<leader>o", function()
 	require("nvchad.tabufline").closeBufs_at_direction("left")
@@ -116,15 +111,14 @@ end, { desc = "close other buffers" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
-map("n", "<leader>r", require("utils.renamer"), lsp_opts("rename")) -- or vim.lsp.buf.rename
+-- <leader>q
+-- <leader>r
+-- <leader>s: LSP signature_help
 
-map("n", "<leader>s", vim.lsp.buf.signature_help, lsp_opts("show signature help"))
+map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
 
--- map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
+-- <leader>u
 
--- <leader>u used to be used by Outline
-
--- <leader>v also mapped by rust lsp rustacenvim
 map("n", "<leader>v", "<cmd>Markview Toggle<CR>", { desc = "toggle markdown preview" })
 
 map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
@@ -140,7 +134,6 @@ map("n", "<leader>z", function()
 end, lsp_opts("show Diagnosics"))
 
 -- <leader>J* Group
-map("n", "<leader>ja", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
 map("n", "<leader>jc", function()
 	require("noice").cmd("last")

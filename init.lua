@@ -60,3 +60,5 @@ end
 require("options")
 require("autocmds")
 require("mappings")
+
+vim.lsp.enable({ "luals", "pyright" })
