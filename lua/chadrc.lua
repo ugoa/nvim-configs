@@ -52,6 +52,7 @@ M.base46 = {
 		-- https://github.com/NvChad/NvChad/discussions/2722
 		["@comment"] = { fg = colors.teal }, -- Override treesitter Enabled filetypes
 		Comment = { fg = colors.teal }, -- Override rest filetypes
+		-- NonText = { fg = colors.light_grey }, -- such as git blame virtual line info
 
 		WhichKeyDesc = {
 			fg = colors.white,
