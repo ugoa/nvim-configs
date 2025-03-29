@@ -42,7 +42,7 @@ local colors = {
 
 M.base46 = {
 	theme = "chadracula",
-	transparency = true,
+	transparency = false,
 
 	hl_override = {
 
@@ -114,7 +114,6 @@ M.ui = {
 	},
 
 	tabufline = {
-		lazyload = true,
 		order = { "treeOffset", "buffers", "tabs" },
 	},
 	cmp = {
