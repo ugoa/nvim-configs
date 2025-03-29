@@ -3,9 +3,14 @@
     "branch": "master",
     "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817"
   },
+
   "aerial.nvim": {
     "branch": "master",
     "commit": "9ebc13583cff447f5493a63e99dfca526b3c3088"
+  },
+  "auto-session": {
+    "branch": "main",
+    "commit": "317412742990371f8e4709074da5c378456a27ff"
   },
   "avante.nvim": {
     "branch": "main",
@@ -160,4 +165,3 @@
     "commit": "370ec46f710e058c9c1646273e6b225acf47cbed"
   }
 }
-
