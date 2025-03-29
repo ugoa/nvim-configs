@@ -70,7 +70,7 @@ local Servers = {
 	pyright = {}, -- Python
 
 	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
-	tsserver = {}, -- Typescript
+	-- tsserver = {}, -- Typescript
 }
 
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua

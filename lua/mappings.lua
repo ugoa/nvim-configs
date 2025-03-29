@@ -87,8 +87,6 @@ map("n", "<leader>b", vim.lsp.buf.references, lsp_opts("show references"))
 -- <leader>c also mapped by rust lsp rustacenvim
 map("n", "<leader>c", vim.lsp.buf.code_action, lsp_opts("Code action"))
 
--- map("n", "<leader>d", require("lsp_lines").toggle, lsp_opts("show lsp lines"))
-
 map("n", "<leader>e", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
 
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })

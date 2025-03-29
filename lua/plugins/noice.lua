@@ -1,6 +1,7 @@
 return {
 	"folke/noice.nvim",
 	event = "VeryLazy",
+	version = "v4.10.0", -- Recommended
 	dependencies = {
 		{
 			"rcarriga/nvim-notify",
