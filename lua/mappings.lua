@@ -120,7 +120,7 @@ map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
 
 -- <leader>u
 
-map("n", "<leader>v", "<cmd>Markview Toggle<CR>", { desc = "toggle markdown preview" })
+map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
 map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 

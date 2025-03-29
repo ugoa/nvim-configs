@@ -130,7 +130,7 @@ return {
 			cursorline = true,
 			width = {
 				max = "25%",
-				min = "15%",
+				min = "18%",
 			},
 		},
 		system_open = {
