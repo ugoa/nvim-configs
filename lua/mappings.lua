@@ -113,8 +113,15 @@ end, { desc = "close other buffers" })
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
 -- <leader>q
+
 -- <leader>r
--- <leader>s: LSP signature_help
+
+map("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Save session" })
+map("n", "<leader>sr", "<cmd>SessionRestore<cr>", { desc = "restores a session" })
+map("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "deletes a session based on the `cwd` from `root_dir`" })
+map("n", "<leader>st", "<cmd>SessionToggleAutoSave<cr>", { desc = "toggles autosave session" })
+map("n", "<leader>sp", "<cmd>SessionPurgeOrphaned<cr>", { desc = "removes all orphaned sessions" })
+map("n", "<leader>sf", "<cmd>SessionSearch<cr>", { desc = "open a session picker" })
 
 map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
 
