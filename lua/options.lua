@@ -80,3 +80,19 @@ vim.filetype.add({
 		html = "htmldjango",
 	},
 })
+
+-- https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/lsp/init.lua
+local x = vim.diagnostic.severity
+
+vim.diagnostic.config({
+	-- disable to avoid duplications with lsp_lines message
+	virtual_text = false,
+	-- enable for lsp_lines
+	virtual_lines = {
+		only_current_line = false,
+		highlight_whole_line = false,
+	},
+	signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
+	underline = true,
+	float = { border = "rounded" },
+})

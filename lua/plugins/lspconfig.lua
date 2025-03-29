@@ -68,9 +68,6 @@ local Servers = {
 
 	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/pyright.lua
 	pyright = {}, -- Python
-
-	-- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/tsserver.lua
-	-- tsserver = {}, -- Typescript
 }
 
 -- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua
@@ -79,22 +76,6 @@ return {
 	event = "User FilePost",
 
 	config = function()
-		-- https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/lsp/init.lua
-		local x = vim.diagnostic.severity
-
-		vim.diagnostic.config({
-			-- disable to avoid duplications with lsp_lines message
-			virtual_text = false,
-			-- enable for lsp_lines
-			virtual_lines = {
-				only_current_line = false,
-				highlight_whole_line = false,
-			},
-			signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
-			underline = true,
-			float = { border = "rounded" },
-		})
-
 		for name, overrides in pairs(Servers) do
 			require("lspconfig")[name].setup(vim.tbl_deep_extend("force", M, overrides))
 		end
