@@ -92,6 +92,7 @@ autocmd("VimEnter", {
 			vim.cmd.cd(data.file)
 			require("nvim-tree.api").tree.open()
 		end
+		require("nvim-tree.api").node.open.edit()
 	end,
 })
 
