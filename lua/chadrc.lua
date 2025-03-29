@@ -7,6 +7,39 @@ local function replace(str, what, with)
 	return string.gsub(str, what, with)
 end
 
+local colors = {
+	white = "#F8F8F2",
+	darker_black = "#222430",
+	black = "#282A36", --  nvim bg
+	black2 = "#2d303e",
+	one_bg = "#373844", -- real bg of onedark
+	one_bg2 = "#44475a",
+	one_bg3 = "#565761",
+	grey = "#5e5f69",
+	grey_fg = "#666771",
+	grey_fg2 = "#6e6f79",
+	light_grey = "#73747e",
+	red = "#ff7070",
+	baby_pink = "#ff86d3",
+	pink = "#FF79C6",
+	line = "#3c3d49", -- for lines like vertsplit
+	green = "#50fa7b",
+	vibrant_green = "#5dff88",
+	nord_blue = "#8b9bcd",
+	blue = "#a1b1e3",
+	yellow = "#F1FA8C",
+	sun = "#FFFFA5",
+	purple = "#BD93F9",
+	dark_purple = "#BD93F9",
+	teal = "#92a2d4",
+	orange = "#FFB86C",
+	cyan = "#8BE9FD",
+	statusline_bg = "#2d2f3b",
+	lightbg = "#41434f",
+	pmenu_bg = "#b389ef",
+	folder_bg = "#BD93F9",
+}
+
 M.base46 = {
 	theme = "chadracula",
 	transparency = true,
@@ -14,22 +47,25 @@ M.base46 = {
 	hl_override = {
 
 		-- https://github.com/nvim-tree/nvim-tree.lua/issues/2923
-		NvimTreeCursorLine = { bg = "#4d4f68" },
+		NvimTreeCursorLine = { bg = colors.lightbg },
 
 		-- https://github.com/NvChad/NvChad/discussions/2722
-		["@comment"] = { fg = "teal" }, -- Override treesitter Enabled filetypes
-		Comment = { fg = "teal" }, -- Override rest filetypes
-		NonText = { fg = "#9dafe3" }, -- Override rest filetypes
+		["@comment"] = { fg = colors.teal }, -- Override treesitter Enabled filetypes
+		Comment = { fg = colors.teal }, -- Override rest filetypes
 
 		WhichKeyDesc = {
-			fg = "white",
+			fg = colors.white,
 		},
+
 		-- bufferline button color
 		TbBufOnModified = {
-			fg = "red",
+			fg = colors.red,
+		},
+		TbFill = {
+			bg = colors.black,
 		},
 		TbBufOnClose = {
-			fg = "green",
+			fg = colors.green,
 		},
 	},
 }
