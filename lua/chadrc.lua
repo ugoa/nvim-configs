@@ -114,7 +114,7 @@ M.ui = {
 	},
 
 	tabufline = {
-		order = { "treeOffset", "buffers", "tabs" },
+		order = { "treeOffset", "buffers" },
 	},
 	cmp = {
 		lspkind_text = true,
