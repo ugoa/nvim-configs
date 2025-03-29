@@ -93,6 +93,7 @@ vim.diagnostic.config({
 	},
 	signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
 	underline = true,
+	float = { border = "rounded" },
 })
 
-vim.opt.winborder = "rounded"
+-- vim.opt.winborder = "rounded"
