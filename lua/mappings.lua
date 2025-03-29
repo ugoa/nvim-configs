@@ -73,6 +73,7 @@ local function lsp_opts(_desc)
 	return { desc = "LSP: " .. _desc }
 end
 
+map("n", "grd", vim.lsp.buf.definition, lsp_opts("go to definition"))
 map("n", "gre", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
 map("n", "grt", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
 map("n", "grs", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
