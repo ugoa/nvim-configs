@@ -95,4 +95,4 @@ vim.diagnostic.config({
 	underline = true,
 })
 
-vim.opt.winborder = "single"
+vim.opt.winborder = "rounded"

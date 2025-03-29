@@ -13,7 +13,12 @@ return {
 			end,
 		},
 
-		"MunifTanjim/nui.nvim",
+		{
+			"MunifTanjim/nui.nvim",
+			dependencies = {
+				"stevearc/dressing.nvim", -- load dressing.nvim first before nui.nvim hiject the vim.ui.input/select event
+			},
+		},
 	},
 	opts = {
 		views = {
