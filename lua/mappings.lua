@@ -130,9 +130,7 @@ end, { desc = "close all buffers" })
 
 map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
-map("n", "<leader>z", function()
-	vim.diagnostic.open_float()
-end, lsp_opts("show Diagnosics"))
+map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
 -- <leader>J* Group
 map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
