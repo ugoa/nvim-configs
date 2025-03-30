@@ -22,6 +22,7 @@ return {
 				api_key_name = "LLM_KEY",
 				endpoint = "https://api.deepseek.com",
 				model = "deepseek-coder",
+				max_tokens = 8192,
 			},
 		},
 		windows = {

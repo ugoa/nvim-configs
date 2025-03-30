@@ -86,7 +86,6 @@ local x = vim.diagnostic.severity
 vim.diagnostic.config({
 	-- disable to avoid duplications with lsp_lines message
 	virtual_text = false,
-	-- enable for lsp_lines
 	virtual_lines = {
 		only_current_line = false,
 		highlight_whole_line = false,

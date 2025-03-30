@@ -92,7 +92,7 @@ map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find 
 
 -- <leader>g
 -- <leader>h
--- <leader>i
+map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>k", function()
 	require("nvchad.tabufline").close_buffer()

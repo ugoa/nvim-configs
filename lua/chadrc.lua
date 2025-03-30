@@ -68,6 +68,14 @@ M.base46 = {
 		-- https://github.com/nvim-tree/nvim-tree.lua/issues/2923
 		NvimTreeCursorLine = { bg = colors.lightbg },
 
+		["@keyword"] = { italic = true },
+		["@keyword.function"] = { italic = true },
+		["@keyword.return"] = { italic = true },
+		["@variable.builtin"] = { italic = true },
+
+		Keyword = { italic = true },
+		Include = { italic = true },
+
 		-- https://github.com/NvChad/NvChad/discussions/2722
 		["@comment"] = { fg = colors.teal }, -- Override treesitter Enabled filetypes
 		Comment = { fg = colors.teal }, -- Override rest filetypes
