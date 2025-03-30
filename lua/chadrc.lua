@@ -73,10 +73,15 @@ M.base46 = {
 		["@keyword.return"] = { italic = true },
 		["@keyword.conditional"] = { italic = true },
 		["@keyword.operator"] = { italic = true },
+		["@keyword.repeat"] = { italic = true },
+
+		["@operator"] = { italic = true },
+
 		["@variable.builtin"] = { italic = true },
 		["@variable.repeat"] = { italic = true },
 		["@variable.conditional"] = { italic = true },
 		["@variable.operator"] = { italic = true },
+
 		["@constant.builtin"] = { italic = true },
 		["@type.builtin"] = { italic = true },
 
