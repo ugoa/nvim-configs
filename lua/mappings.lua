@@ -1,4 +1,8 @@
 local map = vim.keymap.set
+--- LSP mappings
+local function lsp_opts(_desc)
+	return { desc = "LSP: " .. _desc }
+end
 
 map("i", "<C-s>", "<C-o><cmd>wa<CR>", { desc = "save file" })
 map("n", "<C-s>", "<cmd>wa<CR>", { desc = "save file" })
@@ -67,11 +71,6 @@ map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 ----------------------------------------------------------------------------------------------------
 -- leader key mappings
 ----------------------------------------------------------------------------------------------------
-
---- LSP mappings
-local function lsp_opts(_desc)
-	return { desc = "LSP: " .. _desc }
-end
 
 map("n", "grd", vim.lsp.buf.definition, lsp_opts("go to definition"))
 map("n", "gre", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
