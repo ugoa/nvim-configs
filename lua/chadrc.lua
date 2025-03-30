@@ -75,6 +75,7 @@ M.base46 = {
 
 		Keyword = { italic = true },
 		Include = { italic = true },
+		Boolean = { italic = true },
 
 		-- https://github.com/NvChad/NvChad/discussions/2722
 		["@comment"] = { fg = colors.teal }, -- Override treesitter Enabled filetypes
