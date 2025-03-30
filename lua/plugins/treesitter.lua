@@ -10,6 +10,7 @@ return {
 	opts = {
 		ensure_installed = {
 			"rust",
+			"python",
 			"yaml",
 			"bash",
 			"regex",
