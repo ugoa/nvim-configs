@@ -83,28 +83,19 @@ map("n", "grh", function()
 end, { desc = "Toggle inlay hint" })
 map("n", "grw", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 
--- <leader>b
--- <leader>c
--- <leader>d
--- <leader>e
-
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+map("n", "<leader>w", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
+map("n", "<leader>b", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope lsp workspace symbols" })
 
--- <leader>g
--- <leader>h
 map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>k", function()
 	require("nvchad.tabufline").close_buffer()
 end, { desc = "close current buffer" })
 
--- <leader>l
-
 map("n", "<leader>m", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
-
--- <leader>n
 
 map("n", "<leader>o", function()
 	require("nvchad.tabufline").closeBufs_at_direction("left")
@@ -112,10 +103,6 @@ map("n", "<leader>o", function()
 end, { desc = "close other buffers" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
-
--- <leader>q
-
--- <leader>r
 
 map("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Save session" })
 map("n", "<leader>sr", "<cmd>SessionRestore<cr>", { desc = "restores a session" })
@@ -125,8 +112,6 @@ map("n", "<leader>sp", "<cmd>SessionPurgeOrphaned<cr>", { desc = "removes all or
 map("n", "<leader>sf", "<cmd>SessionSearch<cr>", { desc = "open a session picker" })
 
 map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
-
--- <leader>u
 
 map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
@@ -139,6 +124,19 @@ end, { desc = "close all buffers" })
 map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
+
+-- <leader>b
+-- <leader>c
+-- <leader>d
+-- <leader>e
+-- <leader>f
+-- <leader>g
+-- <leader>h
+-- <leader>l
+-- <leader>n
+-- <leader>q
+-- <leader>r
+-- <leader>u
 
 -- <leader>J* Group
 map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
@@ -165,12 +163,6 @@ end, { desc = "telescope nvchad themes" })
 -- Reload all buffers to get external latest changes
 map("n", "<leader>ji", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
 
-map("n", "<leader>jp", function()
-	vim.diagnostic.goto_prev()
-end, { desc = "show previous diagnosics" })
-map("n", "<leader>jn", function()
-	vim.diagnostic.goto_next()
-end, { desc = "show next diagnosics" })
 map("n", "<leader>js", vim.diagnostic.setloclist, lsp_opts("diagnostic loclist"))
 
 -- whichkey
