@@ -125,11 +125,9 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
--- <leader>b
 -- <leader>c
 -- <leader>d
 -- <leader>e
--- <leader>f
 -- <leader>g
 -- <leader>h
 -- <leader>l
@@ -137,6 +135,10 @@ map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 -- <leader>q
 -- <leader>r
 -- <leader>u
+
+map("n", "<leader>r", function()
+	require("conform").format()
+end, { desc = "format" })
 
 -- <leader>J* Group
 map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })

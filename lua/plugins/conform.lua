@@ -14,16 +14,22 @@ return {
 			html = { "djlint" },
 			htmldjango = { "djlint" },
 		},
-		format_on_save = { -- These options will be passed to conform.format()
-			timeout_ms = 10000, -- increase timeout to 2s since black take longer time to finish.
-			lsp_fallback = true,
-		},
+		format_on_save = function(bufnr)
+			local filetype = vim.bo[bufnr].filetype
+			if filetype ~= "html" and filetype ~= "htmldjango" then
+				return {
+					timeout_ms = 10000,
+					lsp_fallback = true,
+				}
+			end
+			return nil
+		end,
 	},
 
 	config = function(_, opts)
 		require("conform").setup(opts)
 
-		require("conform").formatters.djlint = function(bufnr)
+		require("conform").formatters.djlint = function(_bufnr)
 			return {
 				command = "djlint",
 				args = { "--reformat", "-" },
