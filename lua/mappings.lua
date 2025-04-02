@@ -137,7 +137,10 @@ map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 -- <leader>u
 
 map("n", "<leader>r", function()
-	require("conform").format()
+	require("conform").format({
+		timeout_ms = 20000, -- 20 seconds, because djlint is SLOWWWWWWWWW
+		lsp_fallback = true,
+	})
 end, { desc = "format" })
 
 -- <leader>J* Group
