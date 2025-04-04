@@ -82,20 +82,6 @@ autocmd("FileType", {
 	end,
 })
 
--- Open nvimtree when enter
-autocmd("VimEnter", {
-	callback = function(data)
-		if vim.fn.argv(0) == "" then
-			require("nvim-tree.api").tree.open(vim.loop.cwd())
-		elseif vim.fn.isdirectory(data.file) == 1 then
-			-- change to the directory and open the tree
-			vim.cmd.cd(data.file)
-			require("nvim-tree.api").tree.open()
-		end
-		require("nvim-tree.api").node.open.edit()
-	end,
-})
-
 -- Remove trailing whitespaces before write
 autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("trim_whitespaces", { clear = true }),
