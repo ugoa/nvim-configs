@@ -32,6 +32,7 @@ return {
 		require("conform").formatters.djlint = function(_bufnr)
 			return {
 				command = "djlint",
+				-- args = { "--format-js", "--format-css", "--reformat", "-" },
 				args = { "--reformat", "-" },
 				cwd = require("conform.util").root_file({ "djlint.toml" }),
 			}

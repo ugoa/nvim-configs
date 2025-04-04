@@ -126,7 +126,6 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
 -- <leader>c
--- <leader>d
 -- <leader>e
 -- <leader>g
 -- <leader>h
@@ -135,6 +134,14 @@ map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 -- <leader>q
 -- <leader>r
 -- <leader>u
+
+-- When lines are on, text is off. Text on, lines off. Minimize clutter.
+vim.keymap.set("", "<leader>d", function()
+	vim.diagnostic.config({
+		virtual_lines = not vim.diagnostic.config().virtual_lines,
+		-- virtual_text = not vim.diagnostic.config().virtual_text,
+	})
+end, { desc = "Toggle diagnostic [l]ines" })
 
 map("n", "<leader>r", function()
 	require("conform").format({
