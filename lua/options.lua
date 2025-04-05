@@ -28,13 +28,18 @@ o.number = true
 o.numberwidth = 2
 o.ruler = false
 
--- disable nvim intro
+-- Disable intro message and search count messages
 opt.shortmess:append("sI")
 
+-- Show sign column always (for git signs, diagnostics, etc)
 o.signcolumn = "yes"
+-- New splits open below current window
 o.splitbelow = true
+-- New splits open to the right of current window
 o.splitright = true
+-- Time in milliseconds to wait for a mapped sequence to complete
 o.timeoutlen = 400
+-- Enable persistent undo (undo history persists after closing file)
 o.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns
@@ -51,15 +56,12 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- add binaries installed by mason.nvim to path
-local is_windows = vim.fn.has("win32") ~= 0
-local sep = is_windows and "\\" or "/"
-local delim = is_windows and ";" or ":"
-vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, sep) .. delim .. vim.env.PATH
+vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, "/") .. ":" .. vim.env.PATH
 
--- add yours here!
 vim.opt.colorcolumn = "120"
 
 vim.opt.shell = "/opt/homebrew/bin/nu"
+-- vim.opt.shell = "/bin/zsh"
 
 -- FIX: https://github.com/NvChad/NvChad/issues/1907
 -- Another solution is to disable sematic token in rust-tools on_init function
@@ -77,6 +79,7 @@ vim.opt.cursorlineopt = "both"
 
 vim.filetype.add({
 	extension = {
+		-- Treat .html files as htmldjango (Django template) files
 		html = "htmldjango",
 	},
 })

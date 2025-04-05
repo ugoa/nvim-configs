@@ -133,8 +133,7 @@ map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 -- <leader>q
 -- <leader>r
 -- <leader>u
-
--- <leader>l reigistered by rustowl for lifetime
+-- <leader>l
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 vim.keymap.set("", "<leader>d", function()
