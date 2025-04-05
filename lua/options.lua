@@ -59,8 +59,8 @@ vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, sep) .. 
 -- add yours here!
 vim.opt.colorcolumn = "120"
 
-vim.opt.shell = "/opt/homebrew/bin/nu"
--- vim.opt.shell = "/bin/zsh"
+--vim.opt.shell = "/opt/homebrew/bin/nu"
+vim.opt.shell = "/bin/zsh"
 
 -- FIX: https://github.com/NvChad/NvChad/issues/1907
 -- Another solution is to disable sematic token in rust-tools on_init function
