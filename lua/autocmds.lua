@@ -88,7 +88,7 @@ autocmd("FileType", {
 	desc = "Trim trailing white spaces",
 	pattern = "*",
 	callback = function()
-		vim.api.nvim_create_autocmd("BufWritePre", {
+		autocmd("BufWritePre", {
 
 			pattern = "<buffer>",
 			-- Trim trailing whitespaces
