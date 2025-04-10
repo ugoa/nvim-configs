@@ -85,22 +85,33 @@ map("n", "grw", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder
 
 map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map("n", "<leader>w", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
-map("n", "<leader>b", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope lsp workspace symbols" })
+map("n", "<leader>c", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope lsp workspace symbols" })
+map("n", "<leader>b", function()
+	require("telescope.builtin").buffers({ sort_mru = true, ignore_current_buffer = true })
+end, { desc = "telescope list current open buffers" })
 
 map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
-map("n", "<leader>k", function()
+map("n", "<leader>kk", function()
 	require("nvchad.tabufline").close_buffer()
 end, { desc = "close current buffer" })
+map("n", "<leader>kl", function()
+	require("nvchad.tabufline").closeBufs_at_direction("left")
+end, { desc = "close current buffer" })
+map("n", "<leader>kr", function()
+	require("nvchad.tabufline").closeBufs_at_direction("right")
+end, { desc = "close current buffer" })
+map("n", "<leader>ko", function()
+	require("nvchad.tabufline").closeBufs_at_direction("left")
+	require("nvchad.tabufline").closeBufs_at_direction("right")
+end, { desc = "close other buffers" })
+map("n", "<leader>ka", function()
+	require("nvchad.tabufline").closeAllBufs()
+end, { desc = "close other buffers" })
 
 map("n", "<leader>m", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
-
-map("n", "<leader>o", function()
-	require("nvchad.tabufline").closeBufs_at_direction("left")
-	require("nvchad.tabufline").closeBufs_at_direction("right")
-end, { desc = "close other buffers" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
@@ -125,16 +136,15 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
--- <leader>c
 -- <leader>e
 -- <leader>g
 -- <leader>h
 -- <leader>n
 -- <leader>q
+-- <leader>o
 -- <leader>r
 -- <leader>u
-
--- <leader>l reigistered by rustowl for lifetime
+-- <leader>l
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 vim.keymap.set("", "<leader>d", function()
