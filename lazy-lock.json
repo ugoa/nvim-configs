@@ -93,7 +93,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "3e873195f501b1e02d9fd7e5af5cbe74fc2f98c1"
+    "commit": "cb33dea610b7eff240985be9f6fe219920e630ef"
   },
   "nvim-notify": {
     "branch": "master",
@@ -126,6 +126,10 @@
   "rustaceanvim": {
     "branch": "master",
     "commit": "34f0f9761b2f3d861fc15845b42d543da1c1b555"
+  },
+  "scrollEOF.nvim": {
+    "branch": "master",
+    "commit": "a186f695b500e9f0b569102a4a5e8a255cd0d198"
   },
   "showkeys": {
     "branch": "main",
