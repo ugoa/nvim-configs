@@ -9,7 +9,18 @@ return {
 	config = function()
 		require("codecompanion").setup({
 			strategies = {
-				chat = { adapter = "deepseek" },
+				chat = {
+					adapter = "deepseek",
+					-- https://github.com/olimorris/codecompanion.nvim/blob/main/lua/codecompanion/strategies/chat/keymaps.lua
+					keymaps = {
+						stop = {
+							modes = { n = "<C-c>", i = "<C-c>" },
+						},
+						close = {
+							modes = { n = "q", i = "<C-q>" },
+						},
+					},
+				},
 				inline = { adapter = "deepseek" },
 				agent = { adapter = "deepseek" },
 			},
