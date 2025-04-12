@@ -115,6 +115,9 @@ return {
 				{ name = "buffer" },
 				{ name = "nvim_lua" },
 				{ name = "path" },
+				per_filetype = {
+					codecompanion = { "codecompanion" },
+				},
 			},
 		}
 		local opts = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))

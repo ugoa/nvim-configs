@@ -43,6 +43,10 @@
     "branch": "master",
     "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90"
   },
+  "codecompanion.nvim": {
+    "branch": "main",
+    "commit": "35b11dc4b292519a5c09fb2c0c0e8a8832e9e821"
+  },
   "conform.nvim": {
     "branch": "master",
     "commit": "b1a75324ddf96b7bb84963a297b1ed334db087c0"
