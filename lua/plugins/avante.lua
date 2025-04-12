@@ -1,9 +1,9 @@
 return {
+	enabled = false,
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
 	build = "make",
-	enabled = false,
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"stevearc/dressing.nvim",
