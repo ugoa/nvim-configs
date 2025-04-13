@@ -159,7 +159,7 @@ map("n", "<leader>n", "<cmd>set relativenumber!<CR>", { desc = "show Diagnosics"
 -- <leader>b
 
 local crates = require("crates")
-vim.keymap.set("n", "<leader>ct", crates.toggle, { silent = true, desc = "toggle" })
+vim.keymap.set("n", "<leader>cc", crates.toggle, { silent = true, desc = "toggle" })
 vim.keymap.set("n", "<leader>cr", crates.reload, { silent = true, desc = "reload" })
 vim.keymap.set("n", "<leader>cs", crates.show_popup, { silent = true, desc = "show general popup" })
 vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, { silent = true, desc = "show versions" })
