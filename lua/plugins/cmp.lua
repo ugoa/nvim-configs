@@ -84,7 +84,7 @@ return {
 				["<C-e>"] = cmp.mapping.close(),
 				["<S-CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
-					select = true,
+					select = false,
 				}),
 
 				["<Tab>"] = cmp.mapping(function(fallback)
@@ -127,7 +127,7 @@ return {
 			["<S-CR>"] = {
 				c = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
-					select = true,
+					select = false,
 				}),
 			},
 		}
