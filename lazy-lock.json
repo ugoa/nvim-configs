@@ -63,6 +63,10 @@
     "branch": "main",
     "commit": "efff286dd74c22f731cdec26a70b46e5b203c619"
   },
+  "gitlinker.nvim": {
+    "branch": "master",
+    "commit": "23982c86f50a9c3f4bc531d41b7a4a68ddd12355"
+  },
   "gitsigns.nvim": {
     "branch": "main",
     "commit": "17ab794b6fce6fce768430ebc925347e349e1d60"
