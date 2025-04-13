@@ -50,7 +50,7 @@ o.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
 
-opt.scrolloff = 6
+opt.scrolloff = 8
 
 -- disable some default providers
 g.loaded_node_provider = 0

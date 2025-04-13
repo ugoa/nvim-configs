@@ -2,28 +2,6 @@ local function on_attach(bufnr)
 	local api = require("nvim-tree.api")
 	local lib = require("nvim-tree.lib")
 
-	local git_stage_toggle = function()
-		local node = api.tree.get_node_under_cursor()
-		local gs = node.git_status.file
-
-		-- If the current node is a directory get children status
-		if gs == nil then
-			gs = (node.git_status.dir.direct ~= nil and node.git_status.dir.direct[1])
-				or (node.git_status.dir.indirect ~= nil and node.git_status.dir.indirect[1])
-		end
-
-		-- If the file is untracked, unstaged or partially staged, we stage it
-		if gs == "??" or gs == "MM" or gs == "AM" or gs == " M" then
-			vim.cmd("silent !git add " .. node.absolute_path)
-
-		-- If the file is staged, we unstage
-		elseif gs == "M " or gs == "A " then
-			vim.cmd("silent !git restore --staged " .. node.absolute_path)
-		end
-
-		api.tree.reload()
-	end
-
 	local function edit_or_open()
 		local node = api.tree.get_node_under_cursor()
 
@@ -67,8 +45,6 @@ local function on_attach(bufnr)
 	vim.keymap.set("n", "h", close, opts("Close"))
 	vim.keymap.set("n", "t", api.tree.toggle_enable_filters, opts("Toggle Filters"))
 	vim.keymap.set("n", "T", api.tree.change_root_to_node, opts("Set current node as root dir"))
-
-	vim.keymap.set("n", "ga", git_stage_toggle, opts("Git Stage toggle"))
 end
 
 return {
