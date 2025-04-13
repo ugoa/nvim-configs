@@ -114,6 +114,7 @@ return {
 				{ name = "buffer" },
 				{ name = "nvim_lua" },
 				{ name = "path" },
+				{ name = "crates" },
 				per_filetype = {
 					codecompanion = { "codecompanion" },
 				},

@@ -110,9 +110,18 @@ map("n", "<leader>ka", function()
 end, { desc = "close all buffers" })
 map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
 
-map("n", "<leader>m", function()
+map("n", "<leader>mm", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
+map("n", "<leader>md", function()
+	require("conform").format({
+		timeout_ms = 20000, -- 20 seconds, because djlint is SLOWWWWWWWWW
+		lsp_fallback = true,
+	})
+end, { desc = "djlint format" })
+
+map({ "n", "v" }, "<leader>gy", "<cmd>GitLink<CR>", { desc = "Yank git link" })
+map({ "n", "v" }, "<leader>gY", "<cmd>GitLink!<CR>", { desc = "Open git link" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
@@ -152,6 +161,31 @@ map("n", "<leader>n", "<cmd>set relativenumber!<CR>", { desc = "show Diagnosics"
 -- <leader>c
 -- <leader>b
 
+local crates = require("crates")
+vim.keymap.set("n", "<leader>cc", crates.toggle, { silent = true, desc = "toggle" })
+vim.keymap.set("n", "<leader>cr", crates.reload, { silent = true, desc = "reload" })
+vim.keymap.set("n", "<leader>cs", crates.show_popup, { silent = true, desc = "show general popup" })
+vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, { silent = true, desc = "show versions" })
+vim.keymap.set("n", "<leader>cf", crates.show_features_popup, { silent = true, desc = "show features" })
+vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, { silent = true, desc = "show deps" })
+vim.keymap.set("n", "<leader>cu", crates.update_crate, { silent = true, desc = "update crate" })
+vim.keymap.set("v", "<leader>cu", crates.update_crates, { silent = true, desc = "update crates" })
+vim.keymap.set("n", "<leader>ca", crates.update_all_crates, { silent = true, desc = "update all crates" })
+vim.keymap.set("n", "<leader>cU", crates.upgrade_crate, { silent = true, desc = "upgrade crate" })
+vim.keymap.set("v", "<leader>cU", crates.upgrade_crates, { silent = true, desc = "upgrade crates" })
+vim.keymap.set("n", "<leader>cA", crates.upgrade_all_crates, { silent = true, desc = "upgrade all crates" })
+vim.keymap.set("n", "<leader>cx", crates.expand_plain_crate_to_inline_table, { silent = true, desc = "expand" })
+vim.keymap.set("n", "<leader>cX", crates.extract_crate_into_table, { silent = true, desc = "extract" })
+vim.keymap.set("n", "<leader>cH", crates.open_homepage, { silent = true, desc = "open homepage" })
+vim.keymap.set("n", "<leader>cR", crates.open_repository, { silent = true, desc = "open repo" })
+vim.keymap.set("n", "<leader>cD", crates.open_documentation, { silent = true, desc = "open doc" })
+vim.keymap.set("n", "<leader>cC", crates.open_crates_io, { silent = true, desc = "open crates.io" })
+vim.keymap.set("n", "<leader>cL", crates.open_lib_rs, { silent = true, desc = "open lib.rs" })
+
+map("n", "<leader>rr", "<cmd>RustLsp run<cr>", { desc = "Run closet Cargo targets" })
+map("n", "<leader>rl", "<cmd>RustLsp runnables<cr>", { desc = "List runnable targets" })
+map("n", "<leader>rt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
+
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 vim.keymap.set("", "<leader>d", function()
 	vim.diagnostic.config({
@@ -159,13 +193,6 @@ vim.keymap.set("", "<leader>d", function()
 		-- virtual_text = not vim.diagnostic.config().virtual_text,
 	})
 end, { desc = "Toggle diagnostic [l]ines" })
-
-map("n", "<leader>r", function()
-	require("conform").format({
-		timeout_ms = 20000, -- 20 seconds, because djlint is SLOWWWWWWWWW
-		lsp_fallback = true,
-	})
-end, { desc = "format" })
 
 -- <leader>J* Group
 map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
