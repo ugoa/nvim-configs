@@ -83,10 +83,10 @@ map("n", "grh", function()
 end, { desc = "Toggle inlay hint" })
 map("n", "grw", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 
-map("n", "<leader>f", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map("n", "<leader>w", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
-map("n", "<leader>c", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope lsp workspace symbols" })
-map("n", "<leader>b", function()
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
+map("n", "<leader>fc", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope lsp workspace symbols" })
+map("n", "<leader>fb", function()
 	require("telescope.builtin").buffers({ sort_mru = true, ignore_current_buffer = true })
 end, { desc = "telescope list current open buffers" })
 
@@ -138,15 +138,19 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
+map("n", "<leader>n", "<cmd>set relativenumber!<CR>", { desc = "show Diagnosics" })
+
 -- <leader>e
 -- <leader>g
 -- <leader>h
--- <leader>n
 -- <leader>q
 -- <leader>o
 -- <leader>r
 -- <leader>u
 -- <leader>l
+-- <leader>w
+-- <leader>c
+-- <leader>b
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 vim.keymap.set("", "<leader>d", function()
