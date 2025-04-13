@@ -51,6 +51,10 @@
     "branch": "master",
     "commit": "b1a75324ddf96b7bb84963a297b1ed334db087c0"
   },
+  "crates.nvim": {
+    "branch": "main",
+    "commit": "73d2c590c74a0c582144987a4decb4a642755859"
+  },
   "dressing.nvim": {
     "branch": "master",
     "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639"
