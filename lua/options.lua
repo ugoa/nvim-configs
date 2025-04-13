@@ -49,6 +49,8 @@ o.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
 
+opt.scrolloff = 10
+
 -- disable some default providers
 g.loaded_node_provider = 0
 g.loaded_python3_provider = 0
@@ -60,7 +62,7 @@ vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, "/") .. 
 
 vim.opt.colorcolumn = "120"
 
-vim.opt.shell = "/bin/zsh"
+vim.opt.shell = "/opt/homebrew/bin/nu"
 
 -- FIX: https://github.com/NvChad/NvChad/issues/1907
 -- Another solution is to disable sematic token in rust-tools on_init function

@@ -108,6 +108,7 @@ end, { desc = "close other buffers" })
 map("n", "<leader>ka", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "close all buffers" })
+map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
 
 map("n", "<leader>m", function()
 	require("conform").format({ lsp_fallback = true })
@@ -122,7 +123,8 @@ map("n", "<leader>st", "<cmd>SessionToggleAutoSave<cr>", { desc = "toggles autos
 map("n", "<leader>sp", "<cmd>SessionPurgeOrphaned<cr>", { desc = "removes all orphaned sessions" })
 map("n", "<leader>sf", "<cmd>SessionSearch<cr>", { desc = "open a session picker" })
 
-map("n", "<leader>t", "<cmd>AvanteToggle<cr>", { desc = "toggle LLM" })
+map("n", "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "toggle AI Assistant" })
+map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current location" })
 
 map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 

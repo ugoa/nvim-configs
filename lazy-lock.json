@@ -43,6 +43,10 @@
     "branch": "master",
     "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90"
   },
+  "codecompanion.nvim": {
+    "branch": "main",
+    "commit": "35b11dc4b292519a5c09fb2c0c0e8a8832e9e821"
+  },
   "conform.nvim": {
     "branch": "master",
     "commit": "b1a75324ddf96b7bb84963a297b1ed334db087c0"
@@ -93,7 +97,7 @@
   },
   "nvim-lspconfig": {
     "branch": "master",
-    "commit": "3e873195f501b1e02d9fd7e5af5cbe74fc2f98c1"
+    "commit": "cb33dea610b7eff240985be9f6fe219920e630ef"
   },
   "nvim-notify": {
     "branch": "master",
@@ -126,6 +130,10 @@
   "rustaceanvim": {
     "branch": "master",
     "commit": "34f0f9761b2f3d861fc15845b42d543da1c1b555"
+  },
+  "scrollEOF.nvim": {
+    "branch": "master",
+    "commit": "a186f695b500e9f0b569102a4a5e8a255cd0d198"
   },
   "showkeys": {
     "branch": "main",

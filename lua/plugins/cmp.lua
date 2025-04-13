@@ -80,12 +80,11 @@ return {
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-k>"] = cmp.mapping.complete(),
+				["<C-_>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
-
-				["<CR>"] = cmp.mapping.confirm({
+				["<S-CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
-					select = true,
+					select = false,
 				}),
 
 				["<Tab>"] = cmp.mapping(function(fallback)
@@ -115,6 +114,9 @@ return {
 				{ name = "buffer" },
 				{ name = "nvim_lua" },
 				{ name = "path" },
+				per_filetype = {
+					codecompanion = { "codecompanion" },
+				},
 			},
 		}
 		local opts = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
@@ -122,10 +124,14 @@ return {
 		cmp.setup(opts)
 
 		local cmdline_mapping_overrides = {
-			["<Space>"] = {
-				c = cmp.mapping.confirm({ select = false }),
+			["<S-CR>"] = {
+				c = cmp.mapping.confirm({
+					behavior = cmp.ConfirmBehavior.Insert,
+					select = false,
+				}),
 			},
 		}
+
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(cmdline_mapping_overrides),
 			sources = {
