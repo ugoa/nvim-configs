@@ -138,15 +138,19 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
+map("n", "<leader>n", "<cmd>set relativenumber!<CR>", { desc = "show Diagnosics" })
+
 -- <leader>e
 -- <leader>g
 -- <leader>h
--- <leader>n
 -- <leader>q
 -- <leader>o
 -- <leader>r
 -- <leader>u
 -- <leader>l
+-- <leader>w
+-- <leader>c
+-- <leader>b
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 vim.keymap.set("", "<leader>d", function()
