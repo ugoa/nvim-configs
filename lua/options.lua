@@ -27,6 +27,7 @@ o.mouse = "a"
 o.number = true
 o.numberwidth = 2
 o.ruler = false
+o.relativenumber = true
 
 -- Disable intro message and search count messages
 opt.shortmess:append("sI")
