@@ -110,9 +110,15 @@ map("n", "<leader>ka", function()
 end, { desc = "close all buffers" })
 map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
 
-map("n", "<leader>m", function()
+map("n", "<leader>mm", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
+map("n", "<leader>md", function()
+	require("conform").format({
+		timeout_ms = 20000, -- 20 seconds, because djlint is SLOWWWWWWWWW
+		lsp_fallback = true,
+	})
+end, { desc = "djlint format" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
@@ -152,6 +158,10 @@ map("n", "<leader>n", "<cmd>set relativenumber!<CR>", { desc = "show Diagnosics"
 -- <leader>c
 -- <leader>b
 
+map("n", "<leader>rr", "<cmd>RustLsp run<cr>", { desc = "Run closet Cargo targets" })
+map("n", "<leader>rl", "<cmd>RustLsp runnables<cr>", { desc = "List runnable targets" })
+map("n", "<leader>rt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
+
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 vim.keymap.set("", "<leader>d", function()
 	vim.diagnostic.config({
@@ -159,13 +169,6 @@ vim.keymap.set("", "<leader>d", function()
 		-- virtual_text = not vim.diagnostic.config().virtual_text,
 	})
 end, { desc = "Toggle diagnostic [l]ines" })
-
-map("n", "<leader>r", function()
-	require("conform").format({
-		timeout_ms = 20000, -- 20 seconds, because djlint is SLOWWWWWWWWW
-		lsp_fallback = true,
-	})
-end, { desc = "format" })
 
 -- <leader>J* Group
 map("n", "<leader>jb", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
