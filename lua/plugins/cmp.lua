@@ -80,10 +80,9 @@ return {
 				["<C-n>"] = cmp.mapping.select_next_item(),
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-k>"] = cmp.mapping.complete(),
+				["<C-_>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
-
-				["<CR>"] = cmp.mapping.confirm({
+				["<S-CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
 					select = true,
 				}),
@@ -125,10 +124,14 @@ return {
 		cmp.setup(opts)
 
 		local cmdline_mapping_overrides = {
-			["<Space>"] = {
-				c = cmp.mapping.confirm({ select = false }),
+			["<S-CR>"] = {
+				c = cmp.mapping.confirm({
+					behavior = cmp.ConfirmBehavior.Insert,
+					select = true,
+				}),
 			},
 		}
+
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(cmdline_mapping_overrides),
 			sources = {

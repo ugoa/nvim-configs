@@ -124,8 +124,7 @@ map("n", "<leader>sp", "<cmd>SessionPurgeOrphaned<cr>", { desc = "removes all or
 map("n", "<leader>sf", "<cmd>SessionSearch<cr>", { desc = "open a session picker" })
 
 map("n", "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "toggle AI Assistant" })
-map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "toggle AI Assistant" })
-map("v", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "toggle AI Assistant" })
+map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current location" })
 
 map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
