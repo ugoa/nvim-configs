@@ -120,6 +120,8 @@ map("n", "<leader>md", function()
 	})
 end, { desc = "djlint format" })
 
+map({ "n" }, "<leader>gt", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
+
 map({ "n", "v" }, "<leader>gy", "<cmd>GitLink<CR>", { desc = "Yank git link" })
 map({ "n", "v" }, "<leader>gY", "<cmd>GitLink!<CR>", { desc = "Open git link" })
 
