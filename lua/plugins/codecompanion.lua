@@ -29,7 +29,7 @@ return {
 					return require("codecompanion.adapters").extend("deepseek", {
 						schema = {
 							model = {
-								default = "deepseek-reasoner",
+								default = "deepseek-chat",
 								choices = {
 									["deepseek-reasoner"] = { opts = { can_reason = false } },
 									"deepseek-chat",
