@@ -120,8 +120,8 @@ map("n", "<leader>md", function()
 	})
 end, { desc = "djlint format" })
 
-map({ "n", "v" }, "<leader>ly", "<cmd>GitLink<CR>", { desc = "Yank git link" })
-map({ "n", "v" }, "<leader>lY", "<cmd>GitLink!<CR>", { desc = "Open git link" })
+map({ "n", "v" }, "<leader>gc", "<cmd>GitLink!<CR>", { desc = "Open git link" })
+map({ "n", "v" }, "<leader>gC", "<cmd>GitLink<CR>", { desc = "Copy git link" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
