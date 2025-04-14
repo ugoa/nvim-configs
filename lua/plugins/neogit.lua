@@ -8,6 +8,6 @@ return {
 	},
 	config = true,
 	keys = {
-		{ "<leader>=", "<cmd>Neogit<cr>" },
+		{ "<leader>=", "<cmd>Neogit<cr>", { desc = "Open Neogit" } },
 	},
 }
