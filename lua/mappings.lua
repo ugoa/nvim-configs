@@ -122,8 +122,8 @@ end, { desc = "djlint format" })
 
 map({ "n" }, "<leader>gt", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
 
-map({ "n", "v" }, "<leader>gc", "<cmd>GitLink!<CR>", { desc = "Open git link" })
-map({ "n", "v" }, "<leader>gC", "<cmd>GitLink<CR>", { desc = "Copy git link" })
+map({ "n", "v" }, "<leader>gx", "<cmd>GitLink!<CR>", { desc = "Open git link" })
+map({ "n", "v" }, "<leader>gX", "<cmd>GitLink<CR>", { desc = "Copy git link" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
 
@@ -138,8 +138,6 @@ map("n", "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "toggle AI 
 map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current location" })
 
 map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
-
-map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
 
 map("n", "<leader>x", function()
 	require("nvchad.tabufline").closeAllBufs()
