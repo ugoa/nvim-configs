@@ -149,7 +149,8 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
-map("n", "<leader>n", "<cmd>set relativenumber!<CR>", { desc = "show Diagnosics" })
+map("n", "<leader>tn", "<cmd>setl relativenumber! relativenumber?<CR>", { desc = "toggle relativenumber" })
+map("n", "<leader>tw", "<cmd>setl wrap! wrap?<CR>", { desc = "toggle word wrap" })
 
 -- <leader>e
 -- <leader>g
