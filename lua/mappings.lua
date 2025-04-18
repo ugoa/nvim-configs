@@ -80,7 +80,7 @@ map("n", "grt", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
 map("n", "grs", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
 map("n", "grh", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, { desc = "Toggle inlay hint" })
+end, lsp_opts("Toggle inlay hint"))
 map("n", "grw", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
@@ -165,32 +165,32 @@ map("n", "<leader>tw", "<cmd>setl wrap! wrap?<CR>", { desc = "toggle word wrap" 
 -- <leader>b
 
 local crates = require("crates")
-vim.keymap.set("n", "<leader>cc", crates.toggle, { silent = true, desc = "toggle" })
-vim.keymap.set("n", "<leader>cr", crates.reload, { silent = true, desc = "reload" })
-vim.keymap.set("n", "<leader>cs", crates.show_popup, { silent = true, desc = "show general popup" })
-vim.keymap.set("n", "<leader>cv", crates.show_versions_popup, { silent = true, desc = "show versions" })
-vim.keymap.set("n", "<leader>cf", crates.show_features_popup, { silent = true, desc = "show features" })
-vim.keymap.set("n", "<leader>cd", crates.show_dependencies_popup, { silent = true, desc = "show deps" })
-vim.keymap.set("n", "<leader>cu", crates.update_crate, { silent = true, desc = "update crate" })
-vim.keymap.set("v", "<leader>cu", crates.update_crates, { silent = true, desc = "update crates" })
-vim.keymap.set("n", "<leader>ca", crates.update_all_crates, { silent = true, desc = "update all crates" })
-vim.keymap.set("n", "<leader>cU", crates.upgrade_crate, { silent = true, desc = "upgrade crate" })
-vim.keymap.set("v", "<leader>cU", crates.upgrade_crates, { silent = true, desc = "upgrade crates" })
-vim.keymap.set("n", "<leader>cA", crates.upgrade_all_crates, { silent = true, desc = "upgrade all crates" })
-vim.keymap.set("n", "<leader>cx", crates.expand_plain_crate_to_inline_table, { silent = true, desc = "expand" })
-vim.keymap.set("n", "<leader>cX", crates.extract_crate_into_table, { silent = true, desc = "extract" })
-vim.keymap.set("n", "<leader>cH", crates.open_homepage, { silent = true, desc = "open homepage" })
-vim.keymap.set("n", "<leader>cR", crates.open_repository, { silent = true, desc = "open repo" })
-vim.keymap.set("n", "<leader>cD", crates.open_documentation, { silent = true, desc = "open doc" })
-vim.keymap.set("n", "<leader>cC", crates.open_crates_io, { silent = true, desc = "open crates.io" })
-vim.keymap.set("n", "<leader>cL", crates.open_lib_rs, { silent = true, desc = "open lib.rs" })
+map("n", "<leader>cc", crates.toggle, { silent = true, desc = "toggle" })
+map("n", "<leader>cr", crates.reload, { silent = true, desc = "reload" })
+map("n", "<leader>cs", crates.show_popup, { silent = true, desc = "show general popup" })
+map("n", "<leader>cv", crates.show_versions_popup, { silent = true, desc = "show versions" })
+map("n", "<leader>cf", crates.show_features_popup, { silent = true, desc = "show features" })
+map("n", "<leader>cd", crates.show_dependencies_popup, { silent = true, desc = "show deps" })
+map("n", "<leader>cu", crates.update_crate, { silent = true, desc = "update crate" })
+map("v", "<leader>cu", crates.update_crates, { silent = true, desc = "update crates" })
+map("n", "<leader>ca", crates.update_all_crates, { silent = true, desc = "update all crates" })
+map("n", "<leader>cU", crates.upgrade_crate, { silent = true, desc = "upgrade crate" })
+map("v", "<leader>cU", crates.upgrade_crates, { silent = true, desc = "upgrade crates" })
+map("n", "<leader>cA", crates.upgrade_all_crates, { silent = true, desc = "upgrade all crates" })
+map("n", "<leader>cx", crates.expand_plain_crate_to_inline_table, { silent = true, desc = "expand" })
+map("n", "<leader>cX", crates.extract_crate_into_table, { silent = true, desc = "extract" })
+map("n", "<leader>cH", crates.open_homepage, { silent = true, desc = "open homepage" })
+map("n", "<leader>cR", crates.open_repository, { silent = true, desc = "open repo" })
+map("n", "<leader>cD", crates.open_documentation, { silent = true, desc = "open doc" })
+map("n", "<leader>cC", crates.open_crates_io, { silent = true, desc = "open crates.io" })
+map("n", "<leader>cL", crates.open_lib_rs, { silent = true, desc = "open lib.rs" })
 
 map("n", "<leader>rr", "<cmd>RustLsp run<cr>", { desc = "Run closet Cargo targets" })
 map("n", "<leader>rl", "<cmd>RustLsp runnables<cr>", { desc = "List runnable targets" })
 map("n", "<leader>rt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
-vim.keymap.set("", "<leader>d", function()
+map("", "<leader>d", function()
 	vim.diagnostic.config({
 		virtual_lines = not vim.diagnostic.config().virtual_lines,
 		-- virtual_text = not vim.diagnostic.config().virtual_text,
@@ -221,8 +221,6 @@ end, { desc = "telescope nvchad themes" })
 
 -- Reload all buffers to get external latest changes
 map("n", "<leader>ji", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
-
-map("n", "<leader>js", vim.diagnostic.setloclist, lsp_opts("diagnostic loclist"))
 
 -- whichkey
 map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
