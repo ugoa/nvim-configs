@@ -7,8 +7,6 @@ end
 map("i", "<C-s>", "<C-o><cmd>wa<CR>", { desc = "save file" })
 map("n", "<C-s>", "<cmd>wa<CR>", { desc = "save file" })
 
-map("i", "<C-h>", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
-
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 map({ "i", "c" }, "<C-f>", "<Right>", { desc = "move right" })
@@ -113,6 +111,7 @@ map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
 map("n", "<leader>mm", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
+
 map("n", "<leader>md", function()
 	require("conform").format({
 		timeout_ms = 20000, -- 20 seconds, because djlint is SLOWWWWWWWWW
