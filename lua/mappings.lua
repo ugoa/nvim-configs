@@ -147,7 +147,7 @@ map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
-map("n", "<leader>n", "<cmd>set relativenumber!<CR>", { desc = "show Diagnosics" })
+map("n", "<leader>n", "<cmd>set relativenumber!<CR>", { desc = "Toggle relative number" })
 
 -- <leader>e
 -- <leader>g
