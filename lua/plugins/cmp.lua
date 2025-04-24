@@ -87,7 +87,7 @@ return {
 					behavior = cmp.ConfirmBehavior.Insert,
 					select = false,
 				}),
-				["<C-CR>"] = cmp.mapping.confirm({
+				["<CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
 					select = false,
 				}),
@@ -137,7 +137,7 @@ return {
 					select = false,
 				}),
 			},
-			["<C-CR>"] = cmp.mapping.confirm({
+			["<CR>"] = cmp.mapping.confirm({
 				behavior = cmp.ConfirmBehavior.Insert,
 				select = false,
 			}),
