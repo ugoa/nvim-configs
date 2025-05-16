@@ -7,8 +7,6 @@ local function on_attach(bufnr)
 
 		if node.nodes then -- is folder
 			api.node.open.edit()
-		else -- is file
-			api.node.open.edit()
 		end
 	end
 
