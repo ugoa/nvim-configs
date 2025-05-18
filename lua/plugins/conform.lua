@@ -9,7 +9,7 @@ return {
 			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
 			javascriptreact = { "prettier" },
-			json = { "prettier" },
+			-- json = { "prettier" },
 			-- vue = { "prettier" },
 			html = { "djlint" },
 			htmldjango = { "djlint" },
