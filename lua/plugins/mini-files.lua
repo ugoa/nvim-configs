@@ -4,13 +4,13 @@ return {
 	version = "*",
 	opts = {
 		windows = {
-			-- Whether to show preview of file/directory under cursor
 			preview = true,
-			-- Width of focused window
+			width_nofocus = 20,
 			width_focus = 60,
 			width_preview = 100,
 		},
 		mappings = {
+
 			go_in_plus = "<CR>",
 			close = "<ESC>",
 		},
