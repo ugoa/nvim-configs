@@ -11,10 +11,6 @@
     "branch": "main",
     "commit": "0a1318557c03845f2e0dde347bc54507d1d8c34d"
   },
-  "avante.nvim": {
-    "branch": "main",
-    "commit": "89a86f0fc197ec9ffb3663a499432f8df4e4b1e5"
-  },
   "base46": {
     "branch": "v2.5",
     "commit": "fde7a2cd54599e148d376f82980407c2d24b0fa2"
@@ -42,10 +38,6 @@
   "cmp_luasnip": {
     "branch": "master",
     "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90"
-  },
-  "codecompanion.nvim": {
-    "branch": "main",
-    "commit": "35b11dc4b292519a5c09fb2c0c0e8a8832e9e821"
   },
   "conform.nvim": {
     "branch": "master",
@@ -78,10 +70,6 @@
   "lazy.nvim": {
     "branch": "main",
     "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a"
-  },
-  "marks.nvim": {
-    "branch": "master",
-    "commit": "f353e8c08c50f39e99a9ed474172df7eddd89b72"
   },
   "mason.nvim": {
     "branch": "main",
@@ -142,10 +130,6 @@
   "rustaceanvim": {
     "branch": "master",
     "commit": "34f0f9761b2f3d861fc15845b42d543da1c1b555"
-  },
-  "scrollEOF.nvim": {
-    "branch": "master",
-    "commit": "a186f695b500e9f0b569102a4a5e8a255cd0d198"
   },
   "showkeys": {
     "branch": "main",
