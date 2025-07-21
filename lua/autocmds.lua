@@ -109,14 +109,14 @@ autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
 	command = "silent! checktime",
 })
 
--- Open nvim-tree when startup, then move focus to buffer without closing the tree
-autocmd("VimEnter", {
-	callback = function()
-		require("nvim-tree.api").tree.open()
-		if vim.fn.bufname():match("NvimTree_") then
-			vim.cmd.wincmd("p")
-		else
-			vim.cmd("NvimTreeFindFile")
-		end
-	end,
-})
+-- -- Open nvim-tree when startup, then move focus to buffer without closing the tree
+-- autocmd("VimEnter", {
+-- 	callback = function()
+-- 		require("nvim-tree.api").tree.open()
+-- 		if vim.fn.bufname():match("NvimTree_") then
+-- 			vim.cmd.wincmd("p")
+-- 		else
+-- 			vim.cmd("NvimTreeFindFile")
+-- 		end
+-- 	end,
+-- })

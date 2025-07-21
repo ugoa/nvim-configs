@@ -47,7 +47,8 @@ end
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	tag = "v1.10.0",
+	enabled = false,
+	tag = "v1.13.0",
 	cmd = { "NvimTreeToggle", "NvimTreeFocus" },
 
 	-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237

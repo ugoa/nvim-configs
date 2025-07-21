@@ -83,6 +83,10 @@
     "branch": "main",
     "commit": "fc98833b6da5de5a9c5b1446ac541577059555be"
   },
+  "mini.files": {
+    "branch": "main",
+    "commit": "49c855977e9f4821d1ed8179ed44fe098b93ea2a"
+  },
   "neogit": {
     "branch": "master",
     "commit": "43fa47fb61773b0d90a78ebc2521ea8faaeebd86"
@@ -113,7 +117,7 @@
   },
   "nvim-tree.lua": {
     "branch": "master",
-    "commit": "d529a99f88e0dff02e0aa275db2f595cd252a2c8"
+    "commit": "6b5b36659688767fb9f133bb83024ab1466fe5cd"
   },
   "nvim-treesitter": {
     "branch": "master",

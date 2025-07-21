@@ -82,12 +82,7 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-_>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
-
 				["<C-y>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Insert,
-					select = false,
-				}),
-				["<CR>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
 					select = false,
 				}),
@@ -137,16 +132,10 @@ return {
 					select = false,
 				}),
 			},
-			["<CR>"] = cmp.mapping.confirm({
+			["<C-CR>"] = cmp.mapping.confirm({
 				behavior = cmp.ConfirmBehavior.Insert,
 				select = false,
 			}),
-			["<SPACE>"] = {
-				c = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Insert,
-					select = false,
-				}),
-			},
 		}
 
 		cmp.setup.cmdline("/", {
