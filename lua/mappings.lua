@@ -144,7 +144,11 @@ map("n", "<leader>x", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "close all buffers" })
 
-map("n", "<leader>y", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
+map("n", "<leader>o", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
+
+map("n", "<leader>yf", "<cmd>let @+ = expand('%:t')<CR>", { desc = "Copy file name to clipboard" })
+map("n", "<leader>yy", "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path to clipboard" })
+map("n", "<leader>ya", "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy absolute path to clipboard" })
 
 map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
@@ -155,12 +159,10 @@ map("n", "<leader>tw", "<cmd>setl wrap! wrap?<CR>", { desc = "toggle word wrap" 
 -- <leader>g
 -- <leader>h
 -- <leader>q
--- <leader>o
 -- <leader>r
 -- <leader>u
 -- <leader>l
 -- <leader>w
--- <leader>c
 -- <leader>b
 
 local crates = require("crates")
