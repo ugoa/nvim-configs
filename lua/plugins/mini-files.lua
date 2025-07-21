@@ -1,3 +1,4 @@
+-- https://github.com/echasnovski/mini.files
 return {
 	"echasnovski/mini.files",
 	lazy = false,
@@ -10,8 +11,11 @@ return {
 			width_preview = 60,
 		},
 		mappings = {
-			go_in_plus = "<CR>",
 			close = "<ESC>",
+			go_in = "l",
+			go_in_plus = "<CR>",
+			go_out = "H",
+			go_out_plus = "h",
 		},
 	},
 	keys = {
