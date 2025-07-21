@@ -87,6 +87,10 @@
     "branch": "main",
     "commit": "fc98833b6da5de5a9c5b1446ac541577059555be"
   },
+  "mini.files": {
+    "branch": "main",
+    "commit": "49c855977e9f4821d1ed8179ed44fe098b93ea2a"
+  },
   "neogit": {
     "branch": "master",
     "commit": "43fa47fb61773b0d90a78ebc2521ea8faaeebd86"

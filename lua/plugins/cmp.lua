@@ -82,7 +82,7 @@ return {
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
 				["<C-_>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
-				["<C-CR>"] = cmp.mapping.confirm({
+				["<C-y>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
 					select = false,
 				}),
@@ -125,7 +125,7 @@ return {
 		cmp.setup(opts)
 
 		local cmdline_mapping_overrides = {
-			["<C-CR>"] = {
+			["<c-y>"] = {
 				c = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Insert,
 					select = false,

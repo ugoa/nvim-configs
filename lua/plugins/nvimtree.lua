@@ -51,7 +51,7 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	tag = "v1.10.0",
 	cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-
+	enabled = false,
 	-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
 	opts = {
 		on_attach = on_attach,
