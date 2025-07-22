@@ -67,6 +67,7 @@ M.base46 = {
 
 		-- https://github.com/nvim-tree/nvim-tree.lua/issues/2923
 		NvimTreeCursorLine = { bg = colors.lightbg },
+		MiniFilesCursorLine = { bg = colors.lightbg },
 
 		["@keyword"] = { italic = true },
 		["@keyword.function"] = { italic = true },
