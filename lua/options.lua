@@ -102,3 +102,5 @@ vim.diagnostic.config({
 })
 
 vim.opt.swapfile = false
+
+vim.opt.scrolloff = 5
