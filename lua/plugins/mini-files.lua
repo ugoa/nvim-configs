@@ -1,11 +1,10 @@
 -- https://github.com/echasnovski/mini.files
 return {
 	"echasnovski/mini.files",
-	lazy = false,
 	version = "*",
 	opts = {
 		windows = {
-			preview = true,
+			preview = false,
 			width_nofocus = 20,
 			width_focus = 40,
 			width_preview = 60,
