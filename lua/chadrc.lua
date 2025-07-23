@@ -86,7 +86,7 @@ M.base46 = {
 	hl_override = {
 
 		-- https://github.com/nvim-tree/nvim-tree.lua/issues/2923
-		NvimTreeCursorLine = { bg = colors.lightbg },
+		-- NvimTreeCursorLine = { bg = colors.lightbg },
 
 		["@keyword"] = { italic = true },
 		["@keyword.function"] = { italic = true },
