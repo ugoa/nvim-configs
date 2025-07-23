@@ -120,3 +120,19 @@ autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
 -- 		end
 -- 	end,
 -- })
+
+-- Disable diagnostics when the buffer is modified
+autocmd({ "TextChanged", "TextChangedI" }, {
+	pattern = "*",
+	callback = function()
+		vim.diagnostic.enable(false)
+	end,
+})
+
+-- Enable diagnostics after writing the buffer
+autocmd("BufWritePost", {
+	pattern = "*",
+	callback = function()
+		vim.diagnostic.enable(true)
+	end,
+})

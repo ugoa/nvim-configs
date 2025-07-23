@@ -56,9 +56,7 @@ local colors = {
 	lightbg = "#41434f",
 	pmenu_bg = "#b389ef",
 	folder_bg = "#BD93F9",
-}
-
-local base_16 = {
+	-- base_16
 	base00 = "#282936",
 	base01 = "#3a3c4e",
 	base02 = "#4d4f68",
@@ -80,6 +78,10 @@ local base_16 = {
 M.base46 = {
 	theme = "chadracula",
 	transparency = false,
+
+	hl_add = {
+		MiniFilesCursorLine = { bg = colors.lightbg },
+	},
 
 	hl_override = {
 
@@ -112,7 +114,7 @@ M.base46 = {
 		-- https://github.com/NvChad/NvChad/discussions/2722
 		["@comment"] = { fg = colors.teal }, -- Override treesitter Enabled filetypes
 		Comment = { fg = colors.teal }, -- Override rest filetypes
-		NonText = { fg = base_16.base03 }, -- such as git blame virtual line info
+		NonText = { fg = colors.base03 }, -- such as git blame virtual line info
 
 		WhichKeyDesc = {
 			fg = colors.white,
