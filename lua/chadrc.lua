@@ -81,6 +81,7 @@ M.base46 = {
 
 	hl_add = {
 		MiniFilesCursorLine = { bg = colors.lightbg },
+		MiniFilesTitleFocused = { bold = true, bg = colors.nord_blue },
 	},
 
 	hl_override = {
