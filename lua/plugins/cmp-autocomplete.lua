@@ -87,6 +87,11 @@ return {
 					select = false,
 				}),
 
+				["<CR>"] = cmp.mapping.confirm({
+					behavior = cmp.ConfirmBehavior.Insert,
+					select = false,
+				}),
+
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
@@ -132,10 +137,15 @@ return {
 					select = false,
 				}),
 			},
-			["<C-CR>"] = cmp.mapping.confirm({
-				behavior = cmp.ConfirmBehavior.Insert,
-				select = false,
-			}),
+
+			["<CR>"] = {
+				c = function(default)
+					if cmp.visible() then
+						return cmp.confirm({ select = true })
+					end
+					default()
+				end,
+			},
 		}
 
 		cmp.setup.cmdline("/", {
