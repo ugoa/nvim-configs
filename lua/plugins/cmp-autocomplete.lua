@@ -66,7 +66,7 @@ return {
 
 	config = function()
 		local cmp = require("cmp")
-		local options = {
+		local opts = {
 			completion = { completeopt = "menu,menuone" },
 
 			snippet = {
@@ -97,7 +97,7 @@ return {
 					else
 						fallback()
 					end
-				end, { "i", "s" }),
+				end, { "i", "s", "c" }),
 
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
@@ -127,46 +127,20 @@ return {
 				{ name = "nvim_lua" },
 				{ name = "path" },
 				{ name = "crates" },
-				per_filetype = {
-					codecompanion = { "codecompanion" },
-				},
 			},
 		}
 
-		-- local opts = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
-		cmp.setup(options)
-
-		local cmdline_mapping_overrides = {
-
-			["<c-y>"] = {
-				c = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Insert,
-					select = false,
-				}),
-			},
-
-			-- Custom mapping for <Space>
-			-- If a completion menu is visible, confirm the selected item
-			-- Otherwise, just insert a space
-			-- Apply this mapping in command modes
-			["<Space>"] = cmp.mapping(function(fallback)
-				if cmp.visible() then
-					cmp.confirm({ select = true })
-				else
-					fallback()
-				end
-			end, { "c" }),
-		}
+		cmp.setup(opts)
 
 		cmp.setup.cmdline("/", {
-			mapping = cmp.mapping.preset.cmdline(cmdline_mapping_overrides),
+			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
 				{ name = "buffer" },
 			},
 		})
 
 		cmp.setup.cmdline(":", {
-			mapping = cmp.mapping.preset.cmdline(cmdline_mapping_overrides),
+			mapping = cmp.mapping.preset.cmdline(),
 			sources = cmp.config.sources({
 				{ name = "path" },
 			}, {
