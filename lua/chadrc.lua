@@ -150,6 +150,7 @@ M.ui = {
 			"percent",
 			"mode",
 			"lsp",
+			"cwd",
 		},
 		modules = {
 			my_file = function()
