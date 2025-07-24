@@ -5,7 +5,7 @@ return {
 	lazy = false,
 	opts = {
 		win = {
-			border = "rounded",
+			border = "single",
 		},
 	},
 	config = function(_, opts)

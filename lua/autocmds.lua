@@ -137,7 +137,7 @@ autocmd("BufWritePost", {
 	end,
 })
 
-vim.opt.winborder = "rounded"
+vim.opt.winborder = "single"
 autocmd("User", {
 	pattern = "TelescopeFindPre",
 	callback = function()
@@ -145,7 +145,7 @@ autocmd("User", {
 		autocmd("WinLeave", {
 			once = true,
 			callback = function()
-				vim.opt.winborder = "rounded"
+				vim.opt.winborder = "single"
 			end,
 		})
 	end,
