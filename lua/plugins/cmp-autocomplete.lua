@@ -125,9 +125,9 @@ return {
 				},
 			},
 		}
-		local opts = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
 
-		cmp.setup(opts)
+		-- local opts = vim.tbl_deep_extend("force", options, require("nvchad.cmp"))
+		cmp.setup(options)
 
 		local cmdline_mapping_overrides = {
 

@@ -7,6 +7,24 @@ local function replace(str, what, with)
 	return string.gsub(str, what, with)
 end
 
+local get_file = function()
+	local icon = "󰈚"
+	local stbufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
+	local path = vim.api.nvim_buf_get_name(stbufnr)
+	local name = (path == "" and "Empty") or path:match("([^/\\]+)[/\\]*$")
+
+	if name ~= "Empty" then
+		local devicons_present, devicons = pcall(require, "nvim-web-devicons")
+
+		if devicons_present then
+			local ft_icon = devicons.get_icon(name)
+			icon = (ft_icon ~= nil and ft_icon) or icon
+		end
+	end
+
+	return { icon, name }
+end
+
 local colors = {
 	white = "#F8F8F2",
 	darker_black = "#222430",
@@ -38,9 +56,7 @@ local colors = {
 	lightbg = "#41434f",
 	pmenu_bg = "#b389ef",
 	folder_bg = "#BD93F9",
-}
-
-local base_16 = {
+	-- base16
 	base00 = "#282936",
 	base01 = "#3a3c4e",
 	base02 = "#4d4f68",
@@ -63,11 +79,12 @@ M.base46 = {
 	theme = "chadracula",
 	transparency = false,
 
-	hl_override = {
-
-		-- https://github.com/nvim-tree/nvim-tree.lua/issues/2923
-		NvimTreeCursorLine = { bg = colors.lightbg },
+	hl_add = {
 		MiniFilesCursorLine = { bg = colors.lightbg },
+		MiniFilesTitleFocused = { bold = true, bg = colors.nord_blue },
+	},
+
+	hl_override = {
 
 		["@keyword"] = { italic = true },
 		["@keyword.function"] = { italic = true },
@@ -95,7 +112,7 @@ M.base46 = {
 		-- https://github.com/NvChad/NvChad/discussions/2722
 		["@comment"] = { fg = colors.teal }, -- Override treesitter Enabled filetypes
 		Comment = { fg = colors.teal }, -- Override rest filetypes
-		NonText = { fg = base_16.base03 }, -- such as git blame virtual line info
+		NonText = { fg = colors.base03 }, -- such as git blame virtual line info
 
 		WhichKeyDesc = {
 			fg = colors.white,
@@ -139,8 +156,7 @@ M.ui = {
 				local parent = vim.loop.cwd() .. "/"
 				local rpath = replace(path, parent, "")
 
-				local utils = require("nvchad.stl.utils")
-				local x = utils.file()
+				local x = get_file()
 				if rpath == "NvimTree_1" then
 					return ""
 				else
