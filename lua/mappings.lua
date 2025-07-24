@@ -71,7 +71,7 @@ map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 ----------------------------------------------------------------------------------------------------
 -- leader key mappings
 ----------------------------------------------------------------------------------------------------
-
+map("n", "grw", vim.lsp.buf.hover, lsp_opts("go to definition"))
 map("n", "grd", vim.lsp.buf.definition, lsp_opts("go to definition"))
 map("n", "gre", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
 map("n", "grt", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
@@ -79,7 +79,7 @@ map("n", "grs", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
 map("n", "grh", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, lsp_opts("Toggle inlay hint"))
-map("n", "grw", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
+map("n", "grf", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
