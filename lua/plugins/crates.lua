@@ -4,7 +4,7 @@ return {
 	opts = {
 		popup = {
 			autofocus = true,
-			border = "single",
+			border = "rounded",
 		},
 		completion = {
 			crates = {

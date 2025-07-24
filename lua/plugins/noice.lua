@@ -27,7 +27,7 @@ return {
 					row = "15%",
 					col = "50%",
 				},
-				border = "single",
+				border = "rounded",
 				size = {
 					width = "auto",
 					height = "auto",
