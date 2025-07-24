@@ -1,7 +1,6 @@
 -- https://github.com/echasnovski/mini.files
 return {
 	"echasnovski/mini.files",
-	lazy = false,
 	version = "*",
 	opts = {
 		windows = {
