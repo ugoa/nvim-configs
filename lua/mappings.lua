@@ -37,14 +37,13 @@ map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "terminal escape terminal mode" })
 map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "terminal escape terminal mode" })
 
 map({ "n", "t" }, "<M-g>", function()
-	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
 	require("modules.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "toggle floating terminal" })
 map({ "n", "t" }, "<M-->", function()
-	require("nvchad.term").toggle({ pos = "sp", size = 0.4, id = "split_window" })
+	require("modules.term").toggle({ pos = "sp", size = 0.4, id = "split_window" })
 end, { desc = "toggle horizontal terminal" })
 map({ "n", "t" }, "<M-=>", function()
-	require("nvchad.term").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" })
+	require("modules.term").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" })
 end, { desc = "toggle vertical terminal" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
@@ -86,19 +85,14 @@ end, { desc = "telescope list current open buffers" })
 
 map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
-map("n", "<leader>kk", function()
-	require("nvchad.tabufline").close_buffer()
-end, { desc = "close current buffer" })
+map("n", "<leader>kk", "<cmd>bdelete<cr>", { desc = "close current buffer" })
 map("n", "<leader>kl", function()
 	require("nvchad.tabufline").closeBufs_at_direction("left")
 end, { desc = "close buffer at left" })
 map("n", "<leader>kr", function()
 	require("nvchad.tabufline").closeBufs_at_direction("right")
 end, { desc = "close current at right" })
-map("n", "<leader>ko", function()
-	require("nvchad.tabufline").closeBufs_at_direction("left")
-	require("nvchad.tabufline").closeBufs_at_direction("right")
-end, { desc = "close other buffers" })
+map("n", "<leader>ko", "<cmd>%bd|edit #<cr>", { desc = "close other buffers" })
 map("n", "<leader>ka", function()
 	require("nvchad.tabufline").closeAllBufs()
 end, { desc = "close all buffers" })
@@ -135,10 +129,6 @@ map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current 
 map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
 map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
-
-map("n", "<leader>x", function()
-	require("nvchad.tabufline").closeAllBufs()
-end, { desc = "close all buffers" })
 
 map("n", "<leader>o", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
@@ -211,10 +201,6 @@ end, { desc = "noice dismiss all" })
 
 -- whichkey
 map("n", "<leader>jg", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enable highlight" })
-
-map("n", "<leader>jh", function()
-	require("nvchad.themes").open()
-end, { desc = "telescope nvchad themes" })
 
 -- Reload all buffers to get external latest changes
 map("n", "<leader>ji", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })

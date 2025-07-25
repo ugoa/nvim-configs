@@ -190,15 +190,15 @@ M.ui = {
 }
 
 M.term = {
-	float = {
-		relative = "editor",
-		row = 0.05,
-		col = 0.1,
-		width = 0.8,
-		height = 0.8,
-		border = "single",
-	},
+	enable = false,
+	-- float = {
+	-- 	relative = "editor",
+	-- 	row = 0.05,
+	-- 	col = 0.1,
+	-- 	width = 0.8,
+	-- 	height = 0.8,
+	-- 	border = "single",
+	-- },
 }
 
-local status, chadrc = pcall(require, "chadrc")
-return vim.tbl_deep_extend("force", M, status and chadrc or {})
+return M
