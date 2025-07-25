@@ -87,11 +87,17 @@ return {
 					select = false,
 				}),
 
-				-- Custom mapping for <Space>
 				-- If a completion menu is visible, confirm the selected item
 				-- Otherwise, just insert a space
 				-- Apply this mapping in insert and select modes
 				["<S-CR>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.confirm({ select = true })
+					else
+						fallback()
+					end
+				end, { "i", "s", "c" }),
+				["<C-CR>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.confirm({ select = true })
 					else
