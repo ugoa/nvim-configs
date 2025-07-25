@@ -186,8 +186,6 @@ M.ui = {
 	},
 }
 
-M.lsp = { signature = true }
-
 M.term = {
 	float = {
 		relative = "editor",

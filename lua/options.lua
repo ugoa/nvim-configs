@@ -104,3 +104,10 @@ vim.diagnostic.config({
 vim.opt.swapfile = false
 
 vim.opt.scrolloff = 5
+
+local original_signature_help = vim.lsp.buf.signature_help
+vim.lsp.buf.signature_help = function(opts)
+	opts = opts or {}
+	opts.border = "rounded"
+	original_signature_help(opts)
+end
