@@ -1,4 +1,3 @@
-vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46/"
 vim.g.mapleader = " "
 
 -- bootstrap lazy and all plugins
@@ -13,7 +12,6 @@ end
 -- load plugins
 require("lazy").setup("plugins", {
 	defaults = { lazy = true },
-	-- install = { colorscheme = { "nvchad" } },
 
 	ui = { icons = { ft = "", lazy = "󰂠 ", loaded = "", not_loaded = "" } },
 
@@ -52,17 +50,10 @@ require("lazy").setup("plugins", {
 	},
 })
 
--- Ref: https://github.com/NvChad/ui/blob/v3.0/README.md#install
-for _, plugin_highlights in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
-	dofile(vim.g.base46_cache .. plugin_highlights)
-end
-
 require("options")
 require("autocmds")
 require("mappings")
 
-vim.lsp.config("*", {
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
-})
-
 vim.lsp.enable({ "luals", "pyright" })
+
+vim.cmd([[colorscheme catppuccin-mocha]])
