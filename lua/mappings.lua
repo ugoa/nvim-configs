@@ -73,7 +73,9 @@ map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 ----------------------------------------------------------------------------------------------------
 -- leader key mappings
 ----------------------------------------------------------------------------------------------------
-
+vim.keymap.set("n", "grk", function()
+	vim.lsp.buf.hover({ border = "single" }) -- or 'rounded', 'double', etc.
+end, { desc = "LSP Hover" })
 map("n", "grd", vim.lsp.buf.definition, lsp_opts("go to definition"))
 map("n", "gre", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
 map("n", "grt", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
