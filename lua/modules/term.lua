@@ -3,7 +3,7 @@ local g = vim.g
 local M = {}
 local set_buf = api.nvim_set_current_buf
 
-g.nvchad_terms = {}
+g.terms_list = {}
 
 local pos_data = {
 	sp = { resize = "height", area = "lines" },
@@ -31,13 +31,13 @@ vim.g.nvvterm = false
 
 -------------------------- util funcs -----------------------------
 local function save_term_info(index, val)
-	local terms_list = g.nvchad_terms
+	local terms_list = g.terms_list
 	terms_list[tostring(index)] = val
-	g.nvchad_terms = terms_list
+	g.terms_list = terms_list
 end
 
 local function opts_to_id(id)
-	for _, opts in pairs(g.nvchad_terms) do
+	for _, opts in pairs(g.terms_list) do
 		if opts.id == id then
 			return opts
 		end

@@ -65,11 +65,6 @@ vim.opt.colorcolumn = "120"
 
 vim.opt.shell = "/opt/homebrew/bin/nu"
 
--- FIX: https://github.com/NvChad/NvChad/issues/1907
--- Another solution is to disable sematic token in rust-tools on_init function
--- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/configs/lspconfig.lua#L41
-vim.highlight.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
-
 -- Use blink block cursor in normal, visual, showmatch in insert mode
 -- Use blink vert line cursor in insert mode
 vim.opt.guicursor =
@@ -86,7 +81,6 @@ vim.filetype.add({
 	},
 })
 
--- https://github.com/NvChad/ui/blob/v3.0/lua/nvchad/lsp/init.lua
 local x = vim.diagnostic.severity
 vim.diagnostic.config({
 	-- disable to avoid duplications with lsp_lines message
