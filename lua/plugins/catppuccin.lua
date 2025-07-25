@@ -1,6 +1,12 @@
 return {
 
-	{ "catppuccin/nvim", lazy = false, name = "catppuccin", priority = 1000 },
+	{
+		"catppuccin/nvim",
+		lazy = false,
+		name = "catppuccin",
+		priority = 1000,
+		opts = {},
+	},
 	{ "nvim-tree/nvim-web-devicons", opts = {} },
 
 	{

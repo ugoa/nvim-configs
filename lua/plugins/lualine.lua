@@ -18,7 +18,8 @@ return {
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "catppuccin-mocha",
+				theme = "catppuccin",
+				-- theme = "catppuccin-mocha",
 			},
 
 			sections = {
