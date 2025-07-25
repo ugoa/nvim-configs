@@ -16,13 +16,9 @@ map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
-map("n", "<tab>", function()
-	require("nvchad.tabufline").next()
-end, { desc = "buffer goto next" })
+map("n", "<tab>", "<cmd>bnext<CR>", { desc = "buffer goto next" })
 
-map("n", "<S-tab>", function()
-	require("nvchad.tabufline").prev()
-end, { desc = "buffer goto prev" })
+map("n", "<S-tab>", "<cmd>bprevious<CR>", { desc = "buffer goto prev" })
 
 -- nvimtree
 --map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
@@ -42,6 +38,7 @@ map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "terminal escape terminal mode" })
 
 map({ "n", "t" }, "<M-g>", function()
 	require("nvchad.term").toggle({ pos = "float", id = "floatTerm" })
+	require("modules.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "toggle floating terminal" })
 map({ "n", "t" }, "<M-->", function()
 	require("nvchad.term").toggle({ pos = "sp", size = 0.4, id = "split_window" })
