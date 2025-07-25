@@ -136,17 +136,3 @@ autocmd("BufWritePost", {
 		vim.diagnostic.enable(true)
 	end,
 })
-
-vim.opt.winborder = "rounded"
-autocmd("User", {
-	pattern = "TelescopeFindPre",
-	callback = function()
-		vim.opt.winborder = "none"
-		autocmd("WinLeave", {
-			once = true,
-			callback = function()
-				vim.opt.winborder = "rounded"
-			end,
-		})
-	end,
-})

@@ -3,11 +3,6 @@ return {
 	keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
 	cmd = "WhichKey",
 	lazy = false,
-	opts = {
-		win = {
-			border = "rounded",
-		},
-	},
 	config = function(_, opts)
 		vim.o.timeout = true
 		vim.o.timeoutlen = 0
