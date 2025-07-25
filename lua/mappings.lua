@@ -86,32 +86,7 @@ end, { desc = "telescope list current open buffers" })
 map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>kk", "<cmd>bdelete<cr>", { desc = "close current buffer" })
-map("n", "<leader>kl", function()
-	local current_buf = vim.api.nvim_get_current_buf()
-	local buflist = vim.api.nvim_list_bufs()
-
-	-- Find the index of the current buffer in the buflist
-	local current_buf_index = -1
-	for i, bufnr in ipairs(buflist) do
-		if bufnr == current_buf then
-			current_buf_index = i
-			break
-		end
-	end
-
-	-- Delete buffers that are before the current buffer in the list
-	if current_buf_index ~= -1 then
-		for i = 1, current_buf_index - 1 do
-			local bufnr_to_delete = buflist[i]
-			if vim.api.nvim_buf_is_loaded(bufnr_to_delete) then
-				-- Use 'bd' (buffer delete) to close the buffer.
-				-- Add '!' to force deletion even with unsaved changes.
-				vim.cmd("bd " .. bufnr_to_delete)
-			end
-		end
-	end
-end, { desc = "close buffer at left" })
-
+map("n", "<leader>kl", "<cmd>execute '1,' . (bufnr('%') - 1) . 'bdelete'<cr>", { desc = "close current at left" })
 map(
 	"n",
 	"<leader>kr",
