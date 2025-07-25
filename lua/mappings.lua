@@ -87,17 +87,40 @@ map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>kk", "<cmd>bdelete<cr>", { desc = "close current buffer" })
 map("n", "<leader>kl", function()
-	require("nvchad.tabufline").closeBufs_at_direction("left")
-end, { desc = "close buffer at left" })
-map("n", "<leader>kr", function()
-	require("nvchad.tabufline").closeBufs_at_direction("right")
-end, { desc = "close current at right" })
-map("n", "<leader>ko", "<cmd>%bd|edit #<cr>", { desc = "close other buffers" })
-map("n", "<leader>ka", function()
-	require("nvchad.tabufline").closeAllBufs()
-end, { desc = "close all buffers" })
-map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
+	local current_buf = vim.api.nvim_get_current_buf()
+	local buflist = vim.api.nvim_list_bufs()
 
+	-- Find the index of the current buffer in the buflist
+	local current_buf_index = -1
+	for i, bufnr in ipairs(buflist) do
+		if bufnr == current_buf then
+			current_buf_index = i
+			break
+		end
+	end
+
+	-- Delete buffers that are before the current buffer in the list
+	if current_buf_index ~= -1 then
+		for i = 1, current_buf_index - 1 do
+			local bufnr_to_delete = buflist[i]
+			if vim.api.nvim_buf_is_loaded(bufnr_to_delete) then
+				-- Use 'bd' (buffer delete) to close the buffer.
+				-- Add '!' to force deletion even with unsaved changes.
+				vim.cmd("bd " .. bufnr_to_delete)
+			end
+		end
+	end
+end, { desc = "close buffer at left" })
+
+map(
+	"n",
+	"<leader>kr",
+	"<cmd>execute (bufnr('%') + 1) . ',' . bufnr('$') . 'bdelete!'<cr>",
+	{ desc = "close current at right" }
+)
+map("n", "<leader>ko", "<cmd>%bd|edit #<cr>", { desc = "close other buffers" })
+map("n", "<leader>ka", "<cmd>%bd<cr>", { desc = "close all buffers" })
+map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
 map("n", "<leader>mm", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
