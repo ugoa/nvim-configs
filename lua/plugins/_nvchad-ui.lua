@@ -2,6 +2,7 @@ return {
 	{
 		"nvchad/ui",
 		lazy = false,
+		enabled = false,
 		config = function()
 			require("nvchad")
 		end,
