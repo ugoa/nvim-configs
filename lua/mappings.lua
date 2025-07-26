@@ -46,10 +46,29 @@ map({ "n", "t" }, "<M-=>", function()
 	require("custom.term").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" })
 end, { desc = "toggle vertical terminal" })
 
+-- Telescope
+map("n", "<M-f>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+map("n", "<M-p>", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
+map(
+	"n",
+	"<M-n>",
+	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
+	{ desc = "telescope find buffers" }
+)
+map("n", "<M-r>", function()
+	require("telescope.builtin").lsp_references()
+end, { desc = "telescope LSP reference" })
+map("n", "<M-i>", function()
+	require("telescope.builtin").lsp_implementations()
+end, { desc = "telescope LSP implementations" })
+map("n", "<M-d>", function()
+	require("telescope.builtin").lsp_definitions()
+end, { desc = "telescope LSP definitions" })
+
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 
 -- Visual mode
-map("v", "A", "<cmd>normal A", { desc = "append to visual block" })
+map("v", "A", ":normal A", { desc = "append to visual block" })
 
 -- always center search/nav results
 vim.keymap.set("n", "n", "nzz", { desc = "find next and center screen", silent = true })
@@ -71,7 +90,7 @@ map("n", "grd", vim.lsp.buf.definition, lsp_opts("go to definition"))
 map("n", "gre", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
 map("n", "grt", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
 map("n", "S", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
-map("n", "grh", function()
+map("n", "<M-h>", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, lsp_opts("Toggle inlay hint"))
 map("n", "grf", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
@@ -119,24 +138,6 @@ map("n", "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "toggle AI 
 map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current location" })
 
 map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
-
-map("n", "<M-f>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map("n", "<M-p>", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
-map(
-	"n",
-	"<M-n>",
-	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
-	{ desc = "telescope find buffers" }
-)
-map("n", "<M-r>", function()
-	require("telescope.builtin").lsp_references()
-end, { desc = "telescope LSP reference" })
-map("n", "<M-i>", function()
-	require("telescope.builtin").lsp_implementations()
-end, { desc = "telescope LSP implementations" })
-map("n", "<M-d>", function()
-	require("telescope.builtin").lsp_definitions()
-end, { desc = "telescope LSP definitions" })
 
 map("n", "<leader>o", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
