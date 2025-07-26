@@ -88,10 +88,20 @@ return {
 						end,
 					},
 				},
-				lualine_x = {
+				lualine_x = {},
+				lualine_y = {
+					"location",
+					"progress",
+					{
+						function()
+							return vim.fn.line("$")
+						end,
+					},
+				},
+				lualine_z = {
 					"encoding",
-					"filetype",
 					lsp,
+					"filetype",
 				},
 			},
 		},
