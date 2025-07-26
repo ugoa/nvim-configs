@@ -49,7 +49,7 @@ autocmd("FileType", {
 	},
 	callback = function()
 		vim.keymap.set("n", "q", function()
-			vim.cmd(":silent q!")
+			vim.cmd(":silent bw!")
 			vim.api.nvim_input("<CR>")
 		end, { desc = "Close the current buffer", buffer = true })
 	end,

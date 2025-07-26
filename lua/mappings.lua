@@ -31,11 +31,10 @@ map("x", "p", function()
 	return 'pgv"' .. vim.v.register .. "y"
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
-map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "terminal escape terminal mode" })
-map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "terminal escape terminal mode" })
-map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "terminal escape terminal mode" })
-map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "terminal escape terminal mode" })
+-- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
+-- <M-xx x xxxx  x   x xx      xxx >
 
+map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
 map({ "n", "t" }, "<M-g>", function()
 	require("custom.term").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "toggle floating terminal" })
@@ -45,13 +44,22 @@ end, { desc = "toggle horizontal terminal" })
 map({ "n", "t" }, "<M-=>", function()
 	require("custom.term").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" })
 end, { desc = "toggle vertical terminal" })
+map("n", "<M-z>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
+
+-- When lines are on, text is off. Text on, lines off. Minimize clutter.
+map("", "<M-l>", function()
+	vim.diagnostic.config({
+		virtual_lines = not vim.diagnostic.config().virtual_lines,
+		-- virtual_text = not vim.diagnostic.config().virtual_text,
+	})
+end, { desc = "Toggle diagnostic [l]ines" })
 
 -- Telescope
 map("n", "<M-f>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map("n", "<M-p>", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
 map(
 	"n",
-	"<M-n>",
+	"<M-b>",
 	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
 	{ desc = "telescope find buffers" }
 )
@@ -83,18 +91,14 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center s
 map("n", "?", "<cmd>h ", { desc = "help" })
 map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 
-----------------------------------------------------------------------------------------------------
--- leader key mappings
-----------------------------------------------------------------------------------------------------
-map("n", "grd", vim.lsp.buf.definition, lsp_opts("go to definition"))
-map("n", "gre", vim.lsp.buf.declaration, lsp_opts("go to declaration"))
-map("n", "grt", vim.lsp.buf.type_definition, lsp_opts("go to type definition"))
 map("n", "S", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
 map("n", "<M-h>", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, lsp_opts("Toggle inlay hint"))
-map("n", "grf", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 
+----------------------------------------------------------------------------------------------------
+-- leader key mappings
+----------------------------------------------------------------------------------------------------
 map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>kk", "<cmd>bdelete<cr>", { desc = "close current buffer" })
@@ -125,8 +129,6 @@ map({ "n" }, "<leader>gt", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
 map({ "n", "v" }, "<leader>gy", "<cmd>GitLink<CR>", { desc = "Yank git link" })
 map({ "n", "v" }, "<leader>gY", "<cmd>GitLink!<CR>", { desc = "Open git link" })
 
-map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
-
 map("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Save session" })
 map("n", "<leader>sr", "<cmd>SessionRestore<cr>", { desc = "restores a session" })
 map("n", "<leader>sd", "<cmd>SessionDelete<cr>", { desc = "deletes a session based on the `cwd` from `root_dir`" })
@@ -144,8 +146,6 @@ map("n", "<leader>o", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 map("n", "<leader>yf", "<cmd>let @+ = expand('%:t')<CR>", { desc = "Copy file name to clipboard" })
 map("n", "<leader>yy", "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path to clipboard" })
 map("n", "<leader>ya", "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy absolute path to clipboard" })
-
-map("n", "<leader>z", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
 map("n", "<leader>tn", "<cmd>setl relativenumber! relativenumber?<CR>", { desc = "toggle relativenumber" })
 map("n", "<leader>tw", "<cmd>setl wrap! wrap?<CR>", { desc = "toggle word wrap" })
@@ -184,14 +184,6 @@ map("n", "<leader>cL", crates.open_lib_rs, { silent = true, desc = "open lib.rs"
 map("n", "<leader>rr", "<cmd>RustLsp run<cr>", { desc = "Run closet Cargo targets" })
 map("n", "<leader>rl", "<cmd>RustLsp runnables<cr>", { desc = "List runnable targets" })
 map("n", "<leader>rt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
-
--- When lines are on, text is off. Text on, lines off. Minimize clutter.
-map("", "<leader>d", function()
-	vim.diagnostic.config({
-		virtual_lines = not vim.diagnostic.config().virtual_lines,
-		-- virtual_text = not vim.diagnostic.config().virtual_text,
-	})
-end, { desc = "Toggle diagnostic [l]ines" })
 
 -- <leader>J* Group
 
