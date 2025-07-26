@@ -83,13 +83,25 @@ return {
 				theme = "catppuccin",
 			},
 			sections = {
-				lualine_c = {
+				lualine_a = { "mode" },
+				lualine_b = { "branch", "diff", "diagnostics" },
+				lualine_c = { { "filename", path = 1, on_click = minifiles_toggle } },
+				lualine_x = {},
+				lualine_y = {
+					"location",
+					"progress",
 					{
-						"filename",
-						path = 1, -- Displays path relative to cmd
-						on_click = minifiles_toggle,
+						function()
+							return vim.fn.line("$")
+						end,
 					},
 				},
+				lualine_z = { lsp, "filetype" },
+			},
+			inactive_sections = {
+				lualine_c = { { "filename", path = 1, on_click = minifiles_toggle } },
+				lualine_a = { "mode" },
+				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_x = {},
 				lualine_y = {
 					"location",
