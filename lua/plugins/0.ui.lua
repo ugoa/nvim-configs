@@ -98,7 +98,15 @@ return {
 			options = {
 				theme = "catppuccin",
 				disabled_filetypes = {
-					statusline = { "aerial", "checkhealth", "help", "NvTerm_vsp", "NvTerm_sp", "undefined" },
+					statusline = {
+						"aerial",
+						"checkhealth",
+						"help",
+						"NvTerm_vsp",
+						"NvTerm_sp",
+						"undefined",
+						"qf", --quick fix
+					},
 					winbar = { "aerial", "checkhealth", "help" },
 				},
 			},
