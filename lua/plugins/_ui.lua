@@ -20,6 +20,23 @@ local function minifiles_toggle()
 	end
 end
 
+local section_opts = {
+	lualine_a = { "mode" },
+	lualine_b = { "branch", "diff", "diagnostics" },
+	lualine_c = { { "filename", path = 1, on_click = minifiles_toggle } },
+	lualine_x = {
+		{ "location", separator = "" },
+		{ "progress", separator = "" },
+		{
+			function()
+				return vim.fn.line("$")
+			end,
+		},
+	},
+	lualine_y = { lsp },
+	lualine_z = { "filetype" },
+}
+
 return {
 	{
 		"catppuccin/nvim",
@@ -82,38 +99,8 @@ return {
 			options = {
 				theme = "catppuccin",
 			},
-			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { { "filename", path = 1, on_click = minifiles_toggle } },
-				lualine_x = {},
-				lualine_y = {
-					"location",
-					"progress",
-					{
-						function()
-							return vim.fn.line("$")
-						end,
-					},
-				},
-				lualine_z = { lsp, "filetype" },
-			},
-			inactive_sections = {
-				lualine_c = { { "filename", path = 1, on_click = minifiles_toggle } },
-				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_x = {},
-				lualine_y = {
-					"location",
-					"progress",
-					{
-						function()
-							return vim.fn.line("$")
-						end,
-					},
-				},
-				lualine_z = { lsp, "filetype" },
-			},
+			sections = section_opts,
+			inactive_sections = section_opts,
 		},
 	},
 
