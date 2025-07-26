@@ -20,9 +20,6 @@ map("n", "<tab>", "<cmd>bnext<CR>", { desc = "buffer goto next" })
 
 map("n", "<S-tab>", "<cmd>bprevious<CR>", { desc = "buffer goto prev" })
 
--- nvimtree
---map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
-
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
