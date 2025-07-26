@@ -180,8 +180,10 @@ map("", "<leader>d", function()
 	})
 end, { desc = "Toggle diagnostic [l]ines" })
 
--- <leader>J* Group
 map("n", "<C-n>", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
+-- <leader>J* Group
+
+map("n", "<leader>ja", "<cmd>ColorizerToggle<CR>", { desc = "noice last message" })
 map("n", "<leader>jc", function()
 	require("noice").cmd("last")
 end, { desc = "noice last message" })

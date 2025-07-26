@@ -30,6 +30,8 @@ opt.numberwidth = 2
 opt.ruler = false
 opt.relativenumber = true
 
+opt.termguicolors = true
+
 -- Disable intro message and search count messages
 opt.shortmess:append("sI")
 
