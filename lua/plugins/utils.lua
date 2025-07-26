@@ -11,6 +11,7 @@ return {
 			excluded_modes = { "i", "t" },
 		},
 	},
+
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -19,11 +20,13 @@ return {
 			require("nvim-surround").setup()
 		end,
 	},
+
 	{
 		"sphamba/smear-cursor.nvim",
 		cmd = { "SmearCursorToggle" },
 		opts = {},
 	},
+
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "User FilePost",
@@ -34,6 +37,7 @@ return {
 			require("ibl").setup(opts)
 		end,
 	},
+
 	{
 		"folke/which-key.nvim",
 		keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
@@ -45,6 +49,7 @@ return {
 			require("which-key").setup(opts)
 		end,
 	},
+
 	{
 		"folke/which-key.nvim",
 		keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
@@ -56,6 +61,7 @@ return {
 			require("which-key").setup(opts)
 		end,
 	},
+
 	{
 		"razak17/tailwind-fold.nvim",
 		enabled = false,
@@ -63,12 +69,14 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		ft = { "html", "vue", "jsx", "tsx", "htmldjango" },
 	},
+
 	{
 		-- Make sure to set this up properly if you have lazy=true
 		"MeanderingProgrammer/render-markdown.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 		opts = {},
 	},
+
 	{
 		"stevearc/aerial.nvim",
 		cmd = { "AerialToggle" }, -- for code outline
@@ -84,6 +92,13 @@ return {
 			},
 		},
 	},
+
+	{
+		"mrcjkb/rustaceanvim",
+		lazy = false, -- This plugin is already lazy
+		version = "^6", -- Recommended
+	},
+
 	{
 		"Saecki/crates.nvim",
 		event = { "BufRead Cargo.toml" },
@@ -110,6 +125,7 @@ return {
 			},
 		},
 	},
+
 	{
 		"rmagatti/auto-session",
 		lazy = false,
@@ -137,6 +153,7 @@ return {
 			},
 		},
 	},
+
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "User FilePost",
@@ -156,6 +173,7 @@ return {
 			},
 		},
 	},
+
 	{
 		"NeogitOrg/neogit",
 		tag = "v2.0.0",
@@ -166,9 +184,26 @@ return {
 		},
 		config = true,
 	},
+
 	{
-		"mrcjkb/rustaceanvim",
-		lazy = false, -- This plugin is already lazy
-		version = "^6", -- Recommended
+		"LintaoAmons/bookmarks.nvim",
+		tag = "3.2.0",
+		opts = {},
+		dependencies = {
+			{ "kkharji/sqlite.lua" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+		keys = {
+			{ "mm", "<cmd>BookmarksMark<cr>", desc = "Open Mini Files" },
+			{
+				"md",
+				function()
+					require("bookmarks.commands").delete_mark_of_current_file()
+				end,
+				desc = "Delete bookmark at current line",
+			},
+			{ "mo", "<cmd>BookmarksGoto<cr>", desc = "Go to bookmark at current active BookmarkList" },
+			{ "ma", "<cmd>BookmarksCommands<cr>", desc = "Find and trigger a bookmark command." },
+		},
 	},
 }

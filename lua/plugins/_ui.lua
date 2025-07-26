@@ -78,6 +78,14 @@ return {
 					{
 						"filename",
 						path = 1, -- Displays path relative to cmd
+						on_click = function()
+							if not MiniFiles.close() then
+								local buf_name = vim.api.nvim_buf_get_name(0)
+								local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+								MiniFiles.open(path)
+								MiniFiles.reveal_cwd()
+							end
+						end,
 					},
 				},
 				lualine_x = {
