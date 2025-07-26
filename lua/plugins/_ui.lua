@@ -67,7 +67,6 @@ return {
 				Statement = { italic = true },
 				Conditional = { italic = true },
 				Repeat = { italic = true },
-				Function = { italic = true },
 			},
 		},
 	},
