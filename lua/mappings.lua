@@ -79,9 +79,6 @@ map("n", "grf", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
 map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
 map("n", "<leader>fc", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope lsp workspace symbols" })
-map("n", "<leader>fb", function()
-	require("telescope.builtin").buffers({ sort_mru = true, ignore_current_buffer = true })
-end, { desc = "telescope list current open buffers" })
 
 map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
@@ -93,7 +90,8 @@ map(
 	"<cmd>execute (bufnr('%') + 1) . ',' . bufnr('$') . 'bdelete!'<cr>",
 	{ desc = "close current at right" }
 )
-map("n", "<leader>ko", "<cmd>%bd|edit #<cr>", { desc = "close other buffers" })
+--https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
+map("n", "<leader>ko", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
 map("n", "<leader>ka", "<cmd>%bd<cr>", { desc = "close all buffers" })
 map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
 map("n", "<leader>mm", function()
