@@ -109,3 +109,11 @@ autocmd("BufWritePost", {
 		vim.diagnostic.enable(true)
 	end,
 })
+
+-- prevent quickfix buffer being listed
+autocmd("FileType", {
+	pattern = "qf",
+	callback = function()
+		vim.opt_local.buflisted = false
+	end,
+})

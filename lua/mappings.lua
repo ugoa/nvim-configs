@@ -76,10 +76,6 @@ map("n", "grh", function()
 end, lsp_opts("Toggle inlay hint"))
 map("n", "grf", vim.lsp.buf.add_workspace_folder, lsp_opts("add workspace folder"))
 
-map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
-map("n", "<leader>fc", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope lsp workspace symbols" })
-
 map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>kk", "<cmd>bdelete<cr>", { desc = "close current buffer" })
@@ -124,7 +120,23 @@ map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current 
 
 map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
-map("n", "<leader>w", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
+map("n", "<M-f>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+map("n", "<M-p>", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
+map(
+	"n",
+	"<M-n>",
+	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
+	{ desc = "telescope find buffers" }
+)
+map("n", "<M-r>", function()
+	require("telescope.builtin").lsp_references()
+end, { desc = "telescope LSP reference" })
+map("n", "<M-i>", function()
+	require("telescope.builtin").lsp_implementations()
+end, { desc = "telescope LSP implementations" })
+map("n", "<M-d>", function()
+	require("telescope.builtin").lsp_definitions()
+end, { desc = "telescope LSP definitions" })
 
 map("n", "<leader>o", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
@@ -180,12 +192,6 @@ map("", "<leader>d", function()
 	})
 end, { desc = "Toggle diagnostic [l]ines" })
 
-map(
-	"n",
-	"<C-n>",
-	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
-	{ desc = "telescope find buffers" }
-)
 -- <leader>J* Group
 
 map("n", "<leader>ja", "<cmd>ColorizerToggle<CR>", { desc = "noice last message" })

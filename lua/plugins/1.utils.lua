@@ -175,6 +175,7 @@ return {
 		},
 		keys = {
 			{ "mm", "<cmd>BookmarksMark<cr>", desc = "Open Mini Files" },
+			{ "ml", "<cmd>BookmarksTree<cr>", desc = "Open Mini Files" },
 			{
 				"md",
 				function()
