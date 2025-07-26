@@ -80,7 +80,7 @@ return {
 		config = function()
 			require("bufferline").setup({
 				options = {
-					themable = true,
+					themable = true, -- allow override by themes
 					separator_style = "slant",
 					truncate_names = false,
 				},
@@ -98,7 +98,7 @@ return {
 			options = {
 				theme = "catppuccin",
 				disabled_filetypes = {
-					statusline = { "aerial", "checkhealth", "help" },
+					statusline = { "aerial", "checkhealth", "help", "NvTerm_vsp", "NvTerm_sp", "undefined" },
 					winbar = { "aerial", "checkhealth", "help" },
 				},
 			},
