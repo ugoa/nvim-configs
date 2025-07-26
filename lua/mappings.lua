@@ -180,7 +180,12 @@ map("", "<leader>d", function()
 	})
 end, { desc = "Toggle diagnostic [l]ines" })
 
-map("n", "<C-n>", "<cmd>Telescope buffers<CR>", { desc = "telescope find buffers" })
+map(
+	"n",
+	"<C-n>",
+	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
+	{ desc = "telescope find buffers" }
+)
 -- <leader>J* Group
 
 map("n", "<leader>ja", "<cmd>ColorizerToggle<CR>", { desc = "noice last message" })
