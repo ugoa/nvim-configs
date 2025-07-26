@@ -32,8 +32,9 @@ map("x", "p", function()
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xx x xxxx  x   x xx      xxx >
+-- <M-xx x xxxx xx   x xx      xxx >
 
+map("n", "<M-k>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
 map({ "n", "t" }, "<M-g>", function()
 	require("custom.term").toggle({ pos = "float", id = "floatTerm" })
@@ -75,8 +76,14 @@ end, { desc = "telescope LSP definitions" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 
+map("n", "<M-h>", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, lsp_opts("Toggle inlay hint"))
+
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
+
+map("n", "S", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
 
 -- always center search/nav results
 vim.keymap.set("n", "n", "nzz", { desc = "find next and center screen", silent = true })
@@ -90,11 +97,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center s
 
 map("n", "?", "<cmd>h ", { desc = "help" })
 map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
-
-map("n", "S", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
-map("n", "<M-h>", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, lsp_opts("Toggle inlay hint"))
 
 ----------------------------------------------------------------------------------------------------
 -- leader key mappings
@@ -140,8 +142,6 @@ map("n", "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "toggle AI 
 map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current location" })
 
 map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
-
-map("n", "<leader>o", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<leader>yf", "<cmd>let @+ = expand('%:t')<CR>", { desc = "Copy file name to clipboard" })
 map("n", "<leader>yy", "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path to clipboard" })
