@@ -4,8 +4,8 @@ return {
 	cmd = "WhichKey",
 	lazy = false,
 	config = function(_, opts)
-		vim.o.timeout = true
-		vim.o.timeoutlen = 0
+		vim.opt.timeout = true
+		vim.opt.timeoutlen = 0
 		require("which-key").setup(opts)
 	end,
 }

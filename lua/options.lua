@@ -1,50 +1,50 @@
 local opt = vim.opt
-local o = vim.o
 local g = vim.g
 
 -------------------------------------- options ------------------------------------------
-o.laststatus = 3
-o.showmode = false
+opt.laststatus = 0
+opt.laststatus = 0
+opt.showmode = false
 
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
-o.clipboard = "unnamedplus"
+opt.clipboard = "unnamedplus"
 
 -- Indenting
-o.expandtab = true
-o.shiftwidth = 2
-o.smartindent = true
-o.tabstop = 2
-o.softtabstop = 2
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.smartindent = true
+opt.tabstop = 2
+opt.softtabstop = 2
 
 opt.fillchars = { eob = " " }
-o.ignorecase = true
-o.smartcase = true
-o.mouse = "a"
+opt.ignorecase = true
+opt.smartcase = true
+opt.mouse = "a"
 
 -- Numbers
-o.number = true
-o.numberwidth = 2
-o.ruler = false
-o.relativenumber = true
+opt.number = true
+opt.numberwidth = 2
+opt.ruler = false
+opt.relativenumber = true
 
 -- Disable intro message and search count messages
 opt.shortmess:append("sI")
 
 -- Show sign column always (for git signs, diagnostics, etc)
-o.signcolumn = "yes"
+opt.signcolumn = "yes"
 -- New splits open below current window
-o.splitbelow = true
+opt.splitbelow = true
 -- New splits open to the right of current window
-o.splitright = true
+opt.splitright = true
 -- Time in milliseconds to wait for a mapped sequence to complete
-o.timeoutlen = 400
+opt.timeoutlen = 400
 -- Enable persistent undo (undo history persists after closing file)
-o.undofile = true
+opt.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns
-o.updatetime = 250
+opt.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
@@ -61,18 +61,18 @@ g.loaded_ruby_provider = 0
 -- add binaries installed by mason.nvim to path
 vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, "/") .. ":" .. vim.env.PATH
 
-vim.opt.colorcolumn = "120"
+opt.colorcolumn = "120"
 
-vim.opt.shell = "/opt/homebrew/bin/nu"
+opt.shell = "/opt/homebrew/bin/nu"
 
 -- Use blink block cursor in normal, visual, showmatch in insert mode
 -- Use blink vert line cursor in insert mode
-vim.opt.guicursor =
+opt.guicursor =
 	"n-v-c-sm:block-blinkwait50-blinkon100-blinkoff100,i-ci:ver30-iCursor-blinkwait50-blinkon100-blinkoff100"
 
 -- Enable cursor line highlighting and highlight both line number and text
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = "both"
+opt.cursorline = true
+opt.cursorlineopt = "both"
 
 vim.filetype.add({
 	extension = {
@@ -94,7 +94,7 @@ vim.diagnostic.config({
 	float = { border = "rounded" },
 })
 
-vim.opt.swapfile = false
+opt.swapfile = false
 
 -- Set global borde
 local original_signature_help = vim.lsp.buf.signature_help
