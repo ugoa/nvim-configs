@@ -97,6 +97,10 @@ return {
 		opts = {
 			options = {
 				theme = "catppuccin",
+				disabled_filetypes = {
+					statusline = { "aerial", "checkhealth", "help" },
+					winbar = { "aerial", "checkhealth", "help" },
+				},
 			},
 			sections = section_opts,
 			inactive_sections = section_opts,
