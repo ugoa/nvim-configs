@@ -29,7 +29,7 @@ local section_opts = {
 		{ "progress", separator = "" },
 		{
 			function()
-				return vim.fn.line("$")
+				return vim.fn.line("$") .. "L"
 			end,
 		},
 	},
