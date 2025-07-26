@@ -1,4 +1,4 @@
-local lsp = function()
+local function lsp()
 	if rawget(vim, "lsp") then
 		for _, client in ipairs(vim.lsp.get_clients()) do
 			local stbufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid or 0)
@@ -7,8 +7,17 @@ local lsp = function()
 			end
 		end
 	end
-
 	return ""
+end
+
+local function minifiles_toggle()
+	local MiniFiles = require("mini.files")
+	if not MiniFiles.close() then
+		local buf_name = vim.api.nvim_buf_get_name(0)
+		local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+		MiniFiles.open(path)
+		MiniFiles.reveal_cwd()
+	end
 end
 
 return {
@@ -78,14 +87,7 @@ return {
 					{
 						"filename",
 						path = 1, -- Displays path relative to cmd
-						on_click = function()
-							if not MiniFiles.close() then
-								local buf_name = vim.api.nvim_buf_get_name(0)
-								local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-								MiniFiles.open(path)
-								MiniFiles.reveal_cwd()
-							end
-						end,
+						on_click = minifiles_toggle,
 					},
 				},
 				lualine_x = {},
@@ -139,18 +141,7 @@ return {
 			},
 		},
 		keys = {
-			{
-				"-",
-				function()
-					if not MiniFiles.close() then
-						local buf_name = vim.api.nvim_buf_get_name(0)
-						local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-						MiniFiles.open(path)
-						MiniFiles.reveal_cwd()
-					end
-				end,
-				desc = "Open Mini Files",
-			},
+			{ "-", minifiles_toggle, desc = "Open Mini Files" },
 		},
 	},
 }
