@@ -88,8 +88,7 @@ return {
 						end,
 					},
 				},
-				lualine_x = {},
-				lualine_y = {
+				lualine_x = {
 					"location",
 					"progress",
 					{
@@ -98,11 +97,8 @@ return {
 						end,
 					},
 				},
-				lualine_z = {
-					"encoding",
-					lsp,
-					"filetype",
-				},
+				lualine_y = { "encoding" },
+				lualine_z = { lsp, "filetype" },
 			},
 		},
 	},
