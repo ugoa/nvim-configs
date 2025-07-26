@@ -19,6 +19,30 @@ return {
 		priority = 1000,
 		opts = {
 			flavour = "mocha",
+			custom_highlights = {
+				["@keyword"] = { italic = true },
+				["@keyword.function"] = { italic = true },
+				["@keyword.return"] = { italic = true },
+				["@keyword.conditional"] = { italic = true },
+				["@keyword.operator"] = { italic = true },
+				["@keyword.repeat"] = { italic = true },
+
+				["@variable.builtin"] = { italic = true },
+				["@variable.repeat"] = { italic = true },
+				["@variable.conditional"] = { italic = true },
+				["@variable.operator"] = { italic = true },
+
+				["@constant.builtin"] = { italic = true },
+				["@type.builtin"] = { italic = true },
+
+				Keyword = { italic = true },
+				Include = { italic = true },
+				Boolean = { italic = true },
+				Statement = { italic = true },
+				Conditional = { italic = true },
+				Repeat = { italic = true },
+				Function = { italic = true },
+			},
 		},
 	},
 
