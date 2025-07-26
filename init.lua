@@ -56,4 +56,4 @@ require("mappings")
 
 vim.lsp.enable({ "luals", "pyright" })
 
-vim.cmd([[colorscheme catppuccin-mocha]])
+vim.cmd([[colorscheme catppuccin]])

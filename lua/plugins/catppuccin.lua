@@ -5,7 +5,9 @@ return {
 		lazy = false,
 		name = "catppuccin",
 		priority = 1000,
-		opts = {},
+		opts = {
+			flavour = "mocha",
+		},
 	},
 	{ "nvim-tree/nvim-web-devicons", opts = {} },
 

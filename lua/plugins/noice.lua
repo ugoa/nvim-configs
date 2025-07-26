@@ -62,6 +62,7 @@ return {
 			},
 		},
 		cmdline = {
+			enabled = true,
 			format = {
 				search_down = {
 					view = "cmdline_popup",
