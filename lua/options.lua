@@ -1,13 +1,14 @@
 local opt = vim.opt
 local g = vim.g
 
--------------------------------------- options ------------------------------------------
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 opt.laststatus = 0
 opt.laststatus = 0
 opt.showmode = false
 
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
+opt.termguicolors = true
 
 opt.clipboard = "unnamedplus"
 
