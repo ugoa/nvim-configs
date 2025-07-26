@@ -29,9 +29,9 @@ map("x", "p", function()
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xx x xxxx xx   x xxx     xxx >
+-- <M-xx x xxxx  x x x xxx     xxx >
 
-map("n", "<M-k>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
+map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
 map({ "n", "t" }, "<M-t>", function()
 	require("custom.term").toggle({ pos = "float", id = "floatTerm" })
