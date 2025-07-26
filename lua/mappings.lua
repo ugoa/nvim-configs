@@ -70,6 +70,7 @@ end, { desc = "telescope LSP implementations" })
 map("n", "<M-d>", function()
 	require("telescope.builtin").lsp_definitions()
 end, { desc = "telescope LSP definitions" })
+map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 
