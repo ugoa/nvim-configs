@@ -1,17 +1,17 @@
 local map = vim.keymap.set
---- LSP mappings
-local function lsp_opts(_desc)
-	return { desc = "LSP: " .. _desc }
-end
 
 map("i", "<C-s>", "<C-o><cmd>wa<CR>", { desc = "save file" })
+
 map("n", "<C-s>", "<cmd>wa<CR>", { desc = "save file" })
 
 map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 map({ "i", "c" }, "<C-f>", "<Right>", { desc = "move right" })
+
 map({ "i", "c" }, "<C-b>", "<Left>", { desc = "move left" })
+
 map({ "i", "c" }, "<C-a>", "<Home>", { desc = "move beginning" })
+
 map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
@@ -28,89 +28,31 @@ map("x", "p", function()
 	return 'pgv"' .. vim.v.register .. "y"
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
--- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xxxxxxxxxxxx x x xxx  wxxxxxx>
-
-map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
-map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
-map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "move to upper panel" })
-map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
-
-map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
-
-map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
-map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
-map({ "n", "t" }, "<M-t>", function()
-	require("terminal").toggle({ pos = "float", id = "floatTerm" })
-end, { desc = "toggle floating terminal" })
-map({ "n", "t" }, "<M-->", function()
-	require("custom.term").toggle({ pos = "sp", size = 0.4, id = "split_window" })
-end, { desc = "toggle horizontal terminal" })
-map({ "n", "t" }, "<M-=>", function()
-	require("custom.term").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" })
-end, { desc = "toggle vertical terminal" })
-map("n", "<M-z>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
-
--- When lines are on, text is off. Text on, lines off. Minimize clutter.
-map("", "<M-x>", function()
-	vim.diagnostic.config({
-		virtual_lines = not vim.diagnostic.config().virtual_lines,
-		-- virtual_text = not vim.diagnostic.config().virtual_text,
-	})
-end, { desc = "Toggle diagnostic [l]ines" })
-
--- Telescope
-map("n", "<M-f>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map("n", "<M-g>", "<cmd>Telescope live_grep<cr>", { desc = "telescope grep word" })
-map("n", "<M-w>", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
-map(
-	"n",
-	"<M-b>",
-	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
-	{ desc = "telescope find buffers" }
-)
-
-map("n", "<M-r>", function()
-	require("telescope.builtin").lsp_references()
-end, { desc = "telescope LSP reference" })
-map("n", "<M-i>", function()
-	require("telescope.builtin").lsp_implementations()
-end, { desc = "telescope LSP implementations" })
-map("n", "<C-M-d>", function()
-	require("telescope.builtin").lsp_definitions()
-end, { desc = "telescope LSP definitions" })
-map("n", "<M-d>", vim.lsp.buf.definition, { desc = "telescope LSP definitions" })
-map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
-
-map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
-
-map("n", "<M-y>", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, lsp_opts("Toggle inlay hint"))
-
-map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
-
-map("n", "<M-;>", function()
-	require("grug-far").open({ transient = true })
-end, lsp_opts("Open search and replace"))
-
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
 
-map("n", "S", vim.lsp.buf.signature_help, lsp_opts("go to signature_help"))
+map("n", "S", vim.lsp.buf.signature_help, { desc = "go to signature_help" })
 
 -- always center search/nav results
 vim.keymap.set("n", "n", "nzz", { desc = "find next and center screen", silent = true })
+
 vim.keymap.set("n", "N", "Nzz", { desc = "find previous and center screen", silent = true })
+
 vim.keymap.set("n", "*", "*zz", { desc = "highlight next and center screen", silent = true })
+
 vim.keymap.set("n", "#", "#zz", { desc = "highlight previous and center screen", silent = true })
+
 vim.keymap.set("n", "g*", "g*zz", { desc = "highlight all and center screen", silent = true })
 
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center screen", silent = true })
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
 
 map("n", "?", "<cmd>h ", { desc = "help" })
+
 map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
+
+map("n", "<c-o>", "<c-[>", { desc = "jump tag backward" })
 
 map("n", "-", function()
 	local MiniFiles = require("mini.files")
@@ -122,8 +64,92 @@ map("n", "-", function()
 	end
 end, { desc = "Open Mini Files" })
 
+map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
+
+map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
+
 ----------------------------------------------------------------------------------------------------
--- leader key mappings
+-- Meta (Alt/Option) key mappings:
+--    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
+--    <M-abcdefghijkl n   rst  wxyz-=;>
+----------------------------------------------------------------------------------------------------
+
+map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
+
+map(
+	"n",
+	"<M-b>",
+	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
+	{ desc = "telescope find buffers" }
+)
+
+map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
+
+map("n", "<M-d>", vim.lsp.buf.definition, { desc = "LSP definitions" })
+
+map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
+
+map("n", "<M-f>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+
+map("n", "<M-g>", "<cmd>Telescope live_grep<cr>", { desc = "telescope grep word" })
+
+map("n", "<M-i>", function()
+	require("telescope.builtin").lsp_implementations()
+end, { desc = "telescope LSP implementations" })
+
+map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
+
+map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
+
+map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "move to upper panel" })
+
+map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
+
+map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
+
+map("n", "<M-r>", function()
+	require("telescope.builtin").lsp_references()
+end, { desc = "telescope LSP reference" })
+
+map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
+
+map({ "n", "t" }, "<M-t>", function()
+	require("terminal").toggle({ pos = "float", id = "floatTerm" })
+end, { desc = "toggle floating terminal" })
+
+-- Telescope
+map("n", "<M-w>", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
+
+-- When lines are on, text is off. Text on, lines off. Minimize clutter.
+map("", "<M-x>", function()
+	vim.diagnostic.config({
+		virtual_lines = not vim.diagnostic.config().virtual_lines,
+		-- virtual_text = not vim.diagnostic.config().virtual_text,
+	})
+end, { desc = "Toggle diagnostic [l]ines" })
+
+map("n", "<M-y>", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hint" })
+
+map("n", "<M-z>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
+
+map("n", "<M-;>", function()
+	require("grug-far").open({ transient = true })
+end, { desc = "Open search and replace" })
+
+map({ "n", "t" }, "<M-->", function()
+	require("terminal").toggle({ pos = "sp", size = 0.4, id = "split_window" })
+end, { desc = "toggle horizontal terminal" })
+
+map({ "n", "t" }, "<M-=>", function()
+	require("terminal").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" })
+end, { desc = "toggle vertical terminal" })
+
+----------------------------------------------------------------------------------------------------
+-- Leader key mappings:
+--    <leader>-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;
+--    <leader>-a c   g ijk l    rs     yz  ;
 ----------------------------------------------------------------------------------------------------
 map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 
@@ -166,8 +192,6 @@ map("n", "<leader>sf", "<cmd>SessionSearch<cr>", { desc = "open a session picker
 map("n", "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "toggle AI Assistant" })
 map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current location" })
 
-map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
-
 map("n", "<leader>yf", "<cmd>let @+ = expand('%:t')<CR>", { desc = "Copy file name to clipboard" })
 map("n", "<leader>yy", "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path to clipboard" })
 map("n", "<leader>ya", "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy absolute path to clipboard" })
@@ -175,15 +199,7 @@ map("n", "<leader>ya", "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy absolut
 map("n", "<leader>tn", "<cmd>setl relativenumber! relativenumber?<CR>", { desc = "toggle relativenumber" })
 map("n", "<leader>tw", "<cmd>setl wrap! wrap?<CR>", { desc = "toggle word wrap" })
 
--- <leader>e
--- <leader>g
--- <leader>h
--- <leader>q
--- <leader>r
--- <leader>u
--- <leader>l
--- <leader>w
--- <leader>b
+map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
 local crates = require("crates")
 map("n", "<leader>cc", crates.toggle, { silent = true, desc = "toggle" })
@@ -210,9 +226,8 @@ map("n", "<leader>rr", "<cmd>RustLsp run<cr>", { desc = "Run closet Cargo target
 map("n", "<leader>rl", "<cmd>RustLsp runnables<cr>", { desc = "List runnable targets" })
 map("n", "<leader>rt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
 
--- <leader>J* Group
+map("n", "<leader>z", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer to highlight RGB color" })
 
-map("n", "<leader>ja", "<cmd>ColorizerToggle<CR>", { desc = "noice last message" })
 map("n", "<leader>jc", function()
 	require("noice").cmd("last")
 end, { desc = "noice last message" })
@@ -238,7 +253,3 @@ map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
 map("n", "<leader>jm", function()
 	require("smear_cursor").toggle()
 end, { desc = "toggle cursor animation" })
-
-map("n", "?", ":h ", { desc = "help" })
-map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
-map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
