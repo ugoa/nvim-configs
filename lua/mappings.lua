@@ -66,6 +66,7 @@ map(
 	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
 	{ desc = "telescope find buffers" }
 )
+
 map("n", "<M-r>", function()
 	require("telescope.builtin").lsp_references()
 end, { desc = "telescope LSP reference" })
@@ -82,6 +83,8 @@ map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 map("n", "<M-y>", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, lsp_opts("Toggle inlay hint"))
+
+map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
