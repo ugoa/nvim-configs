@@ -181,7 +181,7 @@ return {
 						"query",
 						"vim",
 						"Avante",
-						"grug-for",
+						"grug-far",
 					},
 					winbar = { "aerial", "checkhealth", "help" },
 				},

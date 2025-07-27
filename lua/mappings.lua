@@ -86,6 +86,10 @@ end, lsp_opts("Toggle inlay hint"))
 
 map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
+map("n", "<M-;>", function()
+	require("grug-far").open({ transient = true })
+end, lsp_opts("Open Search and Replace"))
+
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
 

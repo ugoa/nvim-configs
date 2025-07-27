@@ -71,13 +71,6 @@ return {
 				min_width = 30,
 			},
 		},
-		keys = {
-			{
-				"<M-n>",
-				"<cmd>AerialToggle<CR>",
-				{ desc = "toggle code outline" },
-			},
-		},
 	},
 
 	{
