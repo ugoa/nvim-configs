@@ -172,6 +172,9 @@ return {
 				lualine_y = { lsp },
 				lualine_z = { "filetype" },
 			},
+			inactive_sections = {
+				lualine_c = { { "filename", path = 1 } },
+			},
 		},
 	},
 

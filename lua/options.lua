@@ -55,7 +55,7 @@ opt.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
 
-opt.scrolloff = 8
+opt.scrolloff = 5
 
 opt.colorcolumn = "120"
 
