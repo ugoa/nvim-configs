@@ -178,7 +178,7 @@ return {
 				if parent ~= vim.fn.getcwd() then
 					for _ = 1, vim.v.count1 do
 						MiniFiles.go_out()
-						-- MiniFiles.trim_right()
+						MiniFiles.trim_right()
 					end
 				end
 			end
