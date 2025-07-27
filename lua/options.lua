@@ -32,6 +32,8 @@ opt.relativenumber = true
 
 opt.termguicolors = true
 
+opt.swapfile = false
+
 -- Disable intro message and search count messages
 opt.shortmess:append("sI")
 
@@ -55,27 +57,27 @@ opt.whichwrap:append("<>[]hl")
 
 opt.scrolloff = 8
 
+opt.colorcolumn = "120"
+
+opt.shell = "/opt/homebrew/bin/nu"
+
 -- disable some default providers
 g.loaded_node_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
--- add binaries installed by mason.nvim to path
-vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, "/") .. ":" .. vim.env.PATH
-
-opt.colorcolumn = "120"
-
-opt.shell = "/opt/homebrew/bin/nu"
+-- Enable cursor line highlighting and highlight both line number and text
+opt.cursorline = true
+opt.cursorlineopt = "both"
 
 -- Use blink block cursor in normal, visual, showmatch in insert mode
 -- Use blink vert line cursor in insert mode
 opt.guicursor =
 	"n-v-c-sm:block-blinkwait50-blinkon100-blinkoff100,i-ci:ver30-iCursor-blinkwait50-blinkon100-blinkoff100"
 
--- Enable cursor line highlighting and highlight both line number and text
-opt.cursorline = true
-opt.cursorlineopt = "both"
+-- add binaries installed by mason.nvim to path
+vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, "/") .. ":" .. vim.env.PATH
 
 vim.filetype.add({
 	extension = {
@@ -96,8 +98,6 @@ vim.diagnostic.config({
 	underline = true,
 	float = { border = "rounded" },
 })
-
-opt.swapfile = false
 
 -- Set global borde
 local original_signature_help = vim.lsp.buf.signature_help
