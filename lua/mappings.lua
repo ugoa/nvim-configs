@@ -29,7 +29,12 @@ map("x", "p", function()
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xx x xxxx  x x x xxx     xxx >
+-- <M-xx x xxxxxxxxx x xxx     xxx >
+
+map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
+map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
+map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "move to upper panel" })
+map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
 
 map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
@@ -64,7 +69,7 @@ map(
 map("n", "<M-r>", function()
 	require("telescope.builtin").lsp_references()
 end, { desc = "telescope LSP reference" })
-map("n", "<M-i>", function()
+map("n", "<M-m>", function()
 	require("telescope.builtin").lsp_implementations()
 end, { desc = "telescope LSP implementations" })
 map("n", "<M-d>", function()
@@ -74,7 +79,7 @@ map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 
-map("n", "<M-h>", function()
+map("n", "<M-y>", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, lsp_opts("Toggle inlay hint"))
 
