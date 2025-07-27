@@ -29,7 +29,7 @@ map("x", "p", function()
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xxxxxxxxxxxx x x xxx   xxxxxx>
+-- <M-xxxxxxxxxxxx x x xxx  wxxxxxx>
 
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
 map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
@@ -61,7 +61,8 @@ end, { desc = "Toggle diagnostic [l]ines" })
 
 -- Telescope
 map("n", "<M-f>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
-map("n", "<M-g>", "<cmd>Telescope live_grep<cr>", { desc = "telescope find word" })
+map("n", "<M-g>", "<cmd>Telescope live_grep<cr>", { desc = "telescope grep word" })
+map("n", "<M-w>", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
 map(
 	"n",
 	"<M-b>",
@@ -128,6 +129,7 @@ map(
 map("n", "<leader>ko", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
 map("n", "<leader>ka", "<cmd>%bd<cr>", { desc = "close all buffers" })
 map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
+
 map("n", "<leader>mm", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
@@ -222,14 +224,6 @@ map("n", "<leader>ji", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
 
 -- whichkey
 map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
-
-map("n", "<leader>jr", vim.lsp.buf.remove_workspace_folder, lsp_opts("remove workspace folder"))
-
-map("n", "<leader>jl", function()
-	print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end, lsp_opts("list workspace folders"))
-
-map("n", "<leader>jt", "<cmd>TailwindFoldToggle<CR>", { desc = "toggle tailwind fold" })
 
 map("n", "<leader>jm", function()
 	require("smear_cursor").toggle()
