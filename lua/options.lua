@@ -1,11 +1,15 @@
 local opt = vim.opt
+
 local g = vim.g
 
 g.loaded_netrw = 1
+
 g.loaded_netrwPlugin = 1
 
 opt.laststatus = 0
+
 opt.laststatus = 0
+
 opt.showmode = false
 
 opt.termguicolors = true
@@ -14,20 +18,30 @@ opt.clipboard = "unnamedplus"
 
 -- Indenting
 opt.expandtab = true
+
 opt.shiftwidth = 2
+
 opt.smartindent = true
+
 opt.tabstop = 2
+
 opt.softtabstop = 2
 
 opt.fillchars = { eob = " " }
+
 opt.ignorecase = true
+
 opt.smartcase = true
+
 opt.mouse = "a"
 
 -- Numbers
 opt.number = true
+
 opt.numberwidth = 2
+
 opt.ruler = false
+
 opt.relativenumber = true
 
 opt.termguicolors = true
@@ -39,12 +53,16 @@ opt.shortmess:append("sI")
 
 -- Show sign column always (for git signs, diagnostics, etc)
 opt.signcolumn = "yes"
+
 -- New splits open below current window
 opt.splitbelow = true
+
 -- New splits open to the right of current window
 opt.splitright = true
+
 -- Time in milliseconds to wait for a mapped sequence to complete
 opt.timeoutlen = 400
+
 -- Enable persistent undo (undo history persists after closing file)
 opt.undofile = true
 
@@ -63,12 +81,16 @@ opt.shell = "/opt/homebrew/bin/nu"
 
 -- disable some default providers
 g.loaded_node_provider = 0
+
 g.loaded_python3_provider = 0
+
 g.loaded_perl_provider = 0
+
 g.loaded_ruby_provider = 0
 
 -- Enable cursor line highlighting and highlight both line number and text
 opt.cursorline = true
+
 opt.cursorlineopt = "both"
 
 -- Use blink block cursor in normal, visual, showmatch in insert mode
