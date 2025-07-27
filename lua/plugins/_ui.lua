@@ -220,7 +220,7 @@ return {
 
 			local function up_till_root()
 				local p = require("mini.files").get_fs_entry().path
-				local parent = vim.fn.fnamemodify(p, ":h")
+				local parent = vim.fs.dirname(p)
 				-- https://github.com/echasnovski/mini.files/blob/main/lua/mini/files.lua#L2143-L2145
 				if parent ~= vim.fn.getcwd() then
 					for _ = 1, vim.v.count1 do

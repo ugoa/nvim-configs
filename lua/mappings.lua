@@ -29,12 +29,14 @@ map("x", "p", function()
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xxxx xxxxxxxxx x xxx   xxxxxx>
+-- <M-xxxxxxxxxxxxxx x xxx   xxxxxx>
 
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
 map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
 map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "move to upper panel" })
 map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
+
+map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
 
 map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
