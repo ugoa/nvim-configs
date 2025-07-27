@@ -144,4 +144,18 @@ return {
 		},
 		config = true,
 	},
+
+	{
+		"MagicDuck/grug-far.nvim",
+		opts = {},
+		keys = {
+			{
+				"<M-;>",
+				function()
+					require("grug-far").open({ transient = true })
+				end,
+				desc = "Open Search and Replace",
+			},
+		},
+	},
 }

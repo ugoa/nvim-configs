@@ -29,7 +29,7 @@ map("x", "p", function()
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xx x xxxxxxxxx x xxx     xxx >
+-- <M-xxxx xxxxxxxxx x xxx    xxxxx>
 
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
 map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
