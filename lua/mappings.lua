@@ -88,7 +88,7 @@ map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<M-;>", function()
 	require("grug-far").open({ transient = true })
-end, lsp_opts("Open Search and Replace"))
+end, lsp_opts("Open search and replace"))
 
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
