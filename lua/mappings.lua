@@ -29,7 +29,7 @@ map("x", "p", function()
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xxxxxxxxxxxxxx x xxx   xxxxxx>
+-- <M-xxxxxxxxxxxx x x xxx   xxxxxx>
 
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
 map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
@@ -72,12 +72,13 @@ map(
 map("n", "<M-r>", function()
 	require("telescope.builtin").lsp_references()
 end, { desc = "telescope LSP reference" })
-map("n", "<M-m>", function()
+map("n", "<M-i>", function()
 	require("telescope.builtin").lsp_implementations()
 end, { desc = "telescope LSP implementations" })
-map("n", "<M-d>", function()
+map("n", "<C-M-d>", function()
 	require("telescope.builtin").lsp_definitions()
 end, { desc = "telescope LSP definitions" })
+map("n", "<M-d>", vim.lsp.buf.definition, { desc = "telescope LSP definitions" })
 map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })

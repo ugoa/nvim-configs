@@ -10,23 +10,6 @@ local function lsp()
 	return ""
 end
 
-local section_opts = {
-	lualine_a = { "mode" },
-	lualine_b = { "branch", "diff", "diagnostics" },
-	lualine_c = { { "filename", path = 1 } },
-	lualine_x = {
-		{ "location", separator = "" },
-		{ "progress", separator = "" },
-		{
-			function()
-				return vim.fn.line("$") .. "L"
-			end,
-		},
-	},
-	lualine_y = { lsp },
-	lualine_z = { "filetype" },
-}
-
 local colors = {
 	white = "#F8F8F2",
 	darker_black = "#222430",
@@ -159,7 +142,6 @@ return {
 						"checkhealth",
 						"NvTerm_vsp",
 						"NvTerm_sp",
-						"qf", --quick fix
 						"checkhealth",
 						"fugitive*",
 						"git",
@@ -174,8 +156,22 @@ return {
 					winbar = { "aerial", "checkhealth", "help" },
 				},
 			},
-			sections = section_opts,
-			inactive_sections = section_opts,
+			sections = {
+				lualine_a = { "mode" },
+				lualine_b = { "branch", "diff", "diagnostics" },
+				lualine_c = { { "filename", path = 1 } },
+				lualine_x = {
+					{ "location", separator = "" },
+					{ "progress", separator = "" },
+					{
+						function()
+							return vim.fn.line("$") .. "L"
+						end,
+					},
+				},
+				lualine_y = { lsp },
+				lualine_z = { "filetype" },
+			},
 		},
 	},
 
