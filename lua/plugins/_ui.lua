@@ -10,20 +10,10 @@ local function lsp()
 	return ""
 end
 
-local function minifiles_toggle()
-	local MiniFiles = require("mini.files")
-	if not MiniFiles.close() then
-		local buf_name = vim.api.nvim_buf_get_name(0)
-		local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-		MiniFiles.open(path)
-		MiniFiles.reveal_cwd()
-	end
-end
-
 local section_opts = {
 	lualine_a = { "mode" },
 	lualine_b = { "branch", "diff", "diagnostics" },
-	lualine_c = { { "filename", path = 1, on_click = minifiles_toggle } },
+	lualine_c = { { "filename", path = 1 } },
 	lualine_x = {
 		{ "location", separator = "" },
 		{ "progress", separator = "" },
@@ -220,12 +210,49 @@ return {
 				close = "<ESC>",
 				go_in = "l",
 				go_in_plus = "<CR>",
-				go_out = "H",
+				go_out = "h",
 				go_out_plus = "h",
 			},
 		},
+		config = function(_, opts)
+			local MiniFiles = require("mini.files")
+			MiniFiles.setup(opts)
+
+			local function up_till_root()
+				local p = require("mini.files").get_fs_entry().path
+				local parent = vim.fn.fnamemodify(p, ":h")
+				-- https://github.com/echasnovski/mini.files/blob/main/lua/mini/files.lua#L2143-L2145
+				if parent ~= vim.fn.getcwd() then
+					for _ = 1, vim.v.count1 do
+						MiniFiles.go_out()
+						-- MiniFiles.trim_right()
+					end
+				end
+			end
+
+			vim.api.nvim_create_autocmd("User", {
+				pattern = "MiniFilesBufferCreate",
+				callback = function(args)
+					local buf_id = args.data.buf_id
+					vim.keymap.set("n", "h", up_till_root, { buffer = buf_id })
+				end,
+			})
+		end,
+
 		keys = {
-			{ "-", minifiles_toggle, desc = "Open Mini Files" },
+			{
+				"-",
+				function()
+					local MiniFiles = require("mini.files")
+					if not MiniFiles.close() then
+						local buf_name = vim.api.nvim_buf_get_name(0)
+						local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+						MiniFiles.open(path)
+						MiniFiles.reveal_cwd()
+					end
+				end,
+				desc = "Open Mini Files",
+			},
 		},
 	},
 
