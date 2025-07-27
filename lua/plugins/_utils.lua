@@ -51,26 +51,6 @@ return {
 	},
 
 	{
-		"folke/which-key.nvim",
-		keys = { "<leader>", "<c-w>", '"', "'", "`", "c", "v", "g" },
-		cmd = "WhichKey",
-		lazy = false,
-		config = function(_, opts)
-			vim.opt.timeout = true
-			vim.opt.timeoutlen = 0
-			require("which-key").setup(opts)
-		end,
-	},
-
-	{
-		"razak17/tailwind-fold.nvim",
-		enabled = false,
-		opts = {},
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		ft = { "html", "vue", "jsx", "tsx", "htmldjango" },
-	},
-
-	{
 		-- Make sure to set this up properly if you have lazy=true
 		"MeanderingProgrammer/render-markdown.nvim",
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
@@ -163,28 +143,5 @@ return {
 			"nvim-telescope/telescope.nvim",
 		},
 		config = true,
-	},
-
-	{
-		"LintaoAmons/bookmarks.nvim",
-		tag = "3.2.0",
-		opts = {},
-		dependencies = {
-			{ "kkharji/sqlite.lua" },
-			{ "nvim-telescope/telescope.nvim" },
-		},
-		keys = {
-			{ "mm", "<cmd>BookmarksMark<cr>", desc = "Open Mini Files" },
-			{ "ml", "<cmd>BookmarksTree<cr>", desc = "Open Mini Files" },
-			{
-				"md",
-				function()
-					require("bookmarks.commands").delete_mark_of_current_file()
-				end,
-				desc = "Delete bookmark at current line",
-			},
-			{ "mo", "<cmd>BookmarksGoto<cr>", desc = "Go to bookmark at current active BookmarkList" },
-			{ "ma", "<cmd>BookmarksCommands<cr>", desc = "Find and trigger a bookmark command." },
-		},
 	},
 }
