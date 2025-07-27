@@ -77,8 +77,6 @@ opt.scrolloff = 5
 
 opt.colorcolumn = "120"
 
-opt.shell = "/opt/homebrew/bin/nu"
-
 -- disable some default providers
 g.loaded_node_provider = 0
 
