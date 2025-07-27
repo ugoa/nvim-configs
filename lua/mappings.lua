@@ -41,7 +41,7 @@ map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
 map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
 map({ "n", "t" }, "<M-t>", function()
-	require("custom.term").toggle({ pos = "float", id = "floatTerm" })
+	require("terminal").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "toggle floating terminal" })
 map({ "n", "t" }, "<M-->", function()
 	require("custom.term").toggle({ pos = "sp", size = 0.4, id = "split_window" })
@@ -111,6 +111,16 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center s
 
 map("n", "?", "<cmd>h ", { desc = "help" })
 map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
+
+map("n", "-", function()
+	local MiniFiles = require("mini.files")
+	if not MiniFiles.close() then
+		local buf_name = vim.api.nvim_buf_get_name(0)
+		local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
+		MiniFiles.open(path)
+		MiniFiles.reveal_cwd()
+	end
+end, { desc = "Open Mini Files" })
 
 ----------------------------------------------------------------------------------------------------
 -- leader key mappings
