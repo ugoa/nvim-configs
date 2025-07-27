@@ -29,7 +29,7 @@ map("x", "p", function()
 end, { remap = false, expr = true, desc = "paste without reset register" })
 
 -- <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
--- <M-xxxx xxxxxxxxx x xxx    xxxxx>
+-- <M-xxxx xxxxxxxxx x xxx   xxxxxx>
 
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
 map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
@@ -50,7 +50,7 @@ end, { desc = "toggle vertical terminal" })
 map("n", "<M-z>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
-map("", "<M-l>", function()
+map("", "<M-x>", function()
 	vim.diagnostic.config({
 		virtual_lines = not vim.diagnostic.config().virtual_lines,
 		-- virtual_text = not vim.diagnostic.config().virtual_text,
