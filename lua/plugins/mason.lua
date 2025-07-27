@@ -1,23 +1,12 @@
 return {
 	"williamboman/mason.nvim",
-	cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
+	cmd = { "Mason", "MasonInstall" },
 
 	opts = {
 		ensure_installed = {
-			"rust-analyzer",
-			-- for python
-			"pyright",
-			"black",
-			-- for lua
-			"lua-language-server",
-			"stylua",
-			-- for vue.js
-			"vue-language-server",
-			-- for Solid.js, React and Typescript/Javascript
-			"typescript-language-server",
-			"prettier",
-			"djlint", -- for htmldjango/jinja formatting
-			"tailwindcss-language-server",
+			"rust-analyzer", -- for rust
+			"pyright", -- for python
+			"lua-language-server", -- for lua
 		},
 		PATH = "skip",
 
