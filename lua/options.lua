@@ -8,8 +8,6 @@ g.loaded_netrwPlugin = 1
 
 opt.laststatus = 0
 
-opt.laststatus = 0
-
 opt.showmode = false
 
 opt.termguicolors = true
