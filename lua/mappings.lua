@@ -71,7 +71,7 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-abcdefghijkl n   rst  wxyz-=;>
+--    <M-abcdefghijklmn   rst  wxyz-=;>
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
@@ -104,6 +104,8 @@ map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
 map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "move to upper panel" })
 
 map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
+
+map("n", "<M-m>", "<cmd>Telescope bookmarks list<CR>", { desc = "toggle code outline" })
 
 map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 

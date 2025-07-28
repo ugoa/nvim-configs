@@ -23,6 +23,9 @@ return {
 			custom_highlights = {
 				GitSignsCurrentLineBlame = { fg = "#73747e" },
 
+				BookMarksAdd = { fg = "#73747e" },
+				BookMarksAnn = { fg = "#73747e" },
+
 				["@keyword"] = { italic = true },
 				["@keyword.function"] = { italic = true },
 				["@keyword.return"] = { italic = true },
