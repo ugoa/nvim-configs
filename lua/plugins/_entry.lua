@@ -116,6 +116,7 @@ return {
 						separator = "",
 					},
 					{
+						-- show total buffer numbers
 						function()
 							local count = 0
 							for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
@@ -123,7 +124,7 @@ return {
 									count = count + 1
 								end
 							end
-							return " " .. count
+							return " " .. count
 						end,
 					},
 				},
