@@ -113,8 +113,9 @@ return {
 						function()
 							return vim.fn.line("$") .. "L"
 						end,
-						separator = "",
 					},
+				},
+				lualine_y = {
 					{
 						-- show total buffer numbers
 						function()
@@ -127,8 +128,6 @@ return {
 							return " " .. count
 						end,
 					},
-				},
-				lualine_y = {
 					{
 						-- show lsp_client
 						function()
