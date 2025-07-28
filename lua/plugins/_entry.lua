@@ -97,7 +97,7 @@ return {
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff", "diagnostics" },
-				lualine_c = { { "filename", path = 1 } },
+				lualine_c = { { "filename", path = 1 }, "filetype" },
 				lualine_x = {
 					{ "location", separator = "" },
 					{ "progress", separator = "" },
@@ -124,7 +124,13 @@ return {
 						end,
 					},
 				},
-				lualine_z = { "filetype" },
+				lualine_z = {
+					{
+						function()
+							return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+						end,
+					},
+				},
 			},
 			inactive_sections = {
 				lualine_c = { { "filename", path = 1 } },
