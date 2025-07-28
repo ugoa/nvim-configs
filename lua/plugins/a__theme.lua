@@ -147,7 +147,22 @@ return {
 				lualine_z = {
 					{
 						function()
-							return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+							-- return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+							local cwd = vim.fn.getcwd()
+							local home_dir = vim.fn.expand("~")
+
+							if string.find(cwd, home_dir, 1, true) == 1 then
+								-- CWD is within the home directory, so remove the home_dir prefix
+								local relative_path = string.sub(cwd, string.len(home_dir) + 2)
+								if relative_path == "" then
+									-- If CWD is exactly the home directory, the relative path is "."
+									relative_path = "."
+								end
+								return "~/" .. relative_path
+							else
+								-- CWD is outside the home directory, so the relative path is just the CWD
+								return cwd
+							end
 						end,
 					},
 				},
