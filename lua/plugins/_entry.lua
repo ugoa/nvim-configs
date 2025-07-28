@@ -110,18 +110,17 @@ return {
 						function()
 							return vim.fn.line("$") .. "L"
 						end,
+						separator = "",
 					},
 					{
 						function()
-							local all_buffers = vim.api.nvim_list_bufs()
-							local listed_count = 0
-
-							for _, bufnr in ipairs(all_buffers) do
+							local count = 0
+							for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
 								if vim.api.nvim_get_option_value("buflisted", { buf = bufnr }) then
-									listed_count = listed_count + 1
+									count = count + 1
 								end
 							end
-							return listed_count .. "B"
+							return "TB#" .. count
 						end,
 					},
 				},
