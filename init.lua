@@ -55,5 +55,3 @@ require("autocmds")
 require("mappings")
 
 vim.lsp.enable({ "luals", "pyright" })
-
-vim.cmd([[colorscheme catppuccin]])

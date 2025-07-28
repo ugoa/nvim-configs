@@ -45,14 +45,19 @@ return {
 				Repeat = { italic = true },
 			},
 		},
+		config = function(_, opts)
+			require("catppuccin").setup(opts)
+			vim.cmd([[colorscheme catppuccin-mocha]])
+		end,
 	},
 
 	{
 		"akinsho/bufferline.nvim",
 		lazy = false,
+		enabled = false,
+		after = "catppuccin",
 		version = "*",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		after = "catppuccin",
 		config = function()
 			require("bufferline").setup({
 				options = {
