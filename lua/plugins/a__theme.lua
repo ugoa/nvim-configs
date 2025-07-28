@@ -5,7 +5,11 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
-			flavour = "mocha",
+			flavour = "auto", -- latte, frappe, macchiato, mocha
+			background = { -- :h background
+				light = "latte",
+				dark = "mocha",
+			},
 			integrations = {
 				cmp = true,
 				gitsigns = {
@@ -50,7 +54,7 @@ return {
 		},
 		config = function(_, opts)
 			require("catppuccin").setup(opts)
-			vim.cmd([[colorscheme catppuccin-mocha]])
+			vim.cmd([[colorscheme catppuccin]])
 		end,
 	},
 
