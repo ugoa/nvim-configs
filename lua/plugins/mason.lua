@@ -7,6 +7,7 @@ return {
 			"rust-analyzer", -- for rust
 			"pyright", -- for python
 			"lua-language-server", -- for lua
+			"stylua",
 		},
 		PATH = "skip",
 
