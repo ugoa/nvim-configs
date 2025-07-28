@@ -67,8 +67,9 @@ return {
 				["p"] = "actions.jump",
 			},
 			layout = {
-				max_width = { 60, 0.4 },
-				min_width = 30,
+				default_direction = "prefer_left",
+				max_width = { 100, 0.4 },
+				min_width = 40,
 			},
 		},
 	},
