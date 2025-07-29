@@ -8,6 +8,8 @@ g.loaded_netrwPlugin = 1
 
 opt.laststatus = 0
 
+opt.shell = "/opt/homebrew/bin/nu"
+
 opt.showmode = false
 
 opt.termguicolors = true
