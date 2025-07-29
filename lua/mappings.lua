@@ -71,7 +71,7 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-abcdefghijklmn   rst  wxyz-=;>
+--    <M-abcdefghijklmno  rstu wxyz-=;>
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
@@ -109,6 +109,8 @@ map("n", "<M-m>", "<cmd>Telescope bookmarks list<CR>", { desc = "toggle  bookmar
 
 map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
+map("n", "<M-m>", "<cmd>Telescope git_commits<CR>", { desc = "toggle git commits" })
+
 map("n", "<M-r>", function()
 	require("telescope.builtin").lsp_references()
 end, { desc = "telescope LSP reference" })
@@ -118,6 +120,8 @@ map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 map({ "n", "t" }, "<M-t>", function()
 	require("terminal").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "toggle floating terminal" })
+
+map("n", "<M-m>", "<cmd>Telescope git_status<CR>", { desc = "toggle git status" })
 
 -- Telescope
 map("n", "<M-w>", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
