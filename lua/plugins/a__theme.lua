@@ -87,7 +87,6 @@ return {
 				theme = "catppuccin",
 				disabled_filetypes = {
 					statusline = {
-						"undefined",
 						"aerial",
 						"checkhealth",
 						"NvTerm_vsp",
