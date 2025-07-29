@@ -114,6 +114,7 @@ return {
 			log_level = "error",
 		},
 	},
+
 	{
 		{
 			"linrongbin16/gitlinker.nvim",
