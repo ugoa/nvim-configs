@@ -147,7 +147,7 @@ return {
 
 	{
 		"MagicDuck/grug-far.nvim",
-		lazy = false,
+		event = "VeryLazy",
 		opts = {
 			engines = {
 				ripgrep = {
