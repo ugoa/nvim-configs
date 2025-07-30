@@ -280,6 +280,14 @@ return {
 		cmd = "Neotree",
 		lazy = false, -- neo-tree will lazily load itself
 		branch = "v3.x",
+		opts = {
+			filesystem = {
+				follow_current_file = {
+					enabled = true,
+					leave_dirs_open = true,
+				},
+			},
+		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
