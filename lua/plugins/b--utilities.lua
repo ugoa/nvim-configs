@@ -181,4 +181,176 @@ return {
 			require("telescope").load_extension("bookmarks")
 		end,
 	},
+	{
+		"stevearc/conform.nvim",
+		event = "BufWritePre",
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "ruff" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				javascriptreact = { "prettier" },
+				-- json = { "prettier" },
+				-- vue = { "prettier" },
+				html = { "djlint" },
+				htmldjango = { "djlint" },
+			},
+			format_on_save = function(bufnr)
+				local filetype = vim.bo[bufnr].filetype
+				if filetype ~= "html" and filetype ~= "htmldjango" then
+					return {
+						timeout_ms = 10000,
+						lsp_fallback = true,
+					}
+				end
+				return nil
+			end,
+		},
+
+		config = function(_, opts)
+			require("conform").setup(opts)
+
+			require("conform").formatters.djlint = function(_bufnr)
+				return {
+					command = "djlint",
+					-- args = { "--format-js", "--format-css", "--reformat", "-" },
+					args = { "--reformat", "-" },
+					cwd = require("conform.util").root_file({ "djlint.toml" }),
+				}
+			end
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		cmd = { "Mason", "MasonInstall" },
+
+		opts = {
+			ensure_installed = {
+				"rust-analyzer", -- for rust
+				"pyright", -- for python
+				"lua-language-server", -- for lua
+				"stylua",
+			},
+			PATH = "skip",
+
+			ui = {
+				icons = {
+					package_pending = " ",
+					package_installed = " ",
+					package_uninstalled = " ",
+				},
+			},
+			max_concurrent_installers = 10,
+		},
+	},
+	{
+		"stevearc/conform.nvim",
+		event = "BufWritePre",
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "ruff" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
+				javascriptreact = { "prettier" },
+				-- json = { "prettier" },
+				-- vue = { "prettier" },
+				html = { "djlint" },
+				htmldjango = { "djlint" },
+			},
+			format_on_save = function(bufnr)
+				local filetype = vim.bo[bufnr].filetype
+				if filetype ~= "html" and filetype ~= "htmldjango" then
+					return {
+						timeout_ms = 10000,
+						lsp_fallback = true,
+					}
+				end
+				return nil
+			end,
+		},
+
+		config = function(_, opts)
+			require("conform").setup(opts)
+
+			require("conform").formatters.djlint = function(_bufnr)
+				return {
+					command = "djlint",
+					-- args = { "--format-js", "--format-css", "--reformat", "-" },
+					args = { "--reformat", "-" },
+					cwd = require("conform.util").root_file({ "djlint.toml" }),
+				}
+			end
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		cmd = { "Mason", "MasonInstall" },
+
+		opts = {
+			ensure_installed = {
+				"rust-analyzer", -- for rust
+				"pyright", -- for python
+				"lua-language-server", -- for lua
+				"stylua",
+			},
+			PATH = "skip",
+
+			ui = {
+				icons = {
+					package_pending = " ",
+					package_installed = " ",
+					package_uninstalled = " ",
+				},
+			},
+			max_concurrent_installers = 10,
+		},
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		event = { "BufReadPost", "BufNewFile" },
+		build = ":TSUpdate",
+		config = function()
+			local opts = {
+				ensure_installed = {
+					"nu",
+					"rust",
+					"python",
+					"yaml",
+					"bash",
+					"regex",
+					"markdown",
+					"markdown_inline",
+					"vue",
+					"javascript", -- jsx included
+					"typescript",
+					"tsx",
+					"html",
+					"css",
+					"scss",
+					"terraform",
+					"just",
+					"htmldjango",
+					"json",
+					"sql",
+					"java",
+					"scala",
+					"toml",
+					"make",
+				},
+				highlight = {
+					enable = true,
+					use_languagetree = true,
+				},
+				indent = { enable = true },
+			}
+
+			-- IMPORTANT to make TS highlight to work.
+			-- https://github.com/MeanderingProgrammer/render-markdown.nvim/issues/249#issuecomment-2519081718
+			require("nvim-treesitter.configs").setup(opts)
+		end,
+	},
 }
