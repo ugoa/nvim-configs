@@ -20,6 +20,8 @@ map("n", "<tab>", "<cmd>bnext<CR>", { desc = "buffer goto next" })
 
 map("n", "<S-tab>", "<cmd>bprevious<CR>", { desc = "buffer goto prev" })
 
+map("n", "<C-n>", "<cmd>Neotree filesystem reveal left toggle<CR>", { desc = "Toggle File explorer" })
+
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 

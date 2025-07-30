@@ -10,6 +10,7 @@ return {
 				light = "latte",
 				dark = "mocha",
 			},
+			auto_integrations = true,
 			integrations = {
 				cmp = true,
 				gitsigns = {
@@ -87,6 +88,7 @@ return {
 				theme = "catppuccin",
 				disabled_filetypes = {
 					statusline = {
+						"neo-tree",
 						"aerial",
 						"checkhealth",
 						"NvTerm_vsp",
@@ -271,6 +273,17 @@ return {
 				delete = { text = "󰍵" },
 				changedelete = { text = "󱕖" },
 			},
+		},
+	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		cmd = "Neotree",
+		lazy = false, -- neo-tree will lazily load itself
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons", -- optional, but recommended
 		},
 	},
 }
