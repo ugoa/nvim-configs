@@ -45,6 +45,7 @@ return {
 						"--glob=!.output*",
 						"--glob=!.vinxi/*",
 						"--glob=!__pycache__/*",
+						"--glob=!dist/*",
 					},
 				})
 			end,
@@ -81,6 +82,7 @@ return {
 				"--glob=!.output*",
 				"--glob=!.vinxi/*",
 				"--glob=!__pycache__/*",
+				"--glob=!dist/*",
 			},
 
 			prompt_prefix = "   ",
