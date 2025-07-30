@@ -49,7 +49,7 @@ return {
 						"--glob=!db-data/*",
 						"--glob=!.bsp/*",
 						"--glob=!.DS_Store",
-						"--glob=!.project/*",
+						"--glob=!project/*/*",
 					},
 				})
 			end,
@@ -90,7 +90,7 @@ return {
 				"--glob=!db-data/*",
 				"--glob=!.bsp/*",
 				"--glob=!.DS_Store",
-				"--glob=!.project/*",
+				"--glob=!project/**/*",
 			},
 
 			prompt_prefix = "   ",
