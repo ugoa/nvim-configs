@@ -62,6 +62,7 @@ return {
 		"nvim-neo-tree/neo-tree.nvim",
 		cmd = "Neotree",
 		lazy = false, -- neo-tree will lazily load itself
+		enabled = false,
 		branch = "v3.x",
 		opts = {
 			filesystem = {

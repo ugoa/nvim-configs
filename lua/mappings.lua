@@ -91,7 +91,24 @@ map("n", "<M-d>", vim.lsp.buf.definition, { desc = "LSP definitions" })
 
 map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
 
-map("n", "<M-f>", "<cmd>Telescope find_files<cr>", { desc = "telescope find files" })
+map("n", "<M-f>", function()
+	require("telescope.builtin").find_files({
+		find_command = {
+			"rg",
+			"--files",
+			"--smart-case",
+			"--hidden",
+			"--glob",
+			"!**/.git/*",
+			"--glob",
+			"!compose.yml",
+			"--glob",
+			"!compose.yaml",
+			"--glob",
+			"!.env",
+		},
+	})
+end, { desc = "telescope find files" })
 
 map("n", "<M-g>", "<cmd>Telescope live_grep<cr>", { desc = "telescope grep word" })
 

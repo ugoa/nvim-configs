@@ -30,11 +30,6 @@ return {
 				"--hidden",
 				"--trim",
 			},
-			pickers = {
-				find_files = {
-					find_command = { "rg", "--files", "--hidden" },
-				},
-			},
 
 			prompt_prefix = "   ",
 
