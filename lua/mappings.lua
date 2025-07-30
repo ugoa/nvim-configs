@@ -135,9 +135,9 @@ map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
 
 map("n", "<M-m>", "<cmd>Telescope bookmarks list<CR>", { desc = "toggle  bookmarks" })
 
-map("n", "<M-n>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
+map("n", "<M-n>", "<cmd>Telescope git_commits<CR>", { desc = "toggle git commits" })
 
-map("n", "<M-o>", "<cmd>Telescope git_commits<CR>", { desc = "toggle git commits" })
+map("n", "<M-o>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<M-r>", function()
 	require("telescope.builtin").lsp_references()
