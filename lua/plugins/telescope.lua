@@ -60,7 +60,10 @@ return {
 				height = 0.80,
 			},
 			mappings = {
-				i = { ["<Esc>"] = require("telescope.actions").close, ["<Tab>"] = focus_preview },
+				i = {
+					["<Esc>"] = require("telescope.actions").close,
+					["<Tab>"] = focus_preview,
+				},
 			},
 		},
 
