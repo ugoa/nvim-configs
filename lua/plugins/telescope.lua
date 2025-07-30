@@ -15,7 +15,42 @@ end
 return {
 	"nvim-telescope/telescope.nvim",
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
-	cmd = "Telescope",
+	event = "VeryLazy",
+
+	keys = {
+		{
+			"<M-f>",
+			mode = { "n" },
+			function()
+				require("telescope.builtin").find_files({
+					find_command = {
+						"rg",
+						"--files",
+						"--smart-case",
+						"--hidden",
+						"--no-ignore",
+						"--glob=!.github/*",
+						"--glob=!.cargo*",
+						"--glob=!.vscode*",
+						"--glob=!target*",
+						"--glob=!.idea/*",
+						"--glob=!.venv/*",
+						"--glob=!.git/*",
+						"--glob=!log/*",
+						"--glob=!logs/*",
+						"--glob=!tmp*",
+						"--glob=!temp/*",
+						"--glob=!.nuxt*",
+						"--glob=!node_modules/*",
+						"--glob=!.output*",
+						"--glob=!.vinxi/*",
+						"--glob=!__pycache__/*",
+					},
+				})
+			end,
+			desc = "find files",
+		},
+	},
 
 	opts = {
 		defaults = {
@@ -29,6 +64,23 @@ return {
 				"--smart-case",
 				"--hidden",
 				"--trim",
+				"--no-ignore",
+				"--glob=!.github/*",
+				"--glob=!.cargo*",
+				"--glob=!.vscode*",
+				"--glob=!target*",
+				"--glob=!.idea/*",
+				"--glob=!.venv/*",
+				"--glob=!.git/*",
+				"--glob=!log/*",
+				"--glob=!logs/*",
+				"--glob=!tmp*",
+				"--glob=!temp/*",
+				"--glob=!.nuxt*",
+				"--glob=!node_modules/*",
+				"--glob=!.output*",
+				"--glob=!.vinxi/*",
+				"--glob=!__pycache__/*",
 			},
 
 			prompt_prefix = "   ",
