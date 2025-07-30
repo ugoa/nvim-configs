@@ -61,10 +61,6 @@ return {
 		cmd = { "AerialToggle" }, -- for code outline
 		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
 		opts = {
-			keymaps = {
-				["<CR>"] = "actions.scroll",
-				["p"] = "actions.jump",
-			},
 			layout = {
 				default_direction = "prefer_left",
 				max_width = { 100, 0.4 },
