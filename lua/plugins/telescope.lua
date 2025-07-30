@@ -19,10 +19,8 @@ return {
 
 	opts = {
 		defaults = {
-			prompt_prefix = "   ",
 			vimgrep_arguments = {
 				"rg",
-				"-L",
 				"--color=never",
 				"--no-heading",
 				"--with-filename",
@@ -30,23 +28,15 @@ return {
 				"--column",
 				"--smart-case",
 				"--hidden",
-				"--no-ignore",
-				"--glob=!.github/*",
-				"--glob=!.cargo*",
-				"--glob=!.vscode*",
-				"--glob=!target*",
-				"--glob=!.idea/*",
-				"--glob=!.venv/*",
-				"--glob=!.git/*",
-				"--glob=!log/*",
-				"--glob=!logs/*",
-				"--glob=!tmp*",
-				"--glob=!temp/*",
-				"--glob=!.nuxt*",
-				"--glob=!node_modules",
-				"--glob=!.output*",
-				"--glob=!.vinxi/*",
+				"--trim",
 			},
+			pickers = {
+				find_files = {
+					find_command = { "rg", "--files", "--hidden" },
+				},
+			},
+
+			prompt_prefix = "   ",
 
 			selection_caret = " ",
 			entry_prefix = " ",
@@ -62,7 +52,6 @@ return {
 			mappings = {
 				i = {
 					["<Esc>"] = require("telescope.actions").close,
-					["<Tab>"] = focus_preview,
 				},
 			},
 		},
