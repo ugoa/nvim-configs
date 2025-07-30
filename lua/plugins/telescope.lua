@@ -46,6 +46,9 @@ return {
 						"--glob=!.vinxi/*",
 						"--glob=!__pycache__/*",
 						"--glob=!dist/*",
+						"--glob=!db-data/*",
+						"--glob=!.bsp/*",
+						"--glob=!.DS_Store",
 					},
 				})
 			end,
@@ -83,6 +86,9 @@ return {
 				"--glob=!.vinxi/*",
 				"--glob=!__pycache__/*",
 				"--glob=!dist/*",
+				"--glob=!db-data/*",
+				"--glob=!.bsp/*",
+				"--glob=!.DS_Store",
 			},
 
 			prompt_prefix = "   ",
