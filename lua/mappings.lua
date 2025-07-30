@@ -152,7 +152,7 @@ end, { desc = "toggle floating terminal" })
 map("n", "<M-u>", "<cmd>Telescope git_status<CR>", { desc = "toggle git status" })
 
 -- Telescope
-map("n", "<M-w>", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
+map("n", "<M-w>", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 map("", "<M-x>", function()
