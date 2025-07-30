@@ -27,7 +27,6 @@ return {
 				"sql",
 				"java",
 				"scala",
-				"nu",
 				"toml",
 				"make",
 			},
