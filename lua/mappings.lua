@@ -20,8 +20,6 @@ map("n", "]", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
 
 map("n", "[", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
 
-map("n", "<C-n>", "<cmd>Neotree filesystem reveal left toggle<CR>", { desc = "Toggle File explorer" })
-
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
@@ -55,16 +53,6 @@ map("n", "?", "<cmd>h ", { desc = "help" })
 map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
 
 map("n", "<c-o>", "<c-[>", { desc = "jump tag backward" })
-
-map("n", "-", function()
-	local MiniFiles = require("mini.files")
-	if not MiniFiles.close() then
-		local buf_name = vim.api.nvim_buf_get_name(0)
-		local path = vim.fn.filereadable(buf_name) == 1 and buf_name or vim.fn.getcwd()
-		MiniFiles.open(path)
-		MiniFiles.reveal_cwd()
-	end
-end, { desc = "Open Mini Files" })
 
 map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
 
