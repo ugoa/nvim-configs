@@ -15,6 +15,7 @@ return {
 				go_in_plus = "<CR>",
 				go_out = "h",
 				go_out_plus = "h",
+				synchronize = "<S-TAB>",
 			},
 		},
 		config = function(_, opts)
@@ -44,7 +45,7 @@ return {
 
 		keys = {
 			{
-				"-",
+				"<Tab>",
 				function()
 					local MiniFiles = require("mini.files")
 					if not MiniFiles.close() then
@@ -62,7 +63,6 @@ return {
 		"nvim-neo-tree/neo-tree.nvim",
 		cmd = "Neotree",
 		lazy = false, -- neo-tree will lazily load itself
-		enabled = false,
 		branch = "v3.x",
 		opts = {
 			filesystem = {

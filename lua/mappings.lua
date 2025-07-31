@@ -16,10 +16,6 @@ map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
-map("n", "<tab>", "<cmd>bnext<CR>", { desc = "buffer goto next" })
-
-map("n", "<S-tab>", "<cmd>bprevious<CR>", { desc = "buffer goto prev" })
-
 map("n", "]", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
 
 map("n", "[", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
