@@ -16,6 +16,7 @@ map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
+map({ "n", "o" }, "[A", "<Nop>", { silent = true, desc = "buffer goto next" })
 map({ "n", "o" }, "[B", "<Nop>", { silent = true, desc = "buffer goto next" })
 map({ "n", "o" }, "[b", "<Nop>", { silent = true, desc = "buffer goto next" })
 map({ "n", "o" }, "[<C-T>", "<Nop>", { silent = true, desc = "buffer goto next" })
@@ -53,6 +54,7 @@ map({ "n", "o" }, "]d", "<Nop>", { silent = true, desc = "buffer goto next" })
 map({ "n", "o" }, "]<Space>", "<Nop>", { silent = true, desc = "buffer goto next" })
 
 vim.g.no_python_maps = 1
+vim.g.no_sql_maps = 1
 map("n", "]", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
 map("n", "[", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
 
