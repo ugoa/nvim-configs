@@ -49,10 +49,6 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center s
 
 map("n", "?", "<cmd>h ", { desc = "help" })
 
-map("n", "<c-i>", "<c-]>", { desc = "jump tag forward" })
-
-map("n", "<c-o>", "<c-[>", { desc = "jump tag backward" })
-
 map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
 
 map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
