@@ -60,8 +60,8 @@ return {
 		},
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
 		enabled = false,
+		"nvim-neo-tree/neo-tree.nvim",
 		cmd = "Neotree",
 		lazy = false, -- neo-tree will lazily load itself
 		branch = "v3.x",
@@ -95,8 +95,8 @@ return {
 		},
 	},
 	{
-		"mikavilpas/yazi.nvim",
 		enabled = false,
+		"mikavilpas/yazi.nvim",
 		event = "VeryLazy",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim", lazy = true },

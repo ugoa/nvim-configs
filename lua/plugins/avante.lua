@@ -1,6 +1,5 @@
 return {
 	"yetone/avante.nvim",
-	enabled = false,
 	event = "VeryLazy",
 	cmd = "AvanteToggle",
 	version = false,
@@ -34,12 +33,5 @@ return {
 		},
 	},
 
-	keys = {
-		{
-			"<M-a>",
-			mode = { "n" },
-			"<cmd>AvanteToggle<CR>",
-			desc = "Avante",
-		},
-	},
+	keys = { { "<M-a>", "<cmd>AvanteToggle<CR>" } },
 }
