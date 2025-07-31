@@ -126,3 +126,5 @@ vim.lsp.buf.signature_help = function(opts)
 	opts.border = "rounded"
 	original_signature_help(opts)
 end
+
+-- vim.g.did_load_ftplugin = 1
