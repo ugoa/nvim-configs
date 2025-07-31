@@ -65,10 +65,16 @@ return {
 		lazy = false, -- neo-tree will lazily load itself
 		branch = "v3.x",
 		opts = {
+			close_if_last_window = true,
 			filesystem = {
 				follow_current_file = {
 					enabled = true,
 					leave_dirs_open = true,
+				},
+			},
+			default_component_configs = {
+				container = {
+					enable_character_fade = false,
 				},
 			},
 		},
