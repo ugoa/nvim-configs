@@ -58,8 +58,6 @@ map("n", "[", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" }
 
 map("n", "=", "<Nop>", { silent = true, desc = "buffer goto next" })
 map("n", "-", "<Nop>", { silent = true, desc = "buffer goto next" })
-map("n", "=", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
-map("n", "-", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
