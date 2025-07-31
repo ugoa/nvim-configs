@@ -15,7 +15,7 @@ return {
 				go_in_plus = "<CR>",
 				go_out = "h",
 				go_out_plus = "h",
-				synchronize = "<S-TAB>",
+				synchronize = "=",
 			},
 		},
 		config = function(_, opts)
@@ -45,7 +45,7 @@ return {
 
 		keys = {
 			{
-				"<Tab>",
+				"-",
 				function()
 					local MiniFiles = require("mini.files")
 					if not MiniFiles.close() then

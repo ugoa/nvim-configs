@@ -16,50 +16,8 @@ map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
-map({ "n", "o" }, "[A", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[B", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[b", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[<C-T>", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[t", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[T", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[a", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[<C-L>", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[L", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[l", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[<C-Q>", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[Q", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[q", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[D", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[d", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[M", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[m", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[[", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[]", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "[<Space>", "<Nop>", { silent = true, desc = "buffer goto next" })
-
-map({ "n", "o" }, "]B", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]b", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]<C-T>", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]t", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]T", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]a", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]<C-L>", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]L", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]l", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]<C-Q>", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]Q", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]q", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]D", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]d", "<Nop>", { silent = true, desc = "buffer goto next" })
-map({ "n", "o" }, "]<Space>", "<Nop>", { silent = true, desc = "buffer goto next" })
-
-vim.g.no_python_maps = 1
-vim.g.no_sql_maps = 1
-map("n", "]", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
-map("n", "[", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
-
-map("n", "=", "<Nop>", { silent = true, desc = "buffer goto next" })
-map("n", "-", "<Nop>", { silent = true, desc = "buffer goto next" })
+map("n", "<Tab>", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
+map("n", "<BS>", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
@@ -102,10 +60,10 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-abcdefghijklmno  rstu wxyz-=;>
+--    <M-abcdefghijklmnop rstu wxyz-=;>
 ----------------------------------------------------------------------------------------------------
 
-map("n", "<M-a>", "<cmd>enew<CR>", { desc = "buffer new" })
+map("n", "<M-p>", "<cmd>enew<CR>", { desc = "buffer new" })
 
 map(
 	"n",

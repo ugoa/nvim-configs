@@ -1,2 +1,2 @@
-vim.keymap.set("o", "[", "<Nop>", { buffer = true })
-vim.keymap.set("o", "]", "<Nop>", { buffer = true })
+-- vim.keymap.set("o", "[", "<Nop>", { buffer = true })
+-- vim.keymap.set("o", "]", "<Nop>", { buffer = true })
