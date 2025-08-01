@@ -11,7 +11,7 @@ return {
 			},
 			mappings = {
 				close = "<ESC>",
-				go_in = "C-L>",
+				go_in = "",
 				go_in_plus = "<C-L>",
 				go_out = "",
 				go_out_plus = "",
