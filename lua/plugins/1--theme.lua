@@ -87,6 +87,8 @@ return {
 				theme = "catppuccin",
 				disabled_filetypes = {
 					statusline = {
+						"TelescopePrompt",
+						"NvTerm_float",
 						"neo-tree",
 						"aerial",
 						"checkhealth",
