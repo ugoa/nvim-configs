@@ -11,18 +11,24 @@ return {
 			},
 			mappings = {
 				close = "<ESC>",
+				synchronize = "=",
 				go_in = "",
-				go_in_plus = "<C-L>",
+				go_in_plus = "",
 				go_out = "",
 				go_out_plus = "",
-				synchronize = "=",
 			},
 		},
 		config = function(_, opts)
 			local MiniFiles = require("mini.files")
 			MiniFiles.setup(opts)
 
-			local function up_till_root()
+			local go_in_plus = function()
+				for _ = 1, vim.v.count1 do
+					MiniFiles.go_in({ close_on_file = true })
+				end
+			end
+
+			local function go_out_plus_till_root()
 				local p = require("mini.files").get_fs_entry().path
 				local parent = vim.fs.dirname(p)
 				-- https://github.com/echasnovski/mini.files/blob/main/lua/mini/files.lua#L2143-L2145
@@ -38,7 +44,9 @@ return {
 				pattern = "MiniFilesBufferCreate",
 				callback = function(args)
 					local buf_id = args.data.buf_id
-					vim.keymap.set("n", "<C-H>", up_till_root, { buffer = buf_id })
+					vim.keymap.set("n", "<C-H>", go_out_plus_till_root, { buffer = buf_id })
+					vim.keymap.set("n", "<CR>", go_in_plus, { buffer = buf_id })
+					vim.keymap.set("n", "<C-L>", go_in_plus, { buffer = buf_id })
 				end,
 			})
 		end,
