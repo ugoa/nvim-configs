@@ -47,7 +47,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center scr
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
 
-map("n", "?", "<cmd>h ", { desc = "help" })
+map("n", "?", ":h ", { desc = "help" })
 
 map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
 
@@ -58,8 +58,6 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
 --    <M-abcdefghijklmnop rstu wxyz-=;>
 ----------------------------------------------------------------------------------------------------
-
-map("n", "<M-p>", "<cmd>enew<CR>", { desc = "buffer new" })
 
 map(
 	"n",
@@ -100,6 +98,8 @@ end, { desc = "telescope LSP reference" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 
+map("n", "<M-p>", "<cmd>enew<CR>", { desc = "buffer new" })
+
 map({ "n", "t" }, "<M-t>", function()
 	require("terminal").toggle({ pos = "float", id = "floatTerm" })
 end, { desc = "toggle floating terminal" })
@@ -109,19 +109,19 @@ map("n", "<M-u>", "<cmd>Telescope git_status<CR>", { desc = "toggle git status" 
 -- Telescope
 map("n", "<M-w>", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
 
--- When lines are on, text is off. Text on, lines off. Minimize clutter.
-map("", "<M-x>", function()
-	vim.diagnostic.config({
-		virtual_lines = not vim.diagnostic.config().virtual_lines,
-		-- virtual_text = not vim.diagnostic.config().virtual_text,
-	})
-end, { desc = "Toggle diagnostic [l]ines" })
+map("n", "<M-x>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
 map("n", "<M-y>", function()
 	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { desc = "Toggle inlay hint" })
 
-map("n", "<M-z>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
+-- When lines are on, text is off. Text on, lines off. Minimize clutter.
+map("", "<M-z>", function()
+	vim.diagnostic.config({
+		virtual_lines = not vim.diagnostic.config().virtual_lines,
+		-- virtual_text = not vim.diagnostic.config().virtual_text,
+	})
+end, { desc = "Toggle diagnostic lines" })
 
 map("n", "<M-;>", function()
 	require("grug-far").open({ transient = true })
