@@ -111,8 +111,8 @@ return {
 				lualine_b = { "branch", "diff", "diagnostics" },
 				lualine_c = { { "filename", path = 1 }, "filetype" },
 				lualine_x = {
-					{ "location", separator = "" },
 					{ "progress", separator = "" },
+					{ "location", separator = "" },
 					{
 						function()
 							return vim.fn.line("$") .. "L"
