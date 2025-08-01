@@ -120,6 +120,7 @@ return {
 						function()
 							return vim.fn.line("$") .. "L"
 						end,
+						separator = "",
 					},
 				},
 				lualine_y = {
