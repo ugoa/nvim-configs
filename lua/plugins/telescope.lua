@@ -3,6 +3,65 @@ return {
 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	event = "VeryLazy",
 
+	opts = {
+		defaults = {
+			vimgrep_arguments = {
+				"rg",
+				"--color=never",
+				"--no-heading",
+				"--with-filename",
+				"--line-number",
+				"--column",
+				"--smart-case",
+				"--hidden",
+				"--trim",
+				"--no-ignore",
+				"--glob=!.DS_Store",
+				"--glob=!project/*/*",
+				"--glob=!target/*",
+				"--glob=!**/.github/*",
+				"--glob=!**/.cargo*",
+				"--glob=!**/.vscode*",
+				"--glob=!**/.idea/*",
+				"--glob=!**/.venv/*",
+				"--glob=!**/.git/*",
+				"--glob=!**/log/*",
+				"--glob=!**/logs/*",
+				"--glob=!**/tmp*",
+				"--glob=!**/temp/*",
+				"--glob=!**/.nuxt*",
+				"--glob=!**/node_modules/*",
+				"--glob=!**/.output*",
+				"--glob=!**/.vinxi/*",
+				"--glob=!**/__pycache__/*",
+				"--glob=!**/dist/*",
+				"--glob=!**/db-data/*",
+				"--glob=!**/.bsp/*",
+			},
+
+			-- prompt_prefix = "   ",
+			-- selection_caret = "  ",
+			-- entry_prefix = "  ",
+
+			sorting_strategy = "ascending",
+			layout_config = {
+				horizontal = {
+					prompt_position = "top",
+					preview_width = 0.5,
+				},
+				width = 0.85,
+				height = 0.80,
+			},
+			mappings = {
+				i = {
+					["<Esc>"] = require("telescope.actions").close,
+				},
+			},
+		},
+		extensions_list = { "themes", "terms" },
+		extensions = {},
+	},
+
 	keys = {
 		{
 			"<M-f>",
@@ -41,65 +100,5 @@ return {
 			end,
 			desc = "find files",
 		},
-	},
-
-	opts = {
-		defaults = {
-			vimgrep_arguments = {
-				"rg",
-				"--color=never",
-				"--no-heading",
-				"--with-filename",
-				"--line-number",
-				"--column",
-				"--smart-case",
-				"--hidden",
-				"--trim",
-				"--no-ignore",
-				"--glob=!.DS_Store",
-				"--glob=!project/*/*",
-				"--glob=!target/*",
-				"--glob=!**/.github/*",
-				"--glob=!**/.cargo*",
-				"--glob=!**/.vscode*",
-				"--glob=!**/.idea/*",
-				"--glob=!**/.venv/*",
-				"--glob=!**/.git/*",
-				"--glob=!**/log/*",
-				"--glob=!**/logs/*",
-				"--glob=!**/tmp*",
-				"--glob=!**/temp/*",
-				"--glob=!**/.nuxt*",
-				"--glob=!**/node_modules/*",
-				"--glob=!**/.output*",
-				"--glob=!**/.vinxi/*",
-				"--glob=!**/__pycache__/*",
-				"--glob=!**/dist/*",
-				"--glob=!**/db-data/*",
-				"--glob=!**/.bsp/*",
-			},
-
-			prompt_prefix = "   ",
-
-			selection_caret = " ",
-			entry_prefix = " ",
-			sorting_strategy = "ascending",
-			layout_config = {
-				horizontal = {
-					prompt_position = "top",
-					preview_width = 0.5,
-				},
-				width = 0.85,
-				height = 0.80,
-			},
-			mappings = {
-				i = {
-					["<Esc>"] = require("telescope.actions").close,
-				},
-			},
-		},
-
-		extensions_list = { "themes", "terms" },
-		extensions = {},
 	},
 }
