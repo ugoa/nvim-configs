@@ -38,7 +38,7 @@ return {
 				pattern = "MiniFilesBufferCreate",
 				callback = function(args)
 					local buf_id = args.data.buf_id
-					vim.keymap.set("n", "h", up_till_root, { buffer = buf_id })
+					vim.keymap.set("n", "<C-H>", up_till_root, { buffer = buf_id })
 				end,
 			})
 		end,
