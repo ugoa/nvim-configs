@@ -11,10 +11,10 @@ return {
 			},
 			mappings = {
 				close = "<ESC>",
-				go_in = "<C-L>",
+				go_in = "C-L>",
 				go_in_plus = "<C-L>",
-				go_out = "<C-H>",
-				go_out_plus = "<C-H>",
+				go_out = "",
+				go_out_plus = "",
 				synchronize = "=",
 			},
 		},
