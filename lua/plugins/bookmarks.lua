@@ -1,6 +1,6 @@
 return {
   "tomasky/bookmarks.nvim",
-  event = "VimEnter",
+  event = "VeryLazy",
   after = "telescope.nvim",
   config = function()
     require("bookmarks").setup({

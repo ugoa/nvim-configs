@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = { "VeryLazy" },
+  event = "VeryLazy",
   build = ":TSUpdate",
   config = function()
     local opts = {
