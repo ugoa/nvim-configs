@@ -1,7 +1,14 @@
 return {
 	"HiPhish/jinja.vim",
 	lazy = false,
-	-- config = function()
-	-- 	vim.cmd([[ autocmd! bufread,bufnewfile *.html call jinja#adjustfiletype() ]])
-	-- end,
+	config = function()
+		local autocmd = vim.api.nvim_create_autocmd
+
+		autocmd({ "FileType" }, {
+			pattern = { "html", "sql" },
+			callback = function()
+				vim.cmd([[ call jinja#AdjustFiletype() ]])
+			end,
+		})
+	end,
 }
