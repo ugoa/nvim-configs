@@ -10,7 +10,7 @@ return {
 			opts = { history = true, updateevents = "TextChanged,TextChangedI" },
 			config = function(_, opts)
 				require("luasnip").config.set_config(opts)
-				require("luasnip").filetype_extend("htmldjango", { "html" })
+				-- require("luasnip").filetype_extend("htmldjango", { "html" })
 
 				-- vscode format
 				require("luasnip.loaders.from_vscode").lazy_load({ exclude = vim.g.vscode_snippets_exclude or {} })
