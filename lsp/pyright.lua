@@ -8,6 +8,7 @@ return {
     "requirements.txt",
     "Pipfile",
     "pyrightconfig.json",
+    ".git",
     "uv.lock",
   },
   single_file_support = true,
