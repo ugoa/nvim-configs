@@ -4,7 +4,7 @@ return {
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
   opts = {
     layout = {
-      default_direction = "prefer_left",
+      default_direction = "prefer_right",
       max_width = { 100, 0.4 },
       min_width = 40,
     },

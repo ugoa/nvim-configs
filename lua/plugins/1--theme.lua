@@ -87,6 +87,11 @@ return {
         theme = "catppuccin",
         disabled_filetypes = {
           statusline = {
+            "noice",
+            "Avante",
+            "AvanteInput",
+            "AvanteSelectedFiles",
+            "DressingInput",
             "undefined",
             "minifiles",
             "NvimTree",
@@ -104,7 +109,6 @@ return {
             "netrw",
             "notify",
             "query",
-            "Avante",
             "grug-far",
           },
           winbar = { "aerial", "checkhealth", "help" },
