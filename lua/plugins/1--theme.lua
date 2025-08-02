@@ -88,6 +88,7 @@ return {
 				disabled_filetypes = {
 					statusline = {
 						"minifiles",
+						"NvimTree",
 						"TelescopePrompt",
 						"NvTerm_float",
 						"neo-tree",
