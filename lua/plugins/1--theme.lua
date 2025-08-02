@@ -103,7 +103,6 @@ return {
 						"netrw",
 						"notify",
 						"query",
-						"vim",
 						"Avante",
 						"grug-far",
 					},
