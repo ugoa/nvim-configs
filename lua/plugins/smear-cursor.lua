@@ -1,5 +1,5 @@
 return {
-	"sphamba/smear-cursor.nvim",
-	cmd = { "SmearCursorToggle" },
-	opts = {},
+  "sphamba/smear-cursor.nvim",
+  cmd = { "SmearCursorToggle" },
+  opts = {},
 }

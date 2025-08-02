@@ -23,9 +23,12 @@ map("n", "<BS>", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- https://stackoverflow.com/a/5093286/1077486
-map("x", "p", function()
-	return 'pgv"' .. vim.v.register .. "y"
-end, { remap = false, expr = true, desc = "paste without reset register" })
+map(
+  "x",
+  "p",
+  function() return 'pgv"' .. vim.v.register .. "y" end,
+  { remap = false, expr = true, desc = "paste without reset register" }
+)
 
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
@@ -60,10 +63,10 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 
 map(
-	"n",
-	"<M-b>",
-	"<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
-	{ desc = "telescope find buffers" }
+  "n",
+  "<M-b>",
+  "<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
+  { desc = "telescope find buffers" }
 )
 
 map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
@@ -74,9 +77,12 @@ map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
 
 map("n", "<M-g>", "<cmd>Telescope live_grep<cr>", { desc = "telescope grep word" })
 
-map("n", "<M-i>", function()
-	require("telescope.builtin").lsp_implementations()
-end, { desc = "telescope LSP implementations" })
+map(
+  "n",
+  "<M-i>",
+  function() require("telescope.builtin").lsp_implementations() end,
+  { desc = "telescope LSP implementations" }
+)
 
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
 
@@ -92,17 +98,18 @@ map("n", "<M-n>", "<cmd>Telescope git_commits<CR>", { desc = "toggle git commits
 
 map("n", "<M-o>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
-map("n", "<M-r>", function()
-	require("telescope.builtin").lsp_references()
-end, { desc = "telescope LSP reference" })
+map("n", "<M-r>", function() require("telescope.builtin").lsp_references() end, { desc = "telescope LSP reference" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 
 map("n", "<M-p>", "<cmd>enew<CR>", { desc = "buffer new" })
 
-map({ "n", "t" }, "<M-t>", function()
-	require("terminal").toggle({ pos = "float", id = "floatTerm" })
-end, { desc = "toggle floating terminal" })
+map(
+  { "n", "t" },
+  "<M-t>",
+  function() require("terminal").toggle({ pos = "float", id = "floatTerm" }) end,
+  { desc = "toggle floating terminal" }
+)
 
 map("n", "<M-u>", "<cmd>Telescope git_status<CR>", { desc = "toggle git status" })
 
@@ -111,29 +118,36 @@ map("n", "<M-w>", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "
 
 map("n", "<M-x>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
-map("n", "<M-y>", function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, { desc = "Toggle inlay hint" })
+map(
+  "n",
+  "<M-y>",
+  function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+  { desc = "Toggle inlay hint" }
+)
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 map("", "<M-z>", function()
-	vim.diagnostic.config({
-		virtual_lines = not vim.diagnostic.config().virtual_lines,
-		-- virtual_text = not vim.diagnostic.config().virtual_text,
-	})
+  vim.diagnostic.config({
+    virtual_lines = not vim.diagnostic.config().virtual_lines,
+    -- virtual_text = not vim.diagnostic.config().virtual_text,
+  })
 end, { desc = "Toggle diagnostic lines" })
 
-map("n", "<M-;>", function()
-	require("grug-far").open({ transient = true })
-end, { desc = "Open search and replace" })
+map("n", "<M-;>", function() require("grug-far").open({ transient = true }) end, { desc = "Open search and replace" })
 
-map({ "n", "t" }, "<M-->", function()
-	require("terminal").toggle({ pos = "sp", size = 0.4, id = "split_window" })
-end, { desc = "toggle horizontal terminal" })
+map(
+  { "n", "t" },
+  "<M-->",
+  function() require("terminal").toggle({ pos = "sp", size = 0.4, id = "split_window" }) end,
+  { desc = "toggle horizontal terminal" }
+)
 
-map({ "n", "t" }, "<M-=>", function()
-	require("terminal").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" })
-end, { desc = "toggle vertical terminal" })
+map(
+  { "n", "t" },
+  "<M-=>",
+  function() require("terminal").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" }) end,
+  { desc = "toggle vertical terminal" }
+)
 
 ----------------------------------------------------------------------------------------------------
 -- Leader key mappings:
@@ -145,25 +159,28 @@ map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
 map("n", "<leader>kk", "<cmd>bdelete<cr>", { desc = "close current buffer" })
 map("n", "<leader>kl", "<cmd>execute '1,' . (bufnr('%') - 1) . 'bdelete'<cr>", { desc = "close current at left" })
 map(
-	"n",
-	"<leader>kr",
-	"<cmd>execute (bufnr('%') + 1) . ',' . bufnr('$') . 'bdelete!'<cr>",
-	{ desc = "close current at right" }
+  "n",
+  "<leader>kr",
+  "<cmd>execute (bufnr('%') + 1) . ',' . bufnr('$') . 'bdelete!'<cr>",
+  { desc = "close current at right" }
 )
 --https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
 map("n", "<leader>ko", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
 map("n", "<leader>ka", "<cmd>%bd<cr>", { desc = "close all buffers" })
 map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
 
-map("n", "<leader>mm", function()
-	require("conform").format({ lsp_fallback = true })
-end, { desc = "general format file" })
+map(
+  "n",
+  "<leader>mm",
+  function() require("conform").format({ lsp_fallback = true }) end,
+  { desc = "general format file" }
+)
 
 map("n", "<leader>md", function()
-	require("conform").format({
-		timeout_ms = 20000, -- 20 seconds, because djlint is SLOWWWWWWWWW
-		lsp_fallback = true,
-	})
+  require("conform").format({
+    timeout_ms = 20000, -- 20 seconds, because djlint is SLOWWWWWWWWW
+    lsp_fallback = true,
+  })
 end, { desc = "djlint format" })
 
 map({ "n" }, "<leader>gt", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
@@ -217,18 +234,10 @@ map("n", "<leader>rt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
 
 map("n", "<leader>z", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer to highlight RGB color" })
 
-map("n", "<leader>jc", function()
-	require("noice").cmd("last")
-end, { desc = "noice last message" })
-map("n", "<leader>jd", function()
-	require("noice").cmd("history")
-end, { desc = "noice history" })
-map("n", "<leader>je", function()
-	require("noice").cmd("all")
-end, { desc = "noice all" })
-map("n", "<leader>jf", function()
-	require("noice").cmd("dismiss")
-end, { desc = "noice dismiss all" })
+map("n", "<leader>jc", function() require("noice").cmd("last") end, { desc = "noice last message" })
+map("n", "<leader>jd", function() require("noice").cmd("history") end, { desc = "noice history" })
+map("n", "<leader>je", function() require("noice").cmd("all") end, { desc = "noice all" })
+map("n", "<leader>jf", function() require("noice").cmd("dismiss") end, { desc = "noice dismiss all" })
 
 -- whichkey
 map("n", "<leader>jg", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enable highlight" })
@@ -239,6 +248,4 @@ map("n", "<leader>ji", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
 -- whichkey
 map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
 
-map("n", "<leader>jm", function()
-	require("smear_cursor").toggle()
-end, { desc = "toggle cursor animation" })
+map("n", "<leader>jm", function() require("smear_cursor").toggle() end, { desc = "toggle cursor animation" })

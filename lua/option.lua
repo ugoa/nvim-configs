@@ -94,33 +94,33 @@ opt.cursorlineopt = "both"
 -- Use blink block cursor in normal, visual, showmatch in insert mode
 -- Use blink vert line cursor in insert mode
 opt.guicursor =
-	"n-v-c-sm:block-blinkwait50-blinkon100-blinkoff100,i-ci:ver30-iCursor-blinkwait50-blinkon100-blinkoff100"
+  "n-v-c-sm:block-blinkwait50-blinkon100-blinkoff100,i-ci:ver30-iCursor-blinkwait50-blinkon100-blinkoff100"
 
 -- add binaries installed by mason.nvim to path
 vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, "/") .. ":" .. vim.env.PATH
 
 -- Treat .html files as htmldjango (Django template) files
--- vim.filetype.add({ extension = { html = "htmldjango" } })
+vim.filetype.add({ extension = { html = "htmldjango" } })
 
 local x = vim.diagnostic.severity
 vim.diagnostic.config({
-	-- disable to avoid duplications with lsp_lines message
-	virtual_text = false,
-	virtual_lines = {
-		only_current_line = false,
-		highlight_whole_line = false,
-	},
-	signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
-	underline = true,
-	float = { border = "rounded" },
+  -- disable to avoid duplications with lsp_lines message
+  virtual_text = false,
+  virtual_lines = {
+    only_current_line = false,
+    highlight_whole_line = false,
+  },
+  signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
+  underline = true,
+  float = { border = "rounded" },
 })
 
 -- Set global borde
 local original_signature_help = vim.lsp.buf.signature_help
 vim.lsp.buf.signature_help = function(opts)
-	opts = opts or {}
-	opts.border = "rounded"
-	original_signature_help(opts)
+  opts = opts or {}
+  opts.border = "rounded"
+  original_signature_help(opts)
 end
 
 -- vim.g.did_load_ftplugin = 1
