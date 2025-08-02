@@ -23,8 +23,10 @@ return {
 	},
 	opts = {
 		provider = "gemini",
-		gemini = {
-			model = "gemini-2.0-flash",
+		providers = {
+			gemini = {
+				model = "gemini-2.0-flash",
+			},
 		},
 		hints = { enabled = false }, -- disable inline keymap hint
 		windows = {
