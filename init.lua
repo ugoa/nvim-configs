@@ -13,7 +13,7 @@ end
 require("lazy").setup("plugins", {
   defaults = { lazy = true },
 
-  ui = { icons = { ft = "", lazy = "󰂠 ", loaded = "", not_loaded = "" } },
+  ui = { border = "rounded", icons = { ft = "", lazy = "󰂠 ", loaded = "", not_loaded = "" } },
 
   performance = {
     rtp = {

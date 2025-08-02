@@ -1,7 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
-  dependencies = { "nvim-treesitter/nvim-treesitter" },
   event = "VeryLazy",
+  dependencies = { "nvim-lua/plenary.nvim" },
 
   opts = {
     defaults = {
