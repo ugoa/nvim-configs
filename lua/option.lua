@@ -99,12 +99,8 @@ opt.guicursor =
 -- add binaries installed by mason.nvim to path
 vim.env.PATH = table.concat({ vim.fn.stdpath("data"), "mason", "bin" }, "/") .. ":" .. vim.env.PATH
 
-vim.filetype.add({
-	extension = {
-		-- Treat .html files as htmldjango (Django template) files
-		html = "htmldjango",
-	},
-})
+-- Treat .html files as htmldjango (Django template) files
+-- vim.filetype.add({ extension = { html = "htmldjango" } })
 
 local x = vim.diagnostic.severity
 vim.diagnostic.config({
