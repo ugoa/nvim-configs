@@ -31,6 +31,10 @@ return {
         GitSignsCurrentLineBlame = { fg = colors.overlay0 },
 
         WinSeparator = { fg = colors.surface1 },
+        AvanteSidebarWinSeparator = { fg = colors.surface1 },
+        AvanteSidebarWinHorizontalSeparator = { fg = colors.surface1 },
+        NvimTreeWinSeparator = { fg = colors.surface1 },
+        NeoTreeWinSeparator = { fg = colors.surface1 },
 
         BookMarksAdd = { fg = "#73747e" },
         BookMarksAnn = { fg = "#73747e" },

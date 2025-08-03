@@ -36,36 +36,6 @@ return {
   },
 
   {
-    enabled = false,
-    "mikavilpas/yazi.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      { "nvim-lua/plenary.nvim", lazy = true },
-    },
-    keys = {
-      {
-        "<c-n>",
-        "<cmd>Yazi cwd toggle<cr>",
-        desc = "Resume the last yazi session",
-      },
-    },
-    opts = {
-      -- if you want to open yazi instead of netrw, see below for more info
-      open_for_directories = true,
-      yazi_floating_window_border = "single",
-      keymaps = {
-        show_help = "<f1>",
-      },
-    },
-    -- 👇 if you use `open_for_directories=true`, this is recommended
-    init = function()
-      -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
-      -- vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-    end,
-  },
-
-  {
     "nvim-tree/nvim-tree.lua",
     tag = "v1.13.0",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
@@ -144,5 +114,35 @@ return {
     },
 
     keys = { { "<C-n>", "<cmd>NvimTreeToggle<CR>" } },
+  },
+
+  {
+    enabled = false,
+    "mikavilpas/yazi.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", lazy = true },
+    },
+    keys = {
+      {
+        "<c-n>",
+        "<cmd>Yazi cwd toggle<cr>",
+        desc = "Resume the last yazi session",
+      },
+    },
+    opts = {
+      -- if you want to open yazi instead of netrw, see below for more info
+      open_for_directories = true,
+      yazi_floating_window_border = "single",
+      keymaps = {
+        show_help = "<f1>",
+      },
+    },
+    -- 👇 if you use `open_for_directories=true`, this is recommended
+    init = function()
+      -- More details: https://github.com/mikavilpas/yazi.nvim/issues/802
+      -- vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+    end,
   },
 }
