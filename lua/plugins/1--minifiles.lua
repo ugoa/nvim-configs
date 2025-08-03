@@ -70,7 +70,7 @@ return {
           MiniFiles.reveal_cwd()
         end
       end,
-      desc = "Open Mini Files",
+      desc = "Toggle Mini Files",
     },
   },
 }
