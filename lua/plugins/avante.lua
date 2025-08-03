@@ -30,7 +30,16 @@ return {
     },
     hints = { enabled = false }, -- disable inline keymap hint
     windows = {
-      width = 40,
+      sidebar_header = {
+        enabled = false,
+      },
+      width = 45,
+      edit = {
+        start_insert = false,
+      },
+      ask = {
+        start_insert = false,
+      },
     },
   },
 
