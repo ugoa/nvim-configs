@@ -52,6 +52,6 @@ require("lazy").setup("plugins", {
 
 vim.lsp.enable({ "luals", "pyright" })
 
+require("mapping")
 require("option")
 require("autocmd")
-require("mapping")
