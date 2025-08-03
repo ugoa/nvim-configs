@@ -75,7 +75,7 @@ opt.whichwrap:append("<>[]hl")
 
 opt.scrolloff = 5
 
-opt.colorcolumn = "120"
+-- opt.colorcolumn = "120"
 
 -- disable some default providers
 g.loaded_node_provider = 0
