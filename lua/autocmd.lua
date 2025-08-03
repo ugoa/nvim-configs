@@ -76,6 +76,12 @@ autocmd("FileType", {
   end,
 })
 
+-- prevent quickfix buffer being listed
+autocmd("FileType", {
+  pattern = "qf",
+  callback = function() vim.opt_local.buflisted = false end,
+})
+
 -- Trigger vim to autoload modifications from external
 autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   pattern = "*",
@@ -84,17 +90,11 @@ autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
 
 -- Disable diagnostics when the buffer is modified
 -- Enable diagnostics after writing the buffer
-autocmd({ "TextChanged", "TextChangedI" }, {
+autocmd({ "TextChangedI" }, {
   pattern = "*",
   callback = function() vim.diagnostic.enable(false) end,
 })
 autocmd("BufWritePost", {
   pattern = "*",
   callback = function() vim.diagnostic.enable(true) end,
-})
-
--- prevent quickfix buffer being listed
-autocmd("FileType", {
-  pattern = "qf",
-  callback = function() vim.opt_local.buflisted = false end,
 })
