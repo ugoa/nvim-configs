@@ -75,8 +75,6 @@ map("n", "<M-d>", vim.lsp.buf.definition, { desc = "LSP definitions" })
 
 map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
 
-map("n", "<M-g>", "<cmd>Telescope live_grep<cr>", { desc = "telescope grep word" })
-
 map(
   "n",
   "<M-i>",

@@ -4,7 +4,42 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
 
   opts = {
+    pickers = {
+      -- For find_files
+      find_files = {
+        find_command = {
+          "rg",
+          "--files",
+          "--smart-case",
+          "--hidden",
+          "--no-ignore",
+          "--glob=!.DS_Store",
+          "--glob=!project/*/*",
+          "--glob=!target/*",
+          "--glob=!**/.github/*",
+          "--glob=!**/.cargo*",
+          "--glob=!**/.vscode*",
+          "--glob=!**/.idea/*",
+          "--glob=!**/.venv/*",
+          "--glob=!**/.git/*",
+          "--glob=!**/log/*",
+          "--glob=!**/logs/*",
+          "--glob=!**/tmp*",
+          "--glob=!**/temp/*",
+          "--glob=!**/.nuxt*",
+          "--glob=!**/node_modules/*",
+          "--glob=!**/.output*",
+          "--glob=!**/.vinxi/*",
+          "--glob=!**/__pycache__/*",
+          "--glob=!**/dist/*",
+          "--glob=!**/db-data/*",
+          "--glob=!**/.bsp/*",
+        },
+      },
+    },
+
     defaults = {
+      -- For live_grep
       vimgrep_arguments = {
         "rg",
         "--color=never",
@@ -12,9 +47,9 @@ return {
         "--with-filename",
         "--line-number",
         "--column",
+        "--trim",
         "--smart-case",
         "--hidden",
-        "--trim",
         "--no-ignore",
         "--glob=!.DS_Store",
         "--glob=!project/*/*",
@@ -38,10 +73,6 @@ return {
         "--glob=!**/db-data/*",
         "--glob=!**/.bsp/*",
       },
-
-      -- prompt_prefix = "   ",
-      -- selection_caret = "  ",
-      -- entry_prefix = "  ",
 
       sorting_strategy = "ascending",
       layout_config = {
@@ -81,42 +112,7 @@ return {
   },
 
   keys = {
-    {
-      "<M-f>",
-      mode = { "n" },
-      function()
-        require("telescope.builtin").find_files({
-          find_command = {
-            "rg",
-            "--files",
-            "--smart-case",
-            "--hidden",
-            "--no-ignore",
-            "--glob=!.DS_Store",
-            "--glob=!project/*/*",
-            "--glob=!target/*",
-            "--glob=!**/.github/*",
-            "--glob=!**/.cargo*",
-            "--glob=!**/.vscode*",
-            "--glob=!**/.idea/*",
-            "--glob=!**/.venv/*",
-            "--glob=!**/.git/*",
-            "--glob=!**/log/*",
-            "--glob=!**/logs/*",
-            "--glob=!**/tmp*",
-            "--glob=!**/temp/*",
-            "--glob=!**/.nuxt*",
-            "--glob=!**/node_modules/*",
-            "--glob=!**/.output*",
-            "--glob=!**/.vinxi/*",
-            "--glob=!**/__pycache__/*",
-            "--glob=!**/dist/*",
-            "--glob=!**/db-data/*",
-            "--glob=!**/.bsp/*",
-          },
-        })
-      end,
-      desc = "find files",
-    },
+    { "<M-f>", "<cmd>Telescope find_files<CR>" },
+    { "<M-g>", "<cmd>Telescope live_grep<CR>" },
   },
 }
