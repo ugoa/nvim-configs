@@ -8,6 +8,7 @@ return {
         width_nofocus = 20,
         width_focus = 40,
         width_preview = 60,
+        max_number = math.huge,
       },
       mappings = {
         close = "<ESC>",
