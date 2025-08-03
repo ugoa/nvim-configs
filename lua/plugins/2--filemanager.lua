@@ -12,10 +12,17 @@ return {
       mappings = {
         close = "<ESC>",
         synchronize = "<C-S>",
+        show_help = "g?",
+        mark_goto = "",
+        mark_set = "",
         go_in = "",
         go_in_plus = "",
         go_out = "",
         go_out_plus = "",
+        reset = "",
+        reveal_cwd = "",
+        trim_left = "",
+        trim_right = "",
       },
     },
     config = function(_, opts)
