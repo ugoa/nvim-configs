@@ -4,8 +4,8 @@ return {
   opts = {
     windows = {
       preview = true,
-      width_nofocus = 30,
-      width_focus = 30,
+      width_nofocus = 20,
+      width_focus = 40,
       width_preview = 60,
       max_number = math.huge,
     },
