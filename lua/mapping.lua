@@ -152,7 +152,7 @@ map(
 --    <leader>-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;
 --    <leader>-a c   g ijk l    rs     yz  ;
 ----------------------------------------------------------------------------------------------------
-map("n", "<leader>i", "<cmd>Inspect!<cr>", { desc = "Inspect under cursor" })
+map("n", "<leader>i", "<cmd>Inspect<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>kk", "<cmd>bdelete<cr>", { desc = "close current buffer" })
 map("n", "<leader>kl", "<cmd>execute '1,' . (bufnr('%') - 1) . 'bdelete'<cr>", { desc = "close current at left" })

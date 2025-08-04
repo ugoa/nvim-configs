@@ -52,6 +52,10 @@ return {
         ["@variable.conditional"] = { italic = true, fg = colors.mauve },
         ["@variable.operator"] = { italic = true, fg = colors.mauve },
 
+        -- Set color for fields in Rust struct, or Python classes, etc
+        ["@variable.member"] = { italic = true, fg = colors.lavender }, -- treesitter
+        ["@property"] = { fg = colors.lavender }, -- lsp
+
         ["@constant.builtin"] = { italic = true, fg = colors.mauve },
 
         ["@type.builtin"] = { italic = true, fg = colors.mauve },
