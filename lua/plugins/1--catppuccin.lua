@@ -29,7 +29,7 @@ return {
       -- https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/palettes/mocha.lua
       return {
         GitSignsCurrentLineBlame = { fg = colors.overlay0 },
-        MiniFilesCursorLine = { bg = colors.surface2, fg = colors.green },
+        MiniFilesCursorLine = { bg = colors.surface1, fg = colors.green },
 
         WinSeparator = { fg = colors.surface1 },
         AvanteSidebarWinSeparator = { fg = colors.surface1 },
