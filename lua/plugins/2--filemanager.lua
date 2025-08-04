@@ -36,7 +36,6 @@ return {
   },
 
   {
-    enabled = false,
     "nvim-tree/nvim-tree.lua",
     tag = "v1.13.0",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },

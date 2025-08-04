@@ -38,7 +38,21 @@ return {
     sections = {
       lualine_a = { "mode" },
       lualine_b = { "branch", "diff", "diagnostics" },
-      lualine_c = { { "filename", path = 1 }, "filetype" },
+      lualine_c = {
+        { "filename", path = 1 },
+        { "filetype" },
+        {
+          function()
+            local venv_path = os.getenv("VIRTUAL_ENV")
+            if venv_path then
+              -- Extract the last part of the path, which is usually the venv name
+              return vim.fn.fnamemodify(venv_path, ":t")
+            else
+              return "" -- Or a default string like "No Venv"
+            end
+          end,
+        },
+      },
       lualine_x = {
         { "progress", separator = "" },
         { "location", separator = "" },
@@ -58,6 +72,7 @@ return {
             return " " .. count
           end,
         },
+
         {
           -- show lsp_client
           function()
