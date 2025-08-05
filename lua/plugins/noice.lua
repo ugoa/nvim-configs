@@ -98,4 +98,5 @@ return {
       lsp_doc_border = true,
     },
   },
+  keys = { { "<M-v>", "<cmd>Noice telescope<CR>" } },
 }

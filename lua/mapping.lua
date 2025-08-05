@@ -111,7 +111,6 @@ map(
 
 map("n", "<M-u>", "<cmd>Telescope git_status<CR>", { desc = "toggle git status" })
 
-map("n", "<M-v>", "<cmd>Noice telescope<CR>", { desc = "noice history" })
 -- Telescope
 map("n", "<M-w>", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
 
