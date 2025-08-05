@@ -150,22 +150,27 @@ map(
 ----------------------------------------------------------------------------------------------------
 -- Leader key mappings:
 --    <leader>-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;
---    <leader>-a c   g ijk l    rs     yz  ;
+--    <leader>-a c   ghijklm o  rs     yz  ;
 ----------------------------------------------------------------------------------------------------
 map("n", "<leader>i", "<cmd>Inspect<cr>", { desc = "Inspect under cursor" })
 
-map("n", "<leader>kk", "<cmd>bdelete<cr>", { desc = "close current buffer" })
-map("n", "<leader>kl", "<cmd>execute '1,' . (bufnr('%') - 1) . 'bdelete'<cr>", { desc = "close current at left" })
+map("n", "<leader>k", "<cmd>bdelete<cr>", { desc = "close current buffer" })
+map("n", "<leader>l", "<cmd>execute '1,' . (bufnr('%') - 1) . 'bdelete'<cr>", { desc = "close current at left" })
 map(
   "n",
-  "<leader>kr",
+  "<leader>r",
   "<cmd>execute (bufnr('%') + 1) . ',' . bufnr('$') . 'bdelete!'<cr>",
   { desc = "close current at right" }
 )
 --https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
-map("n", "<leader>ko", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
-map("n", "<leader>ka", "<cmd>%bd<cr>", { desc = "close all buffers" })
-map("n", "<leader>kq", "<cmd>silent q!<cr>", { desc = "close window" })
+map("n", "<leader>o", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
+map("n", "<leader>a", "<cmd>%bd<cr>", { desc = "close all buffers" })
+
+map("n", "<leader>h", function() require("noice").cmd("history") end, { desc = "noice history" })
+
+map("n", "<leader>z", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer to highlight RGB color" })
+
+map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
 map(
   "n",
@@ -193,17 +198,12 @@ map("n", "<leader>st", "<cmd>SessionToggleAutoSave<cr>", { desc = "toggles autos
 map("n", "<leader>sp", "<cmd>SessionPurgeOrphaned<cr>", { desc = "removes all orphaned sessions" })
 map("n", "<leader>sf", "<cmd>SessionSearch<cr>", { desc = "open a session picker" })
 
-map("n", "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "toggle AI Assistant" })
-map("n", "<leader>aa", "<cmd>CodeCompanion<cr>", { desc = "AI Prompt at current location" })
-
 map("n", "<leader>yf", "<cmd>let @+ = expand('%:t')<CR>", { desc = "Copy file name to clipboard" })
 map("n", "<leader>yy", "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path to clipboard" })
 map("n", "<leader>ya", "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy absolute path to clipboard" })
 
 map("n", "<leader>tn", "<cmd>setl relativenumber! relativenumber?<CR>", { desc = "toggle relativenumber" })
 map("n", "<leader>tw", "<cmd>setl wrap! wrap?<CR>", { desc = "toggle word wrap" })
-
-map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
 local crates = require("crates")
 map("n", "<leader>cc", crates.toggle, { silent = true, desc = "toggle" })
@@ -226,22 +226,11 @@ map("n", "<leader>cD", crates.open_documentation, { silent = true, desc = "open 
 map("n", "<leader>cC", crates.open_crates_io, { silent = true, desc = "open crates.io" })
 map("n", "<leader>cL", crates.open_lib_rs, { silent = true, desc = "open lib.rs" })
 
-map("n", "<leader>rr", "<cmd>RustLsp run<cr>", { desc = "Run closet Cargo targets" })
-map("n", "<leader>rl", "<cmd>RustLsp runnables<cr>", { desc = "List runnable targets" })
-map("n", "<leader>rt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
+map("n", "<leader>xr", "<cmd>RustLsp run<cr>", { desc = "Run closet Cargo targets" })
+map("n", "<leader>xl", "<cmd>RustLsp runnables<cr>", { desc = "List runnable targets" })
+map("n", "<leader>xt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
 
-map("n", "<leader>z", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer to highlight RGB color" })
-
-map("n", "<leader>jc", function() require("noice").cmd("last") end, { desc = "noice last message" })
-map("n", "<leader>jd", function() require("noice").cmd("history") end, { desc = "noice history" })
-map("n", "<leader>je", function() require("noice").cmd("all") end, { desc = "noice all" })
-map("n", "<leader>jf", function() require("noice").cmd("dismiss") end, { desc = "noice dismiss all" })
-
--- whichkey
-map("n", "<leader>jg", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enable highlight" })
-
--- Reload all buffers to get external latest changes
-map("n", "<leader>ji", "<cmd>bufdo edit<CR>", { desc = "reload all buffers" })
+map("n", "<leader>ji", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enable highlight" })
 
 -- whichkey
 map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
