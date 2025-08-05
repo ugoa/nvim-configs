@@ -36,7 +36,7 @@ return {
       end
     end
 
-    local function go_out_plus_till_root()
+    local function go_out_plus_till_cwd()
       local p = require("mini.files").get_fs_entry().path
       local parent = vim.fs.dirname(p)
       -- https://github.com/echasnovski/mini.files/blob/main/lua/mini/files.lua#L2143-L2145
@@ -52,7 +52,7 @@ return {
       pattern = "MiniFilesBufferCreate",
       callback = function(args)
         local buf_id = args.data.buf_id
-        vim.keymap.set("n", "<M-h>", go_out_plus_till_root, { buffer = buf_id })
+        vim.keymap.set("n", "<M-h>", go_out_plus_till_cwd, { buffer = buf_id })
         vim.keymap.set("n", "<CR>", go_in_plus, { buffer = buf_id })
         vim.keymap.set("n", "<M-l>", go_in_plus, { buffer = buf_id })
       end,
