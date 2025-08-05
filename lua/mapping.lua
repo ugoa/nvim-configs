@@ -59,7 +59,7 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-abcdefghijklmnop rstu wxyz-=;>
+--    <M-abcdefghijklmnop rstuvwxyz-=;>
 ----------------------------------------------------------------------------------------------------
 
 map(
@@ -111,6 +111,7 @@ map(
 
 map("n", "<M-u>", "<cmd>Telescope git_status<CR>", { desc = "toggle git status" })
 
+map("n", "<M-v>", "<cmd>Noice telescope<CR>", { desc = "noice history" })
 -- Telescope
 map("n", "<M-w>", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
 
@@ -165,8 +166,6 @@ map(
 --https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
 map("n", "<leader>o", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
 map("n", "<leader>a", "<cmd>%bd<cr>", { desc = "close all buffers" })
-
-map("n", "<leader>h", function() require("noice").cmd("history") end, { desc = "noice history" })
 
 map("n", "<leader>z", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer to highlight RGB color" })
 
