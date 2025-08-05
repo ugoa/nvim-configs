@@ -1,5 +1,6 @@
 return {
   "echasnovski/mini.files",
+  event = "VeryLazy",
   version = "*",
   opts = {
     windows = {
@@ -51,9 +52,9 @@ return {
       pattern = "MiniFilesBufferCreate",
       callback = function(args)
         local buf_id = args.data.buf_id
-        vim.keymap.set("n", "<C-H>", go_out_plus_till_root, { buffer = buf_id })
+        vim.keymap.set("n", "<M-h>", go_out_plus_till_root, { buffer = buf_id })
         vim.keymap.set("n", "<CR>", go_in_plus, { buffer = buf_id })
-        vim.keymap.set("n", "<C-L>", go_in_plus, { buffer = buf_id })
+        vim.keymap.set("n", "<M-l>", go_in_plus, { buffer = buf_id })
       end,
     })
   end,
