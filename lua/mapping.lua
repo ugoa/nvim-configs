@@ -90,11 +90,7 @@ map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "move to upper panel" })
 
 map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
 
-map("n", "<M-m>", "<cmd>Telescope bookmarks list<CR>", { desc = "toggle  bookmarks" })
-
 map("n", "<M-n>", "<cmd>Telescope git_commits<CR>", { desc = "toggle git commits" })
-
-map("n", "<M-o>", "<cmd>AerialToggle<CR>", { desc = "toggle code outline" })
 
 map("n", "<M-r>", function() require("telescope.builtin").lsp_references() end, { desc = "telescope LSP reference" })
 
@@ -131,8 +127,6 @@ map("", "<M-z>", function()
   })
 end, { desc = "Toggle diagnostic lines" })
 
-map("n", "<M-;>", function() require("grug-far").open({ transient = true }) end, { desc = "Open search and replace" })
-
 map(
   { "n", "t" },
   "<M-->",
@@ -165,10 +159,6 @@ map(
 --https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
 map("n", "<leader>o", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
 map("n", "<leader>a", "<cmd>%bd<cr>", { desc = "close all buffers" })
-
-map("n", "<leader>z", "<cmd>ColorizerToggle<CR>", { desc = "Toggle Colorizer to highlight RGB color" })
-
-map("n", "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", { desc = "toggle markdown preview" })
 
 map(
   "n",

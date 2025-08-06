@@ -3,7 +3,12 @@ return {
 
   { "nvim-lua/plenary.nvim" },
 
-  { "norcalli/nvim-colorizer.lua", cmd = "ColorizerToggle", opts = {} },
+  {
+    "norcalli/nvim-colorizer.lua",
+    cmd = "ColorizerToggle",
+    config = true,
+    keys = { { "<leader>z", "<cmd>ColorizerToggle<CR>" } },
+  },
 
   { "sphamba/smear-cursor.nvim", cmd = { "SmearCursorToggle" }, opts = {} },
 

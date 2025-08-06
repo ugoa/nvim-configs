@@ -9,4 +9,5 @@ return {
       min_width = 40,
     },
   },
+  keys = { { "<M-o>", "<cmd>AerialToggle<CR>" } },
 }
