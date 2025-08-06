@@ -36,19 +36,19 @@ map("v", "A", ":normal A", { desc = "append to visual block" })
 map("n", "S", vim.lsp.buf.signature_help, { desc = "go to signature_help" })
 
 -- always center search/nav results
-vim.keymap.set("n", "n", "nzz", { desc = "find next and center screen", silent = true })
+map("n", "n", "nzz", { desc = "find next and center screen", silent = true })
 
-vim.keymap.set("n", "N", "Nzz", { desc = "find previous and center screen", silent = true })
+map("n", "N", "Nzz", { desc = "find previous and center screen", silent = true })
 
-vim.keymap.set("n", "*", "*zz", { desc = "highlight next and center screen", silent = true })
+map("n", "*", "*zz", { desc = "highlight next and center screen", silent = true })
 
-vim.keymap.set("n", "#", "#zz", { desc = "highlight previous and center screen", silent = true })
+map("n", "#", "#zz", { desc = "highlight previous and center screen", silent = true })
 
-vim.keymap.set("n", "g*", "g*zz", { desc = "highlight all and center screen", silent = true })
+map("n", "g*", "g*zz", { desc = "highlight all and center screen", silent = true })
 
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center screen", silent = true })
+map("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center screen", silent = true })
 
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
+map("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
 
 map("n", "?", ":h ", { desc = "help" })
 
