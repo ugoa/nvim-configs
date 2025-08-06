@@ -120,7 +120,7 @@ map(
 )
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
-map("", "<M-z>", function()
+map("n", "<M-z>", function()
   vim.diagnostic.config({
     virtual_lines = not vim.diagnostic.config().virtual_lines,
     -- virtual_text = not vim.diagnostic.config().virtual_text,
