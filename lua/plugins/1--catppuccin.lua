@@ -29,7 +29,7 @@ return {
       -- https://github.com/catppuccin/nvim/blob/main/lua/catppuccin/palettes/mocha.lua
       return {
         NvimTreeCursorLine = { fg = colors.green, bg = colors.surface0 },
-        NvimTreeOpenedHL = { fg = colors.teal },
+        NvimTreeOpenedHL = { fg = colors.yellow },
 
         GitSignsCurrentLineBlame = { fg = colors.overlay0 },
 
