@@ -78,7 +78,7 @@ autocmd("FileType", {
 
 -- prevent quickfix buffer being listed
 autocmd("FileType", {
-  pattern = "qf",
+  pattern = { "qf", "NvimTree" },
   callback = function() vim.opt_local.buflisted = false end,
 })
 
