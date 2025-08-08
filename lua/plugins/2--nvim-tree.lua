@@ -1,3 +1,16 @@
+local function my_on_attach(bufnr)
+  local api = require("nvim-tree.api")
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  api.config.mappings.default_on_attach(bufnr)
+
+  vim.keymap.set("n", "-", "<Nop>", opts("Disable"))
+  vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+end
+
 return {
   "nvim-tree/nvim-tree.lua",
   tag = "v1.13.0",
@@ -5,6 +18,7 @@ return {
 
   -- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
   opts = {
+    on_attach = my_on_attach,
     reload_on_bufenter = true,
     auto_reload_on_write = true,
     disable_netrw = true,
