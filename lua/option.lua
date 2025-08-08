@@ -42,7 +42,7 @@ opt.numberwidth = 2
 
 opt.ruler = false
 
-opt.relativenumber = true
+opt.relativenumber = false
 
 opt.termguicolors = true
 

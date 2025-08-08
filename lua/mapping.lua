@@ -50,6 +50,10 @@ map("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center screen", silen
 
 map("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
 
+map("n", "<C-f>", "<C-f>zz", { desc = "go page down and center screen", silent = true })
+
+map("n", "<C-b>", "<C-b>zz", { desc = "go page up and center screen", silent = true })
+
 map("n", "?", ":h ", { desc = "help" })
 
 map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
