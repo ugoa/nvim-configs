@@ -101,7 +101,12 @@ return {
               function() vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", prompt_win)) end,
               { buffer = bufnr }
             )
-
+            vim.keymap.set(
+              "n",
+              "<Esc>",
+              function() require("telescope.actions").close(prompt_bufnr) end,
+              { buffer = bufnr }
+            )
             vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", winid))
           end,
         },
