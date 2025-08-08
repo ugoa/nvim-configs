@@ -7,7 +7,7 @@ return {
     "norcalli/nvim-colorizer.lua",
     cmd = "ColorizerToggle",
     config = true,
-    keys = { { "<leader>z", "<cmd>ColorizerToggle<CR>" } },
+    keys = { { "<leader>z", "<cmd>ColorizerToggle<CR>", desc = "Toggle Colorizer" } },
   },
 
   { "sphamba/smear-cursor.nvim", cmd = { "SmearCursorToggle" }, opts = {} },

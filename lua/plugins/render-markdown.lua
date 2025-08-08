@@ -3,5 +3,5 @@ return {
   "MeanderingProgrammer/render-markdown.nvim",
   dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
   config = true,
-  keys = { { "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>" } },
+  keys = { { "<leader>v", "<cmd>RenderMarkdown buf_toggle<CR>", desc = "Toggle Markdown Preview" } },
 }

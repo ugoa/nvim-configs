@@ -98,5 +98,5 @@ return {
       lsp_doc_border = true,
     },
   },
-  keys = { { "<M-v>", "<cmd>Noice telescope<CR>" } },
+  keys = { { "<M-v>", "<cmd>Noice telescope<CR>", desc = "Show Noice history in telescope" } },
 }
