@@ -34,6 +34,7 @@ return {
     update_focused_file = {
       enable = true,
       update_root = false,
+      update_cwd = false,
     },
     renderer = {
       root_folder_label = ":~:s?$?",
