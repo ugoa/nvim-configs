@@ -2,7 +2,7 @@ local bufnr = vim.api.nvim_get_current_buf()
 
 vim.keymap.set(
   "n",
-  "<leader>grv",
+  "<M-q>",
   function() vim.cmd.RustLsp("expandMacro") end,
   { silent = true, buffer = bufnr, desc = "Lsp: Expand Rust Macro" }
 )

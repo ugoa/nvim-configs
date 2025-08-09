@@ -63,7 +63,7 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-abcdefghijklmnop rstuvwxyz-=;>
+--    <M-abcdefghijklmnopqrstuvwxyz-=;>
 ----------------------------------------------------------------------------------------------------
 
 map(
@@ -178,10 +178,10 @@ map("n", "<leader>md", function()
   })
 end, { desc = "djlint format" })
 
-map({ "n" }, "<leader>gt", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
+map({ "n" }, "<leader>n", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
 
 map({ "n", "v" }, "<leader>gy", "<cmd>GitLink<CR>", { desc = "Yank git link" })
-map({ "n", "v" }, "<leader>gY", "<cmd>GitLink!<CR>", { desc = "Open git link" })
+map({ "n", "v" }, "<leader>go", "<cmd>GitLink!<CR>", { desc = "Open git link" })
 
 map("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Save session" })
 map("n", "<leader>sr", "<cmd>SessionRestore<cr>", { desc = "restores a session" })
