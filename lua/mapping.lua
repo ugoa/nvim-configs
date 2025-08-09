@@ -14,6 +14,10 @@ map({ "i", "c" }, "<C-a>", "<Home>", { desc = "move beginning" })
 
 map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
+map("i", "<Space>", "<Space><C-G>u", { desc = "Break undo tree for space" })
+
+map("i", "<Enter>", "<Enter><C-G>u", { desc = "Break undo tree for enter" })
+
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
 map("n", "<Tab>", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
