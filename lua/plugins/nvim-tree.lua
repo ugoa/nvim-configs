@@ -17,7 +17,7 @@ local function on_attach(bufnr)
   vim.keymap.set("n", "-", "<Nop>", opts("Disable"))
   vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
   vim.keymap.set("n", "<CR>", edit, opts("Edit or Expand or Dir-up"))
-  vim.keymap.set("n", "<l>", edit, opts("Edit or Expand or Dir-up"))
+  vim.keymap.set("n", "l", edit, opts("Edit or Expand or Dir-up"))
 end
 
 return {
