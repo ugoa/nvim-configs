@@ -1,14 +1,23 @@
-local function my_on_attach(bufnr)
+local function on_attach(bufnr)
   local api = require("nvim-tree.api")
 
   local function opts(desc)
     return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
   end
 
+  local function edit()
+    local node = api.tree.get_node_under_cursor()
+    local RootNode = require("nvim-tree.node.root")
+    if node:as(RootNode) then return end
+    api.node.open.edit()
+  end
+
   api.config.mappings.default_on_attach(bufnr)
 
   vim.keymap.set("n", "-", "<Nop>", opts("Disable"))
   vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+  vim.keymap.set("n", "<CR>", edit, opts("Edit or Expand or Dir-up"))
+  vim.keymap.set("n", "<l>", edit, opts("Edit or Expand or Dir-up"))
 end
 
 return {
@@ -18,7 +27,7 @@ return {
 
   -- https://github.com/nvim-tree/nvim-tree.lua/blob/master/lua/nvim-tree.lua#L237
   opts = {
-    on_attach = my_on_attach,
+    on_attach = on_attach,
     reload_on_bufenter = true,
     auto_reload_on_write = true,
     disable_netrw = true,
