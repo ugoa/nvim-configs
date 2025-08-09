@@ -88,7 +88,7 @@ return {
           ["<Esc>"] = require("telescope.actions").close,
           -- Move focus between prompt and preview window
           -- https://github.com/nvim-telescope/telescope.nvim/issues/2778#issuecomment-2480852286
-          ["<C-L>"] = function(prompt_bufnr)
+          ["<M-l>"] = function(prompt_bufnr)
             local action_state = require("telescope.actions.state")
             local picker = action_state.get_current_picker(prompt_bufnr)
             local prompt_win = picker.prompt_win
@@ -97,13 +97,19 @@ return {
             local bufnr = previewer.state.bufnr
             vim.keymap.set(
               "n",
-              "<C-H>",
+              "<M-h>",
               function() vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", prompt_win)) end,
               { buffer = bufnr }
             )
             vim.keymap.set(
               "n",
               "<Esc>",
+              function() require("telescope.actions").close(prompt_bufnr) end,
+              { buffer = bufnr }
+            )
+            vim.keymap.set(
+              "n",
+              "q",
               function() require("telescope.actions").close(prompt_bufnr) end,
               { buffer = bufnr }
             )
