@@ -37,10 +37,10 @@ return {
     },
     sections = {
       lualine_a = { "mode" },
-      lualine_b = { "branch", "diff", "diagnostics" },
-      lualine_c = {
-        { "filename", path = 1 },
-        { "filetype" },
+      lualine_b = {
+        "branch",
+        "diff",
+        "diagnostics",
         {
           function()
             local venv_path = os.getenv("VIRTUAL_ENV")
@@ -52,6 +52,10 @@ return {
             end
           end,
         },
+      },
+      lualine_c = {
+        { "filename", path = 1 },
+        { "filetype" },
       },
       lualine_x = {
         { "progress", separator = "" },
