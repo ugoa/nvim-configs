@@ -6,7 +6,7 @@ return {
     windows = {
       preview = false,
       width_nofocus = 30,
-      width_focus = 68,
+      width_focus = 56,
       max_number = math.huge,
     },
     mappings = {
