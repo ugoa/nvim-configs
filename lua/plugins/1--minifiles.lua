@@ -5,8 +5,8 @@ return {
   opts = {
     windows = {
       preview = false,
-      width_nofocus = 30,
-      width_focus = 66,
+      width_nofocus = 40,
+      width_focus = 40,
       max_number = math.huge,
     },
     mappings = {
