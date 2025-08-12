@@ -75,20 +75,30 @@ return {
       },
 
       sorting_strategy = "ascending",
+      layout_strategy = "vertical",
       layout_config = {
+        vertical = {
+          prompt_position = "top",
+          size = {
+            width = "100%",
+            height = "100%",
+          },
+        },
         horizontal = {
           prompt_position = "top",
-          preview_width = 0.6,
+          preview_width = 0.55,
+          size = {
+            width = "90%",
+            height = "90%",
+          },
         },
-        width = 0.85,
-        height = 0.80,
       },
       mappings = {
         i = {
           ["<Esc>"] = require("telescope.actions").close,
           -- Move focus between prompt and preview window
           -- https://github.com/nvim-telescope/telescope.nvim/issues/2778#issuecomment-2480852286
-          ["<M-l>"] = function(prompt_bufnr)
+          ["<M-k>"] = function(prompt_bufnr)
             local action_state = require("telescope.actions.state")
             local picker = action_state.get_current_picker(prompt_bufnr)
             local prompt_win = picker.prompt_win
@@ -97,7 +107,7 @@ return {
             local bufnr = previewer.state.bufnr
             vim.keymap.set(
               "n",
-              "<M-h>",
+              "<M-j>",
               function() vim.cmd(string.format("noautocmd lua vim.api.nvim_set_current_win(%s)", prompt_win)) end,
               { buffer = bufnr }
             )

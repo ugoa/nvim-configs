@@ -4,10 +4,9 @@ return {
   version = "*",
   opts = {
     windows = {
-      preview = true,
+      preview = false,
       width_nofocus = 30,
-      width_focus = 30,
-      width_preview = 60,
+      width_focus = 66,
       max_number = math.huge,
     },
     mappings = {
