@@ -13,7 +13,6 @@ return {
           "AvanteInput",
           "AvanteSelectedFiles",
           "DressingInput",
-          "undefined",
           "minifiles",
           "NvimTree",
           "TelescopePrompt",
@@ -54,7 +53,8 @@ return {
         },
       },
       lualine_c = {
-        { "filename", path = 1 },
+        -- { "filename", path = 1 },
+        { "filename" },
         { "filetype" },
       },
       lualine_x = {
