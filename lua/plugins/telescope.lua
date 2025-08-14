@@ -150,7 +150,9 @@ return {
       "<M-w>",
       function()
         require("telescope.builtin").lsp_dynamic_workspace_symbols({
-          fname_width = 60,
+          fname_width = 90,
+          symbol_width = 35,
+          symbol_type_width = 15,
         })
       end,
     },
