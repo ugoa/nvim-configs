@@ -136,6 +136,27 @@ return {
 
   keys = {
     { "<M-f>", "<cmd>Telescope find_files<CR>" },
+
     { "<M-g>", "<cmd>Telescope live_grep<CR>" },
+
+    { "<M-u>", "<cmd>Telescope git_status<CR>" },
+
+    { "<M-n>", "<cmd>Telescope git_commits<CR>" },
+
+    { "<M-i>", function() require("telescope.builtin").lsp_implementations() end },
+
+    { "<M-b>", "<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>" },
+    {
+      "<M-w>",
+      function()
+        require("telescope.builtin").lsp_dynamic_workspace_symbols({
+          fname_width = 60,
+        })
+      end,
+    },
+    {
+      "<M-r>",
+      function() require("telescope.builtin").lsp_references() end,
+    },
   },
 }

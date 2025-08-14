@@ -70,25 +70,11 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 --    <M-abcdefghijklmnopqrstuvwxyz-=;>
 ----------------------------------------------------------------------------------------------------
 
-map(
-  "n",
-  "<M-b>",
-  "<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>",
-  { desc = "telescope find buffers" }
-)
-
 map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
 
 map("n", "<M-d>", vim.lsp.buf.definition, { desc = "LSP definitions" })
 
 map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
-
-map(
-  "n",
-  "<M-i>",
-  function() require("telescope.builtin").lsp_implementations() end,
-  { desc = "telescope LSP implementations" }
-)
 
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
 
@@ -97,10 +83,6 @@ map({ "n", "t" }, "<M-j>", "<c-w>j", { desc = "move to below panel" })
 map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "move to upper panel" })
 
 map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
-
-map("n", "<M-n>", "<cmd>Telescope git_commits<CR>", { desc = "toggle git commits" })
-
-map("n", "<M-r>", function() require("telescope.builtin").lsp_references() end, { desc = "telescope LSP reference" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
 
@@ -112,11 +94,6 @@ map(
   function() require("terminal").toggle({ pos = "float", id = "floatTerm" }) end,
   { desc = "toggle floating terminal" }
 )
-
-map("n", "<M-u>", "<cmd>Telescope git_status<CR>", { desc = "toggle git status" })
-
--- Telescope
-map("n", "<M-w>", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "telescope find workspace symbol" })
 
 map("n", "<M-x>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
 
