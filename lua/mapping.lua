@@ -194,8 +194,8 @@ map("n", "<leader>st", "<cmd>SessionToggleAutoSave<cr>", { desc = "toggles autos
 map("n", "<leader>sp", "<cmd>SessionPurgeOrphaned<cr>", { desc = "removes all orphaned sessions" })
 map("n", "<leader>sf", "<cmd>SessionSearch<cr>", { desc = "open a session picker" })
 
-map("n", "<leader>yf", "<cmd>let @+ = expand('%:t')<CR>", { desc = "Copy file name to clipboard" })
-map("n", "<leader>yy", "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path to clipboard" })
+map("n", "<leader>yy", "<cmd>let @+ = expand('%:t')<CR>", { desc = "Copy file name to clipboard" })
+map("n", "<leader>yf", "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path to clipboard" })
 map("n", "<leader>ya", "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy absolute path to clipboard" })
 
 map("n", "<leader>tn", "<cmd>setl relativenumber! relativenumber?<CR>", { desc = "toggle relativenumber" })
