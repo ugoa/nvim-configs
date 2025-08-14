@@ -36,7 +36,7 @@ return {
         MiniFilesTitleFocused = { bold = true, fg = colors.green },
         MiniFilesCursorLine = { bg = colors.surface0, fg = colors.teal },
 
-        WinBar = { fg = colors.teal },
+        -- WinBar = { fg = colors.teal },
 
         WinSeparator = { fg = colors.surface1 },
         AvanteSidebarWinSeparator = { fg = colors.surface1 },

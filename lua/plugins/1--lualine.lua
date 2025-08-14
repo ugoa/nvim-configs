@@ -54,7 +54,6 @@ return {
       },
       lualine_c = {
         -- { "filename", path = 1 },
-        { "filename" },
         { "filetype" },
       },
       lualine_x = {
