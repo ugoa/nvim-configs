@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map("i", "<C-s>", "<C-o><cmd>wa<CR>", { desc = "save file" })
+map("i", "<C-s>", "<Esc><cmd>wa<CR>", { desc = "save file" })
 
 map("n", "<C-s>", "<cmd>wa<CR>", { desc = "save file" })
 

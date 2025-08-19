@@ -11,7 +11,7 @@ return {
         themable = true, -- allow override by themes
         separator_style = "slant",
         truncate_names = false,
-        offsets = { { filetype = "NvimTree", text = "File Explorer" } },
+        offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center" } },
       },
       highlights = require("catppuccin.groups.integrations.bufferline").get({ styles = { "bold" } }),
     })
