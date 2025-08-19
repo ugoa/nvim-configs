@@ -55,7 +55,7 @@ return {
       lualine_c = {
         {
           "filename",
-          -- path = 1
+          path = 1,
         },
         { "filetype" },
       },
