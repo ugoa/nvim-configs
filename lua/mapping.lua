@@ -21,7 +21,7 @@ map("i", "<Enter>", "<Enter><C-G>u", { desc = "Break undo tree for enter" })
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
 
 map("n", "<Tab>", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
-map("n", "<BS>", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
+map("n", "<S-Tab>", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
