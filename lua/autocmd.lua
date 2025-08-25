@@ -100,7 +100,7 @@ autocmd("BufWritePost", {
 })
 
 -- Open nvim-tree when startup, then move focus to buffer without closing the tree
-autocmd("VimEnter", {
+autocmd("BufEnter", {
   callback = function()
     require("nvim-tree.api").tree.open()
     if vim.fn.bufname():match("NvimTree_") then
