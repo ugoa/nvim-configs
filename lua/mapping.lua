@@ -133,7 +133,7 @@ map(
 ----------------------------------------------------------------------------------------------------
 map("n", "<leader>i", "<cmd>Inspect<cr>", { desc = "Inspect under cursor" })
 
-map("n", "<leader>k", "<cmd>bdelete<cr>", { desc = "close current buffer" })
+map("n", "<leader>k", function() require("bufdelete").bufdelete() end, { desc = "close current buffer" })
 map("n", "<leader>l", "<cmd>execute '1,' . (bufnr('%') - 1) . 'bdelete'<cr>", { desc = "close current at left" })
 map(
   "n",

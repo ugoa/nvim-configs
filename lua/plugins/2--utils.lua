@@ -13,4 +13,6 @@ return {
   { "sphamba/smear-cursor.nvim", cmd = { "SmearCursorToggle" }, opts = {} },
 
   { "stevearc/quicker.nvim", event = "FileType qf", opts = {} },
+
+  { "famiu/bufdelete.nvim" },
 }
