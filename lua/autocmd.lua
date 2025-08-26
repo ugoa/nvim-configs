@@ -43,13 +43,12 @@ autocmd("FileType", {
     "quickfix",
     "vim",
     "Avante",
-    "undefined",
   },
   callback = function()
     vim.keymap.set(
       "n",
       "q",
-      function() require("bufdelete").bufdelete() end,
+      function() vim.cmd(":silent bw!") end,
       { desc = "Close the current buffer", buffer = true }
     )
   end,

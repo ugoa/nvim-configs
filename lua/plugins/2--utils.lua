@@ -10,9 +10,9 @@ return {
     keys = { { "<leader>z", "<cmd>ColorizerToggle<CR>", desc = "Toggle Colorizer" } },
   },
 
-  { "sphamba/smear-cursor.nvim", cmd = { "SmearCursorToggle" }, opts = {} },
+  { "sphamba/smear-cursor.nvim", cmd = { "SmearCursorToggle" }, config = true },
 
-  { "stevearc/quicker.nvim", event = "FileType qf", opts = {} },
+  { "stevearc/quicker.nvim", event = "FileType qf", config = true },
 
   { "famiu/bufdelete.nvim" },
 }
