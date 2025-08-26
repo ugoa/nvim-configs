@@ -133,18 +133,6 @@ map(
 ----------------------------------------------------------------------------------------------------
 map("n", "<leader>i", "<cmd>Inspect<cr>", { desc = "Inspect under cursor" })
 
-map("n", "<leader>k", function() require("bufdelete").bufdelete() end, { desc = "close current buffer" })
-map("n", "<leader>l", "<cmd>execute '1,' . (bufnr('%') - 1) . 'bdelete'<cr>", { desc = "close current at left" })
-map(
-  "n",
-  "<leader>r",
-  "<cmd>execute (bufnr('%') + 1) . ',' . bufnr('$') . 'bdelete!'<cr>",
-  { desc = "close current at right" }
-)
---https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
-map("n", "<leader>o", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
-map("n", "<leader>a", "<cmd>%bd<cr>", { desc = "close all buffers" })
-
 map(
   "n",
   "<leader>mm",

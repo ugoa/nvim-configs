@@ -16,4 +16,43 @@ return {
       highlights = require("catppuccin.groups.integrations.bufferline").get({ styles = { "bold" } }),
     })
   end,
+  keys = {
+    {
+      "<leader>k",
+      function() require("bufdelete").bufdelete() end,
+      desc = "close current buffer",
+    },
+    {
+      "<leader>l",
+      "<cmd>BufferLineCloseLeft<cr>",
+      desc = "close current at left",
+    },
+    {
+      "<leader>r",
+      "<cmd>BufferLineCloseRight<cr>",
+      desc = "close current at right",
+    },
+    {
+      "<leader>o",
+      "<cmd>BufferLineCloseOthers<cr>",
+    },
+    {
+      "<leader>a",
+      function()
+        vim.cmd([[BufferLineCloseOthers]])
+        require("bufdelete").bufdelete()
+      end,
+      desc = "close all buffers",
+    },
+  },
 }
+
+-- map("n", , { desc = "close current buffer" })
+--
+-- map("n", "<leader>l", "<cmd>BufferLineCloseLeft<cr>", { desc = "close current at left" })
+--
+-- map("n", "<leader>r", "<cmd>BufferLineCloseRight<cr>", { desc = "close current at left" })
+--
+-- map("n", "<leader>o", "<cmd>BufferLineCloseOthers<cr>", { desc = "close current at left" })
+--
+-- map("n", "<leader>a", function() vim.cmd([[BufferLineCloseOthers]]) require("bufdelete").bufdelete() end, { desc = "close all buffers" })

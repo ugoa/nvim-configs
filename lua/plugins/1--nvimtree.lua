@@ -100,5 +100,5 @@ return {
     },
   },
 
-  keys = { { "-", "<cmd>NvimTreeToggle<CR>" } },
+  keys = { { "<C-n>", "<cmd>NvimTreeToggle<CR>" } },
 }
