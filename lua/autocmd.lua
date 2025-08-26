@@ -43,6 +43,7 @@ autocmd("FileType", {
     "quickfix",
     "vim",
     "Avante",
+    "grug-far",
   },
   callback = function()
     vim.keymap.set(
