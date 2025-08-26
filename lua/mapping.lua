@@ -91,7 +91,7 @@ map("n", "<M-p>", "<cmd>enew<CR>", { desc = "buffer new" })
 map(
   { "n", "t" },
   "<M-t>",
-  function() require("terminal").toggle({ pos = "float", id = "floatTerm" }) end,
+  function() require("my.terminal").toggle({ pos = "float", id = "floatTerm" }) end,
   { desc = "toggle floating terminal" }
 )
 
@@ -115,14 +115,14 @@ end, { desc = "Toggle diagnostic lines" })
 map(
   { "n", "t" },
   "<M-->",
-  function() require("terminal").toggle({ pos = "sp", size = 0.4, id = "split_window" }) end,
+  function() require("my.terminal").toggle({ pos = "sp", size = 0.4, id = "split_window" }) end,
   { desc = "toggle horizontal terminal" }
 )
 
 map(
   { "n", "t" },
   "<M-=>",
-  function() require("terminal").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" }) end,
+  function() require("my.terminal").toggle({ pos = "vsp", size = 0.3, id = "vertical_split_window" }) end,
   { desc = "toggle vertical terminal" }
 )
 

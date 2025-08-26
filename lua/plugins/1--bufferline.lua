@@ -5,7 +5,6 @@ return {
   version = "*",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "famiu/bufdelete.nvim",
   },
   config = function()
     vim.opt.winbar = nil
@@ -22,7 +21,7 @@ return {
   keys = {
     {
       "<leader>k",
-      function() require("bufdelete").bufdelete() end,
+      function() require("my.bufdelete").bufdelete() end,
       desc = "close current buffer",
     },
     {
@@ -43,7 +42,7 @@ return {
       "<leader>a",
       function()
         vim.cmd([[BufferLineCloseOthers]])
-        require("bufdelete").bufdelete()
+        require("my.bufdelete").bufdelete()
       end,
       desc = "close all buffers",
     },
