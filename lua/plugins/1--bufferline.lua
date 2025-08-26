@@ -46,13 +46,3 @@ return {
     },
   },
 }
-
--- map("n", , { desc = "close current buffer" })
---
--- map("n", "<leader>l", "<cmd>BufferLineCloseLeft<cr>", { desc = "close current at left" })
---
--- map("n", "<leader>r", "<cmd>BufferLineCloseRight<cr>", { desc = "close current at left" })
---
--- map("n", "<leader>o", "<cmd>BufferLineCloseOthers<cr>", { desc = "close current at left" })
---
--- map("n", "<leader>a", function() vim.cmd([[BufferLineCloseOthers]]) require("bufdelete").bufdelete() end, { desc = "close all buffers" })
