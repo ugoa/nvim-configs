@@ -49,7 +49,7 @@ autocmd("FileType", {
     vim.keymap.set(
       "n",
       "q",
-      function() vim.cmd(":silent bw!") end,
+      function() require("bufdelete").bufdelete() end,
       { desc = "Close the current buffer", buffer = true }
     )
   end,
