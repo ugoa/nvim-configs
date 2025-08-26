@@ -43,5 +43,7 @@ return {
     },
   },
 
-  keys = { { "<M-a>", "<cmd>AvanteToggle<CR>" } },
+  keys = {
+    { "<M-a>", "<cmd>AvanteToggle<CR>" },
+  },
 }

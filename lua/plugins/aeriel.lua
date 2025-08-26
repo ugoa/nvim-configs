@@ -1,7 +1,10 @@
 return {
   "stevearc/aerial.nvim",
   cmd = { "AerialToggle" }, -- for code outline
-  dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-tree/nvim-web-devicons",
+  },
   opts = {
     layout = {
       default_direction = "prefer_right",
@@ -9,5 +12,7 @@ return {
       min_width = 40,
     },
   },
-  keys = { { "<M-o>", "<cmd>AerialToggle<CR>" } },
+  keys = {
+    { "<M-o>", "<cmd>AerialToggle<CR>" },
+  },
 }

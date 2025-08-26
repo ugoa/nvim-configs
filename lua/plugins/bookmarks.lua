@@ -21,5 +21,7 @@ return {
     })
     require("telescope").load_extension("bookmarks")
   end,
-  keys = { { "<M-m>", "<cmd>Telescope bookmarks list<CR>" } },
+  keys = {
+    { "<M-m>", "<cmd>Telescope bookmarks list<CR>" },
+  },
 }

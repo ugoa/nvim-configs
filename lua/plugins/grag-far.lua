@@ -10,5 +10,7 @@ return {
       },
     },
   },
-  keys = { { "<M-;>", function() require("grug-far").open({ transient = true }) end } },
+  keys = {
+    { "<M-;>", function() require("grug-far").open({ transient = true }) end },
+  },
 }

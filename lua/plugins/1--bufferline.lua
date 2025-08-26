@@ -3,7 +3,10 @@ return {
   event = "VeryLazy",
   after = "catppuccin",
   version = "*",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "famiu/bufdelete.nvim",
+  },
   config = function()
     vim.opt.winbar = nil
     require("bufferline").setup({

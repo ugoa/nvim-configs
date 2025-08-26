@@ -1,10 +1,12 @@
 return {
   enabled = false,
   "olimorris/codecompanion.nvim",
-  keys = {
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
     {
-      "<M-a>",
-      "<cmd>CodeCompanionChat Toggle<CR>",
+      "MeanderingProgrammer/render-markdown.nvim",
+      ft = { "markdown", "codecompanion" },
     },
   },
   opts = {
@@ -32,12 +34,10 @@ return {
       end,
     },
   },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
+  keys = {
     {
-      "MeanderingProgrammer/render-markdown.nvim",
-      ft = { "markdown", "codecompanion" },
+      "<M-a>",
+      "<cmd>CodeCompanionChat Toggle<CR>",
     },
   },
 }
