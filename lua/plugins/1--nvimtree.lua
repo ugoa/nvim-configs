@@ -100,5 +100,13 @@ return {
     },
   },
 
-  keys = { { "<C-n>", "<cmd>NvimTreeToggle<CR>" } },
+  keys = {
+    {
+      "<C-n>",
+      function()
+        vim.cmd("NvimTreeToggle")
+        vim.cmd.wincmd("p")
+      end,
+    },
+  },
 }
