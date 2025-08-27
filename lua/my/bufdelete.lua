@@ -17,7 +17,9 @@ end
 -- Prompt user for choice.
 -- This captures the first character inputted after the prompt is shown and returns it.
 local function char_prompt(text, choices)
-  local choice = fn.confirm(text, table.concat(choices, "\n"), "", "Q")
+  -- if pressed Enter, the first choice is selected, which is save buffer and kill
+  local choice = fn.confirm(text, table.concat(choices, "\n"), 1, "Q")
+
   if choice == 0 then
     return "C" -- Cancel if no choice was made
   else
@@ -60,8 +62,7 @@ local function buf_kill(target_buffers, switchable_buffers, force, wipeout)
   end
 
   if next(buf_is_deleted) == nil then
-    -- No targets, do nothing
-    api.nvim_err_writeln("bufdelete.nvim: No buffers were deleted")
+    api.nvim_echo({ { "bufdelete.nvim: No buffers were deleted" } }, true, {})
     return
   end
 
@@ -108,7 +109,7 @@ local function buf_kill(target_buffers, switchable_buffers, force, wipeout)
   else
     switch_bufnr = api.nvim_create_buf(true, false)
 
-    if switch_bufnr == 0 then api.nvim_err_writeln("bufdelete.nvim: Failed to create buffer") end
+    if switch_bufnr == 0 then api.nvim_echo({ { "bufdelete.nvim: Failed to create buffer" } }, true, {}) end
   end
 
   -- Switch all target windows to the selected buffer.
