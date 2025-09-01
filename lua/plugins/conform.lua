@@ -1,6 +1,6 @@
 return {
   "stevearc/conform.nvim",
-  event = "BufWritePre",
+  event = { "BufWritePre", "VeryLazy" },
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
@@ -16,13 +16,21 @@ return {
     },
     format_on_save = function(bufnr)
       local filetype = vim.bo[bufnr].filetype
-      if filetype ~= "html" and filetype ~= "htmldjango" then
-        return {
-          timeout_ms = 10000,
-          lsp_fallback = true,
-        }
+      -- Disable with a global or buffer-local variable
+      -- or for html/htmldjango filetype
+      if
+        vim.g.disable_autoformat
+        or vim.b[bufnr].disable_autoformat
+        or filetype == "html"
+        or filetype == "htmldjango"
+      then
+        return
       end
-      return nil
+
+      return {
+        timeout_ms = 10000,
+        lsp_fallback = true,
+      }
     end,
   },
 
@@ -37,5 +45,18 @@ return {
         cwd = require("conform.util").root_file({ "djlint.toml" }),
       }
     end
+
+    vim.api.nvim_create_user_command("FormatToggle", function(args)
+      local is_global = not args.bang
+      vim.g.disable_autoformat = not vim.g.disable_autoformat
+      if vim.g.disable_autoformat then
+        vim.notify("Autoformat-on-save Disabled globally", vim.log.levels.WARN)
+      else
+        vim.notify("Autoformat-on-save Enabled globally", vim.log.levels.INFO)
+      end
+    end, {
+      desc = "Toggle autoformat-on-save",
+      bang = true,
+    })
   end,
 }

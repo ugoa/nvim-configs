@@ -133,9 +133,10 @@ map(
 ----------------------------------------------------------------------------------------------------
 map("n", "<leader>i", "<cmd>Inspect<cr>", { desc = "Inspect under cursor" })
 
+map("n", "<leader>mm", "<cmd>FormatToggle<cr>", { desc = "Toggle auto-format" })
 map(
   "n",
-  "<leader>mm",
+  "<leader>mf",
   function() require("conform").format({ lsp_fallback = true }) end,
   { desc = "general format file" }
 )
