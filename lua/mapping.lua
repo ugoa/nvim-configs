@@ -60,7 +60,7 @@ map("n", "<C-b>", "<C-b>zz", { desc = "go page up and center screen", silent = t
 
 map("n", "?", ":h ", { desc = "help" })
 
-map({ "n", "v" }, "H", "0", { desc = "go to line non-blank start" })
+map({ "n", "v" }, "H", "^", { desc = "go to line non-blank start" })
 
 map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 

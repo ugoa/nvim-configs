@@ -4,7 +4,7 @@ return {
   event = "VeryLazy",
   opts = {
     disable = {
-      bt = { "terminal" },
+      -- bt = { "terminal" },
     },
   },
 }
