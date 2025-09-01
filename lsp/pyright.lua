@@ -15,6 +15,9 @@ return {
   settings = {
     python = {
       analysis = {
+        diagnosticSeverityOverrides = {
+          reportUnusedExpression = "none", -- Set severity to "none" to disable
+        },
         autoSearchPaths = true,
         useLibraryCodeForTypes = true,
         diagnosticMode = "openFilesOnly",
