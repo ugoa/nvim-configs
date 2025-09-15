@@ -48,6 +48,7 @@ return {
         ".values",
         ".terraform",
       },
+      custom = { "__pycache__" },
     },
     actions = {
       change_dir = {
