@@ -123,4 +123,4 @@ vim.lsp.buf.signature_help = function(opts)
   original_signature_help(opts)
 end
 
-opt.winbar = "%f"
+-- opt.winbar = "%f"
