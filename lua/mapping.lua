@@ -131,9 +131,13 @@ map(
 --    <leader>-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;
 --    <leader>-a c   ghijklm o  rs     yz  ;
 ----------------------------------------------------------------------------------------------------
+
+map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc = "general format file" })
+
 map("n", "<leader>i", "<cmd>Inspect<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>mm", "<cmd>FormatToggle<cr>", { desc = "Toggle auto-format" })
+
 map(
   "n",
   "<leader>mf",
