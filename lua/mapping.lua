@@ -134,6 +134,9 @@ map(
 
 map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc = "general format file" })
 
+-- https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
+map("n", "<leader>o", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
+
 map("n", "<leader>i", "<cmd>Inspect<cr>", { desc = "Inspect under cursor" })
 
 map("n", "<leader>mm", "<cmd>FormatToggle<cr>", { desc = "Toggle auto-format" })
