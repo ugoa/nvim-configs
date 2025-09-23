@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "ugoa/telescope-recent-files.nvim",
   },
 
   opts = {
@@ -136,8 +137,14 @@ return {
     extensions = {},
   },
 
+  config = function(_, opts)
+    require("telescope").setup(opts)
+    require("telescope").load_extension("recent-files")
+  end,
+
   keys = {
-    { "<M-f>", "<cmd>Telescope find_files<CR>" },
+    -- { "<M-f>", "<cmd>Telescope find_files<CR>" },
+    { "<M-f>", function() require("telescope").extensions["recent-files"].recent_files({}) end },
 
     { "<M-g>", "<cmd>Telescope live_grep<CR>" },
 
@@ -147,7 +154,7 @@ return {
 
     { "<M-i>", function() require("telescope.builtin").lsp_implementations() end },
 
-    { "<M-b>", "<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>" },
+    -- { "<M-b>", "<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>" },
     {
       "<M-w>",
       function()
