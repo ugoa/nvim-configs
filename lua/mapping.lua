@@ -132,10 +132,27 @@ map(
 --    <leader>-a c   ghijklm o  rs     yz  ;
 ----------------------------------------------------------------------------------------------------
 
-map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc = "general format file" })
+map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc = "delete current buffer" })
 
 -- https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
 map("n", "<leader>o", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
+
+-- map("n", "<leader>o", function()
+--   local bufnrs = vim.tbl_filter(function(bufnr)
+--     if 1 ~= vim.fn.buflisted(bufnr) or bufnr == vim.api.nvim_get_current_buf() then
+--       return false
+--     else
+--       return true
+--     end
+--   end, vim.api.nvim_list_bufs())
+--   print(vim.inspect(bufnrs))
+--
+--   for _, buf_id in ipairs(bufnrs) do
+--     local buffer_name = vim.api.nvim_buf_get_name(buf_id)
+--     print(buffer_name)
+--     require("my.bufdelete").bufdelete(buffer_name, true)
+--   end
+-- end, { desc = "close other buffers" })
 
 map("n", "<leader>i", "<cmd>Inspect<cr>", { desc = "Inspect under cursor" })
 
