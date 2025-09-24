@@ -67,7 +67,7 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-a cdefghijklmnopqrstuvwxyz-=;>
+--    <M-a cdefghijklmno qrstuvwxyz-=;>
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
@@ -85,8 +85,6 @@ map({ "n", "t" }, "<M-k>", "<c-w>k", { desc = "move to upper panel" })
 map({ "n", "t" }, "<M-l>", "<c-w>l", { desc = "move to right panel" })
 
 map("n", "<M-s>", "<cmd>!open -R %:p<CR>", { desc = "Open in Finder" })
-
-map("n", "<M-p>", "<cmd>enew<CR>", { desc = "buffer new" })
 
 map(
   { "n", "t" },
@@ -129,13 +127,19 @@ map(
 ----------------------------------------------------------------------------------------------------
 -- Leader key mappings:
 --    <leader>-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;
---    <leader>-a c   ghijklm o  rs     yz  ;
+--    <leader>-a c   ghijklmnop rs  v  yz  ;
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc = "delete current buffer" })
 
 -- https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one#comment84748132_42071865
 map("n", "<leader>o", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
+
+map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
+
+map("n", "<leader>v", "<cmd>vnew<CR>", { desc = "buffer new virtical" })
+
+map("n", "<leader>n", "<cmd>new<CR>", { desc = "buffer new horizontal" })
 
 -- map("n", "<leader>o", function()
 --   local bufnrs = vim.tbl_filter(function(bufnr)
@@ -172,7 +176,7 @@ map("n", "<leader>md", function()
   })
 end, { desc = "djlint format" })
 
-map({ "n" }, "<leader>n", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
+-- map({ "n" }, "<leader>n", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
 
 map({ "n", "v" }, "<leader>gy", "<cmd>GitLink<CR>", { desc = "Yank git link" })
 map({ "n", "v" }, "<leader>go", "<cmd>GitLink!<CR>", { desc = "Open git link" })

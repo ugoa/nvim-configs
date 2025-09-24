@@ -144,7 +144,41 @@ return {
 
   keys = {
     -- { "<M-f>", "<cmd>Telescope find_files<CR>" },
-    { "<M-f>", function() require("telescope").extensions["recent-files"].recent_files({}) end },
+    {
+      "<M-f>",
+      function()
+        require("telescope").extensions["recent-files"].recent_files({
+          find_command = {
+            "rg",
+            "--files",
+            "--smart-case",
+            "--hidden",
+            "--no-ignore",
+            "--glob=!.DS_Store",
+            "--glob=!project/*/*",
+            "--glob=!target/*",
+            "--glob=!**/.github/*",
+            "--glob=!**/.cargo*",
+            "--glob=!**/.vscode*",
+            "--glob=!**/.idea/*",
+            "--glob=!**/.venv/*",
+            "--glob=!**/.git/*",
+            "--glob=!**/log/*",
+            "--glob=!**/logs/*",
+            "--glob=!**/tmp*",
+            "--glob=!**/temp/*",
+            "--glob=!**/.nuxt*",
+            "--glob=!**/node_modules/*",
+            "--glob=!**/.output*",
+            "--glob=!**/.vinxi/*",
+            "--glob=!**/__pycache__/*",
+            "--glob=!**/dist/*",
+            "--glob=!**/db-data/*",
+            "--glob=!**/.bsp/*",
+          },
+        })
+      end,
+    },
 
     { "<M-g>", "<cmd>Telescope live_grep<CR>" },
 
