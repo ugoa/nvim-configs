@@ -54,18 +54,18 @@ return {
         ["@keyword.operator"] = { italic = true, fg = colors.mauve },
         ["@keyword.repeat"] = { italic = true, fg = colors.mauve },
 
-        ["@variable.builtin"] = { italic = true, fg = colors.mauve },
-        ["@variable.repeat"] = { italic = true, fg = colors.mauve },
-        ["@variable.conditional"] = { italic = true, fg = colors.mauve },
-        ["@variable.operator"] = { italic = true, fg = colors.mauve },
+        -- ["@variable.builtin"] = { italic = true, fg = colors.mauve },
+        -- ["@variable.repeat"] = { italic = true, fg = colors.mauve },
+        -- ["@variable.conditional"] = { italic = true, fg = colors.mauve },
+        -- ["@variable.operator"] = { italic = true, fg = colors.mauve },
 
         -- Set color for fields in Rust struct, or Python classes, etc
-        ["@variable.member"] = { italic = true, fg = colors.lavender }, -- treesitter
-        ["@property"] = { fg = colors.lavender }, -- lsp
+        -- ["@variable.member"] = { italic = true, fg = colors.lavender }, -- treesitter
+        -- ["@property"] = { fg = colors.lavender }, -- lsp
 
-        ["@constant.builtin"] = { italic = true, fg = colors.mauve },
+        -- ["@constant.builtin"] = { italic = true, fg = colors.mauve },
 
-        ["@type.builtin"] = { italic = true, fg = colors.mauve },
+        -- ["@type.builtin"] = { italic = true, fg = colors.mauve },
 
         Keyword = { italic = true, fg = colors.mauve },
         Include = { italic = true, fg = colors.mauve },
