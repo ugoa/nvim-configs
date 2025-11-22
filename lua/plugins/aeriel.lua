@@ -13,6 +13,6 @@ return {
     },
   },
   keys = {
-    { "<M-o>", "<cmd>AerialToggle<CR>" },
+    { "<leader>u", "<cmd>AerialToggle<CR>", desc = "Display code outline" },
   },
 }

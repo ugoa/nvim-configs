@@ -67,7 +67,7 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-a cdefghijklmno qrstuvwxyz-=;>
+--    <M-a cdefghijklmn  qrstuvwxyz-=;>
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
@@ -127,7 +127,7 @@ map(
 ----------------------------------------------------------------------------------------------------
 -- Leader key mappings:
 --    <leader>-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;
---    <leader>-a c   ghijklmnop rs  v  yz  ;
+--    <leader>-a c   ghijklmnop rs uv  yz  ;
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc = "delete current buffer" })
