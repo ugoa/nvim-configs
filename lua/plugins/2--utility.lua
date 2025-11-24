@@ -8,7 +8,7 @@ return {
     cmd = "ColorizerToggle",
     config = true,
     keys = {
-      { "<leader>z", "<cmd>ColorizerToggle<CR>", desc = "Toggle Colorizer" },
+      { "<leader>x", "<cmd>ColorizerToggle<CR>", desc = "Toggle Colorizer" },
     },
   },
 

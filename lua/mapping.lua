@@ -67,7 +67,7 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-a cdefghijklmn  qrstuvwxyz-=;>
+--    <M-a cdefghijklmn  qrstuvwxy -=;>
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
@@ -102,14 +102,6 @@ map(
   { desc = "Toggle inlay hint" }
 )
 
--- When lines are on, text is off. Text on, lines off. Minimize clutter.
-map("n", "<M-z>", function()
-  vim.diagnostic.config({
-    virtual_lines = not vim.diagnostic.config().virtual_lines,
-    -- virtual_text = not vim.diagnostic.config().virtual_text,
-  })
-end, { desc = "Toggle diagnostic lines" })
-
 map(
   { "n", "t" },
   "<M-->",
@@ -127,7 +119,7 @@ map(
 ----------------------------------------------------------------------------------------------------
 -- Leader key mappings:
 --    <leader>-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;
---    <leader>-a c   ghijklmnop rs uv  yz  ;
+--    <leader>-a c   ghijklmnop rs uv xyz  ;
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc = "delete current buffer" })
@@ -226,3 +218,11 @@ map("n", "<leader>ji", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enabl
 map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
 
 map("n", "<leader>jm", function() require("smear_cursor").toggle() end, { desc = "toggle cursor animation" })
+
+-- When lines are on, text is off. Text on, lines off. Minimize clutter.
+map("n", "<leader>z", function()
+  vim.diagnostic.config({
+    virtual_lines = not vim.diagnostic.config().virtual_lines,
+    -- virtual_text = not vim.diagnostic.config().virtual_text,
+  })
+end, { desc = "Toggle diagnostic lines" })
