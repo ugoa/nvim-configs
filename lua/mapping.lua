@@ -104,7 +104,7 @@ map(
 ----------------------------------------------------------------------------------------------------
 -- Leader key mappings:
 --    <leader>-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;
---    <leader>-a c   ghijklmnop rs uv xyz  ;
+--    <leader>-a c   ghijklm op rs u  xyz  ;
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc = "delete current buffer" })
@@ -113,10 +113,6 @@ map("n", "<leader>k", function() require("my.bufdelete").bufdelete() end, { desc
 map("n", "<leader>o", "<cmd>%bd|e#|bd#<cr>", { desc = "close other buffers" })
 
 map("n", "<leader>p", "<cmd>enew<CR>", { desc = "buffer new" })
-
-map("n", "<leader>v", "<cmd>vnew<CR>", { desc = "buffer new virtical" })
-
-map("n", "<leader>n", "<cmd>new<CR>", { desc = "buffer new horizontal" })
 
 -- map("n", "<leader>o", function()
 --   local bufnrs = vim.tbl_filter(function(bufnr)
@@ -168,9 +164,6 @@ map("n", "<leader>sf", "<cmd>SessionSearch<cr>", { desc = "open a session picker
 map("n", "<leader>yy", "<cmd>let @+ = expand('%:t')<CR>", { desc = "Copy file name to clipboard" })
 map("n", "<leader>yf", "<cmd>let @+ = expand('%')<CR>", { desc = "Copy relative path to clipboard" })
 map("n", "<leader>ya", "<cmd>let @+ = expand('%:p')<CR>", { desc = "Copy absolute path to clipboard" })
-
-map("n", "<leader>tn", "<cmd>setl relativenumber! relativenumber?<CR>", { desc = "toggle relativenumber" })
-map("n", "<leader>tw", "<cmd>setl wrap! wrap?<CR>", { desc = "toggle word wrap" })
 
 local crates = require("crates")
 map("n", "<leader>cc", crates.toggle, { silent = true, desc = "toggle" })
