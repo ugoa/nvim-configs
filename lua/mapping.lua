@@ -37,8 +37,6 @@ map(
 -- Visual mode
 map("v", "A", ":normal A", { desc = "append to visual block" })
 
-map("n", "S", vim.lsp.buf.signature_help, { desc = "go to signature_help" })
-
 -- always center search/nav results
 map("n", "n", "nzz", { desc = "find next and center screen", silent = true })
 
@@ -67,14 +65,8 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-a cde  hijklmn  qrstuvwxy -=;>
+--    <M-a cdef hijklmn  qrstuvwxy -=;>
 ----------------------------------------------------------------------------------------------------
-
-map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })
-
-map("n", "<M-d>", vim.lsp.buf.definition, { desc = "LSP definitions" })
-
-map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP rename" })
 
 map({ "n", "t" }, "<M-h>", "<c-w>h", { desc = "move to left panel" })
 
@@ -94,13 +86,6 @@ map(
 )
 
 map("n", "<M-x>", vim.diagnostic.open_float, { desc = "show Diagnosics" })
-
-map(
-  "n",
-  "<M-y>",
-  function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
-  { desc = "Toggle inlay hint" }
-)
 
 map(
   { "n", "t" },
@@ -170,8 +155,8 @@ end, { desc = "djlint format" })
 
 -- map({ "n" }, "<leader>n", "<cmd>Neogit<CR>", { desc = "Open Neogit" })
 
-map({ "n", "v" }, "<leader>gy", "<cmd>GitLink<CR>", { desc = "Yank git link" })
-map({ "n", "v" }, "<leader>go", "<cmd>GitLink!<CR>", { desc = "Open git link" })
+map({ "n", "v" }, "<leader>wy", "<cmd>GitLink<CR>", { desc = "Yank git link" })
+map({ "n", "v" }, "<leader>wo", "<cmd>GitLink!<CR>", { desc = "Open git link" })
 
 map("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Save session" })
 map("n", "<leader>sr", "<cmd>SessionRestore<cr>", { desc = "restores a session" })
@@ -208,10 +193,6 @@ map("n", "<leader>cD", crates.open_documentation, { silent = true, desc = "open 
 map("n", "<leader>cC", crates.open_crates_io, { silent = true, desc = "open crates.io" })
 map("n", "<leader>cL", crates.open_lib_rs, { silent = true, desc = "open lib.rs" })
 
-map("n", "<leader>xr", "<cmd>RustLsp run<cr>", { desc = "Run closet Cargo targets" })
-map("n", "<leader>xl", "<cmd>RustLsp runnables<cr>", { desc = "List runnable targets" })
-map("n", "<leader>xt", "<cmd>RustLsp testables<cr>", { desc = "List tests" })
-
 map("n", "<leader>ji", "<cmd>TSEnable highlight<CR>", { desc = "treesitter enable highlight" })
 
 -- whichkey
@@ -219,10 +200,36 @@ map("n", "<leader>jk", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
 
 map("n", "<leader>jm", function() require("smear_cursor").toggle() end, { desc = "toggle cursor animation" })
 
+-- map("n", "<leader>gy", "<cmd>WhichKey<CR>", { desc = "whichkey all keymaps" })
+
+--------------------------------------- LSP Section ---------------------------------------
+
+local toggle_inlayhint = function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end
+map("n", "<leader>gy", toggle_inlayhint, { desc = "Toggle inlay hint" })
+
+map("n", "<leader>grr", "<cmd>RustLsp run<cr>", { desc = "[Rust] Run closet Cargo targets" })
+
+map("n", "<leader>grl", "<cmd>RustLsp runnables<cr>", { desc = "[Rust] List runnable targets" })
+
+map("n", "<leader>grt", "<cmd>RustLsp testables<cr>", { desc = "[Rust] List tests" })
+
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
-map("n", "<leader>z", function()
+local toggle_vitualtext = function()
   vim.diagnostic.config({
     virtual_lines = not vim.diagnostic.config().virtual_lines,
     -- virtual_text = not vim.diagnostic.config().virtual_text,
   })
-end, { desc = "Toggle diagnostic lines" })
+end
+map("n", "<leader>gz", toggle_vitualtext, { desc = "Toggle diagnostic lines" })
+
+map("n", "<leader>gc", vim.lsp.buf.code_action, { desc = "Display availble code action" })
+
+map("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Display LSP definitions" })
+
+map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "Display availble code action" })
+
+map("n", "<M-d>", vim.lsp.buf.definition, { desc = "Display LSP definitions" })
+
+map("n", "<leader>ge", vim.lsp.buf.rename, { desc = "Rename" })
+
+map("n", "<leader>gs", vim.lsp.buf.signature_help, { desc = "Go to signature_help" })
