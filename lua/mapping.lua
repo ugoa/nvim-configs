@@ -67,7 +67,7 @@ map({ "n", "v" }, "L", "g_", { desc = "go to line end" })
 ----------------------------------------------------------------------------------------------------
 -- Meta (Alt/Option) key mappings:
 --    <M-ABCDEFGHIJKLMNOPQRSTUVWXYZ-=;>
---    <M-a cdefghijklmn  qrstuvwxy -=;>
+--    <M-a cde  hijklmn  qrstuvwxy -=;>
 ----------------------------------------------------------------------------------------------------
 
 map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "code action" })

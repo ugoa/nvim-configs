@@ -145,7 +145,7 @@ return {
   keys = {
     -- { "<M-f>", "<cmd>Telescope find_files<CR>" },
     {
-      "<M-f>",
+      "<C-p>",
       function()
         require("telescope").extensions["recent-files"].recent_files({
           find_command = {
@@ -180,7 +180,7 @@ return {
       end,
     },
 
-    { "<M-g>", "<cmd>Telescope live_grep<CR>" },
+    { "<C-S-p>", "<cmd>Telescope live_grep<CR>" },
 
     { "<M-u>", "<cmd>Telescope git_status<CR>" },
 

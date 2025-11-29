@@ -44,6 +44,6 @@ return {
   },
 
   keys = {
-    { "<M-a>", "<cmd>AvanteToggle<CR>" },
+    { "<leader>a", "<cmd>AvanteToggle<CR>", desc = "Toggle AI Assistant" },
   },
 }
