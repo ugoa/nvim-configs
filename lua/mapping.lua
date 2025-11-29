@@ -217,7 +217,7 @@ map("n", "<leader>gz", toggle_vitualtext, { desc = "Toggle diagnostic lines" })
 
 map("n", "<leader>gc", vim.lsp.buf.code_action, { desc = "Display availble code action" })
 
-map("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Display LSP definitions" })
+map("n", "<leader>gd", vim.lsp.buf.type_definition, { desc = "Display LSP definitions" })
 
 map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "Display availble code action" })
 
