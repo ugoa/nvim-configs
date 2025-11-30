@@ -198,13 +198,13 @@ map("n", "<leader>jm", function() require("smear_cursor").toggle() end, { desc =
 --------------------------------------- LSP Section ---------------------------------------
 
 local toggle_inlayhint = function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end
-map("n", "<leader>gy", toggle_inlayhint, { desc = "Toggle inlay hint" })
+map("n", "<leader>gy", toggle_inlayhint, { desc = "LSP: Toggle inlay hint" })
 
-map("n", "<leader>grr", "<cmd>RustLsp run<cr>", { desc = "[Rust] Run closet Cargo targets" })
+map("n", "<leader>gtr", "<cmd>RustLsp run<cr>", { desc = "[Rust] Run closet Cargo targets" })
 
-map("n", "<leader>grl", "<cmd>RustLsp runnables<cr>", { desc = "[Rust] List runnable targets" })
+map("n", "<leader>gtl", "<cmd>RustLsp runnables<cr>", { desc = "[Rust] List runnable targets" })
 
-map("n", "<leader>grt", "<cmd>RustLsp testables<cr>", { desc = "[Rust] List tests" })
+map("n", "<leader>gtt", "<cmd>RustLsp testables<cr>", { desc = "[Rust] List tests" })
 
 -- When lines are on, text is off. Text on, lines off. Minimize clutter.
 local toggle_vitualtext = function()
@@ -213,16 +213,16 @@ local toggle_vitualtext = function()
     -- virtual_text = not vim.diagnostic.config().virtual_text,
   })
 end
-map("n", "<leader>gz", toggle_vitualtext, { desc = "Toggle diagnostic lines" })
+map("n", "<leader>gz", toggle_vitualtext, { desc = "LSP: Toggle diagnostic lines" })
 
-map("n", "<leader>gc", vim.lsp.buf.code_action, { desc = "Display availble code action" })
+map("n", "<leader>gc", vim.lsp.buf.code_action, { desc = "LSP: Display availble code action" })
 
-map("n", "<leader>gd", vim.lsp.buf.type_definition, { desc = "Display LSP definitions" })
+map("n", "<leader>gd", vim.lsp.buf.type_definition, { desc = "LSP: Display LSP definitions" })
 
-map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "Display availble code action" })
+map("n", "<M-c>", vim.lsp.buf.code_action, { desc = "LSP: Display availble code action" })
 
-map("n", "<M-d>", vim.lsp.buf.definition, { desc = "Display LSP definitions" })
+map("n", "<M-d>", vim.lsp.buf.definition, { desc = "LSP: Display LSP definitions" })
 
-map("n", "<leader>ge", vim.lsp.buf.rename, { desc = "Rename" })
+map("n", "<leader>ge", vim.lsp.buf.rename, { desc = "LSP: Rename" })
 
-map("n", "<leader>gs", vim.lsp.buf.signature_help, { desc = "Go to signature_help" })
+map("n", "<leader>gs", vim.lsp.buf.signature_help, { desc = "LSP: Go to signature_help" })

@@ -186,11 +186,15 @@ return {
 
     { "<M-n>", "<cmd>Telescope git_commits<CR>" },
 
-    { "<M-i>", function() require("telescope.builtin").lsp_implementations() end },
+    {
+      "<leader>gi",
+      function() require("telescope.builtin").lsp_implementations() end,
+      desc = "LSP: Find implementations",
+    },
 
     -- { "<M-b>", "<cmd>Telescope buffers sort_mru=true ignore_current_buffer=true<CR>" },
     {
-      "<M-w>",
+      "<leader>gw",
       function()
         require("telescope.builtin").lsp_dynamic_workspace_symbols({
           fname_width = 90,
@@ -198,10 +202,12 @@ return {
           symbol_type_width = 15,
         })
       end,
+      desc = "LSP: Find workspace symbols",
     },
     {
-      "<M-r>",
+      "<leader>gr",
       function() require("telescope.builtin").lsp_references() end,
+      desc = "LSP: find references",
     },
   },
 }
