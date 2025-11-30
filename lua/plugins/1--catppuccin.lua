@@ -54,7 +54,7 @@ return {
         ["@keyword.operator"] = { italic = true, fg = colors.mauve },
         ["@keyword.repeat"] = { italic = true, fg = colors.mauve },
 
-        -- ["@variable.builtin"] = { italic = true, fg = colors.mauve },
+        ["@variable.builtin"] = { fg = colors.mauve },
         -- ["@variable.repeat"] = { italic = true, fg = colors.mauve },
         -- ["@variable.conditional"] = { italic = true, fg = colors.mauve },
         -- ["@variable.operator"] = { italic = true, fg = colors.mauve },
