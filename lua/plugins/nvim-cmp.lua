@@ -76,9 +76,6 @@ return {
       mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-_>"] = cmp.mapping.complete(),
         ["<C-e>"] = cmp.mapping.close(),
         -- ["<C-y>"] = cmp.mapping.confirm({
         --   behavior = cmp.ConfirmBehavior.Insert,
@@ -88,20 +85,21 @@ return {
         -- If a completion menu is visible, confirm the selected item
         -- Otherwise, just insert a space
         -- Apply this mapping in insert and select modes
-        ["<S-CR>"] = cmp.mapping(function(fallback)
+        ["<CR>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.confirm({ select = true })
           else
             fallback()
           end
-        end, { "i", "s", "c" }),
+        end, { "i", "s" }),
+
         ["<C-CR>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.confirm({ select = true })
           else
             fallback()
           end
-        end, { "i", "s", "c" }),
+        end, { "c" }),
 
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then

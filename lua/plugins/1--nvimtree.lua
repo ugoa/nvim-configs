@@ -80,8 +80,8 @@ return {
       signcolumn = "yes", --auto, yes or no
       cursorline = true,
       width = {
-        max = "30%",
-        min = "18%",
+        max = "33%",
+        min = "20%",
       },
     },
     system_open = {
