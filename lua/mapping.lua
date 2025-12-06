@@ -213,7 +213,7 @@ local toggle_vitualtext = function()
     -- virtual_text = not vim.diagnostic.config().virtual_text,
   })
 end
-map("n", "<leader>gz", toggle_vitualtext, { desc = "LSP: Toggle diagnostic lines" })
+map("n", "<M-z>", toggle_vitualtext, { desc = "LSP: Toggle diagnostic lines" })
 
 map("n", "<leader>gc", vim.lsp.buf.code_action, { desc = "LSP: Display availble code action" })
 

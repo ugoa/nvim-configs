@@ -111,7 +111,7 @@ vim.diagnostic.config({
     highlight_whole_line = false,
   },
   signs = { text = { [x.ERROR] = "󰅙", [x.WARN] = "", [x.INFO] = "󰋼", [x.HINT] = "󰌵" } },
-  underline = true,
+  underline = false,
   float = { border = "rounded" },
 })
 
