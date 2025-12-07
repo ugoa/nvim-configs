@@ -1,6 +1,7 @@
 return {
   "yetone/avante.nvim",
   cmd = "AvanteToggle",
+  enabled = false,
   version = false,
   build = "make",
   dependencies = {
