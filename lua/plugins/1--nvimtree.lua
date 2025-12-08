@@ -70,7 +70,7 @@ return {
       indent_markers = {
         enable = false,
       },
-      -- group_empty = true,
+      group_empty = true,
       full_name = true,
       special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "justfile" },
       -- hidden_display = "all",
