@@ -23,7 +23,14 @@ autocmd("BufReadPost", {
 autocmd("BufEnter", {
   pattern = "*",
   callback = function()
-    if vim.fn.expand("%:t") == "" or vim.bo.filetype == "" then vim.cmd([[ :setfiletype undefined ]]) end
+    if vim.fn.expand("%:t") == "" or vim.bo.filetype == "" then
+      vim.keymap.set(
+        "n",
+        "q",
+        function() vim.cmd(":silent bw!") end,
+        { desc = "Close the current buffer", buffer = true }
+      )
+    end
   end,
 })
 
@@ -44,7 +51,6 @@ autocmd("FileType", {
     "vim",
     "Avante",
     "grug-far",
-    "undefined",
   },
   callback = function()
     vim.keymap.set(
