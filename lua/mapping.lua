@@ -38,24 +38,24 @@ map(
 map("v", "A", ":normal A", { desc = "append to visual block" })
 
 -- always center search/nav results
-map("n", "n", "nzz", { desc = "find next and center screen", silent = true })
+-- map("n", "n", "nzz", { desc = "find next and center screen", silent = true })
 
-map("n", "N", "Nzz", { desc = "find previous and center screen", silent = true })
+-- map("n", "N", "Nzz", { desc = "find previous and center screen", silent = true })
 
-map("n", "*", "*zz", { desc = "highlight next and center screen", silent = true })
+-- map("n", "*", "*zz", { desc = "highlight next and center screen", silent = true })
 
-map("n", "#", "#zz", { desc = "highlight previous and center screen", silent = true })
+-- map("n", "#", "#zz", { desc = "highlight previous and center screen", silent = true })
 
-map("n", "g*", "g*zz", { desc = "highlight all and center screen", silent = true })
+-- map("n", "g*", "g*zz", { desc = "highlight all and center screen", silent = true })
 
-map("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center screen", silent = true })
-
-map("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
-
-map("n", "<C-f>", "<C-f>zz", { desc = "go page down and center screen", silent = true })
-
-map("n", "<C-b>", "<C-b>zz", { desc = "go page up and center screen", silent = true })
-
+-- map("n", "<C-u>", "<C-u>zz", { desc = "go half page up and center screen", silent = true })
+--
+-- map("n", "<C-d>", "<C-d>zz", { desc = "go half page down and center screen", silent = true })
+--
+-- map("n", "<C-f>", "<C-f>zz", { desc = "go page down and center screen", silent = true })
+--
+-- map("n", "<C-b>", "<C-b>zz", { desc = "go page up and center screen", silent = true })
+--
 map("n", "?", ":h ", { desc = "help" })
 
 map({ "n", "v" }, "H", "^", { desc = "go to line non-blank start" })
