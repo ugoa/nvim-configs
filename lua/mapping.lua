@@ -6,7 +6,7 @@ map({ "i", "c" }, "<C-f>", "<Right>", { desc = "move right" })
 
 map({ "i", "c" }, "<C-b>", "<Left>", { desc = "move left" })
 
-map({ "i", "c" }, "<C-a>", "<Home>", { desc = "move beginning" })
+map({ "i", "c" }, "<C-a>", "<C-o>^", { desc = "move beginning" })
 
 map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
@@ -14,9 +14,9 @@ map({ "i", "c" }, "<C-d>", "<Delete>", { desc = "delete backward" })
 
 map("i", "<C-k>", "<C-o>D", { desc = "delete till end" })
 
-map("i", "<C-p>", "<Up>", { desc = "delete till end" })
+map("i", "<C-p>", "<Up>", { desc = "go up" })
 
-map("i", "<C-n>", "<Down>", { desc = "delete till end" })
+map("i", "<C-n>", "<Down>", { desc = "go down" })
 
 map("i", "<Space>", "<Space><C-G>u", { desc = "Break undo tree for space" })
 
