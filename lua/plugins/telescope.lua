@@ -209,5 +209,10 @@ return {
       function() require("telescope.builtin").lsp_references() end,
       desc = "LSP: find references",
     },
+    {
+      "<M-r>",
+      function() require("telescope.builtin").lsp_references() end,
+      desc = "LSP: find references",
+    },
   },
 }

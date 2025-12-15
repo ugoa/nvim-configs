@@ -2,10 +2,6 @@ local map = vim.keymap.set
 
 map("i", "<C-s>", "<Esc><cmd>wa<CR>", { desc = "save file" })
 
-map("n", "<C-s>", "<cmd>wa<CR>", { desc = "save file" })
-
-map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
-
 map({ "i", "c" }, "<C-f>", "<Right>", { desc = "move right" })
 
 map({ "i", "c" }, "<C-b>", "<Left>", { desc = "move left" })
@@ -14,11 +10,19 @@ map({ "i", "c" }, "<C-a>", "<Home>", { desc = "move beginning" })
 
 map({ "i", "c" }, "<C-e>", "<End>", { desc = "move to end" })
 
+map({ "i", "c" }, "<C-d>", "<Delete>", { desc = "delete backward" })
+
+map("i", "<C-k>", "<C-o>D", { desc = "delete till end" })
+
 map("i", "<Space>", "<Space><C-G>u", { desc = "Break undo tree for space" })
 
 map("i", "<Enter>", "<Enter><C-G>u", { desc = "Break undo tree for enter" })
 
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+
 map("n", "<C-c>", "<cmd>%y+<CR>", { desc = "general copy whole file" })
+
+map("n", "<C-s>", "<cmd>wa<CR>", { desc = "save file" })
 
 map("n", "<Tab>", "<cmd>bnext<CR>", { nowait = true, desc = "buffer goto next" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { nowait = true, desc = "buffer goto prev" })
@@ -226,3 +230,5 @@ map("n", "<M-d>", vim.lsp.buf.definition, { desc = "LSP: Display LSP definitions
 map("n", "<leader>ge", vim.lsp.buf.rename, { desc = "LSP: Rename" })
 
 map("n", "<leader>gs", vim.lsp.buf.signature_help, { desc = "LSP: Go to signature_help" })
+
+map("n", "<leader>b", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle: Git current line blame" })
