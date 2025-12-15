@@ -233,6 +233,8 @@ map("n", "<M-d>", vim.lsp.buf.definition, { desc = "LSP: Display LSP definitions
 
 map("n", "<leader>ge", vim.lsp.buf.rename, { desc = "LSP: Rename" })
 
+map("n", "<M-e>", vim.lsp.buf.rename, { desc = "LSP: Rename" })
+
 map("n", "<leader>gs", vim.lsp.buf.signature_help, { desc = "LSP: Go to signature_help" })
 
 map("n", "<leader>b", "<cmd>Gitsigns toggle_current_line_blame<cr>", { desc = "Toggle: Git current line blame" })
