@@ -14,6 +14,10 @@ map({ "i", "c" }, "<C-d>", "<Delete>", { desc = "delete backward" })
 
 map("i", "<C-k>", "<C-o>D", { desc = "delete till end" })
 
+map("i", "<C-p>", "<Up>", { desc = "delete till end" })
+
+map("i", "<C-n>", "<Down>", { desc = "delete till end" })
+
 map("i", "<Space>", "<Space><C-G>u", { desc = "Break undo tree for space" })
 
 map("i", "<Enter>", "<Enter><C-G>u", { desc = "Break undo tree for enter" })

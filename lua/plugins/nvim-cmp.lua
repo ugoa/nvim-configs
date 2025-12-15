@@ -74,9 +74,9 @@ return {
       },
 
       mapping = {
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-n>"] = cmp.mapping.select_next_item(),
-        ["<C-e>"] = cmp.mapping.close(),
+        ["<C-p>"] = cmp.config.disable,
+        ["<C-n>"] = cmp.config.disable,
+        ["<C-q>"] = cmp.mapping.close(),
         -- ["<C-y>"] = cmp.mapping.confirm({
         --   behavior = cmp.ConfirmBehavior.Insert,
         --   select = false,
