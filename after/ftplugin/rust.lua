@@ -7,6 +7,13 @@ vim.keymap.set(
   { silent = true, buffer = bufnr, desc = "[Rust] Expand Rust Macro" }
 )
 
+vim.keymap.set(
+  "n",
+  "<M-x>",
+  function() vim.cmd.RustLsp("expandMacro") end,
+  { silent = true, buffer = bufnr, desc = "[Rust] Expand Rust Macro" }
+)
+
 vim.g.rustaceanvim = {
   server = {
     default_settings = {
